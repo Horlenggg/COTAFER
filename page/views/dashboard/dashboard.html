@@ -1,0 +1,122 @@
+{% extends "templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+<!-- Dashboard -->
+<div class="flex-1 flex flex-col">
+	<h2 class="text-2xl px-5 mt-5">Dashboard</h2>
+
+	<div class="w-full h-auto grid grid-cols-2 gap-5 xl:grid-cols-4 px-5 mt-5">
+		<div class="w-full h-24 flex justify-between items-center bg-white rounded-lg shadow-md border-l-4 border-red-500 px-5 transform transition duration-300 hover:scale-103">
+			<div class="flex flex-col justify-center items-start">
+				<span class="uppercase text-xs text-red-500">Followers</span>
+				<span class="text-xl">99.9K</span>
+			</div>
+			<div class="w-20 h-full flex items-center">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-10 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+					<path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+				</svg>
+			</div>
+		</div>
+		<div class="w-full h-24 flex justify-between items-center bg-white rounded-lg shadow-md border-l-4 border-green-500 px-5 transform transition duration-300 hover:scale-103">
+			<div class="flex flex-col justify-center items-start">
+				<span class="uppercase text-xs text-green-500">Follows last 30days</span>
+				<span class="text-xl">+100</span>
+			</div>
+			<div class="w-20 h-full flex items-center">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-10 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+					<path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+				</svg>
+			</div>
+		</div>
+		<div class="w-full h-24 flex justify-between items-center bg-white rounded-lg shadow-md border-l-4 border-blue-500 px-5 transform transition duration-300 hover:scale-103">
+			<div class="flex flex-col justify-center items-start">
+				<span class="uppercase text-xs text-blue-500">Articles</span>
+				<span class="text-xl">99</span>
+			</div>
+			<div class="w-20 h-full flex items-center">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-10 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+					<path d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z" />
+					<path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+				</svg>
+			</div>
+		</div>
+		<div class="w-full h-24 flex justify-between items-center bg-white rounded-lg shadow-md border-l-4 border-yellow-500 px-5 transform transition duration-300 hover:scale-103">
+			<div class="flex flex-col justify-center items-start">
+				<span class="uppercase text-xs text-yellow-500">Articles last 30days</span>
+				<span class="text-xl">11</span>
+			</div>
+			<div class="w-20 h-full flex items-center">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-10 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+					<path d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z" />
+					<path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+				</svg>
+			</div>
+		</div>
+	</div>
+
+	<div class="relative w-full h-80 px-5 mt-5">
+		<div class="w-full h-80 rounded-md shadow-lg border border-gray-300">
+			<div class="w-full h-10 flex justify-between items-center border-b border-gray-300 px-5">
+				<h2 class="text-main">Statistics</h2>
+				<div class="relative" x-data="app()" x-init="[initYear(), getNoOfYear()]" x-cloak>
+					<div class="container mx-auto px-2 py-2">
+						<div class="w-40">
+							<input type="hidden" name="year" x-ref="year">
+							<div class="relative flex flex-row select-none">
+								<button type="button" class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full focus:outline-none" @click="prevYear();getYearValue(year)">
+									<svg class="h-6 w-6 text-main inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+									</svg>
+								</button>
+								<input type="text" class="w-full pr-4 text-right text-main bg-transparent leading-none select-none focus:outline-none focus:shadow-outline" readonly x-model="datepickerValue" @click="showDatepicker = !showDatepicker" @keydown.escape="showDatepicker = false" placeholder="Select date">
+								<button class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full focus:outline-none" @click="nextYear();getYearValue(year)">
+									<svg class="h-6 w-6 text-main inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+									</svg>
+								</button>
+								<div class="absolute top-1 left-10">
+									<img class="w-5 h-5" src="/assets/images/svg/calendar-alt-regular.svg" alt="">
+								</div>
+							</div>
+
+							<div class="bg-white mt-11 rounded-md shadow-lg border p-4 absolute top-0 right-0" style="width: 18rem" x-show.transition="showDatepicker" @click.away="showDatepicker = false">
+								<div class="flex justify-between items-center mb-2">
+									<div>
+										<span x-text="datepickerValue" class="ml-1 text-lg text-gray-600 font-normal"></span>
+									</div>
+								</div>
+								<div class="flex flex-wrap -mx-1">
+									<template x-for="(noYear, yearIndex) in no_of_years" :key="yearIndex">
+										<div style="width: 25%" class="py-1 px-2 mb-1">
+											<div
+												@click="getYearValue(noYear)"
+												x-text="noYear"
+												class="w-12 h-12 rounded-full flex justify-center items-center cursor-pointer text-center text-sm leading-loose border transition ease-in-out duration-100"
+												:class="{'bg-main text-white': isYear(noYear) == true, 'text-gray-700 hover:text-white hover:bg-red-300': isYear(noYear) == false }"
+											></div>
+										</div>
+									</template>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<canvas id="chartDB" class="max-w-full max-h-87% rounded-b-md bg-white"></canvas>
+		</div>
+	</div>
+
+	<div class="w-full px-5 mt-5">
+		<div class="flex flex-col bg-white rounded-md shadow-lg border border-gray-300">
+			<div class="h-10 flex justify-start items-center bg-gray-100 border-b border-gray-300 px-5">
+				<h2 class="text-main">Top View</h2>
+			</div>
+			<div class="p-5">
+				<div id="tableDashboard"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% if params.client_module is defined -%}
+    {% set clientModule = params.client_module -%}
+{% else -%}
+    {% set clientModule = 'dashboard' -%}
+{% endif -%}
+
+<!doctype html>
+<html lang="{{ page.lang or 'en' }}">
+<head>
+    <title>{% block title %}Cotafer News{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="{{ seo.keyword }}" />
+    <meta name="description" content="{{ seo.desc }}" />
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
+
+    {#- fav icon #}
+    <link rel="icon" href="/assets/images/logo/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    {#- custom style #}
+    <link href="/assets/module/{{ clientModule }}/app.css?version={{ vdate('/assets/module/' + clientModule + '/app.js') }}" rel="stylesheet">
+
+    {#- Default image loader #}
+    <script src="/assets/vendor/default-image-loader/defaultImage.js"></script>
+
+    {% block externalLib %}{% endblock %}
+
+</head>
+{% block body -%}
+
+<body id="page-top">
+    {# Page Wrapper -#}
+    <div id="wrapper">
+        {% block wrapper -%}
+        {%- endblock %}
+    </div>
+    <foot>
+        {#- translate #}
+        <script src="/assets/translation.js?code={{ vrand() }}"></script>
+        {#- custom style #}
+        <script src="/assets/module/{{ clientModule }}/app.js?version={{ vdate('/assets/module/' + clientModule + '/app.js') }}"></script>
+    </foot>
+</body>
+{% endblock body %}
+
+</html>

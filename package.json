@@ -1,0 +1,22 @@
+{
+  "name": "gonoka-news",
+  "version": "1.0.0",
+  "description": "**create env** `python3.8 -m venv venv`",
+  "main": "index.js",
+  "scripts": {
+    "build-tailwindcss": "postcss page/assets/vendor/tailwindcss/base.css -o page/assets/vendor/tailwindcss/tailwindcss.css",
+    "build-pro": "NODE_ENV=production postcss page/assets/vendor/tailwindcss/base.css -o page/assets/vendor/tailwindcss/tailwindcss.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.3.3",
+    "@tailwindcss/line-clamp": "^0.2.0",
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1",
+    "tailwind-scrollbar": "^1.3.0",
+    "tailwindcss": "^2.2.4"
+  }
+}

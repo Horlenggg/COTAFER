@@ -1,0 +1,49 @@
+# default rule
+.idea
+.idea/
+.idea/*
+
+# log
+logs
+logs/
+logs/*.log
+
+# upload
+page/assets/upload
+page/assets/upload/
+page/assets/upload/*
+
+# vscode
+.vscode
+.vscode/
+.vscode/*
+
+# env
+venv
+venv/
+venv/*
+
+# python system
+__pycache__
+__pycache__/
+__pycache__/*
+
+# no pyc
+*.pyc
+
+# remove generated sass cache
+.sass-cache/
+
+# tailwind generated file
+page/assets/vendor/tailwindcss/tailwindcss.css
+
+page/assets/module/*/app.js
+page/assets/module/*/app.css
+page/assets/module/*/css
+page/assets/module/*/css/
+page/assets/module/*/css/*.css
+#*.css
+
+# nodejs
+node_modules/
+package-lock.json

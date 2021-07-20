@@ -1,0 +1,30 @@
+
+{% extends 'templates/_baseLayout.html' %}
+
+{% from 'templates/macro/_baseMacro.html' import sidebar %}
+{% from 'templates/macro/_baseMacro.html' import header %}
+{% from 'templates/macro/_baseMacro.html' import footer %}
+
+        {% block wrapper %}
+            <div class="flex h-screen bg-gray-100">
+                {{ sidebar(params) }}
+                <div class="flex-1 flex flex-col overflow-hidden">
+                    <div class="flex-shrink-0">
+                        {{ header() }} 
+                    </div>
+                    <div class="flex-shrink-0 px-5 mt-5 text-2xl flex justify-between">
+                        {% block contentTitle %}{% endblock %}
+                    </div>
+                    {% block overideContentBody %}
+                    <div class="flex flex-1 overflow-hidden px-5 py-5 space-x-5">
+                        {% block contentBody %}{% endblock %}
+                    </div>
+                    {% endblock %}
+                    {% block overideFooter %}
+                    <div class="flex-shrink-0">
+                        {{ footer() }}
+                    </div>
+                    {% endblock %}
+                </div>
+            </div>
+        {% endblock %}
