@@ -1,5 +1,5 @@
 {
-  "name": "gonoka-news",
+  "name": "cotafer-im",
   "version": "1.0.0",
   "description": "**create env** `python3.8 -m venv venv`",
   "main": "index.js",

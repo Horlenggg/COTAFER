@@ -10,7 +10,7 @@ class Config(Entity):
     """
 
     """
-    GONOKA_WEB_API      = 'gonoka_web_api'
+    GONOKA_WEB_API      = 'api'
     GONOKA_MEDIA_API    = 'gonoka_media_api'
     LOGGER              = 'log'
     SECRET_KEY          = 'secret_key'
