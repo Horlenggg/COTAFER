@@ -13,6 +13,11 @@ page/assets/upload
 page/assets/upload/
 page/assets/upload/*
 
+# image testing
+page/assets/images/testing
+page/assets/images/testing/
+page/assets/images/testing*
+
 # vscode
 .vscode
 .vscode/
