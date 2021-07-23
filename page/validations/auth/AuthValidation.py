@@ -12,8 +12,8 @@ class AuthValidation(MyValidation):
         self.__h = self.header.getElement()
         self.__EB = AuthRule()
 
-    def loginFormGet(self, data={}):
-        return controller(headerParam=self.__h, bodyParam=self.__b).loginFormGet(data)
+    def loginGet(self):
+        return controller(headerParam=self.__h, bodyParam=self.__b).loginGet()
 
     def login(self):
         try:
@@ -41,4 +41,9 @@ class AuthValidation(MyValidation):
             return controller(headerParam=self.__h, bodyParam=self.__b).logout()
         except Exception as e:
             return controller(headerParam=self.__h, bodyParam=self.__b).logout()
- 
+
+    def forgetPasswordGet(self):
+        return controller(headerParam=self.__h, bodyParam=self.__b).forgetPasswordGet()
+
+    def newPasswordGet(self):
+        return controller(headerParam=self.__h, bodyParam=self.__b).newPasswordGet()

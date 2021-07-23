@@ -1,1 +1,0 @@
-var defaultDashboard = 1;

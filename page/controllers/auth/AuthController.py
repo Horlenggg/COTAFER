@@ -57,7 +57,7 @@ class AuthController(MyController):
             self.log.error(f'AuthContoller Exception ', str(e))
             return self.logout()
  
-    def loginFormGet(self, data: dict={}) -> Any:
+    def loginGet(self) -> Any:
         try:
 
             # check if token is exist
@@ -70,10 +70,6 @@ class AuthController(MyController):
             )
 
             # add params
-            # self.view.addParams(self.getCountry())
-
-            if data.get('errorMessage'):
-                self.view.addParam('errorMessage', data.get('errorMessage'))
 
             # view
             return self.view.render('auth/login'), self.status.OK
@@ -108,11 +104,11 @@ class AuthController(MyController):
                 return self.__index()
 
             # else:
-            return self.loginFormGet(data={'errorMessage': 'this is error message'})
+            return self.loginGet(data={'errorMessage': 'this is error message'})
 
         except Exception as e:
             self.log.error(f'AuthController Exception ', str(e))
-            return self.redirect('loginFormGet')
+            return self.redirect('loginGet')
 
     def logout(self) -> Any:
         try:
@@ -127,9 +123,42 @@ class AuthController(MyController):
             # remove sessions
             self.__destroySessions()
 
-            return self.redirect('loginFormGet')
+            return self.redirect('loginGet')
 
         except Exception as e:
             self.log.error(f'AuthController Exception ', str(e))
-            return self.redirect('loginFormGet')
- 
+            return self.redirect('loginGet')
+
+    def forgetPasswordGet(self) -> Any:
+        try:
+
+            # active link
+            self.view.addData(
+                params={'client_module'   : '1_login'}
+            )
+
+            # add params
+
+            # view
+            return self.view.render('auth/forgetPassword'), self.status.OK
+
+        except Exception as e:
+            self.log.error(f'AuthController Exception ', str(e)) 
+            return self.view.render('auth/forgetPassword')
+
+    def newPasswordGet(self) -> Any:
+        try:
+
+            # active link
+            self.view.addData(
+                params={'client_module'   : '1_login'}
+            )
+
+            # add params
+
+            # view
+            return self.view.render('auth/newPassword'), self.status.OK
+
+        except Exception as e:
+            self.log.error(f'AuthController Exception ', str(e)) 
+            return self.view.render('auth/newPassword')

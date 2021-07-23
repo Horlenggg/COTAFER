@@ -1,0 +1,127 @@
+{% extends "templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+<div class="w-full h-full flex flex-col">
+	<div class="flex justify-between">
+		<div class="flex flex-col mt-4 mb-2">
+			<span class="text-main-color text-base font-bold mb-1">Overtime day</span>
+		</div>
+		<div class="text-sm mt-4 w-36">
+			<div class="relative">
+				<div x-data="monthPicker()">
+					<div class="mt-1 relative">
+						<button id="countIdPresenter" type="button" @click="tempselectedYear = selectedYear, isOn = !isOn" x-on:keydown.escape="isOn = false" 
+							class="relative w-full bg-white border border-gray-300 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+							aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+							<span x-text="`${month[selectedMonth - 1][1]}-${selectedYear}`" class="ml-2 block text-sm truncate"></span>
+							<span class="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+								<svg class="h-5 w-5" fill="none" stroke="#ececec" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							</span>
+						</button>
+						<ul x-cloak x-show="isOn" x-on:keydown.escape="isOn = false" 
+							x-transition:enter="transition ease-out duration-100 transform"
+							x-transition:enter-start="opacity-0 scale-95"
+							x-transition:enter-end="opacity-100 scale-100"
+							x-transition:leave="transition ease-in duration-75 transform"
+							x-transition:leave-start="opacity-100 scale-100"
+							x-transition:leave-end="opacity-0 scale-95"
+							class="z-50 absolute w-52 right-0 bg-white shadow-lg border text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+							tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+							aria-activedescendant="listbox-option-3">
+							<li class="flex px-3 py-2">
+								<span x-text="tempselectedYear"></span>
+								<button @click="tempselectedYear -= 1" type="button" class="ml-auto">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+									  </svg>
+								</button>
+								<button @click="tempselectedYear += 1" type="button" class="">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+									  </svg>
+								</button>
+							</li>
+							<li class="flex px-3 justify-between text-sm mb-2">
+								<button x-text="month[0][1]" @click="selectedYear = tempselectedYear, selectedMonth = month[0][0], isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedMonth == 1}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="month[1][1]" @click="selectedYear = tempselectedYear, selectedMonth = 2, isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedMonth == 2}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="month[2][1]" @click="selectedYear = tempselectedYear, selectedMonth = 3, isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedMonth == 3}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="month[3][1]" @click="selectedYear = tempselectedYear, selectedMonth = 4, isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedMonth == 4}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+							</li>
+							<li class="flex px-3 justify-between text-sm pb-2">
+								<button x-text="month[4][1]" @click="selectedYear = tempselectedYear, selectedMonth = 5, isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedMonth == 5}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="month[5][1]" @click="selectedYear = tempselectedYear, selectedMonth = 6, isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedMonth == 6}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="month[6][1]" @click="selectedYear = tempselectedYear, selectedMonth = 7, isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedMonth == 7}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="month[7][1]" @click="selectedYear = tempselectedYear, selectedMonth = 8, isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedMonth == 8}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+							</li>
+							<li class="flex px-3 justify-between text-sm mb-2">
+								<button x-text="month[8][1]" @click="selectedYear = tempselectedYear, selectedMonth = 9, isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedMonth == 9}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="month[9][1]" @click="selectedYear = tempselectedYear, selectedMonth = 10, isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedMonth == 10}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="month[10][1]" @click="selectedYear = tempselectedYear, selectedMonth = 11, isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedMonth == 11}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="month[11][1]" @click="selectedYear = tempselectedYear, selectedMonth = 12, isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedMonth == 12}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="flex items-center text-sm font-semibold mb-3">
+		<div class="w-6 h-3 bg-red-300"></div>
+		<h5 class="ml-3 mr-5">PUBLIC HOLIDAY</h5>
+		<div class="w-6 h-3 bg-lightBlue-400"></div>
+		<h5 class="ml-3 mr-5">SATURDAY & SUNDAY</h5>
+	</div>
+	<table class="table-auto w-full bg-white text-sm mb-5 shadow ">
+		<thead>
+			<tr class="bg-indigo-100 py-3">
+				<th class="py-2 font-semibold">Date</th>
+				<th class="py-2 font-semibold">Check In</th>
+				<th class="py-2 font-semibold">Check Out</th>
+				<th class="py-2 font-semibold">Total</th>
+				<th class="py-2 font-semibold">Reason</th>
+			</tr>
+		</thead>
+		<tbody class="text-center text-xs">
+			<tr class="bg-red-300">
+				<td class="py-2">04/25/2021</td>
+				<td class="py-2">8:30 AM</td>
+				<td class="py-2">5:40 PM</td>
+				<td class="py-2">8:30</td>
+				<td class="py-2"></td>
+			</tr>
+			<tr class="bg-gray-50">
+				<td class="py-2">04/26/2021</td>
+				<td class="py-2">8:30 AM</td>
+				<td class="py-2">5:40 PM</td>
+				<td class="py-2">3:30</td>
+				<td class="py-2"></td>
+			</tr>
+			<tr class="bg-lightBlue-400">
+				<td class="py-2">04/27/2021</td>
+				<td class="py-2">8:30 AM</td>
+				<td class="py-2">5:40 PM</td>
+				<td class="py-2">8:40</td>
+				<td class="py-2"></td>
+			</tr>
+			<tr class="bg-gray-50">
+				<td class="py-2">04/28/2021</td>
+				<td class="py-2">8:30 AM</td>
+				<td class="py-2">5:40 PM</td>
+				<td class="py-2">0:30</td>
+				<td class="py-2"></td>
+			</tr>
+			<tr>
+				<td class="py-2">04/30/2021</td>
+				<td class="py-2">8:30 AM</td>
+				<td class="py-2">5:40 PM</td>
+				<td class="py-2">0:30</td>
+				<td class="py-2"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+{% endblock %}

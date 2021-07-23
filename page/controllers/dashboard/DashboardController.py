@@ -18,23 +18,31 @@ class DashboardController(MyController):
         super().__init__(hParam=headerParam, bParam=bodyParam, modelClass=DashboardModel())
         
         # view params
-        self._param = {
-            'active_module'     : ['dashboard', '']
-            , 'client_module'   : '2_dashboard'
-        }
+        # self._param = {
+        #     'active_module'     : ['attendance', '']
+        #     , 'client_module'   : '2_attendance'
+        # }
 
-    @authenticated
     def dashboardGet(self) -> Any:
         
         try:
-            self.log.info('DashboardController.dashboardGet info')
+            self.log.info('DasboardController.dashboardGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['dashboard', '']
+                    , 'client_module'   : '2_attendance'
+                    , 'base_module'     : ''
+                }
+            )
 
             return self.render(
                 viewFile='dashboard/dashboard'
             )
 
         except Exception as e:
-            self.log.error(f'DashboardController.dashboardGet Exception ', str(e))
+            self.log.error(f'DasboardController.dashboardGet Exception ', str(e))
             return self.render(
                 viewFile='dashboard/dashboard'
             )

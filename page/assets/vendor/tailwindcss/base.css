@@ -5,3 +5,91 @@
 [v-cloak] {
     display: none !important;
 }
+
+.text-main-color {
+    color: rgba(55, 65, 81, 1);
+}
+.main-color {
+    background-color: rgba(55, 65, 81, 1);
+}
+
+.bg-lightBlue-400 {
+    background-color: #7DD3FC;
+}
+.text-second-color {
+    color: rgba(107, 114, 128);
+}
+.second-color {
+    background-color: rgba(107, 114, 128);
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.mt-customize{
+    margin-top: 10.65rem;
+}
+.custom-number-input input:focus {
+    outline: none !important;
+}
+
+.custom-number-input button:focus {
+    outline: none !important;
+}
+li>ul                 { transform: translatex(100%) scale(0) }
+li:hover>ul           { transform: translatex(100%) scale(1) }
+li > button img       { transform: rotate(-90deg) }
+li:hover > button img { transform: rotate(-270deg) }
+
+/* Below styles fake what can be achieved with the tailwind config
+    you need to add the group-hover variant to scale and define your custom
+    min width style.
+    See https://codesandbox.io/s/tailwindcss-multilevel-dropdown-y91j7?file=/index.html
+    for implementation with config file
+*/
+
+.group:hover .group-hover\:scale-100 { transform: scale(1) }
+.group:hover .group-hover\:-rotate-180 { transform: rotate(180deg) }
+.scale-0 { transform: scale(0) }
+.min-w-32 { min-width: 8rem }
+
+/* for alpine js use in modal and dropdown */
+[x-cloak] {
+    display: none;
+}
+
+/* for all page which use donut chart */
+.chart-item-bg { stroke: #ECF2FF }
+.chart-item-0  { stroke: #FF7A7A }
+
+/* for tailwind */
+/* this must be remove if tailwind is compile by config.js file */
+.group:hover .group-hover\:hidden {
+    display: none;
+}
+.group:hover .group-hover\:block {
+    display: block;
+}
+/* add new font size */
+.text-xxs {
+    font-size: 0.5rem;
+}
+
+/* Overide fullCalendar style */
+.fc-daygrid-event.fc-daygrid-block-event.fc-h-event.fc-event.fc-event-start.fc-event-end.fc-event-past {  
+    border-radius: 0;
+}
+.fc-event-main {
+    border-left: 3px solid #80E5FF;
+}
+
+/* use in login page sepcial for default show modal */
+body.alert-full-active {
+    overflow-x: hidden;
+    overflow-y: hidden !important;
+    }
+
+.-z-1 {
+    z-index: -1;
+}

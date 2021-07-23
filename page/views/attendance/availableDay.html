@@ -1,0 +1,155 @@
+{% extends "templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+<div class="w-full h-full flex flex-col">
+	<div class="flex justify-between">
+		<div class="flex flex-col mt-4 mb-2">
+			<span class="text-main-color font-bold mb-1">Avaliable day</span>
+			<span class="text-sm">From 04/01/2021 - 04/30/2021</span>
+		</div>
+		<div class="text-sm mt-4 w-36">
+			<div class="relative">
+				<div x-data="yearPicker()">
+					<div class="mt-1 relative">
+						<button id="countIdPresenter" type="button" @click="isOn = !isOn" x-on:keydown.escape="isOn = false" 
+							class="relative w-full bg-white border border-gray-300 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+							aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+							<span x-text="selectedYear" class="ml-2 block text-sm truncate"></span>
+							<span class="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+								<svg class="h-5 w-5" fill="none" stroke="#ececec" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							</span>
+						</button>
+						<ul x-cloak x-show="isOn" x-on:keydown.escape="isOn = false" 
+							x-transition:enter="transition ease-out duration-100 transform"
+							x-transition:enter-start="opacity-0 scale-95"
+							x-transition:enter-end="opacity-100 scale-100"
+							x-transition:leave="transition ease-in duration-75 transform"
+							x-transition:leave-start="opacity-100 scale-100"
+							x-transition:leave-end="opacity-0 scale-95"
+							class="pt-2 z-50 absolute w-52 right-0 bg-white shadow-lg border text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+							tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+							aria-activedescendant="listbox-option-3">
+							<!-- <li class="flex px-3 py-2">
+								<span x-text="tempselectedYear"></span>
+								<button @click="tempselectedYear -= 1" type="button" class="ml-auto">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+									  </svg>
+								</button>
+								<button @click="tempselectedYear += 1" type="button" class="">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+									  </svg>
+								</button>
+							</li> -->
+							<li class="flex px-3 justify-between text-xs mb-2">
+								<button x-text="years[0]" @click="selectedYear = years[0], isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedYear == years[0]}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="years[1]" @click="selectedYear = years[1], isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedYear == years[1]}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="years[2]" @click="selectedYear = years[2], isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedYear == years[2]}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="years[3]" @click="selectedYear = years[3], isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedYear == years[3]}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+							</li>
+							<li class="flex px-3 justify-between text-xs mb-2">
+								<button x-text="years[4]" @click="selectedYear = years[4], isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedYear == years[4]}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="years[5]" @click="selectedYear = years[5], isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedYear == years[5]}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="years[6]" @click="selectedYear = years[6], isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedYear == years[6]}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="years[7]" @click="selectedYear = years[7], isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedYear == years[7]}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+							</li>
+							
+							<li class="flex px-3 justify-between text-xs mb-2">
+								<button x-text="years[8]" @click="selectedYear = years[8], isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedYear == years[8]}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="years[9]" @click="selectedYear = years[9], isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedYear == years[9]}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="years[10]" @click="selectedYear = years[10], isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedYear == years[10]}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+								<button x-text="years[11]" @click="selectedYear = years[11], isOn = false" type="button" :class="{'bg-gray-600 text-white' : selectedYear == years[11]}" class="w-10 h-10 hover:bg-gray-500 hover:text-white rounded-full"></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="flex flex-wrap justify-between">
+		<div class="w-36 lg:w-48 xl:w-52 pb-5">
+			<div class="bg-white flex flex-col shadow pt-2 pb-4">
+				<span class="text-sm font-bold ml-2 mb-3">Annual Leave</span>
+				<div data="3/18" class="chart w-11/12 m-auto relative">
+					<div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 text-center flex flex-col w-full">
+						<span class="text-xs font-bold">3/18</span>
+						<span class="text-xxs">days per year</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w-36 lg:w-48 xl:w-52 pb-5">
+			<div class="bg-white flex flex-col shadow pt-2 pb-4">
+				<span class="text-sm font-bold ml-2 mb-3">Sick Leave</span>
+				<div data="1/5" class=" chart w-11/12 m-auto relative">
+					<div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 text-center flex flex-col w-full">
+						<span class="text-xs font-bold">1/5</span>
+						<span class="text-xxs">days per year</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w-36 lg:w-48 xl:w-52 pb-5">
+			<div class="bg-white flex flex-col shadow pt-2 pb-4">
+				<span class="text-sm font-bold ml-2 mb-3">Special Leave</span>
+				<div data="1/10" class="chart w-11/12 m-auto relative">
+					<div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 text-center flex flex-col w-full">
+						<span class="text-xs font-bold">1/10</span>
+						<span class="text-xxs">days per year</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w-36 lg:w-48 xl:w-52 pb-5">
+			<div class="bg-white flex flex-col shadow pt-2 pb-4">
+				<span class="text-sm font-bold ml-2 mb-3">Maternity Leave</span>
+				<div data="0/90" class="chart w-11/12 m-auto relative">
+					<div class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 text-center flex flex-col w-full">
+						<span class="text-xs font-bold">0/90</span>
+						<span class="text-xxs">days per year</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<table class="table-auto w-full bg-white text-sm mb-5 shadow text-left">
+		<thead>
+			<tr class="bg-indigo-100 py-3">
+				<th class="pl-2 py-2 font-semibold">Date</th>
+				<th class="py-2 font-semibold">Leave type</th>
+				<th class="py-2 font-semibold">Person in charge</th>
+				<th class="py-2 font-semibold">Note</th>
+				<th class="pr-2 py-2 font-semibold">Status</th>
+			</tr>
+		</thead>
+		<tbody class="text-left text-xs">
+			<tr class="">
+				<td class="pl-2 py-2">04/01/2021</td>
+				<td class="py-2">Annual leave</td>
+				<td class="py-2">Sitthykun LY</td>
+				<td class="py-2">I have personal issue.</td>
+				<td class="pr-2 py-2 text-green-400">Approved</td>
+			</tr>
+			<tr class="bg-gray-50">
+				<td class="pl-2 py-2">04/01/2021</td>
+				<td class="py-2">Annual leave</td>
+				<td class="py-2">Sitthykun LY</td>
+				<td class="py-2">I have personal issue at university.</td>
+				<td class="pr-2 py-2 text-yellow-300">Panding</td>
+			</tr>
+			<tr class="">
+				<td class="pl-2 py-2">04/01/2021</td>
+				<td class="py-2">Special leave</td>
+				<td class="py-2">Sitthykun LY</td>
+				<td class="py-2">I have personal issue.</td>
+				<td class="pr-2 py-2 text-red-500">Declined</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+{% endblock %}

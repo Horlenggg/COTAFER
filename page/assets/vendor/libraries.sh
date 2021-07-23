@@ -17,3 +17,14 @@ VUE_js=./page/assets/vendor/vue/vue.global.js # comment this line when deploy to
 
 # sha256
 Sha256=./page/assets/vendor/sha256/sha256.js
+
+#flatpicker
+Flatpicker_Min_Css=./page/assets/vendor/flatpickr/css/flatpickr.min.css
+Flatpicker_Min_Js=./page/assets/vendor/flatpickr/js/flatpickr.min.js
+
+#alpine
+Alpine_Js=./page/assets/vendor/alpine/alpine.min.js
+
+#fullcalendar
+Fullcalendar_Min_Css=./page/assets/vendor/fullcalendar/css/fullcalendar.min.css
+Fullcalendar_Min_Js=./page/assets/vendor/fullcalendar/js/fullcalendar.min.js
