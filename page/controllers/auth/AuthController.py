@@ -72,11 +72,11 @@ class AuthController(MyController):
             # add params
 
             # view
-            return self.view.render('auth/login'), self.status.OK
+            return self.view.render('auth/login-1'), self.status.OK
 
         except Exception as e:
             self.log.error(f'AuthController Exception ', str(e)) 
-            return self.view.render('auth/login')
+            return self.view.render('auth/login-1')
 
     def login(self) -> Any:
         try:

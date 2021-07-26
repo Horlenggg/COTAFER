@@ -119,12 +119,12 @@
     }
 ] -%}
 {%- endif -%}
-<aside id="sidebar" class="w-1/2 bg-white md:w-3/12 lg:w-2/12 border-r hidden md:block lg:block">
+<aside id="sidebar" class="w-full max-w-70 bg-white hidden md:block lg:block">
     <ul class="list-reset flex flex-col">
         {%- for module in sideBarModules -%}
         <li class="group">
             <a href="{{ module.href }}" class="font-semibold text-sm no-underline py-4 px-5 flex justify-between items-center {{ 'bg-gray-700 text-white' if activeModule[0] == module.module else 'bg-white text-gray-700 hover:bg-gray-700 hover:text-white' }}">
-                <div class="flex flex-row">
+                <div class="flex flex-row items-center">
                     {%- if activeModule[0] == module.module -%}
                     <img src="{{ module.icon_active }}" class="w-4 h-4 mr-3" alt="">
                     {%- else -%}
@@ -144,21 +144,25 @@
 {% endmacro %}
 
 {% macro header() %}
-<header class="bg-gray-700 shadow-md">
-    <div class="flex justify-between px-5">
-        <div class="flex flex-row items-center space-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" onclick="sidebarToggle()" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <a href="/"><img class="w-26 h-auto" src="/assets/images/svg/cotafer-logo-white.svg" alt=""></a>
-        </div>
-        <div class="flex items-center py-2">
-            <form class="flex items-center" action="">
-                <input class="w-12 h-8 md:w-56 lg:w-96 xl:w-96 2xl-w-128 p-2 mx-1 bg-gray-500 outline-none text-white placeholder-gray-200" type="search" placeholder="Search...">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#ececec">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+<header class="bg-gray-700 shadow-md select-none">
+    <div class="flex justify-between px-5 py-1.5">
+        <div class="flex flex-row">
+            <div class="min-w-65 flex flex-row items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" onclick="sidebarToggle()" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-            </form>
+                <a href="/"><img class="w-26 h-auto" src="/assets/images/cotafer-logo-white.svg" alt=""></a>
+            </div>
+            <div class="flex justify-center items-center">
+                <div class="flex items-center space-x-2">
+                    <input class="w-96 h-full text-sm text-white bg-gray-500 placeholder-gray-200 focus:outline-none px-3 py-2" type="search" placeholder="Search...">
+                    <button class="focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#ececec">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
         <div class="flex items-center py-2">
             <a href="/attendance" class="no-underline">
@@ -170,7 +174,7 @@
         <div class="group flex flex-row justify-end items-center space-x-3">
             <img class="inline-block h-8 w-8 rounded-full object-cover" src="https://images.unsplash.com/photo-1535704882196-765e5fc62a53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
             <span class="text-white">Justin</span>
-            <ul class="flex flex-col mt-customize mr-5 z-50 bg-white transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32">
+            <ul class="flex flex-col mt-40 mr-5 z-50 bg-white border transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out min-w-32">
                 <li><a href="/account/profile"
                         class="no-underline px-4 py-2 block hover:bg-gray-700 hover:text-white">My
                         account</a></li>
@@ -180,9 +184,8 @@
                 <li>
                     <hr class="border-t mx-2 border-gray-200">
                 </li>
-                <li><a href=""
-                        class="no-underline px-4 py-2 block hover:bg-gray-700 hover:text-white modal-open"
-                        data-toggle="modal" data-target="logoutModal">Logout</a></li>
+                <li><a href="/logout"
+                        class="no-underline px-4 py-2 block hover:bg-gray-700 hover:text-white">Logout</a></li>
             </ul>
         </div>
     </div>

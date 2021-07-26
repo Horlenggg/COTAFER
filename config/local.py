@@ -1,6 +1,6 @@
 {
     "api": {
-        "url": "http://api.cotafer.im.local.com"
+        "url": "http://api.cotafer.im.local.com/"
         , "merchant_id": "ie98djowue1af8624e3769c2d51bf3s4ewt"
         , "auth2": ""
         , "hashcode": ""

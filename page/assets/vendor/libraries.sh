@@ -12,7 +12,7 @@ TailwindCss=./page/assets/vendor/tailwindcss/tailwindcss.css
 AXIOS=./page/assets/vendor/axios/axios.min.js
 
 # https://unpkg.com/vue@3.0.11/dist/vue.global.js
-VUE_js=./page/assets/vendor/vue/vue.global.js # comment this line when deploy to production. => Important!
+VUE_Js=./page/assets/vendor/vue/vue.global.js # comment this line when deploy to production. => Important!
 #VUE_js=./page/assets/vendor/vue/vue.global.pro.js # unncomment this line when deploy to production. => Important!
 
 # sha256
