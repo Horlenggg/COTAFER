@@ -22,7 +22,7 @@ LOG_SYSTEM_PATH             = ROOT_DIR + '/logs/'
 
 # address
 IP                          = '127.0.0.1'
-PORT                        = '7050'
+PORT                        = '7031'
 
 # session
 SESSION_HOST                = IP
