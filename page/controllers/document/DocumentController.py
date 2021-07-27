@@ -32,7 +32,7 @@ class DocumentController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['document', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '5_document'
                     , 'base_module'     : ''
                 }
             )
@@ -56,7 +56,7 @@ class DocumentController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['document', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '5_document'
                     , 'base_module'     : ''
                 }
             )
@@ -80,7 +80,7 @@ class DocumentController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['document', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '5_document'
                     , 'base_module'     : ''
                 }
             )

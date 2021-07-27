@@ -57,7 +57,7 @@ class AuthController(MyController):
             self.log.error(f'AuthContoller Exception ', str(e))
             return self.logout()
  
-    def loginGet(self) -> Any:
+    def loginGet(self, data: dict={}) -> Any:
         try:
 
             # check if token is exist
@@ -66,39 +66,39 @@ class AuthController(MyController):
 
             # active link
             self.view.addData(
-                params={'client_module'   : '1_login'}
+                params = 
+                    {   'client_module'     : '1_login' }
             )
 
-            # add params
+            if data.get('errorMessage'):
+                self.view.addParam('errorMessage', data.get('errorMessage'))
 
             # view
-            return self.view.render('auth/login-1'), self.status.OK
+            return self.view.render('auth/login'), self.status.OK
 
         except Exception as e:
-            self.log.error(f'AuthController Exception ', str(e)) 
-            return self.view.render('auth/login-1')
+            self.log.error(f'AuthController Exception ', str(e))
+            return self.view.render('auth/login')
 
     def login(self) -> Any:
         try:
             # set params
             mParams = {
                 "username"          : self.getClientBodyParam["username"]
-                , "password"        : self.getClientBodyParam["password"] 
+                , "password"        : self.getClientBodyParam["password"]
             }
-
             self.log.info(f'AuthController.login, mParams: ', mParams)
 
             # call api
-            self.model.login(mParams) 
+            self.model.login(mParams)
             
             if self.model.respond.hsc == self.status.OK and self.model.respond.isAccepted():
             # if True:
-
                 # response
-                res = {'login_token': 'thisIsToken'}
+                res = {'login_token': self.model.respond.data.get('login_token')}
+
                 # set token
                 self.__createSessions(res)
-                # self.__createSessions(self.model.respond.data)
 
                 # index
                 return self.__index()

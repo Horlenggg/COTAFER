@@ -1,3 +1,4 @@
+from logging import log
 from typing import Any
 from library.MyValidation import MyValidation
 from page.controllers.auth.AuthController import AuthController as controller
@@ -12,8 +13,8 @@ class AuthValidation(MyValidation):
         self.__h = self.header.getElement()
         self.__EB = AuthRule()
 
-    def loginGet(self):
-        return controller(headerParam=self.__h, bodyParam=self.__b).loginGet()
+    def loginGet(self, data={}):
+        return controller(headerParam=self.__h, bodyParam=self.__b).loginGet(data)
 
     def login(self):
         try:
@@ -30,11 +31,11 @@ class AuthValidation(MyValidation):
                 return controller(headerParam=self.__h, bodyParam=self.__b).login()
 
             error = {"errorMessage", "validation error"}
-            return self.loginFormGet(error)
+            return self.loginGet(error)
 
         except Exception as e:
             error = {"errorMessage", "validation error"}
-            return self.loginFormGet(error)
+            return self.loginGet(error)
 
     def logout(self):
         try:

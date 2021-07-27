@@ -32,7 +32,7 @@ class AccountController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['account', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '4_account'
                     , 'base_module'     : ''
                 }
             )
@@ -56,7 +56,7 @@ class AccountController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['account', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '4_account'
                     , 'base_module'     : ''
                 }
             )
@@ -80,7 +80,7 @@ class AccountController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['account', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '4_account'
                     , 'base_module'     : ''
                 }
             )
@@ -104,7 +104,7 @@ class AccountController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['account', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '4_account'
                     , 'base_module'     : ''
                 }
             )
@@ -128,7 +128,7 @@ class AccountController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['account', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '4_account'
                     , 'base_module'     : ''
                 }
             )

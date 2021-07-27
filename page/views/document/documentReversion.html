@@ -12,71 +12,115 @@
 			<li>Re-version</li>
 		</ol>
 	</div>
-	<div class="w-full mx-auto overflow-hidden xl:w-3/4">
+	<div id="documentReversion" class="w-full mx-auto overflow-hidden xl:w-3/4">
 		<div class="bg-white flex flex-col p-5 space-y-5">
 			<div class="w-full flex flex-row space-x-5">
 				<div class="w-1/2">
 					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Title</label>
-					<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4" type="text" placeholder="title" disabled>  
+					<input
+						v-model="title"
+						:class="isTitleVal ? 'border-red-500' : ''"
+						class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4"
+						type="text"
+						placeholder="title"
+					>  
 				</div>
 				<div class="w-1/2">
 					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >File Name</label>
-					<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4" id="grid-first-name" type="text" placeholder="filename" disabled>  
+					<input
+						v-model="filename"
+						:class="isFilenameVal ? 'border-red-500' : ''"
+						class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4"
+						type="text"
+						placeholder="filename"
+					>  
 				</div>
 			</div>
 			<div class="w-full flex flex-row space-x-5">
 				<div class="w-1/2">
 					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Category</label>
-					<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4" type="text" placeholder="category" disabled>  
+					<div class="relative">
+						<select v-model="category" class="block appearance-none w-full bg-white border text-grey-darker py-3 px-4 pr-8">
+							<option 
+								v-for="cat in catOption"
+								:key="cat.id"
+								v-text="cat.value"
+								:value="cat.id"
+							></option>
+						</select>
+						<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</div>
+					</div>
 				</div>
 				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >Department</label>
-					<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4" id="grid-first-name" type="text" placeholder="department" disabled>  
+					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Department</label>
+					<div class="relative">
+						<select v-model="department" class="block appearance-none w-full bg-white border text-grey-darker py-3 px-4 pr-8">
+							<option 
+								v-for="de in deOption"
+								:key="de.id"
+								v-text="de.value"
+								:value="de.id"
+							></option>
+						</select>
+						<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="w-full flex flex-row space-x-5">
 				<div class="w-1/2">
 					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">File</label>
-					<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4" type="file">  
+					<input
+						@change="onFileHandle"
+						:class="isFileVal ? 'border-red-500' : ''"
+						class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4"
+						type="file">  
 				</div>
 				<div class="w-1/2">
 					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Version</label>
 					<div class="w-full h-10 flex flex-row space-x-5">
-						<div class="w-1/3 flex flex-row h-10 rounded-lg relative bg-transparent">
-							<button data-action="decrement" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-full cursor-pointer outline-none" disabled>
+						<div class="w-1/3 h-full flex flex-row">
+							<button @click="onDecrease('major')" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-full focus:outline-none">
 								<span class="m-auto text-2xl font-thin">−</span>
 							</button>
-							<input type="number" class="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md flex items-center text-gray-700" value="1"></input>
-							<button data-action="increment" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-full cursor-pointer outline-none">
+							<input v-model="vMajor" type="number" class="focus:outline-none text-center w-full bg-gray-300 font-semibold text-md flex items-center text-gray-700" readonly></input>
+							<button @click="onIncrease('major')" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-full focus:outline-none">
 								<span class="m-auto text-2xl font-thin">+</span>
 							</button>
 						</div>
-						<div class="w-1/3 flex flex-row h-10 rounded-lg relative bg-transparent">
-							<button data-action="decrement1" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-full cursor-pointer outline-none" disabled>
+						<div class="w-1/3 h-full flex flex-row">
+							<button @click="onDecrease('minor')" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-full focus:outline-none">
 								<span class="m-auto text-2xl font-thin">−</span>
 							</button>
-							<input type="number" class="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md flex items-center text-gray-700" value="0"></input>
-							<button data-action="increment1" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-full cursor-pointer outline-none">
+							<input v-model="vMinor" type="number" class="focus:outline-none text-center w-full bg-gray-300 font-semibold text-md flex items-center text-gray-700" readonly></input>
+							<button @click="onIncrease('minor')" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-full focus:outline-none">
 								<span class="m-auto text-2xl font-thin">+</span>
 							</button>
 						</div>
-						<div class="w-1/3 flex flex-row h-10 rounded-lg relative bg-transparent">
-							<button data-action="decrement2" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-full cursor-pointer outline-none" disabled>
+						<div class="w-1/3 h-full flex flex-row">
+							<button @click="onDecrease('patch')" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-full focus:outline-none">
 								<span class="m-auto text-2xl font-thin">−</span>
 							</button>
-							<input type="number" class="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md flex items-center text-gray-700" value="0"></input>
-							<button data-action="increment2" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-full cursor-pointer outline-none">
+							<input v-model="vPatch" type="number" class="focus:outline-none text-center w-full bg-gray-300 font-semibold text-md flex items-center text-gray-700" readonly></input>
+							<button @click="onIncrease('patch')" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-full focus:outline-none">
 								<span class="m-auto text-2xl font-thin">+</span>
 							</button>
 						</div>
-					</div>  
+					</div>
 				</div>
 			</div>
 			<div class="w-full flex justify-end space-x-5">
 				<button class="w-24 h-10 text-sm bg-white text-gray-700 border border-gray-700 hover:text-white hover:bg-gray-700 focus:outline-none">
 					<a class="px-5 py-2" href="/document">Cancel</a>
 				</button>
-				<button class="w-24 h-10 px-5 py-2 text-sm text-white bg-gray-700 focus:outline-none">
+				<button @click="onSubmit" class="w-24 h-10 px-5 py-2 text-sm text-white bg-gray-700 focus:outline-none">
 					Save
 				</button>
 			</div>
