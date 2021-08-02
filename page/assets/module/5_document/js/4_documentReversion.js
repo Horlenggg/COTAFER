@@ -63,22 +63,26 @@ if(document.querySelector('#documentReversion')){
                         file        = document.createElement('input'),
                         filename    = document.createElement('input'),
                         department  = document.createElement('input'),
+                        version     = document.createElement('input'),
                         form        = document.createElement('form');
         
                     title.name      = 'title';
                     title.value     = this.title;
     
                     category.name   = 'category';
-                    category.value  = this.category;
+                    category.value  = parseInt(this.category);
         
-                    file.name       = 'file';
-                    file.value      = this.file;
+                    // file.name       = 'file';
+                    // file.value      = this.file;
     
-                    filename.name   = 'filename';
+                    filename.name   = 'fileName';
                     filename.value  = this.filename;
     
                     department.name     = 'department';
-                    department.value    = this.department;
+                    department.value    = parseInt(this.department);
+
+                    version.name    = 'version'
+                    version.value   = this.vMajor + '.' + this.vMinor + '.' + this.vPatch
         
                     form.className  = 'hidden';
                     form.method     = 'POST';
@@ -86,9 +90,10 @@ if(document.querySelector('#documentReversion')){
         
                     form.append(title);
                     form.append(category);
-                    form.append(file);
+                    // form.append(file);
                     form.append(filename);
                     form.append(department);
+                    form.append(version);
         
                     document.body.append(form);
                     form.submit();

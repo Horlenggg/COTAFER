@@ -10,14 +10,13 @@ from startup import wa as route
 """======================================
     Source Controller Page Validation
 ======================================"""
-from page.validations.auth import AuthValidation as auth 
-from page.validations.attendance import AttendanceValidation as attendance
-
-from page.validations.dashboard import DashboardValidation as dashboard
-from page.validations.account import AccountValidation as account
-from page.validations.document import DocumentValidation as document
-from page.validations.google import GoogleValidation as google
-from page.validations.setting import SettingValidation as setting
+from page.validations.auth          import AuthValidation as auth 
+from page.validations.attendance    import AttendanceValidation as attendance
+from page.validations.dashboard     import DashboardValidation as dashboard
+from page.validations.account       import AccountValidation as account
+from page.validations.document      import DocumentValidation as document
+from page.validations.google        import GoogleValidation as google
+from page.validations.setting       import SettingValidation as setting
  
 
 # ================= #
@@ -61,17 +60,33 @@ def accountGet():
 def accountProfileGet():
     return account.AccountValidation().accountProfileGet()
 
+@route.post('/account/profile')
+def accountProfilePost():
+    return account.AccountValidation().accountProfilePost()
+
 @route.get('/account/password/change')
 def accountChangePasswordGet():
     return account.AccountValidation().accountChangePasswordGet()
+
+@route.post('/account/password/change')
+def accountChangePasswordPost():
+    return account.AccountValidation().accountChangePasswordPost()
 
 @route.get('/account/add')
 def accountAddGet():
     return account.AccountValidation().accountAddGet()
 
+@route.post('/account/add')
+def accountAddPost():
+    return account.AccountValidation().accountAddPost()
+
 @route.get('/account/edit')
 def accountEditGet():
     return account.AccountValidation().accountEditGet()
+
+@route.post('/account/edit')
+def accountEditPost():
+    return account.AccountValidation().accountEditPost()
 
 @route.get('/document')
 def documentGet():
@@ -81,9 +96,17 @@ def documentGet():
 def documentAddGet():
     return document.DocumentValidation().documentAddGet()
 
+@route.post('/document/add')
+def documentAddPost():
+    return document.DocumentValidation().documentAddPost()
+
 @route.get('/document/reversion')
 def documentReversionGet():
     return document.DocumentValidation().documentReversionGet()
+
+@route.post('/document/reversion')
+def documentReversionPost():
+    return document.DocumentValidation().documentReversionPost()
 
 @route.get('/google')
 def googleGet():

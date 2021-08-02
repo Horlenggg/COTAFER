@@ -38,10 +38,10 @@ if(document.querySelector('#accountChangePw')){
                         newPassword     = document.createElement('input'),
                         form            = document.createElement('form');
         
-                    currentPassword.name   = 'currentpassword';
+                    currentPassword.name   = 'currentPassword';
                     currentPassword.value  = Sha256.hash(this.currentPassword);
     
-                    newPassword.name   = 'newpassword';
+                    newPassword.name   = 'newPassword';
                     newPassword.value  = Sha256.hash(this.newPassword);
         
                     form.className  = 'hidden';

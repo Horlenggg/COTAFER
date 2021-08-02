@@ -71,6 +71,23 @@ class DocumentController(MyController):
                 viewFile='document/documentAdd'
             )
 
+    def documentAddPost(self) -> Any:
+        try:
+            self.log.info(self.data.form)
+            
+            # set params
+            # mParams = {
+            #     "title"          : self.getClientBodyParam["title"]
+            #     , "fileName"     : self.getClientBodyParam["fileName"]
+            #     , "category"     : self.getClientBodyParam["category"]
+            #     , "department"   : self.getClientBodyParam["department"]
+            # }
+
+            # self.log.info(f'AccountController.accountAddPost, info: ', mParams)
+
+        except Exception as e:
+            self.log.error(f'DocumentController.documentAddPost Exception ', str(e))
+
     def documentReversionGet(self) -> Any:
         
         try:
@@ -94,3 +111,20 @@ class DocumentController(MyController):
             return self.render(
                 viewFile='document/documentReversion'
             )
+
+    def documentReversionPost(self) -> Any:
+        try:
+            self.log.info(self.data.form)
+            
+            # set params
+            # mParams = {
+            #     "title"          : self.getClientBodyParam["title"]
+            #     , "fileName"     : self.getClientBodyParam["fileName"]
+            #     , "category"     : self.getClientBodyParam["category"]
+            #     , "department"   : self.getClientBodyParam["department"]
+            # }
+
+            # self.log.info(f'AccountController.accountAddPost, info: ', mParams)
+
+        except Exception as e:
+            self.log.error(f'DocumentController.documentReversionPost Exception ', str(e))

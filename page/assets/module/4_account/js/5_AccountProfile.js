@@ -76,10 +76,10 @@ if(document.querySelector('#accountProfile')){
                         department  = document.createElement('input'),
                         form        = document.createElement('form');
         
-                    firstName.name   = 'firstname';
+                    firstName.name   = 'firstName';
                     firstName.value  = this.firstName;
 
-                    lastName.name   = 'lastname';
+                    lastName.name   = 'lastName';
                     lastName.value  = this.lastName;
     
                     email.name      = 'email';
@@ -88,7 +88,7 @@ if(document.querySelector('#accountProfile')){
                     password.name   = 'password';
                     password.value  = Sha256.hash(this.password);
     
-                    phoneNumber.name    = 'phonenumber';
+                    phoneNumber.name    = 'phoneNumber';
                     phoneNumber.value   = this.phoneNumber;
     
                     department.name    = 'department';

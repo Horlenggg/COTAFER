@@ -75,7 +75,7 @@ if(document.querySelector('#accountEdit')){
                         permission  = document.createElement('input'),
                         form        = document.createElement('form');
         
-                    username.name   = 'username';
+                    username.name   = 'userName';
                     username.value  = this.username;
     
                     email.name      = 'email';

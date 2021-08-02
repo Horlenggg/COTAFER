@@ -75,7 +75,7 @@ if(document.querySelector('#accountAdd')){
                         permission  = document.createElement('input'),
                         form        = document.createElement('form');
         
-                    username.name   = 'username';
+                    username.name   = 'userName';
                     username.value  = this.username;
     
                     email.name      = 'email';
@@ -85,13 +85,15 @@ if(document.querySelector('#accountAdd')){
                     password.value  = Sha256.hash(this.password);
     
                     application.name    = 'application';
-                    application.value   = this.application;
+                    application.value   = parseInt(this.application);
     
                     link.name       = 'link';
                     link.value      = this.link;
     
                     permission.name    = 'permission';
-                    permission.value   = this.permission;
+                    permission.value   = parseInt(this.permission);
+
+                    console.log(this.username, this.email, this.password, this.application, this.link, this.permission);
         
                     form.className  = 'hidden';
                     form.method     = 'POST';

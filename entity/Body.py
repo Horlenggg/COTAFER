@@ -4,20 +4,27 @@ from application.data.Entity import Entity
 
 class Body(Entity):
 	pass
-	# A	
+	# A
+	APPLICATION		= "application"
 
 	# B
 
 	# C	
 	COUNTRY			= "country"
-	CONTRY_CODE		= "countryCode"	
+	CONTRY_CODE		= "countryCode"
+	CATEGORY		= "category"
+	CURRENT_PASSWORD = "currentPassword"
 
 	# D
+	DEPARTMENT		= "department"
 
 	# E
 	EMAIL			= "email"
 
 	# F
+	FILE 			= "file"
+	FILE_NAME		= "fileName"
+	FIRST_NAME		= "firstName"
 
 	# G
 
@@ -31,10 +38,13 @@ class Body(Entity):
 	# K
 
 	# L
+	LINK			= "link"
+	LAST_NAME		= "lastName"
 
 	# M
 
 	# N
+	NEW_PASSWORD	= "newPassword"
 
 	# O	
 
@@ -42,6 +52,7 @@ class Body(Entity):
 	PASSWORD 		= "password"
 	RETYPE_PASSWORD = "retypePassword"
 	PHONE_NUMBER	= "phoneNumber"	
+	PERMISSION 		= "permission"
 
 	# Q
 
@@ -50,11 +61,13 @@ class Body(Entity):
 	# S	
 
 	# T
+	TITLE			= "title"
 
 	# U
-	USERNAME 		= "username"
+	USERNAME 		= "userName"
 
 	# V	
+	VERSION			= "version"
 
 	# W
 	

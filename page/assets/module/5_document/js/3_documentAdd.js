@@ -62,16 +62,16 @@ if(document.querySelector('#documentAdd')){
                     title.value     = this.title;
     
                     category.name   = 'category';
-                    category.value  = this.category;
+                    category.value  = parseInt(this.category);
         
-                    file.name       = 'file';
-                    file.value      = this.file;
+                    // file.name       = 'file';
+                    // file.value      = this.file;
     
-                    filename.name   = 'filename';
+                    filename.name   = 'fileName';
                     filename.value  = this.filename;
     
                     department.name     = 'department';
-                    department.value    = this.department;
+                    department.value    = parseInt(this.department);
         
                     form.className  = 'hidden';
                     form.method     = 'POST';
@@ -79,7 +79,7 @@ if(document.querySelector('#documentAdd')){
         
                     form.append(title);
                     form.append(category);
-                    form.append(file);
+                    // form.append(file);
                     form.append(filename);
                     form.append(department);
         

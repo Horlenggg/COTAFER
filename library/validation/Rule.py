@@ -31,7 +31,7 @@ class Rule:
 
         self.__id = {
             'required': True
-            , 'type': 'integer'
+            , 'integer': True
             , 'empty': False
             , 'min': 1
         }
@@ -214,7 +214,7 @@ class Rule:
             'empty': False
             , 'type': 'string'
             , 'minlength': 1
-            , 'maxlength': 15
+            , 'maxlength': 75
         }
 
         # first name

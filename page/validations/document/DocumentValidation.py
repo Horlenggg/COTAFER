@@ -1,6 +1,7 @@
 
 from library.MyValidation import MyValidation
 from page.controllers.document.DocumentController import DocumentController as document
+from page.validations.entity.DocumentRule import DocumentRule
 
 
 class DocumentValidation(MyValidation):
@@ -10,6 +11,7 @@ class DocumentValidation(MyValidation):
 
         self.__b = self.body.getElement()
         self.__h = self.header.getElement()
+        self.__EB = DocumentRule()
 
     # Auth 2_login form
     def documentGet(self):
@@ -24,9 +26,29 @@ class DocumentValidation(MyValidation):
         except Exception as e:
             return document(headerParam=self.__h, bodyParam=self.__b).documentAddGet()
 
+    def documentAddPost(self):
+        try:
+            self.body.adds(self.__EB.getDocumentAdd())
+
+            if self.isValid():
+                return document(headerParam=self.__h, bodyParam=self.__b).documentAddPost()
+
+        except Exception as e:
+            self.log.error('Validation error')
+
     def documentReversionGet(self):
         try:
             return document(headerParam=self.__h, bodyParam=self.__b).documentReversionGet()
         except Exception as e:
             return document(headerParam=self.__h, bodyParam=self.__b).documentReversionGet()
+
+    def documentReversionPost(self):
+        try:
+            self.body.adds(self.__EB.getDocumentReversion())
+
+            if self.isValid():
+                return document(headerParam=self.__h, bodyParam=self.__b).documentReversionPost()
+
+        except Exception as e:
+            self.log.error('Validation error')
 
