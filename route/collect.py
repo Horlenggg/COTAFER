@@ -64,6 +64,10 @@ def accountProfileGet():
 def accountProfilePost():
     return account.AccountValidation().accountProfilePost()
 
+@route.post('/account/profile/upload')
+def accountProfileUpload():
+    return account.AccountValidation().accountProfileUpload()
+
 @route.get('/account/password/change')
 def accountChangePasswordGet():
     return account.AccountValidation().accountChangePasswordGet()
@@ -100,6 +104,10 @@ def documentAddGet():
 def documentAddPost():
     return document.DocumentValidation().documentAddPost()
 
+@route.post('/document/add/file')
+def documentAddFilePost():
+    return document.DocumentValidation().documentAddFilePost()
+
 @route.get('/document/reversion')
 def documentReversionGet():
     return document.DocumentValidation().documentReversionGet()
@@ -107,6 +115,10 @@ def documentReversionGet():
 @route.post('/document/reversion')
 def documentReversionPost():
     return document.DocumentValidation().documentReversionPost()
+
+@route.post('/document/reversion/file')
+def documentReversionFilePost():
+    return document.DocumentValidation().documentReversionFilePost()
 
 @route.get('/google')
 def googleGet():

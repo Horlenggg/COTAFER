@@ -7,7 +7,10 @@ Package: Project
 """
 from logging import log
 from typing import Any
-
+import shutil
+from time import time
+from application.constants import ASSET_UPLOAD_REAL_PATH
+from library.FileUpload import FileUpload
 from library.MyController import MyController, authenticated
 from page.models.account.AccountModel import AccountModel
 
@@ -17,6 +20,7 @@ class AccountController(MyController):
     def __init__(self, headerParam: dict, bodyParam: dict):
 
         super().__init__(hParam=headerParam, bParam=bodyParam, modelClass=AccountModel())
+        self.fileUpload = FileUpload()
 
     def accountGet(self) -> Any:
         
@@ -84,6 +88,60 @@ class AccountController(MyController):
 
         except Exception as e:
             self.log.error(f'AccountController.accountProfilePost Exception ', str(e))
+
+    def accountProfileUpload(self) -> Any:
+        try:
+            # data file
+            files = self.data.file.getlist('file')
+            if len(files) <= 0:
+                return self.httpAjaxResponse(status="failed")
+
+            __fileName = []
+            __allowExtensions = ['png', 'jpg', 'jpeg']
+            __targetPath = int(self.session.get(self.session.ACCOUNT_ID))
+
+            for file in files:
+                if file and ('.' in file.filename and file.filename.rsplit('.', 1)[1].lower() in __allowExtensions):
+                    # change filename before saving
+                    # unique number for photo
+                    _uuid = str(int(time() * 10000000))
+                    moduleName = '/'
+                    _filename = 'pf_' + _uuid + '_.' + file.filename.split('.')[-1]
+
+                    # save file
+                    _isUpload = self.fileUpload.image(file, __targetPath, __allowExtensions, moduleName, _filename)
+
+                    if _isUpload:
+                        __fileName.append(_filename)
+                        self.log.info(str(__fileName))
+
+                else:
+                    return self.httpAjaxResponse(status="failed")
+            
+            self.session.delete('pf_photos')
+            self.session.setDict('pf_photos', {'info': __fileName})
+
+            # request params
+            _requestParams = {
+                'file'          : self.session.getDict('pf_photos')['info']
+                , 'path'        : int(self.session.get(self.session.ACCOUNT_ID)) or 0
+                , 'module_id'   : int(self.session.get(self.session.ACCOUNT_ID))
+                , 'platform'    : 'web'
+            }
+
+            self.log.info(_requestParams)
+
+            __mediaAPIRes = self.mediaAPI.postJson('/profile/upload', _requestParams).status_code
+            moduleName = '/'
+
+            if __mediaAPIRes == 200:
+                shutil.rmtree(ASSET_UPLOAD_REAL_PATH + '/' + str(self.session.get(self.session.ACCOUNT_ID)))
+            else:
+                self.log.error(f'AccountController api media request failed...')
+
+        except Exception as e:
+            self.log.error('AccountController.accountProfileUpload', str(e))
+            return self.httpAjaxResponse(status="failed")
 
     def accountChangePasswordGet(self) -> Any:
         
@@ -154,7 +212,7 @@ class AccountController(MyController):
             
             # set params
             # mParams = {
-            #     "userName"          : self.getClientBodyParam["userName"]
+            #     "username"          : self.getClientBodyParam["username"]
             #     , "email"           : self.getClientBodyParam["email"]
             #     , "password"        : self.getClientBodyParam["password"]
             #     , "application"     : self.getClientBodyParam["application"]

@@ -124,6 +124,13 @@ if(document.querySelector('#accountProfile')){
                     }
                     reader.readAsDataURL(file[0])
                     this.$emit('input', file[0])
+
+                    let formData = new FormData();
+                    formData.append("file", file[0]);
+
+                    let request = new XMLHttpRequest();
+                    request.open("POST", "/account/profile/upload");
+                    request.send(formData);
                 }
             }
         }

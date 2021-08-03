@@ -21,6 +21,7 @@ class MySession:
         """
         self.TOKEN                      = 'token'
         self.PASSWORD                   = 'password'
+        self.ACCOUNT_ID                 = 'acc_id'
         self.ACC_INFO                   = 'account_info'
         self.ERROR_MESSAGE              = 'error_message'
         self.SUCCESS_MESSAGE            = 'success_message'

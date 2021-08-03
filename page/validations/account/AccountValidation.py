@@ -36,6 +36,12 @@ class AccountValidation(MyValidation):
         except Exception as e:
             self.log.error('Validation error')
 
+    def accountProfileUpload(self):
+        try:
+            return account(headerParam=self.__h, bodyParam=self.__b).accountProfileUpload()
+        except Exception as e:
+            return account(headerParam=self.__h, bodyParam=self.__b).accountProfileUpload()
+
     def accountChangePasswordGet(self):
         try:
             return account(headerParam=self.__h, bodyParam=self.__b).accountChangePasswordGet()

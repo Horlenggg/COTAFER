@@ -4,7 +4,7 @@ if(document.querySelector('#documentAdd')){
             return {
                 title: ''
                 , category: 1
-                , file: ''
+                , file: []
                 , filename: ''
                 , department: 1
     
@@ -27,7 +27,18 @@ if(document.querySelector('#documentAdd')){
         },
         methods: {
             onFileHandle(e){
-                this.file = e.target.files
+                this.file = e.target.files;
+                let ext = this.file[0].name.substring(this.file[0].name.lastIndexOf('.') + 1);
+                if(ext === "pdf") {
+                    let formData = new FormData();
+                    formData.append("file", this.file[0]);
+    
+                    let request = new XMLHttpRequest();
+                    request.open("POST", "/document/add/file");
+                    request.send(formData);
+                } else {
+                    this.$refs.inputPdf.value = ''
+                }
             }
             , onSubmit(){
                 if (!this.title) {
@@ -47,7 +58,6 @@ if(document.querySelector('#documentAdd')){
                 } else {
                     this.isFilenameVal = false;
                 }
-    
     
                 if(this.isTitleVal == false && this.isFileVal == false && this.isFilenameVal == false){
                     let 

@@ -30,7 +30,18 @@ if(document.querySelector('#documentReversion')){
         },
         methods: {
             onFileHandle(e){
-                this.file = e.target.files
+                this.file = e.target.files;
+                let ext = this.file[0].name.substring(this.file[0].name.lastIndexOf('.') + 1);
+                if(ext === "pdf") {
+                    let formData = new FormData();
+                    formData.append("file", this.file[0]);
+    
+                    let request = new XMLHttpRequest();
+                    request.open("POST", "/document/reversion/file");
+                    request.send(formData);
+                } else {
+                    this.$refs.inputPdf.value = ''
+                }
             }
 
             , onSubmit(){

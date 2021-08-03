@@ -36,6 +36,12 @@ class DocumentValidation(MyValidation):
         except Exception as e:
             self.log.error('Validation error')
 
+    def documentAddFilePost(self):
+        try:
+            return document(headerParam=self.__h, bodyParam=self.__b).documentAddFilePost()
+        except Exception as e:
+            return document(headerParam=self.__h, bodyParam=self.__b).documentAddFilePost()
+
     def documentReversionGet(self):
         try:
             return document(headerParam=self.__h, bodyParam=self.__b).documentReversionGet()
@@ -52,3 +58,8 @@ class DocumentValidation(MyValidation):
         except Exception as e:
             self.log.error('Validation error')
 
+    def documentReversionFilePost(self):
+        try:
+            return document(headerParam=self.__h, bodyParam=self.__b).documentReversionFilePost()
+        except Exception as e:
+            return document(headerParam=self.__h, bodyParam=self.__b).documentReversionFilePost()

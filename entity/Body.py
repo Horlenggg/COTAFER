@@ -64,7 +64,7 @@ class Body(Entity):
 	TITLE			= "title"
 
 	# U
-	USERNAME 		= "userName"
+	USERNAME 		= "username"
 
 	# V	
 	VERSION			= "version"
