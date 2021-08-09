@@ -33,7 +33,7 @@ class GoogleController(MyController):
                 params={
                     'active_module'     : ['google', '']
                     , 'client_module'   : '2_attendance'
-                    , 'base_module'     : ''
+                    , 'base_module'     : 'home'
                 }
             )
 

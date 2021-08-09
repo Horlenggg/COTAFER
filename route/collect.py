@@ -12,6 +12,9 @@ from startup import wa as route
 ======================================"""
 from page.validations.auth          import AuthValidation as auth 
 from page.validations.attendance    import AttendanceValidation as attendance
+from page.validations.general       import GeneralValidation as general
+from page.validations.test          import TestValidation as test
+from page.validations.live          import LiveValidation as live
 from page.validations.dashboard     import DashboardValidation as dashboard
 from page.validations.account       import AccountValidation as account
 from page.validations.document      import DocumentValidation as document
@@ -133,23 +136,93 @@ def settingGet():
 # ================= #
 
 @route.get('/attendance')
-@route.get('/checkinandout')
+@route.get('/attendance/checkinandout')
 def checkInandOutGet():
     return attendance.AttendanceValidation().checkInandOutGet()
 
-@route.get('/leaverequest')
+@route.get('/attendance/leaverequest')
 def leaveRequestGet():
     return attendance.AttendanceValidation().leaveRequestGet()
 
-@route.get('/publicholiday')
+@route.get('/attendance/publicholiday')
 def publicHolidayGet():
     return attendance.AttendanceValidation().publicHolidayGet()
 
-@route.get('/availableday')
+@route.get('/attendance/availableday')
 def availableDayGet():
     return attendance.AttendanceValidation().availableDayGet()
 
-@route.get('/overtimeday')
+@route.get('/attendance/overtimeday')
 def overTimeDayGet():
     return attendance.AttendanceValidation().overTimeDayGet()
- 
+
+# ================= #
+#      General      #
+# ================= #
+
+@route.get('/general')
+@route.get('/general/users')
+def generalUsersGet():
+    return general.GeneralValidation().generalUsersGet()
+
+@route.get('/general/department')
+def generalDepartmentGet():
+    return general.GeneralValidation().generalDepartmentGet()
+
+@route.get('/general/roles')
+def generalRolesGet():
+    return general.GeneralValidation().generalRolesGet()
+
+@route.get('/general/company')
+def generalCompanyGet():
+    return general.GeneralValidation().generalCompanyGet()
+
+# ================= #
+#       Test        #
+# ================= #
+
+@route.get('/test')
+@route.get('/test/gonoka')
+def testGonokaGet():
+    return test.TestValidation().testGonokaGet()
+
+@route.get('/test/cotafer')
+def testCotaferGet():
+    return test.TestValidation().testCotaferGet()
+
+# ================= #
+#       Live        #
+# ================= #
+
+@route.get('/live')
+@route.get('/live/gonoka/ios')
+def liveGonokaIosGet():
+    return live.LiveValidation().liveGonokaIosGet()
+
+@route.get('/live/gonoka/android')
+def liveGonokaAndroidGet():
+    return live.LiveValidation().liveGonokaAndroidGet()
+
+@route.get('/live/gonoka/web')
+def liveGonokaWebGet():
+    return live.LiveValidation().liveGonokaWebGet()
+
+@route.get('/live/gonoka/api')
+def liveGonokaApiGet():
+    return live.LiveValidation().liveGonokaApiGet()
+
+@route.get('/live/cotafer/ios')
+def liveCotaferIosGet():
+    return live.LiveValidation().liveCotaferIosGet()
+
+@route.get('/live/cotafer/android')
+def liveCotaferAndroidGet():
+    return live.LiveValidation().liveCotaferAndroidGet()
+
+@route.get('/live/cotafer/web')
+def liveCotaferWebGet():
+    return live.LiveValidation().liveCotaferWebGet()
+
+@route.get('/live/cotafer/api')
+def liveCotaferApiGet():
+    return live.LiveValidation().liveCotaferApiGet()

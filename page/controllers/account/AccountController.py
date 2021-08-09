@@ -32,7 +32,7 @@ class AccountController(MyController):
                 params={
                     'active_module'     : ['account', '']
                     , 'client_module'   : '4_account'
-                    , 'base_module'     : ''
+                    , 'base_module'     : 'home'
                 }
             )
 
@@ -56,7 +56,7 @@ class AccountController(MyController):
                 params={
                     'active_module'     : ['account', '']
                     , 'client_module'   : '4_account'
-                    , 'base_module'     : ''
+                    , 'base_module'     : 'home'
                 }
             )
 
@@ -153,7 +153,7 @@ class AccountController(MyController):
                 params={
                     'active_module'     : ['account', '']
                     , 'client_module'   : '4_account'
-                    , 'base_module'     : ''
+                    , 'base_module'     : 'home'
                 }
             )
 
@@ -192,7 +192,7 @@ class AccountController(MyController):
                 params={
                     'active_module'     : ['account', '']
                     , 'client_module'   : '4_account'
-                    , 'base_module'     : ''
+                    , 'base_module'     : 'home'
                 }
             )
 
@@ -235,7 +235,7 @@ class AccountController(MyController):
                 params={
                     'active_module'     : ['account', '']
                     , 'client_module'   : '4_account'
-                    , 'base_module'     : ''
+                    , 'base_module'     : 'home'
                 }
             )
 

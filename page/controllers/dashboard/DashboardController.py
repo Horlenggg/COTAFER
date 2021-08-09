@@ -33,7 +33,7 @@ class DashboardController(MyController):
                 params={
                     'active_module'     : ['dashboard', '']
                     , 'client_module'   : '2_attendance'
-                    , 'base_module'     : ''
+                    , 'base_module'     : 'home'
                 }
             )
 

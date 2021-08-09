@@ -31,7 +31,7 @@ class DocumentController(MyController):
                 params={
                     'active_module'     : ['document', '']
                     , 'client_module'   : '5_document'
-                    , 'base_module'     : ''
+                    , 'base_module'     : 'home'
                 }
             )
 
@@ -55,7 +55,7 @@ class DocumentController(MyController):
                 params={
                     'active_module'     : ['document', '']
                     , 'client_module'   : '5_document'
-                    , 'base_module'     : ''
+                    , 'base_module'     : 'home'
                 }
             )
 
@@ -147,7 +147,7 @@ class DocumentController(MyController):
                 params={
                     'active_module'     : ['document', '']
                     , 'client_module'   : '5_document'
-                    , 'base_module'     : ''
+                    , 'base_module'     : 'home'
                 }
             )
 

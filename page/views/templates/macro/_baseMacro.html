@@ -1,70 +1,12 @@
 {% macro sidebar(params) %}
 
-{% if params.base_module == 'attendance' -%}
-{%- if params.active_module is defined -%}
+{% if params.active_module is defined -%}
 {%- set activeModule = params.active_module -%}
 {%- else -%}
 {%- set activeModule = ['', ''] -%}
-{%- endif -%}
+{%- endif %}
 
-{%- set sideBarModules = [
-    {
-        'module'        : 'checkinandout'
-        , 'module_text' : 'Check In & Out'
-        , 'icon'        : '/assets/images/svg/sidebar/check_in_and_out.svg'
-        , 'icon_active' : '/assets/images/svg/sidebar/check_in_and_out-white.svg'
-        , 'href'        : '/checkinandout'
-        , 'collapsible' : False
-        , 'data_parent' : '#accordionSidebar'
-        , 'sub_module'  : []
-    },
-    {
-        'module'        : 'leaverequest'
-        , 'module_text' : 'Leave Request'
-        , 'icon'        : '/assets/images/svg/sidebar/leave_request.svg'
-        , 'icon_active' : '/assets/images/svg/sidebar/leave_request-white.svg'
-        , 'href'        : '/leaverequest'
-        , 'collapsible' : False
-        , 'data_parent' : '#accordionSidebar'
-        , 'sub_module'  : []
-    },
-    {
-        'module'        : 'publicholiday'
-        , 'module_text' : 'Public Holiday'
-        , 'icon'        : '/assets/images/svg/sidebar/public_holiday.svg'
-        , 'icon_active' : '/assets/images/svg/sidebar/public_holiday-white.svg'
-        , 'href'        : '/publicholiday'
-        , 'collapsible' : False
-        , 'data_parent' : '#accordionSidebar'
-        , 'sub_module'  : []
-    },
-    {
-        'module'        : 'availableday'
-        , 'module_text' : 'Available Day'
-        , 'icon'        : '/assets/images/svg/sidebar/available_day.svg'
-        , 'icon_active' : '/assets/images/svg/sidebar/available_day-white.svg'
-        , 'href'        : '/availableday'
-        , 'collapsible' : False
-        , 'data_parent' : '#accordionSidebar'
-        , 'sub_module'  : []
-    },
-    {
-        'module'        : 'overtimeday'
-        , 'module_text' : 'Overtime Day'
-        , 'icon'        : '/assets/images/svg/sidebar/overtime_day.svg'
-        , 'icon_active' : '/assets/images/svg/sidebar/overtime_day-white.svg'
-        , 'href'        : '/overtimeday'
-        , 'collapsible' : False
-        , 'data_parent' : '#accordionSidebar'
-        , 'sub_module'  : []
-    }
-] -%}
-{%- else -%}
-{%- if params.active_module is defined -%}
-{%- set activeModule = params.active_module -%}
-{%- else -%}
-{%- set activeModule = ['', ''] -%}
-{%- endif -%}
+{% if params.base_module == 'home' -%}
 
 {%- set sideBarModules = [
     {
@@ -106,24 +48,208 @@
         , 'collapsible' : False
         , 'data_parent' : '#accordionSidebar'
         , 'sub_module'  : []
+    }
+] -%}
+
+{%- elif params.base_module == 'attendance' -%}
+
+{%- set sideBarModules = [
+    {
+        'module'        : 'checkinandout'
+        , 'module_text' : 'Check In & Out'
+        , 'icon'        : '/assets/images/svg/sidebar/check_in_and_out.svg'
+        , 'icon_active' : '/assets/images/svg/sidebar/check_in_and_out-white.svg'
+        , 'href'        : '/attendance/checkinandout'
+        , 'collapsible' : False
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : []
     },
     {
-        'module'        : 'setting'
-        , 'module_text' : 'Setting'
+        'module'        : 'leaverequest'
+        , 'module_text' : 'Leave Request'
+        , 'icon'        : '/assets/images/svg/sidebar/leave_request.svg'
+        , 'icon_active' : '/assets/images/svg/sidebar/leave_request-white.svg'
+        , 'href'        : '/attendance/leaverequest'
+        , 'collapsible' : False
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : []
+    },
+    {
+        'module'        : 'publicholiday'
+        , 'module_text' : 'Public Holiday'
+        , 'icon'        : '/assets/images/svg/sidebar/public_holiday.svg'
+        , 'icon_active' : '/assets/images/svg/sidebar/public_holiday-white.svg'
+        , 'href'        : '/attendance/publicholiday'
+        , 'collapsible' : False
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : []
+    },
+    {
+        'module'        : 'availableday'
+        , 'module_text' : 'Available Day'
+        , 'icon'        : '/assets/images/svg/sidebar/available_day.svg'
+        , 'icon_active' : '/assets/images/svg/sidebar/available_day-white.svg'
+        , 'href'        : '/attendance/availableday'
+        , 'collapsible' : False
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : []
+    },
+    {
+        'module'        : 'overtimeday'
+        , 'module_text' : 'Overtime Day'
         , 'icon'        : '/assets/images/svg/sidebar/overtime_day.svg'
         , 'icon_active' : '/assets/images/svg/sidebar/overtime_day-white.svg'
-        , 'href'        : '/setting'
+        , 'href'        : '/attendance/overtimeday'
         , 'collapsible' : False
         , 'data_parent' : '#accordionSidebar'
         , 'sub_module'  : []
     }
 ] -%}
+
+{%- elif params.base_module == 'general' -%}
+
+{%- set sideBarModules = [
+    {
+        'module'        : 'users'
+        , 'module_text' : 'Users'
+        , 'icon'        : '/assets/images/svg/sidebar/check_in_and_out.svg'
+        , 'icon_active' : '/assets/images/svg/sidebar/check_in_and_out-white.svg'
+        , 'href'        : '/general/users'
+        , 'collapsible' : False
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : []
+    },
+    {
+        'module'        : 'department'
+        , 'module_text' : 'Department'
+        , 'icon'        : '/assets/images/svg/sidebar/leave_request.svg'
+        , 'icon_active' : '/assets/images/svg/sidebar/leave_request-white.svg'
+        , 'href'        : '/general/department'
+        , 'collapsible' : False
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : []
+    },
+    {
+        'module'        : 'roles'
+        , 'module_text' : 'Roles'
+        , 'icon'        : '/assets/images/svg/sidebar/public_holiday.svg'
+        , 'icon_active' : '/assets/images/svg/sidebar/public_holiday-white.svg'
+        , 'href'        : '/general/roles'
+        , 'collapsible' : False
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : []
+    },
+    {
+        'module'        : 'company'
+        , 'module_text' : 'Company'
+        , 'icon'        : '/assets/images/svg/sidebar/available_day.svg'
+        , 'icon_active' : '/assets/images/svg/sidebar/available_day-white.svg'
+        , 'href'        : '/general/company'
+        , 'collapsible' : False
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : []
+    },
+] -%}
+
+{%- elif params.base_module == 'test' -%}
+
+{%- set sideBarModules = [
+    {
+        'module'        : 'gonoka'
+        , 'module_text' : 'Gonoka'
+        , 'icon'        : '/assets/images/svg/sidebar/check_in_and_out.svg'
+        , 'icon_active' : '/assets/images/svg/sidebar/check_in_and_out-white.svg'
+        , 'href'        : '/test/gonoka'
+        , 'collapsible' : False
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : []
+    },
+    {
+        'module'        : 'cotafer'
+        , 'module_text' : 'Cotafer'
+        , 'icon'        : '/assets/images/svg/sidebar/leave_request.svg'
+        , 'icon_active' : '/assets/images/svg/sidebar/leave_request-white.svg'
+        , 'href'        : '/test/cotafer'
+        , 'collapsible' : False
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : []
+    },
+] -%}
+
+{%- elif params.base_module == 'live' -%}
+
+{%- set sideBarModules = [
+    {
+        'module'        : 'gonoka'
+        , 'module_text' : 'Gonoka'
+        , 'icon'        : '/assets/images/svg/sidebar/check_in_and_out.svg'
+        , 'icon_active' : '/assets/images/svg/sidebar/check_in_and_out-white.svg'
+        , 'href'        : '/live/gonoka'
+        , 'collapsible' : true
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : [
+            {
+                'sub_module' : 'ios'
+                , 'sub_module_text' : 'Ios'
+                , 'sub_module_href' : '/live/gonoka/ios'
+            },
+            {
+                'sub_module' : 'android'
+                ,'sub_module_text'  : 'Android'
+                , 'sub_module_href' : '/live/gonoka/android'
+            },
+            {
+                'sub_module' : 'web'
+                ,'sub_module_text'  : 'Web'
+                , 'sub_module_href' : '/live/gonoka/web'
+            },
+            {
+                'sub_module' : 'api'
+                ,'sub_module_text'  : 'Api'
+                , 'sub_module_href' : '/live/gonoka/api'
+            },
+        ]
+    },
+    {
+        'module'        : 'cotafer'
+        , 'module_text' : 'Cotafer'
+        , 'icon'        : '/assets/images/svg/sidebar/leave_request.svg'
+        , 'icon_active' : '/assets/images/svg/sidebar/leave_request-white.svg'
+        , 'href'        : '/live/cotafer'
+        , 'collapsible' : True
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : [
+            {
+                'sub_module' : 'ios'
+                , 'sub_module_text' : 'Ios'
+                , 'sub_module_href' : '/live/cotafer/ios'
+            },
+            {
+                'sub_module' : 'android'
+                ,'sub_module_text'  : 'Android'
+                , 'sub_module_href' : '/live/cotafer/android'
+            },
+            {
+                'sub_module' : 'web'
+                ,'sub_module_text'  : 'Web'
+                , 'sub_module_href' : '/live/cotafer/web'
+            },
+            {
+                'sub_module' : 'api'
+                ,'sub_module_text'  : 'Api'
+                , 'sub_module_href' : '/live/cotafer/api'
+            },
+        ]
+    },
+] -%}
 {%- endif -%}
+
 <aside id="sidebar" class="w-full max-w-70 bg-white hidden md:block lg:block">
-    <ul class="list-reset flex flex-col">
+    <ul class="list-reset flex flex-col" x-data="{ activeModule: {{ activeModule }} }">
         {%- for module in sideBarModules -%}
+        {%- if module.collapsible == False -%}
         <li class="group">
-            <a href="{{ module.href }}" class="font-semibold text-sm no-underline py-4 px-5 flex justify-between items-center {{ 'bg-gray-700 text-white' if activeModule[0] == module.module else 'bg-white text-gray-700 hover:bg-gray-700 hover:text-white' }}">
+            <a href="{{ module.href }}" class="font-Roboto text-base no-underline py-4 px-5 flex justify-between items-center {{ 'bg-gray-700 text-white' if activeModule[0] == module.module else 'bg-white text-gray-700 hover:bg-gray-700 hover:text-white' }}">
                 <div class="flex flex-row items-center">
                     {%- if activeModule[0] == module.module -%}
                     <img src="{{ module.icon_active }}" class="w-4 h-4 mr-3" alt="">
@@ -138,9 +264,38 @@
                 </svg>
             </a>
         </li>
+        {%- else -%}
+        <li>
+            <div class="group font-Roboto text-base no-underline py-4 px-5 flex justify-between items-center bg-white text-gray-700 hover:bg-gray-700 hover:text-white"
+                @click="activeModule[0] !== '{{ module.module }}' ? activeModule[0] = '{{ module.module }}' : activeModule[0] = null">
+                <div class="flex flex-row items-center">
+                    <img src="{{ module.icon }}" class="w-4 h-4 mr-3 group-hover:hidden" alt="">
+                    <img src="{{ module.icon_active }}" class="w-4 h-4 mr-3 hidden group-hover:block" alt="">
+                    <span>{{ module.module_text }}</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-700 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                </svg>
+            </div>
+            <div {{ '' if activeModule[0]==module.module else 'x-cloak' }}
+                class="{{ 'max-h-full' if activeModule[0] == module.module else 'max-h-0' }} relative font-Roboto text-base overflow-hidden duration-300 ease-out w-full flex flex-col"
+                x-ref="container{{ module.module }}"
+                x-bind:style="activeModule[0] === '{{ module.module }}' ? 'max-height: ' + $refs.container{{ module.module }}.scrollHeight + 'px' : ''">
+                <div class="bg-white flex flex-col">
+                    {% for subModule in module.sub_module -%}
+                    <a class="relative items-center py-2 {{ 'text-white bg-gray-700' if activeModule[1] == subModule.sub_module and activeModule[0] == module.module else 'text-gray-700 bg-white hover:bg-gray-700 hover:text-white' }}"
+                        href="{{ subModule.sub_module_href}}">
+                        <span class="ml-10">{{ subModule.sub_module_text }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </li>
+        {%- endif -%}
         {%- endfor -%}
     </ul>
 </aside>
+
 {% endmacro %}
 
 {% macro header() %}
@@ -164,8 +319,23 @@
                 </div>
             </div>
         </div>
-        <div class="flex items-center py-2">
-            <a href="/attendance" class="no-underline">
+        <div class="flex items-center space-x-3 py-2">
+            <a href="/general" title="General" class="no-underline">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                </svg>
+            </a>
+            <a href="/attendance" title="Attendance" class="no-underline">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                </svg>
+            </a>
+            <a href="/test" title="Test" class="no-underline">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                </svg>
+            </a>
+            <a href="/live" title="Live" class="no-underline">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
                 </svg>

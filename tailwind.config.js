@@ -14,6 +14,7 @@ module.exports = {
       fontFamily: {
         'Lato': ['Lato', 'sans-serif'],
         'Poppins': ['Poppins', 'sans-serif'],
+        'Roboto' : ['Roboto', 'sans-serif']
       },
       fontSize: {
         'xs-sm': '0.813rem',
@@ -26,10 +27,14 @@ module.exports = {
           DEFAULT: '#FF3C3C',
         }
       },
+      width: {
+        '7.5': '1.875rem',
+      },
       height: {
         '5.5': '1.375rem',
         '780': '780px',
         '12.5': '3.125rem',
+        '13': '3.25rem',
         '15': '3.75rem'
       },
       maxWidth: {
@@ -47,6 +52,7 @@ module.exports = {
         '1200': '1200'
       },
       padding: {
+        '6.5' : '1.625rem',
         '12.5': '3.125rem',
         '1/2': '50%',
         '1/3': '33.33333%',
