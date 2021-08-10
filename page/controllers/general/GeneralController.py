@@ -47,6 +47,30 @@ class GeneralController(MyController):
                 viewFile='general/users'
             )
 
+    def generalUsersAddGet(self) -> Any:
+        
+        try:
+            self.log.info('GeneralController.generalUsersAddGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['users', '']
+                    , 'client_module'   : '3_general'
+                    , 'base_module'     : 'general'
+                }
+            )
+
+            return self.render(
+                viewFile='general/usersAdd'
+            )
+
+        except Exception as e:
+            self.log.error(f'GeneralController.generalUsersAddGet Exception ', str(e))
+            return self.render(
+                viewFile='general/usersAdd'
+            )
+
     def generalDepartmentGet(self) -> Any:
         
         try:

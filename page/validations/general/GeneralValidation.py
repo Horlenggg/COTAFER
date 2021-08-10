@@ -18,6 +18,13 @@ class GeneralValidation(MyValidation):
         except Exception as e:
             return general(headerParam=self.__h, bodyParam=self.__b).generalUsersGet()
 
+    # Auth 2_login form
+    def generalUsersAddGet(self):
+        try:
+            return general(headerParam=self.__h, bodyParam=self.__b).generalUsersAddGet()
+        except Exception as e:
+            return general(headerParam=self.__h, bodyParam=self.__b).generalUsersAddGet()
+
     def generalDepartmentGet(self):
         try:
             return general(headerParam=self.__h, bodyParam=self.__b).generalDepartmentGet()

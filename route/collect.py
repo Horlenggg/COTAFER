@@ -165,6 +165,10 @@ def overTimeDayGet():
 def generalUsersGet():
     return general.GeneralValidation().generalUsersGet()
 
+@route.get('/general/users/add')
+def generalUsersAddGet():
+    return general.GeneralValidation().generalUsersAddGet()
+
 @route.get('/general/department')
 def generalDepartmentGet():
     return general.GeneralValidation().generalDepartmentGet()

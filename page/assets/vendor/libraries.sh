@@ -28,3 +28,7 @@ Alpine_Js=./page/assets/vendor/alpine/alpine.min.js
 #fullcalendar
 Fullcalendar_Min_Css=./page/assets/vendor/fullcalendar/css/fullcalendar.min.css
 Fullcalendar_Min_Js=./page/assets/vendor/fullcalendar/js/fullcalendar.min.js
+
+# vue multi select
+VUE_MultiselectJS=./page/assets/vendor/multiselect/js/multiselect.global.js
+VUE_MultiselectCss=./page/assets/vendor/multiselect/css/multiselect.css
