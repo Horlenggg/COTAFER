@@ -29,6 +29,7 @@ module.exports = {
       },
       width: {
         '7.5': '1.875rem',
+        '25': '6.25rem'
       },
       height: {
         '5.5': '1.375rem',
@@ -52,6 +53,7 @@ module.exports = {
         '1200': '1200'
       },
       padding: {
+        '2.25': '0.563rem',
         '6.5' : '1.625rem',
         '12.5': '3.125rem',
         '1/2': '50%',
@@ -73,4 +75,7 @@ module.exports = {
        }
     },
   },
+  plugins: [
+
+  ],
 }

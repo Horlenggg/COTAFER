@@ -71,6 +71,54 @@ class GeneralController(MyController):
                 viewFile='general/usersAdd'
             )
 
+    def generalUsersEditGet(self) -> Any:
+        
+        try:
+            self.log.info('GeneralController.generalUsersEditGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['users', '']
+                    , 'client_module'   : '3_general'
+                    , 'base_module'     : 'general'
+                }
+            )
+
+            return self.render(
+                viewFile='general/usersEdit'
+            )
+
+        except Exception as e:
+            self.log.error(f'GeneralController.generalUsersEditGet Exception ', str(e))
+            return self.render(
+                viewFile='general/usersEdit'
+            )
+
+    def generalUsersViewGet(self) -> Any:
+        
+        try:
+            self.log.info('GeneralController.generalUsersViewGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['users', '']
+                    , 'client_module'   : '3_general'
+                    , 'base_module'     : 'general'
+                }
+            )
+
+            return self.render(
+                viewFile='general/usersView'
+            )
+
+        except Exception as e:
+            self.log.error(f'GeneralController.generalUsersViewGet Exception ', str(e))
+            return self.render(
+                viewFile='general/usersView'
+            )
+
     def generalDepartmentGet(self) -> Any:
         
         try:
@@ -93,6 +141,78 @@ class GeneralController(MyController):
             self.log.error(f'GeneralController.generalDepartmentGet Exception ', str(e))
             return self.render(
                 viewFile='general/department'
+            )
+
+    def generalDepartmentAddGet(self) -> Any:
+        
+        try:
+            self.log.info('GeneralController.generalDepartmentAddGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['department', '']
+                    , 'client_module'   : '3_general'
+                    , 'base_module'     : 'general'
+                }
+            )
+
+            return self.render(
+                viewFile='general/departmentAdd'
+            )
+
+        except Exception as e:
+            self.log.error(f'GeneralController.generalDepartmentAddGet Exception ', str(e))
+            return self.render(
+                viewFile='general/departmentAdd'
+            )
+
+    def generalDepartmentEditGet(self) -> Any:
+        
+        try:
+            self.log.info('GeneralController.generalDepartmentEditGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['department', '']
+                    , 'client_module'   : '3_general'
+                    , 'base_module'     : 'general'
+                }
+            )
+
+            return self.render(
+                viewFile='general/departmentEdit'
+            )
+
+        except Exception as e:
+            self.log.error(f'GeneralController.generalDepartmentEditGet Exception ', str(e))
+            return self.render(
+                viewFile='general/departmentEdit'
+            )
+
+    def generalDepartmentViewGet(self) -> Any:
+        
+        try:
+            self.log.info('GeneralController.generalDepartmentViewGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['department', '']
+                    , 'client_module'   : '3_general'
+                    , 'base_module'     : 'general'
+                }
+            )
+
+            return self.render(
+                viewFile='general/departmentView'
+            )
+
+        except Exception as e:
+            self.log.error(f'GeneralController.generalDepartmentViewGet Exception ', str(e))
+            return self.render(
+                viewFile='general/departmentView'
             )
 
     def generalRolesGet(self) -> Any:
@@ -141,4 +261,76 @@ class GeneralController(MyController):
             self.log.error(f'GeneralController.generalCompanyGet Exception ', str(e))
             return self.render(
                 viewFile='general/company'
+            )
+
+    def generalCompanyAddGet(self) -> Any:
+        
+        try:
+            self.log.info('GeneralController.generalCompanyAddGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['company', '']
+                    , 'client_module'   : '3_general'
+                    , 'base_module'     : 'general'
+                }
+            )
+
+            return self.render(
+                viewFile='general/companyAdd'
+            )
+
+        except Exception as e:
+            self.log.error(f'GeneralController.generalCompanyAddGet Exception ', str(e))
+            return self.render(
+                viewFile='general/companyAdd'
+            )
+
+    def generalCompanyEditGet(self) -> Any:
+        
+        try:
+            self.log.info('GeneralController.generalCompanyEditGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['company', '']
+                    , 'client_module'   : '3_general'
+                    , 'base_module'     : 'general'
+                }
+            )
+
+            return self.render(
+                viewFile='general/companyEdit'
+            )
+
+        except Exception as e:
+            self.log.error(f'GeneralController.generalCompanyEditGet Exception ', str(e))
+            return self.render(
+                viewFile='general/companyEdit'
+            )
+
+    def generalCompanyViewGet(self) -> Any:
+        
+        try:
+            self.log.info('GeneralController.generalCompanyViewGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['company', '']
+                    , 'client_module'   : '3_general'
+                    , 'base_module'     : 'general'
+                }
+            )
+
+            return self.render(
+                viewFile='general/companyView'
+            )
+
+        except Exception as e:
+            self.log.error(f'GeneralController.generalCompanyViewGet Exception ', str(e))
+            return self.render(
+                viewFile='general/companyView'
             )

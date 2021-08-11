@@ -169,9 +169,29 @@ def generalUsersGet():
 def generalUsersAddGet():
     return general.GeneralValidation().generalUsersAddGet()
 
+@route.get('/general/users/edit')
+def generalUsersEditGet():
+    return general.GeneralValidation().generalUsersEditGet()
+
+@route.get('/general/users/view')
+def generalUsersViewGet():
+    return general.GeneralValidation().generalUsersViewGet()
+
 @route.get('/general/department')
 def generalDepartmentGet():
     return general.GeneralValidation().generalDepartmentGet()
+
+@route.get('/general/department/add')
+def generalDepartmentAddGet():
+    return general.GeneralValidation().generalDepartmentAddGet()
+
+@route.get('/general/department/edit')
+def generalDepartmentEditGet():
+    return general.GeneralValidation().generalDepartmentEditGet()
+
+@route.get('/general/department/view')
+def generalDepartmentViewGet():
+    return general.GeneralValidation().generalDepartmentViewGet()
 
 @route.get('/general/roles')
 def generalRolesGet():
@@ -180,6 +200,18 @@ def generalRolesGet():
 @route.get('/general/company')
 def generalCompanyGet():
     return general.GeneralValidation().generalCompanyGet()
+
+@route.get('/general/company/add')
+def generalCompanyAddGet():
+    return general.GeneralValidation().generalCompanyAddGet()
+
+@route.get('/general/company/edit')
+def generalCompanyEditGet():
+    return general.GeneralValidation().generalCompanyEditGet()
+
+@route.get('/general/company/view')
+def generalCompanyViewGet():
+    return general.GeneralValidation().generalCompanyViewGet()
 
 # ================= #
 #       Test        #
