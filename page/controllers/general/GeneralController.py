@@ -239,6 +239,78 @@ class GeneralController(MyController):
                 viewFile='general/roles'
             )
 
+    def generalRolesAddGet(self) -> Any:
+        
+        try:
+            self.log.info('GeneralController.generalRolesAddGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['roles', '']
+                    , 'client_module'   : '3_general'
+                    , 'base_module'     : 'general'
+                }
+            )
+
+            return self.render(
+                viewFile='general/rolesAdd'
+            )
+
+        except Exception as e:
+            self.log.error(f'GeneralController.generalRolesAddGet Exception ', str(e))
+            return self.render(
+                viewFile='general/rolesAdd'
+            )
+
+    def generalRolesEditGet(self) -> Any:
+        
+        try:
+            self.log.info('GeneralController.generalRolesEditGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['roles', '']
+                    , 'client_module'   : '3_general'
+                    , 'base_module'     : 'general'
+                }
+            )
+
+            return self.render(
+                viewFile='general/rolesEdit'
+            )
+
+        except Exception as e:
+            self.log.error(f'GeneralController.generalRolesEditGet Exception ', str(e))
+            return self.render(
+                viewFile='general/rolesEdit'
+            )
+
+    def generalRolesViewGet(self) -> Any:
+        
+        try:
+            self.log.info('GeneralController.generalRolesViewGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['roles', '']
+                    , 'client_module'   : '3_general'
+                    , 'base_module'     : 'general'
+                }
+            )
+
+            return self.render(
+                viewFile='general/rolesView'
+            )
+
+        except Exception as e:
+            self.log.error(f'GeneralController.generalRolesViewGet Exception ', str(e))
+            return self.render(
+                viewFile='general/rolesView'
+            )
+
     def generalCompanyGet(self) -> Any:
         
         try:

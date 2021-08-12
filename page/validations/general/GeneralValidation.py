@@ -66,6 +66,24 @@ class GeneralValidation(MyValidation):
         except Exception as e:
             return general(headerParam=self.__h, bodyParam=self.__b).generalRolesGet()
 
+    def generalRolesAddGet(self):
+        try:
+            return general(headerParam=self.__h, bodyParam=self.__b).generalRolesAddGet()
+        except Exception as e:
+            return general(headerParam=self.__h, bodyParam=self.__b).generalRolesAddGet()
+
+    def generalRolesEditGet(self):
+        try:
+            return general(headerParam=self.__h, bodyParam=self.__b).generalRolesEditGet()
+        except Exception as e:
+            return general(headerParam=self.__h, bodyParam=self.__b).generalRolesEditGet()
+
+    def generalRolesViewGet(self):
+        try:
+            return general(headerParam=self.__h, bodyParam=self.__b).generalRolesViewGet()
+        except Exception as e:
+            return general(headerParam=self.__h, bodyParam=self.__b).generalRolesViewGet()
+
     def generalCompanyGet(self):
         try:
             return general(headerParam=self.__h, bodyParam=self.__b).generalCompanyGet()

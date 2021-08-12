@@ -1,0 +1,100 @@
+{% extends "templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+<div id="generalDepartmentEdit" class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
+	<div class="flex flex-row items-center">
+		<a href="/general/department" class="no-underline">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+			</svg>
+		</a>
+		<span class="font-Roboto font-bold text-3xl text-gray-700 ml-6.5">Edit Department</span>
+	</div>
+	<div class="flex flex-col px-12 pt-10 space-y-6.5">
+		<div class="w-full">
+			<label for="departmentName" class="block font-Roboto text-gray-700">Department name</label>
+			<input 
+				type="text" 
+				v-model="departmentName"
+				class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+				:class="isDeVal ? 'border-red-500' : ''"
+				placeholder="Company name"
+			>
+			<span class="font-Roboto text-xs text-red-500" v-text='errMessageDe'></span>
+		</div>
+		<div class="w-full space-y-3">
+			<div class="space-y-3">
+				<div class="w-full flex flex-row justify-between items-center">
+					<div @click="onCollapse('dashboard')" class="flex-1 flex flex-row items-center cursor-pointer select-none space-x-3">
+						<svg v-if="!isDaCollapse" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+						<svg v-else xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+						</svg>
+						<p class="font-Roboto font-medium">Dashboard</p>
+					</div>
+					<input 
+						v-model="dashboard" 
+						@change="onChecked('dashboard')" 
+						class="rounded-none focus:outline-none" 
+						:class="{ 'is-checked' : isDaHaveSelected }"
+						type="checkbox">
+				</div>
+				<div v-show="isDaCollapse" class="pl-7">
+					<div class="flex flex-row justify-between py-3 pl-2 border-t border-b">
+						<p class="font-Roboto text-sm">Search all</p>
+						<input v-model="dashboardSelectAll" @change="onChecked" class="focus:outline-none" type="checkbox">
+					</div>
+					<div class="flex flex-row justify-between py-3 pl-2 border-b">
+						<p class="font-Roboto text-sm">Rest password</p>
+						<input v-model="dashboardResetPw" @change="onChecked" class="focus:outline-none" type="checkbox">
+					</div>
+				</div>
+			</div>
+			<div class="space-y-3">
+				<div class="w-full flex flex-row justify-between items-center">
+					<div @click="onCollapse('document')" class="flex-1 flex flex-row items-center cursor-pointer select-none space-x-3">
+						<svg v-if="!isDoCollapse" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+						<svg v-else xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+						</svg>
+						<p class="font-Roboto font-medium">Document</p>
+					</div>
+					<input 
+						v-model="document" 
+						@change="onChecked('document')" 
+						class="focus:outline-none"
+						:class="{ 'is-checked' : isDoHaveSelected }"
+						type="checkbox">
+				</div>
+				<div v-show="isDoCollapse" class="pl-7">
+					<div class="flex flex-row justify-between py-3 pl-2 border-t border-b">
+						<p class="font-Roboto text-sm">Add version</p>
+						<input 
+							v-model="documentAddVersion" 
+							@change="onChecked" 
+							class="focus:outline-none" 
+							type="checkbox">
+					</div>
+					<div class="flex flex-row justify-between py-3 pl-2 border-b">
+						<p class="font-Roboto text-sm">View ID</p>
+						<input 
+							v-model="documentViewId" 
+							@change="onChecked" 
+							class="focus:outline-none" 
+							type="checkbox">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="w-full flex justify-end px-12 mt-15">
+		<button @click="onSubmit" class="font-Roboto font-medium text-lg uppercase text-white bg-gray-700 py-3.5 px-24">Update</button>
+	</div>
+</div>
+
+{% endblock %}

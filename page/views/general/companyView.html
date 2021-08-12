@@ -1,0 +1,68 @@
+{% extends "templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+<div id="generalCompanyView" class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
+	<div class="flex flex-row items-center">
+		<a href="/general/company" class="no-underline">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+			</svg>
+		</a>
+		<span class="font-Roboto font-bold text-3xl text-gray-700 ml-6.5">View Company</span>
+	</div>
+	<div class="flex flex-col px-12 pt-10 space-y-6.5">
+		<div class="flex flex-row space-x-12.5">
+			<div class="w-1/2">
+				<label for="companyName" class="block font-Roboto text-gray-700">Company name</label>
+				<div 
+					v-text="companyName"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none">
+				</div>
+			</div>
+			<div class="w-1/2">
+				<label for="title" class="block font-Roboto text-gray-700">Title</label>
+				<div 
+					v-text="title"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none">
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="w-1/2">
+				<label for="website" class="block font-Roboto text-gray-700">Website</label>
+				<div 
+					v-text="website"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none">
+				</div>
+			</div>
+			<div class="w-1/2">
+				<label for="email" class="block font-Roboto text-gray-700">Email</label>
+				<div 
+					v-text="email"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none">
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="w-1/2">
+				<label for="phoneNumber" class="block font-Roboto text-gray-700">Phone number</label>
+				<div 
+					v-text="phoneNumber"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none">
+				</div>
+			</div>
+			<div class="w-1/2">
+				<label for="icon" class="block font-Roboto text-gray-700">Icon</label>
+				<input 
+					type="file"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-2.25 focus:outline-none"
+					disabled
+				>
+				<span class="text-xs text-disable">The recommended image size: 20x20 pixels. Only jpeg, png, svg</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

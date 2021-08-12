@@ -197,6 +197,18 @@ def generalDepartmentViewGet():
 def generalRolesGet():
     return general.GeneralValidation().generalRolesGet()
 
+@route.get('/general/roles/add')
+def generalRolesAddGet():
+    return general.GeneralValidation().generalRolesAddGet()
+
+@route.get('/general/roles/edit')
+def generalRolesEditGet():
+    return general.GeneralValidation().generalRolesEditGet()
+
+@route.get('/general/roles/view')
+def generalRolesViewGet():
+    return general.GeneralValidation().generalRolesViewGet()
+
 @route.get('/general/company')
 def generalCompanyGet():
     return general.GeneralValidation().generalCompanyGet()
