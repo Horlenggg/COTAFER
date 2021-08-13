@@ -6,85 +6,39 @@ if(document.querySelector('#generalRolesView')){
                 , availableUsers        : ['Web Developer', 'IOS Developer', 'Web Developer', 'IOS Developer', 'Web Developer', 'IOS Developer', 'Web Developer', 'IOS Developer']
                 , department            : 'Department'
 
-                , dashboard             : true
-                , dashboardSelectAll    : true
-                , dashboardResetPw      : true
-
-                , document              : false
-                , documentAddVersion    : false
-                , documentViewId        : true
-
-                , isDaCollapse          : false
-                , isDaHaveSelected      : false
-                , isDoCollapse          : false
-                , isDoHaveSelected      : false
-            }
-        },
-        mounted() {
-            this.onChecked()
-            if(this.dashboardSelectAll == true || this.dashboardResetPw == true){
-                this.isDaCollapse = true
-            }
-
-            if(this.documentAddVersion == true || this.documentViewId == true){
-                this.isDoCollapse = true
+                , dashboard             : 'Dashboard'
+                , dashboardData         : [
+                    { id: 1, text: 'Search All', model: true }
+                    , { id: 2, text: 'Reset Password', model: true }
+                ]
+                , document              : 'Document'
+                , documentData          : [
+                    { id: 1, text: 'Add Version', model: true }
+                    , { id: 2, text: 'View Id', model: false }
+                ]
+                , setting              : 'Setting'
+                , settingData          : [
+                    { id: 1, text: 'Add Version', model: false }
+                    , { id: 2, text: 'View Id', model: false }
+                ]
+                , users              : 'Users'
+                , usersData          : [
+                    { id: 1, text: 'Add Version', model: false }
+                    , { id: 2, text: 'View Id', model: false }
+                ]
+                , projectTesting              : 'Project Testing'
+                , projectTestingData          : [
+                    { id: 1, text: 'Add Version', model: false }
+                    , { id: 2, text: 'View Id', model: false }
+                ]
             }
         },
         methods: {
             onSubmit(){
             }
-            , onCollapse(e = ''){
-                if(e == 'dashboard'){
-                    this.isDaCollapse = !this.isDaCollapse
-                } else if(e == 'document'){
-                    this.isDoCollapse = !this.isDoCollapse
-                }
-            }
-            , onChecked(e = ''){
-                if(e == 'dashboard'){
-                    if(this.dashboard == true){
-                        this.dashboardSelectAll = true;
-                        this.dashboardResetPw = true;
-                    } else {
-                        this.dashboardSelectAll = false;
-                        this.dashboardResetPw = false;
-                    }
-                } else if(e == 'document'){
-                    if(this.document == true){
-                        this.documentAddVersion = true;
-                        this.documentViewId = true;
-                    } else {
-                        this.documentAddVersion = false;
-                        this.documentViewId = false;
-                    }
-                }
-
-                if(this.dashboardSelectAll == true || this.dashboardResetPw == true){
-                    this.isDaHaveSelected = true
-                } else {
-                    this.isDaHaveSelected = false
-                }
-
-                if(this.documentAddVersion == true || this.documentViewId == true){
-                    this.isDoHaveSelected = true
-                } else {
-                    this.isDoHaveSelected = false
-                }
-                
-                if(this.dashboardSelectAll == true && this.dashboardResetPw == true){
-                    this.dashboard = true
-                } else {
-                    this.dashboard = false
-                }
-
-                if(this.documentAddVersion == true && this.documentViewId == true){
-                    this.document = true
-                } else {
-                    this.document = false
-                }
-            }
         },
     }
     const generalRolesViewApp =  Vue.createApp(generalRolesView);
+    generalRolesViewApp.component('collapse-view-vue', COLLAPSE_VIEW_COMPONENT);
     generalRolesViewApp.mount('#generalRolesView');    
 }
