@@ -23,10 +23,6 @@ pip install -r requirements.txt
 ```
 npm i
 ```
-**install tailwind-form**
-```
-npm install @tailwindcss/forms
-```
 
 **generate app.css and app.js**
 ```

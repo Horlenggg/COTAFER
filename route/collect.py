@@ -234,6 +234,14 @@ def generalCompanyViewGet():
 def testGonokaGet():
     return test.TestValidation().testGonokaGet()
 
+@route.get('/test/gonoka/add')
+def testGonokaAddGet():
+    return test.TestValidation().testGonokaAddGet()
+
+@route.get('/test/gonoka/edit')
+def testGonokaEditGet():
+    return test.TestValidation().testGonokaEditGet()
+
 @route.get('/test/cotafer')
 def testCotaferGet():
     return test.TestValidation().testCotaferGet()

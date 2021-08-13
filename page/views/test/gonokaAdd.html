@@ -1,0 +1,215 @@
+{% extends "templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+<div id="testGonokaAdd" class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
+	<div class="flex flex-row items-center">
+		<a href="/general/users" class="no-underline">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+			</svg>
+		</a>
+		<span class="font-Roboto font-bold text-3xl text-gray-700 ml-6.5">Add Project Testing</span>
+	</div>
+	<div class="flex flex-col px-12 pt-10 space-y-6.5">
+		<div class="flex flex-row space-x-12.5">
+			<div class="w-1/2">
+				<label for="version" class="block font-Roboto text-gray-700">Version</label>
+				<input 
+					type="text" 
+					v-model="version"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isFnVal ? 'border-red-500' : ''"
+					placeholder="Version"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageFn'></span>
+			</div>
+			<div class="relative w-1/2">
+				<label for="projectName" class="block font-Roboto text-gray-700">Project Name</label>
+				<div class="absolute top-10.5 right-2 border-l border-gray-300 pl-1.5 z-10">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
+					</svg>
+				</div>
+				<select 
+					v-model="projectName" 
+					class="mt-2.5 block w-full appearance-none font-Roboto text-sm bg-white border px-4 py-3 focus:outline-none"
+					:class=" isDeVal ? 'border-red-500' : '' "
+				>
+					<option value="0">Please select project</option>
+					<option v-for="pr in prOption" v-text="pr.label" value="pr.value"></option>
+				</select>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageDe'></span>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="relative w-1/2">
+				<label for="improveTest" class="block font-Roboto text-gray-700">Improve Test</label>
+				<Multiselect
+					v-model="improveTest"
+					:class="isDeVal ? 'border-red-500' : ''"
+					placeholder="Improve Test"
+					:options="imTOption"
+					mode="tags"
+					:searchable="true"
+					:createTag="true"
+					:caret="true"
+				>
+				</Multiselect>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageDe'></span>
+			</div>
+			<div class="relative w-1/2">
+				<label for="improvePublic" class="block font-Roboto text-gray-700">Improve Public</label>
+				<Multiselect
+					v-model="improvePublic"
+					:class="isDeVal ? 'border-red-500' : ''"
+					placeholder="Improve Public"
+					:options="imPOption"
+					mode="tags"
+					:searchable="true"
+					:createTag="true"
+					:caret="true"
+				>
+				</Multiselect>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageDe'></span>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="w-1/2">
+				<label for="byLink" class="block font-Roboto text-gray-700">By Link</label>
+				<input 
+					type="text" 
+					v-model="byLink"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isFnVal ? 'border-red-500' : ''"
+					placeholder="By Link"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageFn'></span>
+			</div>
+			<div class="w-1/2">
+				<label for="formLink" class="block font-Roboto text-gray-700">Form Link</label>
+				<input 
+					type="text" 
+					v-model="formLink"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isFnVal ? 'border-red-500' : ''"
+					placeholder="Form Link"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageFn'></span>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="relative w-1/2">
+				<label for="releaseDate" class="block font-Roboto text-gray-700">Release Date</label>
+				<div class="absolute bottom-3 right-2 border-l border-gray-300 pl-1.5 z-10">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+					</svg>
+				</div>
+				<input 
+					id="releaseDate"
+					type="text" 
+					v-model="releaseDate"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isFnVal ? 'border-red-500' : ''"
+					placeholder="Release Date"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageFn'></span>
+			</div>
+			<div class="relative w-1/2">
+				<label for="platform" class="block font-Roboto text-gray-700">Platform</label>
+				<div class="absolute top-10.5 right-2 border-l border-gray-300 pl-1.5 z-10">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
+					</svg>
+				</div>
+				<select 
+					v-model="platform" 
+					class="mt-2.5 block w-full appearance-none font-Roboto text-sm bg-white border px-4 py-3 focus:outline-none"
+					:class="isDeVal ? 'border-red-500' : ''"
+				>
+					<option value="0">Please select project</option>
+					<option v-for="de in deOption" v-text="de.label" value="de.value"></option>
+				</select>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageDe'></span>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="relative w-1/2">
+				<label for="startTestDate" class="block font-Roboto text-gray-700">Start Test Date</label>
+				<div class="absolute bottom-3 right-2 border-l border-gray-300 pl-1.5 z-10">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+					</svg>
+				</div>
+				<input 
+					id="startTestDate"
+					type="text" 
+					v-model="startTestDate"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isFnVal ? 'border-red-500' : ''"
+					placeholder="Release Date"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageFn'></span>
+			</div>
+			<div class="relative w-1/2">
+				<label for="finishTestDate" class="block font-Roboto text-gray-700">Finish Test Date</label>
+				<div class="absolute bottom-3 right-2 border-l border-gray-300 pl-1.5 z-10">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+					</svg>
+				</div>
+				<input 
+					id="finishTestDate"
+					type="text" 
+					v-model="finishTestDate"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isFnVal ? 'border-red-500' : ''"
+					placeholder="Finish Date"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageFn'></span>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="relative w-1/2">
+				<label for="stagingDate" class="block font-Roboto text-gray-700">Staging Date</label>
+				<div class="absolute bottom-3 right-2 border-l border-gray-300 pl-1.5 z-10">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+					</svg>
+				</div>
+				<input 
+					id="stagingDate"
+					type="text" 
+					v-model="stagingDate"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isFnVal ? 'border-red-500' : ''"
+					placeholder="Staging Date"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageFn'></span>
+			</div>
+			<div class="relative w-1/2">
+				<label for="productDate" class="block font-Roboto text-gray-700">Product Date</label>
+				<div class="absolute bottom-3 right-2 border-l border-gray-300 pl-1.5 z-10">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+					</svg>
+				</div>
+				<input 
+					id="productDate"
+					type="text" 
+					v-model="productDate"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isFnVal ? 'border-red-500' : ''"
+					placeholder="Product Date"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageFn'></span>
+			</div>
+		</div>
+	</div>
+	<div class="w-full flex justify-end px-12 mt-15">
+		<button @click="onSubmit" class="font-Roboto font-medium text-lg uppercase text-white bg-gray-700 py-3.5 px-24">Add</button>
+	</div>
+</div>
+
+{% endblock %}

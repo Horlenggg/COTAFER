@@ -18,6 +18,18 @@ class TestValidation(MyValidation):
         except Exception as e:
             return test(headerParam=self.__h, bodyParam=self.__b).testGonokaGet()
 
+    def testGonokaAddGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaAddGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaAddGet()
+
+    def testGonokaEditGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaEditGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaEditGet()
+
     def testCotaferGet(self):
         try:
             return test(headerParam=self.__h, bodyParam=self.__b).testCotaferGet()
