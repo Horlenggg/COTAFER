@@ -28,14 +28,32 @@ if(document.querySelector('#generalRolesAdd')){
                     , { value: 4, label: 'Api' }
                 ]
 
-                , dashboard             : false
-                , dashboardSelectAll    : false
-                , dashboardResetPw      : false
+                , dashboard             : 'Dashboard'
+                , dashboardData         : [
+                    { id: 1, text: 'Search All', model: true }
+                    , { id: 2, text: 'Reset Password', model: true }
+                ]
+                , document              : 'Document'
+                , documentData          : [
+                    { id: 1, text: 'Add Version', model: true }
+                    , { id: 2, text: 'View Id', model: false }
+                ]
+                , setting              : 'Setting'
+                , settingData          : [
+                    { id: 1, text: 'Add Version', model: false }
+                    , { id: 2, text: 'View Id', model: false }
+                ]
+                , users              : 'Users'
+                , usersData          : [
+                    { id: 1, text: 'Add Version', model: false }
+                    , { id: 2, text: 'View Id', model: false }
+                ]
+                , projectTesting              : 'Project Testing'
+                , projectTestingData          : [
+                    { id: 1, text: 'Add Version', model: false }
+                    , { id: 2, text: 'View Id', model: false }
+                ]
 
-                , document              : false
-                , documentAddVersion    : false
-                , documentViewId        : false
-                
                 , isRoVal               : false //check validation role name
                 , isDeVal               : false //check validation department
                 , isAvVal               : false //check validation available user
@@ -43,14 +61,7 @@ if(document.querySelector('#generalRolesAdd')){
                 , errMessageDe          : ''    //error message department
                 , errMessageAv          : ''    //error message available user
 
-                , isDaCollapse: false
-                , isDaHaveSelected: false
-                , isDoCollapse: false
-                , isDoHaveSelected: false
             }
-        },
-        mounted() {
-            this.onChecked()
         },
         methods: {
             onSubmit(){
@@ -105,59 +116,10 @@ if(document.querySelector('#generalRolesAdd')){
                     }
                 }
             }
-            , onCollapse(e = ''){
-                if(e == 'dashboard'){
-                    this.isDaCollapse = !this.isDaCollapse
-                } else if(e == 'document'){
-                    this.isDoCollapse = !this.isDoCollapse
-                }
-            }
-            , onChecked(e = ''){
-                if(e == 'dashboard'){
-                    if(this.dashboard == true){
-                        this.dashboardSelectAll = true;
-                        this.dashboardResetPw = true;
-                    } else {
-                        this.dashboardSelectAll = false;
-                        this.dashboardResetPw = false;
-                    }
-                } else if(e == 'document'){
-                    if(this.document == true){
-                        this.documentAddVersion = true;
-                        this.documentViewId = true;
-                    } else {
-                        this.documentAddVersion = false;
-                        this.documentViewId = false;
-                    }
-                }
-
-                if(this.dashboardSelectAll == true || this.dashboardResetPw == true){
-                    this.isDaHaveSelected = true
-                } else {
-                    this.isDaHaveSelected = false
-                }
-
-                if(this.documentAddVersion == true || this.documentViewId == true){
-                    this.isDoHaveSelected = true
-                } else {
-                    this.isDoHaveSelected = false
-                }
-                
-                if(this.dashboardSelectAll == true && this.dashboardResetPw == true){
-                    this.dashboard = true
-                } else {
-                    this.dashboard = false
-                }
-
-                if(this.documentAddVersion == true && this.documentViewId == true){
-                    this.document = true
-                } else {
-                    this.document = false
-                }
-            }
         },
     }
     const generalRolesAddApp =  Vue.createApp(generalRolesAdd);
     generalRolesAddApp.component('Multiselect', VueformMultiselect);
+    generalRolesAddApp.component('collapse-vue', COLLAPSE_COMPONENT);
     generalRolesAddApp.mount('#generalRolesAdd');    
 }
