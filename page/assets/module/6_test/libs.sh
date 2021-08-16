@@ -12,5 +12,4 @@ js=(
     "$Sha256"
     "$Flatpicker_Min_Js"
     "$VUE_MultiselectJS"
-
 )

@@ -23,6 +23,78 @@ class LiveController(MyController):
         #     , 'client_module'   : '2_attendance'
         # }
 
+    def liveGet(self) -> Any:
+        
+        try:
+            self.log.info('LiveController.liveGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['', '']
+                    , 'client_module'   : '7_live'
+                    , 'base_module'     : 'live'
+                }
+            )
+
+            return self.render(
+                viewFile='live/live'
+            )
+
+        except Exception as e:
+            self.log.error(f'LiveController.liveGet Exception ', str(e))
+            return self.render(
+                viewFile='live/live'
+            )
+
+    def liveAddGet(self) -> Any:
+        
+        try:
+            self.log.info('LiveController.liveAddGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['', '']
+                    , 'client_module'   : '7_live'
+                    , 'base_module'     : 'live'
+                }
+            )
+
+            return self.render(
+                viewFile='live/liveAdd'
+            )
+
+        except Exception as e:
+            self.log.error(f'LiveController.liveAddGet Exception ', str(e))
+            return self.render(
+                viewFile='live/liveAdd'
+            )
+
+    def liveEditGet(self) -> Any:
+        
+        try:
+            self.log.info('LiveController.liveEditGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['', '']
+                    , 'client_module'   : '7_live'
+                    , 'base_module'     : 'live'
+                }
+            )
+
+            return self.render(
+                viewFile='live/liveEdit'
+            )
+
+        except Exception as e:
+            self.log.error(f'LiveController.liveEditGet Exception ', str(e))
+            return self.render(
+                viewFile='live/liveEdit'
+            )
+
     def liveGonokaIosGet(self) -> Any:
         
         try:

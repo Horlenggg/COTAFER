@@ -118,3 +118,51 @@ class TestController(MyController):
             return self.render(
                 viewFile='test/cotafer'
             )
+
+    def testCotaferAddGet(self) -> Any:
+        
+        try:
+            self.log.info('TestController.testCotaferAddGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['cotafer', '']
+                    , 'client_module'   : '6_test'
+                    , 'base_module'     : 'test'
+                }
+            )
+
+            return self.render(
+                viewFile='test/cotaferAdd'
+            )
+
+        except Exception as e:
+            self.log.error(f'TestController.testCotaferAddGet Exception ', str(e))
+            return self.render(
+                viewFile='test/cotaferAdd'
+            )
+
+    def testCotaferEditGet(self) -> Any:
+        
+        try:
+            self.log.info('TestController.testCotaferEditGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['cotafer', '']
+                    , 'client_module'   : '6_test'
+                    , 'base_module'     : 'test'
+                }
+            )
+
+            return self.render(
+                viewFile='test/cotaferEdit'
+            )
+
+        except Exception as e:
+            self.log.error(f'TestController.testCotaferEditGet Exception ', str(e))
+            return self.render(
+                viewFile='test/cotaferEdit'
+            )

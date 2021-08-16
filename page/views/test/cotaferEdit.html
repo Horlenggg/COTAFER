@@ -2,14 +2,14 @@
 
 {% block bodyContent %}
 
-<div id="testGonokaAdd" class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
+<div id="testCotaferEdit" class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
 	<div class="flex flex-row items-center">
 		<a href="/test" class="no-underline">
 			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 			</svg>
 		</a>
-		<span class="font-Roboto font-bold text-3xl text-gray-700 ml-6.5">Add Project Testing</span>
+		<span class="font-Roboto font-bold text-3xl text-gray-700 ml-6.5">Edit Project Testing</span>
 	</div>
 	<div class="flex flex-col px-12 pt-10 space-y-6.5">
 		<div class="flex flex-row space-x-12.5">
@@ -205,21 +205,6 @@
 				>
 				<span class="font-Roboto text-xs text-red-500" v-text='errMessagePrD'></span>
 			</div>
-		</div>
-		<div class="w-full">
-			<label for="report" class="block font-Roboto text-gray-700">Product Date</label>
-			<div class="relative w-full">
-				<textarea 
-					v-model="report" 
-					class="mt-2.5 w-full font-Roboto text-sm border resize-none outline-none p-3" 
-					:class="isRePVal ? 'border-red-500' : ''"
-					cols="30" 
-					rows="5" 
-					maxlength="100"
-					placeholder="Write your report here"></textarea>
-				<span v-text="report.length + '/100'" class="absolute bottom-3 right-3 font-Roboto text-xs-sm text-gray-300"></span>
-			</div>
-			<span class="font-Roboto text-xs text-red-500" v-text='errMessageReP'></span>
 		</div>
 	</div>
 	<div class="w-full flex justify-end px-12 mt-15">

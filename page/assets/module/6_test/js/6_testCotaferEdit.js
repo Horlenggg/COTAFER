@@ -1,5 +1,5 @@
-if(document.querySelector('#testGonokaAdd')){
-    const testGonokaAdd = {
+if(document.querySelector('#testCotaferEdit')){
+    const testCotaferEdit = {
         data() {
             return {
                 version             : ''
@@ -46,8 +46,6 @@ if(document.querySelector('#testGonokaAdd')){
                 , productDate       : ''
                 , report            : ''
 
-                , isShow            : 0
-
                 , isVeVal           : false
                 , isPrVal           : false
                 , isImTVal          : false
@@ -60,7 +58,6 @@ if(document.querySelector('#testGonokaAdd')){
                 , isFiVal           : false
                 , isStDVal          : false
                 , isPrDVal          : false
-                , isRePVal          : false
 
                 , errMessageVe      : ''
                 , errMessagePr      : ''
@@ -74,7 +71,6 @@ if(document.querySelector('#testGonokaAdd')){
                 , errMessageFi      : ''
                 , errMessageStD     : ''
                 , errMessagePrD     : ''  
-                , errMessageReP     : ''  
             }
         },
         mounted() {
@@ -207,17 +203,6 @@ if(document.querySelector('#testGonokaAdd')){
                     this.isPrDVal = false
                 }
 
-                if(this.report.length == 0){
-                    this.isRePVal = true
-                    this.errMessageReP = 'Require'
-                } else if(this.report.length > 100){
-                    this.isRePVal = true
-                    this.errMessageReP = 'Max length 100 character'
-                } else {
-                    this.isRePVal = false
-                    this.errMessageReP = ''
-                }
-
     
                 if(this.version || this.projectName !== 0 || this.improveTest || this.improvePublic || this.byLink || this.formLink || this.releaseDate || this.platform || this.startTestDate || this.finishTestDate || this.stagingDate || this.productDate){
                     if(!this.isVeVal && !this.isPrVal && !this.isImTVal && !this.isImPVal && !this.isBlVal && !this.isFlVal && !this.isReVal && !this.isPlVal && !this.isStVal && !this.isFiVal && !this.isStDVal && !this.isPrDVal){
@@ -288,7 +273,7 @@ if(document.querySelector('#testGonokaAdd')){
             },
         },
     }
-    const testGonokaAddApp =  Vue.createApp(testGonokaAdd);
-    testGonokaAddApp.component('Multiselect', VueformMultiselect);
-    testGonokaAddApp.mount('#testGonokaAdd');    
+    const testCotaferEditApp =  Vue.createApp(testCotaferEdit);
+    testCotaferEditApp.component('Multiselect', VueformMultiselect);
+    testCotaferEditApp.mount('#testCotaferEdit');    
 }

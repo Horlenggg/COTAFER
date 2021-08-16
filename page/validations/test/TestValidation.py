@@ -36,3 +36,15 @@ class TestValidation(MyValidation):
         except Exception as e:
             return test(headerParam=self.__h, bodyParam=self.__b).testCotaferGet()
 
+    def testCotaferAddGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferAddGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferAddGet()
+
+    def testCotaferEditGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferEditGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferEditGet()
+

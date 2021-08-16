@@ -1,8 +1,8 @@
-if(document.querySelector('#testGonoka')){
-    const testGonoka = {
+if(document.querySelector('#testCotafer')){
+    const testCotafer = {
         data() {
             return {
-                gonoka: [
+                cotafer: [
                     {
                         id              : 1
                         , version       : '1.0.5'
@@ -56,7 +56,7 @@ if(document.querySelector('#testGonoka')){
             }
         },
         mounted() {
-            flatpickr("#testGonokaDate", {});
+            flatpickr("#testCotaferDate", {});
         },
         methods: {
             onModal(id = 0) {
@@ -74,6 +74,6 @@ if(document.querySelector('#testGonoka')){
             }
         },
     }
-    const testGonokaApp =  Vue.createApp(testGonoka);
-    testGonokaApp.mount('#testGonoka');
+    const testCotaferApp =  Vue.createApp(testCotafer);
+    testCotaferApp.mount('#testCotafer');
 }

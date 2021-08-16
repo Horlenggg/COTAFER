@@ -1,0 +1,209 @@
+{% extends "templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+<div id="liveAdd" class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
+	<div class="flex flex-row items-center">
+		<a href="/live" class="no-underline">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+			</svg>
+		</a>
+		<span class="font-Roboto font-bold text-3xl text-gray-700 ml-6.5">Add Live Product</span>
+	</div>
+	<div class="flex flex-col px-12 pt-10 space-y-6.5">
+		<div class="flex flex-row space-x-12.5">
+			<div class="relative w-1/2">
+				<label for="productName" class="block font-Roboto text-gray-700">Product Name</label>
+				<input 
+					type="text" 
+					v-model="productName"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isPrVal ? 'border-red-500' : ''"
+					placeholder="Product Name"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessagePr'></span>
+			</div>
+			<div class="w-1/2">
+				<label for="version" class="block font-Roboto text-gray-700">Version</label>
+				<input 
+					type="text" 
+					v-model="version"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isVeVal ? 'border-red-500' : ''"
+					placeholder="Version"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageVe'></span>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="relative w-1/2">
+				<label for="git" class="block font-Roboto text-gray-700">Git</label>
+				<input 
+					type="text" 
+					v-model="git"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isGiVal ? 'border-red-500' : ''"
+					placeholder="Git"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageGi'></span>
+			</div>
+			<div class="w-1/2">
+				<label for="RelativeProject" class="block font-Roboto text-gray-700">Relative Project</label>
+				<input 
+					type="text" 
+					v-model="relativeProject"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isReVal ? 'border-red-500' : ''"
+					placeholder="Relative Project"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageRe'></span>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="relative w-1/2">
+				<label for="category" class="block font-Roboto text-gray-700">Category</label>
+				<div class="absolute top-10.5 right-2 border-l border-gray-300 pl-1.5 z-10">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
+					</svg>
+				</div>
+				<select 
+					v-model="category" 
+					class="mt-2.5 block w-full appearance-none font-Roboto text-sm bg-white border px-4 py-3 focus:outline-none"
+					:class="isCaVal ? 'border-red-500' : ''"
+				>
+					<option value="0">Select...</option>
+					<option v-for="ca in cateOption" v-text="ca.label" value="ca.value"></option>
+				</select>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageCa'></span>
+			</div>
+			<div class="relative w-1/2">
+				<label for="platform" class="block font-Roboto text-gray-700">Platform</label>
+				<div class="absolute top-10.5 right-2 border-l border-gray-300 pl-1.5 z-10">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
+					</svg>
+				</div>
+				<select 
+					v-model="platform" 
+					class="mt-2.5 block w-full appearance-none font-Roboto text-sm bg-white border px-4 py-3 focus:outline-none"
+					:class="isPlVal ? 'border-red-500' : ''"
+				>
+					<option value="0">Select...</option>
+					<option v-for="pl in plOption" v-text="pl.label" value="pl.value"></option>
+				</select>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessagePl'></span>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="relative w-1/2">
+				<label for="expiration" class="block font-Roboto text-gray-700">Expiration</label>
+				<div class="absolute top-11 right-2 border-l border-gray-300 pl-1.5 z-10">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+					</svg>
+				</div>
+				<input 
+					id="expiration"
+					type="text" 
+					v-model="expiration"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isExVal ? 'border-red-500' : ''"
+					placeholder="Expiration"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageEx'></span>
+			</div>
+			<div class="relative w-1/2">
+				<label for="server" class="block font-Roboto text-gray-700">Server</label>
+				<div class="absolute top-10.5 right-2 border-l border-gray-300 pl-1.5 z-10">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
+					</svg>
+				</div>
+				<select 
+					v-model="server" 
+					class="mt-2.5 block w-full appearance-none font-Roboto text-sm bg-white border px-4 py-3 focus:outline-none"
+					:class="isSeVal ? 'border-red-500' : ''"
+				>
+					<option value="0">Select...</option>
+					<option v-for="se in seOption" v-text="se.label" value="se.value"></option>
+				</select>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageSe'></span>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="relative w-1/2">
+				<label for="startDate" class="block font-Roboto text-gray-700">Start Date</label>
+				<div class="absolute top-11 right-2 border-l border-gray-300 pl-1.5 z-10">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+					</svg>
+				</div>
+				<input 
+					id="startDate"
+					type="text" 
+					v-model="startDate"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isSttDVal ? 'border-red-500' : ''"
+					placeholder="Start Date"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageSttD'></span>
+			</div>
+			<div class="relative w-1/2">
+				<label for="startApproveBy" class="block font-Roboto text-gray-700">Start Approve By</label>
+				<Multiselect
+					v-model="startApproveBy"
+					:class="isSttAVal ? 'border-red-500' : ''"
+					placeholder="Start Approve By"
+					:options="sttAOption"
+					mode="tags"
+					:searchable="true"
+					:createTag="true"
+					:caret="true"
+				>
+				</Multiselect>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageSttA'></span>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="relative w-1/2">
+				<label for="stopDate" class="block font-Roboto text-gray-700">Stop Date</label>
+				<div class="absolute top-11 right-2 border-l border-gray-300 pl-1.5 z-10">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+					</svg>
+				</div>
+				<input 
+					id="stopDate"
+					type="text" 
+					v-model="stopDate"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isStpDVal ? 'border-red-500' : ''"
+					placeholder="Stop Date"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageStpD'></span>
+			</div>
+			<div class="relative w-1/2">
+				<label for="stopApproveBy" class="block font-Roboto text-gray-700">Stop Approve By</label>
+				<Multiselect
+					v-model="stopApproveBy"
+					:class="isStpAVal ? 'border-red-500' : ''"
+					placeholder="Stop Approve By"
+					:options="stpAOption"
+					mode="tags"
+					:searchable="true"
+					:createTag="true"
+					:caret="true"
+				>
+				</Multiselect>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageStpA'></span>
+			</div>
+		</div>
+	</div>
+	<div class="w-full flex justify-end px-12 mt-15">
+		<button @click="onSubmit" class="font-Roboto font-medium text-lg uppercase text-white bg-gray-700 py-3.5 px-24">Add</button>
+	</div>
+</div>
+
+{% endblock %}

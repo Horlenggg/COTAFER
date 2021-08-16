@@ -1,5 +1,5 @@
-if(document.querySelector('#testGonokaAdd')){
-    const testGonokaAdd = {
+if(document.querySelector('#testCotaferAdd')){
+    const testCotaferAdd = {
         data() {
             return {
                 version             : ''
@@ -288,7 +288,7 @@ if(document.querySelector('#testGonokaAdd')){
             },
         },
     }
-    const testGonokaAddApp =  Vue.createApp(testGonokaAdd);
-    testGonokaAddApp.component('Multiselect', VueformMultiselect);
-    testGonokaAddApp.mount('#testGonokaAdd');    
+    const testCotaferAddApp =  Vue.createApp(testCotaferAdd);
+    testCotaferAddApp.component('Multiselect', VueformMultiselect);
+    testCotaferAddApp.mount('#testCotaferAdd');    
 }

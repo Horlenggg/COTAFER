@@ -246,11 +246,30 @@ def testGonokaEditGet():
 def testCotaferGet():
     return test.TestValidation().testCotaferGet()
 
+@route.get('/test/cotafer/add')
+def testCotaferAddGet():
+    return test.TestValidation().testCotaferAddGet()
+
+@route.get('/test/cotafer/edit')
+def testCotaferEditGet():
+    return test.TestValidation().testCotaferEditGet()
+
 # ================= #
 #       Live        #
 # ================= #
 
 @route.get('/live')
+def liveGet():
+    return live.LiveValidation().liveGet()
+
+@route.get('/live/add')
+def liveAddGet():
+    return live.LiveValidation().liveAddGet()
+
+@route.get('/live/edit')
+def liveEditGet():
+    return live.LiveValidation().liveEditGet()
+
 @route.get('/live/gonoka/ios')
 def liveGonokaIosGet():
     return live.LiveValidation().liveGonokaIosGet()

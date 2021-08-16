@@ -341,22 +341,97 @@
                 </svg>
             </a>
         </div>
-        <div class="group flex flex-row justify-end items-center space-x-3">
-            <img class="inline-block h-8 w-8 rounded-full object-cover" src="https://images.unsplash.com/photo-1535704882196-765e5fc62a53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
-            <span class="text-white">Justin</span>
-            <ul class="flex flex-col mt-40 mr-5 z-50 bg-white border transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out min-w-32">
-                <li><a href="/account/profile"
-                        class="no-underline px-4 py-2 block hover:bg-gray-700 hover:text-white">My
-                        account</a></li>
-                <li><a href="/account/password/change"
-                        class="no-underline px-4 py-2 block hover:bg-gray-700 hover:text-white">Change
-                        password</a></li>
-                <li>
-                    <hr class="border-t mx-2 border-gray-200">
-                </li>
-                <li><a href="/logout"
-                        class="no-underline px-4 py-2 block hover:bg-gray-700 hover:text-white">Logout</a></li>
-            </ul>
+        <div x-data="{ isShowProfile : false, isShowNotification: false }" class="relative flex flex-row justify-end items-center space-x-5">
+            <div>
+                <div @click="isShowNotification = true" class="cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+                    </svg>
+                </div>
+                <div x-show="isShowNotification" class="absolute -top-1.5 -right-5 h-screen flex flex-col justify-between bg-white shadow-lg blur z-20" style="width: 420px;">
+                    <div class="w-full flex flex-col px-6.5 pt-10">
+                        <div class="flex flex-row justify-between pb-8 border-b border-gray-300">
+                            <p class="font-Roboto font-medium text-2xxl text-gray-700 ">Notifications</p>
+                            <button @click="isShowNotification = false" class="focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                  </svg>
+                            </button>
+                        </div>
+                        <div>
+                            <div class="flex flex-row justify-between items-center space-x-2.5">
+                                <div class="relative w-15 h-15">
+                                    <img class="absolute inset-0 w-full h-full object-cover rounded-full" src="https://images.unsplash.com/photo-1535704882196-765e5fc62a53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
+                                </div>
+                                <div class="flex-1 flex flex-row justify-between border-b border-gray-300 py-5">
+                                    <div class="flex flex-col space-y-2">
+                                        <div class="flex flex-row items-center space-x-2.5">
+                                            <p class="font-Roboto font-medium text-lg">Baleze</p>
+                                            <span class="font-Roboto text-sm">Add Project Testing</span>
+                                        </div>
+                                        <span class="font-Roboto text-sm">23-May-21 05:12 PM</span>
+                                    </div>
+                                    <button class="font-Roboto text-sm text-gray-700">Clear</button>
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between items-center space-x-2.5">
+                                <div class="relative w-15 h-15">
+                                    <img class="absolute inset-0 w-full h-full object-cover rounded-full" src="https://images.unsplash.com/photo-1535704882196-765e5fc62a53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
+                                </div>
+                                <div class="flex-1 flex flex-row justify-between border-b border-gray-300 py-5">
+                                    <div class="flex flex-col space-y-2">
+                                        <div class="flex flex-row items-center space-x-2.5">
+                                            <p class="font-Roboto font-medium text-lg">Baleze</p>
+                                            <span class="font-Roboto text-sm">Add Project Testing</span>
+                                        </div>
+                                        <span class="font-Roboto text-sm">23-May-21 05:12 PM</span>
+                                    </div>
+                                    <button class="font-Roboto text-sm text-gray-700">Clear</button>
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between items-center space-x-2.5">
+                                <div class="relative w-15 h-15">
+                                    <img class="absolute inset-0 w-full h-full object-cover rounded-full" src="https://images.unsplash.com/photo-1535704882196-765e5fc62a53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
+                                </div>
+                                <div class="flex-1 flex flex-row justify-between border-b border-gray-300 py-5">
+                                    <div class="flex flex-col space-y-2">
+                                        <div class="flex flex-row items-center space-x-2.5">
+                                            <p class="font-Roboto font-medium text-lg">Baleze</p>
+                                            <span class="font-Roboto text-sm">Add Project Testing</span>
+                                        </div>
+                                        <span class="font-Roboto text-sm">23-May-21 05:12 PM</span>
+                                    </div>
+                                    <button class="font-Roboto text-sm text-gray-700">Clear</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="w-full font-Roboto text-lg text-white bg-gray-700 py-4">Clear all</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div @click="isShowProfile = true" class="flex flex-row items-center cursor-pointer space-x-2">
+                    <div class="relative w-8 h-8">
+                        <img class="absolute inset-0 w-full h-full object-cover rounded-full" src="https://images.unsplash.com/photo-1535704882196-765e5fc62a53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
+                    </div>
+                    <span class="text-white">Justin</span>
+                </div>
+                <ul x-show="isShowProfile" @click.away="isShowProfile = false" class="absolute top-10.5 right-0 flex flex-col z-50 bg-white border transition duration-150 ease-in-out min-w-44">
+                    <li><a href="/account/profile"
+                            class="no-underline px-4 py-2 block font-Roboto hover:bg-gray-700 hover:text-white">My
+                            account</a></li>
+                    <li><a href="/account/password/change"
+                            class="no-underline px-4 py-2 block font-Roboto hover:bg-gray-700 hover:text-white">Change
+                            password</a></li>
+                    <li>
+                        <hr class="border-t mx-2 border-gray-200">
+                    </li>
+                    <li><a href="/logout"
+                            class="no-underline px-4 py-2 block font-Roboto hover:bg-gray-700 hover:text-white">Logout</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </header>

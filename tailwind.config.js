@@ -20,6 +20,7 @@ module.exports = {
         'xs-sm': '0.813rem',
         'sm-base': '0.938rem',
         'base-lg': '1.063rem',
+        '2xxl': '1.75rem'
       },
       colors: {
         'disable': '#E6E6E6',
@@ -29,6 +30,7 @@ module.exports = {
       },
       width: {
         '7.5': '1.875rem',
+        '15': '3.75rem',
         '25': '6.25rem'
       },
       height: {
@@ -46,6 +48,7 @@ module.exports = {
       minWidth: {
         '300': '300px',
         '40': '10rem',
+        '44': '11rem',
         '65': '16.25rem'
       },
       zIndex: {

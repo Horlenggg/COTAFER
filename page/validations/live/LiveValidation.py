@@ -11,7 +11,24 @@ class LiveValidation(MyValidation):
         self.__b = self.body.getElement()
         self.__h = self.header.getElement()
 
-    # Auth 2_login form
+    def liveGet(self):
+        try:
+            return live(headerParam=self.__h, bodyParam=self.__b).liveGet()
+        except Exception as e:
+            return live(headerParam=self.__h, bodyParam=self.__b).liveGet()
+
+    def liveAddGet(self):
+        try:
+            return live(headerParam=self.__h, bodyParam=self.__b).liveAddGet()
+        except Exception as e:
+            return live(headerParam=self.__h, bodyParam=self.__b).liveAddGet()
+
+    def liveEditGet(self):
+        try:
+            return live(headerParam=self.__h, bodyParam=self.__b).liveEditGet()
+        except Exception as e:
+            return live(headerParam=self.__h, bodyParam=self.__b).liveEditGet()
+
     def liveGonokaIosGet(self):
         try:
             return live(headerParam=self.__h, bodyParam=self.__b).liveGonokaIosGet()
