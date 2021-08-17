@@ -23,6 +23,78 @@ class TestController(MyController):
         #     , 'client_module'   : '2_attendance'
         # }
 
+    def testGet(self) -> Any:
+        
+        try:
+            self.log.info('TestController.testGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['', '']
+                    , 'client_module'   : '6_test'
+                    , 'base_module'     : 'test'
+                }
+            )
+
+            return self.render(
+                viewFile='test/test'
+            )
+
+        except Exception as e:
+            self.log.error(f'TestController.testGet Exception ', str(e))
+            return self.render(
+                viewFile='test/test'
+            )
+
+    def testAddGet(self) -> Any:
+        
+        try:
+            self.log.info('TestController.testAddGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['', '']
+                    , 'client_module'   : '6_test'
+                    , 'base_module'     : 'test'
+                }
+            )
+
+            return self.render(
+                viewFile='test/testAdd'
+            )
+
+        except Exception as e:
+            self.log.error(f'TestController.testAddGet Exception ', str(e))
+            return self.render(
+                viewFile='test/testAdd'
+            )
+
+    def testEditGet(self) -> Any:
+        
+        try:
+            self.log.info('TestController.testEditGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['', '']
+                    , 'client_module'   : '6_test'
+                    , 'base_module'     : 'test'
+                }
+            )
+
+            return self.render(
+                viewFile='test/testEdit'
+            )
+
+        except Exception as e:
+            self.log.error(f'TestController.testEditGet Exception ', str(e))
+            return self.render(
+                viewFile='test/testEdit'
+            )
+
     def testGonokaGet(self) -> Any:
         
         try:
@@ -45,54 +117,6 @@ class TestController(MyController):
             self.log.error(f'TestController.testGonokaGet Exception ', str(e))
             return self.render(
                 viewFile='test/gonoka'
-            )
-
-    def testGonokaAddGet(self) -> Any:
-        
-        try:
-            self.log.info('TestController.testGonokaAddGet info')
-
-            # active link
-            self.view.addData(
-                params={
-                    'active_module'     : ['gonoka', '']
-                    , 'client_module'   : '6_test'
-                    , 'base_module'     : 'test'
-                }
-            )
-
-            return self.render(
-                viewFile='test/gonokaAdd'
-            )
-
-        except Exception as e:
-            self.log.error(f'TestController.testGonokaAddGet Exception ', str(e))
-            return self.render(
-                viewFile='test/gonokaAdd'
-            )
-
-    def testGonokaEditGet(self) -> Any:
-        
-        try:
-            self.log.info('TestController.testGonokaEditGet info')
-
-            # active link
-            self.view.addData(
-                params={
-                    'active_module'     : ['gonoka', '']
-                    , 'client_module'   : '6_test'
-                    , 'base_module'     : 'test'
-                }
-            )
-
-            return self.render(
-                viewFile='test/gonokaEdit'
-            )
-
-        except Exception as e:
-            self.log.error(f'TestController.testGonokaEditGet Exception ', str(e))
-            return self.render(
-                viewFile='test/gonokaEdit'
             )
 
     def testCotaferGet(self) -> Any:
@@ -119,31 +143,6 @@ class TestController(MyController):
                 viewFile='test/cotafer'
             )
 
-    def testCotaferAddGet(self) -> Any:
-        
-        try:
-            self.log.info('TestController.testCotaferAddGet info')
-
-            # active link
-            self.view.addData(
-                params={
-                    'active_module'     : ['cotafer', '']
-                    , 'client_module'   : '6_test'
-                    , 'base_module'     : 'test'
-                }
-            )
-
-            return self.render(
-                viewFile='test/cotaferAdd'
-            )
-
-        except Exception as e:
-            self.log.error(f'TestController.testCotaferAddGet Exception ', str(e))
-            return self.render(
-                viewFile='test/cotaferAdd'
-            )
-
-    def testCotaferEditGet(self) -> Any:
         
         try:
             self.log.info('TestController.testCotaferEditGet info')

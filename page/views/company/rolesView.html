@@ -1,0 +1,51 @@
+{% extends "templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+<div id="companyRolesView" class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
+	<div class="flex flex-row items-center">
+		<a href="/company/roles" class="no-underline">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+			</svg>
+		</a>
+		<span class="font-Roboto font-bold text-3xl text-gray-700 ml-6.5">View Roles</span>
+	</div>
+	<div class="flex flex-col px-12 pt-10 space-y-6.5">
+		<div class="w-full">
+			<label for="roleName" class="block font-Roboto text-gray-700">Role name</label>
+			<div 
+				v-text="roleName" 
+				class="mt-2.5 block w-full appearance-none font-Roboto text-sm bg-white border px-4 py-2.25"
+			>
+			</div>
+		</div>
+		<div class="w-full">
+			<label for="department" class="block font-Roboto text-gray-700">Department</label>
+			<div 
+				v-text="department" 
+				class="mt-2.5 block w-full appearance-none font-Roboto text-sm bg-white border px-4 py-2.25"
+			>
+			</div>
+		</div>
+		<div class="w-full">
+			<label for="availableUsers" class="block font-Roboto text-gray-700">Available Users</label>
+			<div class="mt-2.5 h-auto flex flex-wrap gap-1.5 border p-1.5">
+				<div
+					v-for="av in availableUsers"
+					v-text="av" 
+					class="font-Roboto text-sm border px-1.5 py-1">
+				</div>
+			</div>
+		</div>
+		<div class="w-full space-y-3">
+			<collapse-view-vue :data="dashboardData" :title="dashboard"></collapse-view-vue>
+			<collapse-view-vue :data="documentData" :title="document"></collapse-view-vue>
+			<collapse-view-vue :data="settingData" :title="setting"></collapse-view-vue>
+			<collapse-view-vue :data="usersData" :title="users"></collapse-view-vue>
+			<collapse-view-vue :data="projectTestingData" :title="projectTesting"></collapse-view-vue>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

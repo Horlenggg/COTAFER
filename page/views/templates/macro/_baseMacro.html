@@ -14,7 +14,7 @@
         , 'module_text' : 'Dashboard'
         , 'icon'        : '/assets/images/svg/sidebar/check_in_and_out.svg'
         , 'icon_active' : '/assets/images/svg/sidebar/check_in_and_out-white.svg'
-        , 'href'        : '/dashboard'
+        , 'href'        : '/acc'
         , 'collapsible' : False
         , 'data_parent' : '#accordionSidebar'
         , 'sub_module'  : []
@@ -24,7 +24,7 @@
         , 'module_text' : 'Account'
         , 'icon'        : '/assets/images/svg/sidebar/leave_request.svg'
         , 'icon_active' : '/assets/images/svg/sidebar/leave_request-white.svg'
-        , 'href'        : '/account'
+        , 'href'        : '/acc/account'
         , 'collapsible' : False
         , 'data_parent' : '#accordionSidebar'
         , 'sub_module'  : []
@@ -34,7 +34,7 @@
         , 'module_text' : 'Document'
         , 'icon'        : '/assets/images/svg/sidebar/public_holiday.svg'
         , 'icon_active' : '/assets/images/svg/sidebar/public_holiday-white.svg'
-        , 'href'        : '/document'
+        , 'href'        : '/acc/document'
         , 'collapsible' : False
         , 'data_parent' : '#accordionSidebar'
         , 'sub_module'  : []
@@ -44,7 +44,7 @@
         , 'module_text' : 'Google'
         , 'icon'        : '/assets/images/svg/sidebar/available_day.svg'
         , 'icon_active' : '/assets/images/svg/sidebar/available_day-white.svg'
-        , 'href'        : '/google'
+        , 'href'        : '/acc/google'
         , 'collapsible' : False
         , 'data_parent' : '#accordionSidebar'
         , 'sub_module'  : []
@@ -106,7 +106,7 @@
     }
 ] -%}
 
-{%- elif params.base_module == 'general' -%}
+{%- elif params.base_module == 'company' -%}
 
 {%- set sideBarModules = [
     {
@@ -114,7 +114,7 @@
         , 'module_text' : 'Users'
         , 'icon'        : '/assets/images/svg/sidebar/check_in_and_out.svg'
         , 'icon_active' : '/assets/images/svg/sidebar/check_in_and_out-white.svg'
-        , 'href'        : '/general/users'
+        , 'href'        : '/company/users'
         , 'collapsible' : False
         , 'data_parent' : '#accordionSidebar'
         , 'sub_module'  : []
@@ -124,7 +124,7 @@
         , 'module_text' : 'Department'
         , 'icon'        : '/assets/images/svg/sidebar/leave_request.svg'
         , 'icon_active' : '/assets/images/svg/sidebar/leave_request-white.svg'
-        , 'href'        : '/general/department'
+        , 'href'        : '/company/department'
         , 'collapsible' : False
         , 'data_parent' : '#accordionSidebar'
         , 'sub_module'  : []
@@ -134,7 +134,7 @@
         , 'module_text' : 'Roles'
         , 'icon'        : '/assets/images/svg/sidebar/public_holiday.svg'
         , 'icon_active' : '/assets/images/svg/sidebar/public_holiday-white.svg'
-        , 'href'        : '/general/roles'
+        , 'href'        : '/company/roles'
         , 'collapsible' : False
         , 'data_parent' : '#accordionSidebar'
         , 'sub_module'  : []
@@ -144,7 +144,7 @@
         , 'module_text' : 'Company'
         , 'icon'        : '/assets/images/svg/sidebar/available_day.svg'
         , 'icon_active' : '/assets/images/svg/sidebar/available_day-white.svg'
-        , 'href'        : '/general/company'
+        , 'href'        : '/company/company'
         , 'collapsible' : False
         , 'data_parent' : '#accordionSidebar'
         , 'sub_module'  : []
@@ -159,20 +159,62 @@
         , 'module_text' : 'Gonoka'
         , 'icon'        : '/assets/images/svg/sidebar/check_in_and_out.svg'
         , 'icon_active' : '/assets/images/svg/sidebar/check_in_and_out-white.svg'
-        , 'href'        : '/test/gonoka'
-        , 'collapsible' : False
+        , 'href'        : '/test'
+        , 'collapsible' : true
         , 'data_parent' : '#accordionSidebar'
-        , 'sub_module'  : []
+        , 'sub_module'  : [
+            {
+                'sub_module' : 'ios'
+                , 'sub_module_text' : 'Ios'
+                , 'sub_module_href' : '/test/gonoka/ios'
+            },
+            {
+                'sub_module' : 'android'
+                ,'sub_module_text'  : 'Android'
+                , 'sub_module_href' : '/test/gonoka/android'
+            },
+            {
+                'sub_module' : 'web'
+                ,'sub_module_text'  : 'Web'
+                , 'sub_module_href' : '/test/gonoka/web'
+            },
+            {
+                'sub_module' : 'api'
+                ,'sub_module_text'  : 'Api'
+                , 'sub_module_href' : '/test/gonoka/api'
+            },
+        ]
     },
     {
         'module'        : 'cotafer'
         , 'module_text' : 'Cotafer'
         , 'icon'        : '/assets/images/svg/sidebar/leave_request.svg'
         , 'icon_active' : '/assets/images/svg/sidebar/leave_request-white.svg'
-        , 'href'        : '/test/cotafer'
-        , 'collapsible' : False
+        , 'href'        : '/test'
+        , 'collapsible' : True
         , 'data_parent' : '#accordionSidebar'
-        , 'sub_module'  : []
+        , 'sub_module'  : [
+            {
+                'sub_module' : 'ios'
+                , 'sub_module_text' : 'Ios'
+                , 'sub_module_href' : '/test/cotafer/ios'
+            },
+            {
+                'sub_module' : 'android'
+                ,'sub_module_text'  : 'Android'
+                , 'sub_module_href' : '/test/cotafer/android'
+            },
+            {
+                'sub_module' : 'web'
+                ,'sub_module_text'  : 'Web'
+                , 'sub_module_href' : '/test/cotafer/web'
+            },
+            {
+                'sub_module' : 'api'
+                ,'sub_module_text'  : 'Api'
+                , 'sub_module_href' : '/test/cotafer/api'
+            },
+        ]
     },
 ] -%}
 
@@ -249,7 +291,7 @@
         {%- for module in sideBarModules -%}
         {%- if module.collapsible == False -%}
         <li class="group">
-            <a href="{{ module.href }}" class="font-Roboto text-base no-underline py-4 px-5 flex justify-between items-center {{ 'bg-gray-700 text-white' if activeModule[0] == module.module else 'bg-white text-gray-700 hover:bg-gray-700 hover:text-white' }}">
+            <a href="{{ module.href }}" class="font-Roboto text-base no-underline py-4 px-5 flex justify-between items-center select-none {{ 'bg-gray-700 text-white' if activeModule[0] == module.module else 'bg-white text-gray-700 hover:bg-gray-700 hover:text-white' }}">
                 <div class="flex flex-row items-center">
                     {%- if activeModule[0] == module.module -%}
                     <img src="{{ module.icon_active }}" class="w-4 h-4 mr-3" alt="">
@@ -266,7 +308,7 @@
         </li>
         {%- else -%}
         <li>
-            <div class="group font-Roboto text-base no-underline py-4 px-5 flex justify-between items-center bg-white text-gray-700 hover:bg-gray-700 hover:text-white"
+            <div class="group font-Roboto text-base no-underline py-4 px-5 flex justify-between items-center select-none bg-white text-gray-700 hover:bg-gray-700 hover:text-white"
                 @click="activeModule[0] !== '{{ module.module }}' ? activeModule[0] = '{{ module.module }}' : activeModule[0] = null">
                 <div class="flex flex-row items-center">
                     <img src="{{ module.icon }}" class="w-4 h-4 mr-3 group-hover:hidden" alt="">
@@ -320,7 +362,7 @@
             </div>
         </div>
         <div class="flex items-center space-x-3 py-2">
-            <a href="/general" title="General" class="no-underline">
+            <a href="/company" title="Company" class="no-underline">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
                 </svg>
@@ -419,10 +461,10 @@
                     <span class="text-white">Justin</span>
                 </div>
                 <ul x-show="isShowProfile" @click.away="isShowProfile = false" class="absolute top-10.5 right-0 flex flex-col z-50 bg-white border transition duration-150 ease-in-out min-w-44">
-                    <li><a href="/account/profile"
+                    <li><a href="/acc/account/profile"
                             class="no-underline px-4 py-2 block font-Roboto hover:bg-gray-700 hover:text-white">My
                             account</a></li>
-                    <li><a href="/account/password/change"
+                    <li><a href="/acc/account/password/change"
                             class="no-underline px-4 py-2 block font-Roboto hover:bg-gray-700 hover:text-white">Change
                             password</a></li>
                     <li>

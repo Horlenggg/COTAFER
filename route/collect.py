@@ -12,14 +12,13 @@ from startup import wa as route
 ======================================"""
 from page.validations.auth          import AuthValidation as auth 
 from page.validations.attendance    import AttendanceValidation as attendance
-from page.validations.general       import GeneralValidation as general
+from page.validations.company       import CompanyValidation as company
 from page.validations.test          import TestValidation as test
 from page.validations.live          import LiveValidation as live
 from page.validations.dashboard     import DashboardValidation as dashboard
 from page.validations.account       import AccountValidation as account
 from page.validations.document      import DocumentValidation as document
 from page.validations.google        import GoogleValidation as google
-from page.validations.setting       import SettingValidation as setting
  
 
 # ================= #
@@ -51,85 +50,81 @@ def newPasswordGet():
 # ================= #
 
 @route.get('/')
-@route.get('/dashboard')
+@route.get('/acc')
 def dashboardGet():
     return dashboard.DashboardValidation().dashboardGet()
 
-@route.get('/account')
+@route.get('/acc/account')
 def accountGet():
     return account.AccountValidation().accountGet()
 
-@route.get('/account/profile')
+@route.get('/acc/account/profile')
 def accountProfileGet():
     return account.AccountValidation().accountProfileGet()
 
-@route.post('/account/profile')
+@route.post('/acc/account/profile')
 def accountProfilePost():
     return account.AccountValidation().accountProfilePost()
 
-@route.post('/account/profile/upload')
+@route.post('/acc/account/profile/upload')
 def accountProfileUpload():
     return account.AccountValidation().accountProfileUpload()
 
-@route.get('/account/password/change')
+@route.get('/acc/account/password/change')
 def accountChangePasswordGet():
     return account.AccountValidation().accountChangePasswordGet()
 
-@route.post('/account/password/change')
+@route.post('/acc/account/password/change')
 def accountChangePasswordPost():
     return account.AccountValidation().accountChangePasswordPost()
 
-@route.get('/account/add')
+@route.get('/acc/account/add')
 def accountAddGet():
     return account.AccountValidation().accountAddGet()
 
-@route.post('/account/add')
+@route.post('/acc/account/add')
 def accountAddPost():
     return account.AccountValidation().accountAddPost()
 
-@route.get('/account/edit')
+@route.get('/acc/account/edit')
 def accountEditGet():
     return account.AccountValidation().accountEditGet()
 
-@route.post('/account/edit')
+@route.post('/acc/account/edit')
 def accountEditPost():
     return account.AccountValidation().accountEditPost()
 
-@route.get('/document')
+@route.get('/acc/document')
 def documentGet():
     return document.DocumentValidation().documentGet()
 
-@route.get('/document/add')
+@route.get('/acc/document/add')
 def documentAddGet():
     return document.DocumentValidation().documentAddGet()
 
-@route.post('/document/add')
+@route.post('/acc/document/add')
 def documentAddPost():
     return document.DocumentValidation().documentAddPost()
 
-@route.post('/document/add/file')
+@route.post('/acc/document/add/file')
 def documentAddFilePost():
     return document.DocumentValidation().documentAddFilePost()
 
-@route.get('/document/reversion')
+@route.get('/acc/document/reversion')
 def documentReversionGet():
     return document.DocumentValidation().documentReversionGet()
 
-@route.post('/document/reversion')
+@route.post('/acc/document/reversion')
 def documentReversionPost():
     return document.DocumentValidation().documentReversionPost()
 
-@route.post('/document/reversion/file')
+@route.post('/acc/document/reversion/file')
 def documentReversionFilePost():
     return document.DocumentValidation().documentReversionFilePost()
 
-@route.get('/google')
+@route.get('/acc/google')
 def googleGet():
     return google.GoogleValidation().googleGet()
-
-@route.get('/setting')
-def settingGet():
-    return setting.SettingValidation().settingGet()
 
 # ================= #
 #    Attendance     #
@@ -157,102 +152,98 @@ def overTimeDayGet():
     return attendance.AttendanceValidation().overTimeDayGet()
 
 # ================= #
-#      General      #
+#      company      #
 # ================= #
 
-@route.get('/general')
-@route.get('/general/users')
-def generalUsersGet():
-    return general.GeneralValidation().generalUsersGet()
+@route.get('/company')
+@route.get('/company/users')
+def companyUsersGet():
+    return company.CompanyValidation().companyUsersGet()
 
-@route.get('/general/users/add')
-def generalUsersAddGet():
-    return general.GeneralValidation().generalUsersAddGet()
+@route.get('/company/users/add')
+def companyUsersAddGet():
+    return company.CompanyValidation().companyUsersAddGet()
 
-@route.get('/general/users/edit')
-def generalUsersEditGet():
-    return general.GeneralValidation().generalUsersEditGet()
+@route.get('/company/users/edit')
+def companyUsersEditGet():
+    return company.CompanyValidation().companyUsersEditGet()
 
-@route.get('/general/users/view')
-def generalUsersViewGet():
-    return general.GeneralValidation().generalUsersViewGet()
+@route.get('/company/users/view')
+def companyUsersViewGet():
+    return company.CompanyValidation().companyUsersViewGet()
 
-@route.get('/general/department')
-def generalDepartmentGet():
-    return general.GeneralValidation().generalDepartmentGet()
+@route.get('/company/department')
+def companyDepartmentGet():
+    return company.CompanyValidation().companyDepartmentGet()
 
-@route.get('/general/department/add')
-def generalDepartmentAddGet():
-    return general.GeneralValidation().generalDepartmentAddGet()
+@route.get('/company/department/add')
+def companyDepartmentAddGet():
+    return company.CompanyValidation().companyDepartmentAddGet()
 
-@route.get('/general/department/edit')
-def generalDepartmentEditGet():
-    return general.GeneralValidation().generalDepartmentEditGet()
+@route.get('/company/department/edit')
+def companyDepartmentEditGet():
+    return company.CompanyValidation().companyDepartmentEditGet()
 
-@route.get('/general/department/view')
-def generalDepartmentViewGet():
-    return general.GeneralValidation().generalDepartmentViewGet()
+@route.get('/company/department/view')
+def companyDepartmentViewGet():
+    return company.CompanyValidation().companyDepartmentViewGet()
 
-@route.get('/general/roles')
-def generalRolesGet():
-    return general.GeneralValidation().generalRolesGet()
+@route.get('/company/roles')
+def companyRolesGet():
+    return company.CompanyValidation().companyRolesGet()
 
-@route.get('/general/roles/add')
-def generalRolesAddGet():
-    return general.GeneralValidation().generalRolesAddGet()
+@route.get('/company/roles/add')
+def companyRolesAddGet():
+    return company.CompanyValidation().companyRolesAddGet()
 
-@route.get('/general/roles/edit')
-def generalRolesEditGet():
-    return general.GeneralValidation().generalRolesEditGet()
+@route.get('/company/roles/edit')
+def companyRolesEditGet():
+    return company.CompanyValidation().companyRolesEditGet()
 
-@route.get('/general/roles/view')
-def generalRolesViewGet():
-    return general.GeneralValidation().generalRolesViewGet()
+@route.get('/company/roles/view')
+def companyRolesViewGet():
+    return company.CompanyValidation().companyRolesViewGet()
 
-@route.get('/general/company')
-def generalCompanyGet():
-    return general.GeneralValidation().generalCompanyGet()
+@route.get('/company/company')
+def companyCompanyGet():
+    return company.CompanyValidation().companyCompanyGet()
 
-@route.get('/general/company/add')
-def generalCompanyAddGet():
-    return general.GeneralValidation().generalCompanyAddGet()
+@route.get('/company/company/add')
+def companyCompanyAddGet():
+    return company.CompanyValidation().companyCompanyAddGet()
 
-@route.get('/general/company/edit')
-def generalCompanyEditGet():
-    return general.GeneralValidation().generalCompanyEditGet()
+@route.get('/company/company/edit')
+def companyCompanyEditGet():
+    return company.CompanyValidation().companyCompanyEditGet()
 
-@route.get('/general/company/view')
-def generalCompanyViewGet():
-    return general.GeneralValidation().generalCompanyViewGet()
+@route.get('/company/company/view')
+def companyCompanyViewGet():
+    return company.CompanyValidation().companyCompanyViewGet()
 
 # ================= #
 #       Test        #
 # ================= #
 
 @route.get('/test')
+def testGet():
+    return test.TestValidation().testGet()
+
+@route.get('/test/add')
+def testAddGet():
+    return test.TestValidation().testAddGet()
+
+@route.get('/test/edit')
+def testEditGet():
+    return test.TestValidation().testEditGet()
+
+
 @route.get('/test/gonoka')
 def testGonokaGet():
     return test.TestValidation().testGonokaGet()
 
-@route.get('/test/gonoka/add')
-def testGonokaAddGet():
-    return test.TestValidation().testGonokaAddGet()
-
-@route.get('/test/gonoka/edit')
-def testGonokaEditGet():
-    return test.TestValidation().testGonokaEditGet()
-
 @route.get('/test/cotafer')
 def testCotaferGet():
     return test.TestValidation().testCotaferGet()
-
-@route.get('/test/cotafer/add')
-def testCotaferAddGet():
-    return test.TestValidation().testCotaferAddGet()
-
-@route.get('/test/cotafer/edit')
-def testCotaferEditGet():
-    return test.TestValidation().testCotaferEditGet()
 
 # ================= #
 #       Live        #
@@ -274,30 +265,8 @@ def liveEditGet():
 def liveGonokaIosGet():
     return live.LiveValidation().liveGonokaIosGet()
 
-@route.get('/live/gonoka/android')
-def liveGonokaAndroidGet():
-    return live.LiveValidation().liveGonokaAndroidGet()
-
-@route.get('/live/gonoka/web')
-def liveGonokaWebGet():
-    return live.LiveValidation().liveGonokaWebGet()
-
-@route.get('/live/gonoka/api')
-def liveGonokaApiGet():
-    return live.LiveValidation().liveGonokaApiGet()
 
 @route.get('/live/cotafer/ios')
 def liveCotaferIosGet():
     return live.LiveValidation().liveCotaferIosGet()
 
-@route.get('/live/cotafer/android')
-def liveCotaferAndroidGet():
-    return live.LiveValidation().liveCotaferAndroidGet()
-
-@route.get('/live/cotafer/web')
-def liveCotaferWebGet():
-    return live.LiveValidation().liveCotaferWebGet()
-
-@route.get('/live/cotafer/api')
-def liveCotaferApiGet():
-    return live.LiveValidation().liveCotaferApiGet()

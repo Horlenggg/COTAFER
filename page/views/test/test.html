@@ -2,9 +2,9 @@
 
 {% block bodyContent %}
 
-<div id="live" class="w-full h-full flex flex-col">
+<div id="test" class="w-full h-full flex flex-col">
 	<div class="flex flex-row justify-between items-center my-10">
-		<a href="/live/add" class="h-13 flex items-center text-white bg-gray-700 px-5">Add</a>
+		<a href="/test/add" class="h-13 flex items-center text-white bg-gray-700 px-5">Add</a>
 		<div class="flex flex-row items-center space-x-3">
 			<div class="relative w-60 h-13">
 				<div class="absolute top-3 right-2 border-l border-gray-300 pl-1.5 z-10">
@@ -27,7 +27,7 @@
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
 					</svg>
 				</div>
-				<input id="liveDate" class="block w-full appearance-none font-Roboto text-sm text-gray-700 bg-white border p-4 focus:outline-none" type="text" placeholder="Select Date">
+				<input id="testDate" class="block w-full appearance-none font-Roboto text-sm text-gray-700 bg-white border p-4 focus:outline-none" type="text" placeholder="Select Date">
 			</div>
 			<div class="h-13 flex flex-row bg-white px-3 py-2">
 				<input type="text" class="h-full font-Roboto p-4 focus:outline-none">
@@ -45,80 +45,114 @@
 				<thead>
 					<tr class="font-Roboto font-bold text-sm text-left text-gray-700 bg-white uppercase">
 						<th class="px-4 py-6.5"></th>
-						<th class="px-4 py-6.5">Product Name</th>
-						<th class="px-4 py-6.5">Category</th>
-						<th class="px-4 py-6.5">Platform</th>
 						<th class="px-4 py-6.5">Version</th>
-						<th class="px-4 py-6.5 w-2/6">Git</th>
+						<th class="px-4 py-6.5">Project Name</th>
+						<th class="px-4 py-6.5">Form Link</th>
+						<th class="px-4 py-6.5">By Link</th>
+						<th class="px-4 py-6.5 w-2/6">Report</th>
 						<th class="px-4 py-6.5">Status</th>
 					</tr>
 				</thead>
 				<tbody class="bg-white">
 					<tr 
-						v-for="(live, index) in lives"
-						:key="live.id"
+						v-for="(test, index) in tests"
+						:key="test.id"
 						class="font-Roboto text-sm text-gray-700"
 						:class="{ 'bg-gray-100' : index % 2 === 0 }"
 					>
 						<td class="relative px-4 py-6.5 text-sm">
-							<button @click="onModal(live.id)" class="focus:outline-none">
+							<button @click="onModal(test.id)" class="focus:outline-none">
 								<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 								</svg>
 							</button>
-							<div v-show="isShow === live.id" class="absolute top-15 left-5 bg-white border z-10">
-								<div v-if="live.status == 'Stopped'">
-									<button @click="onStart(live.id)" class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
+							<div v-show="isShow === test.id" class="absolute top-15 left-5 bg-white border z-10">
+								<div v-if="permission === 'manager'">
+									<button @click="onStart(test.id)" class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
 										<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
 											<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
 										</svg>
 										<span class="font-Roboto text-base text-green-500">Start</span>
 									</button>
-								</div>
-								<div v-else-if="live.status == 'Running'">
-									<button @click="onStop(live.id)" class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
+									<button @click="onStop(test.id)" class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
 										<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
 											<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
 										</svg>
 										<span class="font-Roboto text-base text-red-500">Stop</span>
 									</button>
-								</div>
-								<button @click="onSuspend(live.id)" class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-										<path fill-rule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clip-rule="evenodd" />
-									</svg>
-									<span class="font-Roboto text-base">Suspend</span>
-								</button>
-								<button class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
-									<a href="/live/edit" class="no-underline w-full flex flex-row space-x-5">
+									<button @click="onSuspend(test.id)" class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
 										<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-											<path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-											<path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+											<path fill-rule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clip-rule="evenodd" />
 										</svg>
-										<span class="font-Roboto text-base">Edit</span>
-									</a>
-								</button>
-								<button @click="onArchive(live.id)" class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-										<path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
-										<path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd" />
-									</svg>
-									<span class="font-Roboto text-base">Archive</span>
-								</button>
-								<button @click="onDelete(live.id)" class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-										<path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-									</svg>
-									<span class="font-Roboto text-base">Delete</span>
-								</button>
+										<span class="font-Roboto text-base">Suspend</span>
+									</button>
+									<button class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
+										<a href="/test/edit" class="no-underline w-full flex flex-row space-x-5">
+											<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+												<path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+												<path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+											</svg>
+											<span class="font-Roboto text-base">Edit</span>
+										</a>
+									</button>
+									<button @click="onArchive(test.id)" class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+											<path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+											<path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd" />
+										</svg>
+										<span class="font-Roboto text-base">Archive</span>
+									</button>
+									<button @click="onDelete(test.id)" class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+											<path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+										</svg>
+										<span class="font-Roboto text-base">Delete</span>
+									</button>
+								</div>
+								<div v-else-if="permission === 'supervisor'">
+									<button class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
+										<a href="/test/edit" class="no-underline w-full flex flex-row space-x-5">
+											<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+												<path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+												<path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+											</svg>
+											<span class="font-Roboto text-base">Edit</span>
+										</a>
+									</button>
+									<button @click="onArchive(test.id)" class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+											<path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+											<path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd" />
+										</svg>
+										<span class="font-Roboto text-base">Archive</span>
+									</button>
+								</div>
+								<div v-else-if="permission === 'member'">
+									<button class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
+										<a href="/test/edit" class="no-underline w-full flex flex-row space-x-5">
+											<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+												<path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+												<path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+											</svg>
+											<span class="font-Roboto text-base">Edit</span>
+										</a>
+									</button>
+									<button @click="onArchive(test.id)" class="w-full flex flex-row space-x-5 hover:bg-gray-100 focus:outline-none px-6 py-3">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+											<path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+											<path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd" />
+										</svg>
+										<span class="font-Roboto text-base">Archive</span>
+									</button>
+								</div>
 							</div>
 						</td>
-						<td class="px-4 py-6.5 text-sm" v-text="live.productName"></td>
-						<td class="px-4 py-6.5 text-sm" v-text="live.category"></td>
-						<td class="px-4 py-6.5 text-sm" v-text="live.platform"></td>
-						<td class="px-4 py-6.5 text-sm" v-text="live.version"></td>
-						<td class="px-4 py-6.5 text-sm" v-text="live.git"></td>
-						<td class="px-4 py-6.5 text-sm" v-text="live.status" :class="{ 'text-red-500' : live.status == 'Stopped', 'text-green-500' : live.status == 'Running' }"></td>
+						<td class="px-4 py-6.5 text-sm" v-text="test.version"></td>
+						<td class="px-4 py-6.5 text-sm" v-text="test.projectName"></td>
+						<td class="px-4 py-6.5 text-sm" v-text="test.formLink"></td>
+						<td class="px-4 py-6.5 text-sm" v-text="test.byLink"></td>
+						<td class="px-4 py-6.5 text-sm" v-text="test.report"></td>
+						<td class="px-4 py-6.5 text-sm" v-text="test.status" :class="{ 'text-red-500' : test.status == 'Stopped', 'text-green-500' : test.status == 'Running' }"></td>
 						</td>
 					</tr>
 				</tbody>

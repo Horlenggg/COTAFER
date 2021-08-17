@@ -1,0 +1,71 @@
+{% extends "templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+<div id="companyRolesAdd" class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
+	<div class="flex flex-row items-center">
+		<a href="/company/roles" class="no-underline">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+			</svg>
+		</a>
+		<span class="font-Roboto font-bold text-3xl text-gray-700 ml-6.5">Add Roles</span>
+	</div>
+	<div class="flex flex-col px-12 pt-10 space-y-6.5">
+		<div class="w-full">
+			<label for="roleName" class="block font-Roboto text-gray-700">Role name</label>
+			<input 
+				type="text" 
+				v-model="roleName"
+				class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+				:class="isRoVal ? 'border-red-500' : ''"
+				placeholder="Role name"
+			>
+			<span class="font-Roboto text-xs text-red-500" v-text='errMessageRo'></span>
+		</div>
+		<div class="relative w-full">
+			<label for="department" class="block font-Roboto text-gray-700">Department</label>
+			<div class="absolute top-10.5 right-2 border-l border-gray-300 pl-1.5 z-10">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
+				</svg>
+			</div>
+			<select 
+				v-model="department" 
+				class="mt-2.5 block w-full appearance-none font-Roboto text-sm bg-white border px-4 py-2.25 focus:outline-none"
+				:class="isDeVal ? 'border-red-500' : ''"
+			>
+				<option value="0">Please select department</option>
+				<option v-for="de in deOption" v-text="de.label" value="de.value"></option>
+			</select>
+			<span class="font-Roboto text-xs text-red-500" v-text='errMessageDe'></span>
+		</div>
+		<div class="relative w-full">
+			<label for="availableUsers" class="block font-Roboto text-gray-700">Available Users</label>
+			<Multiselect
+				v-model="availableUsers"
+				:class="isAvVal ? 'border-red-500' : ''"
+				placeholder="Available Users"
+				:options="avOption"
+				mode="tags"
+				:searchable="true"
+				:createTag="true"
+				:caret="true"
+			>
+			</Multiselect>
+			<span class="font-Roboto text-xs text-red-500" v-text='errMessageAv'></span>
+		</div>
+		<div class="w-full space-y-3">
+			<collapse-vue :data="dashboardData" :title="dashboard"></collapse-vue>
+			<collapse-vue :data="documentData" :title="document"></collapse-vue>
+			<collapse-vue :data="settingData" :title="setting"></collapse-vue>
+			<collapse-vue :data="usersData" :title="users"></collapse-vue>
+			<collapse-vue :data="projectTestingData" :title="projectTesting"></collapse-vue>
+		</div>
+	</div>
+	<div class="w-full flex justify-end px-12 mt-15">
+		<button @click="onSubmit" class="font-Roboto font-medium text-lg uppercase text-white bg-gray-700 py-3.5 px-24">Add</button>
+	</div>
+</div>
+
+{% endblock %}

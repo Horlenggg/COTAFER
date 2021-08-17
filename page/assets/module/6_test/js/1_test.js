@@ -1,42 +1,44 @@
-if(document.querySelector('#live')){
-    const live = {
+if(document.querySelector('#test')){
+    const test = {
         data() {
             return {
-                lives: [
+                permission              : 'member'
+
+                ,tests: [
                     {
                         id              : 1
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , platform      : 'IOS'
                         , version       : '1.0.5'
-                        , git           : 'easd23459560sd34g'
+                        , projectName   : 'Gonoka IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Running'
                     }
                     ,{
                         id              : 2
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , platform      : 'IOS'
                         , version       : '1.0.5'
-                        , git           : 'easd23459560sd34g'
+                        , projectName   : 'Gonoka IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Stopped'
                     }
                     ,{
                         id              : 3
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , platform      : 'IOS'
                         , version       : '1.0.5'
-                        , git           : 'easd23459560sd34g'
+                        , projectName   : 'Gonoka IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Running'
                     }
                     ,{
                         id              : 4
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , platform      : 'IOS'
                         , version       : '1.0.5'
-                        , git           : 'easd23459560sd34g'
+                        , projectName   : 'Gonoka IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Stopped'
                     }
                 ]
@@ -56,7 +58,7 @@ if(document.querySelector('#live')){
             }
         },
         mounted() {
-            flatpickr("#liveDate", {});
+            flatpickr("#testDate", {});
         },
         methods: {
             onModal(id = 0) {
@@ -83,6 +85,6 @@ if(document.querySelector('#live')){
             }
         },
     }
-    const liveApp =  Vue.createApp(live);
-    liveApp.mount('#live');
+    const testApp =  Vue.createApp(test);
+    testApp.mount('#test');
 }

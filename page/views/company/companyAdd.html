@@ -1,0 +1,92 @@
+{% extends "templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+<div id="companyCompanyAdd" class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
+	<div class="flex flex-row items-center">
+		<a href="/company/company" class="no-underline">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+			</svg>
+		</a>
+		<span class="font-Roboto font-bold text-3xl text-gray-700 ml-6.5">Add Company</span>
+	</div>
+	<div class="flex flex-col px-12 pt-10 space-y-6.5">
+		<div class="flex flex-row space-x-12.5">
+			<div class="w-1/2">
+				<label for="companyName" class="block font-Roboto text-gray-700">Company name</label>
+				<input 
+					type="text" 
+					v-model="companyName"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none"
+					:class="isCnVal ? 'border-red-500' : ''"
+					placeholder="Company name"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageCn'></span>
+			</div>
+			<div class="w-1/2">
+				<label for="title" class="block font-Roboto text-gray-700">Title</label>
+				<input 
+					type="text" 
+					v-model="title" 
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none" 
+					:class="isTtVal ? 'border-red-500' : ''"
+					placeholder="Title"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageTt'></span>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="w-1/2">
+				<label for="website" class="block font-Roboto text-gray-700">Website</label>
+				<input 
+					type="text" 
+					v-model="website" 
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none" 
+					:class="isWsVal ? 'border-red-500' : ''"
+					placeholder="Website"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageWs'></span>
+			</div>
+			<div class="w-1/2">
+				<label for="email" class="block font-Roboto text-gray-700">Email</label>
+				<input 
+					type="text" 
+					v-model="email" 
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none" 
+					:class="isEmVal ? 'border-red-500' : ''"
+					placeholder="Email"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessageEm'></span>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="w-1/2">
+				<label for="phonenumber" class="block font-Roboto text-gray-700">Phone Number</label>
+				<input 
+					type="text" 
+					v-model="phoneNumber" 
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 focus:outline-none" 
+					:class="isPhVal ? 'border-red-500' : ''"
+					placeholder="Phone Number"
+				>
+				<span class="font-Roboto text-xs text-red-500" v-text='errMessagePh'></span>
+			</div>
+			<div class="w-1/2">
+				<label for="icon" class="block font-Roboto text-gray-700">Icon</label>
+				<input 
+					@change="onHandleFile"
+					type="file"
+					class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-2.25 focus:outline-none" 
+					:class="isIcVal ? 'border-red-500' : ''"
+				>
+				<span class="text-xs text-disable">The recommended image size: 20x20 pixels. Only jpeg, png, svg</span>
+			</div>
+		</div>
+	</div>
+	<div class="w-full flex justify-end px-12 mt-15">
+		<button @click="onSubmit" class="font-Roboto font-medium text-lg text-white uppercase bg-gray-700 py-3.5 px-24">Add</button>
+	</div>
+</div>
+
+{% endblock %}

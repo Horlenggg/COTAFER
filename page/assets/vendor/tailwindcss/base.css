@@ -194,3 +194,7 @@ body.alert-full-active {
     border-color: #000;
     background-color: currentColor;
   }
+
+.flatpickr-wrapper {
+    @apply w-full !important;
+}
