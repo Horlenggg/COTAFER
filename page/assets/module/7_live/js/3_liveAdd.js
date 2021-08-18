@@ -48,6 +48,7 @@ if(document.querySelector('#liveAdd')){
                     , { value: 3, label: 'Cotafer News' }
                     , { value: 4, label: 'Gonoka Newsfeed' }
                 ]
+                , note              : ''
 
                 , isShow            : 0
 
@@ -63,6 +64,7 @@ if(document.querySelector('#liveAdd')){
                 , isSttAVal         : false
                 , isStpDVal         : false
                 , isStpAVal         : false
+                , isNoVal           : false
 
                 , errMessagePr      : ''
                 , errMessageVe      : ''
@@ -76,6 +78,7 @@ if(document.querySelector('#liveAdd')){
                 , errMessageSttA    : ''
                 , errMessageStpD    : ''
                 , errMessageStpA    : ''
+                , errMessageNo      : ''
             }
         },
         mounted() {
@@ -210,6 +213,17 @@ if(document.querySelector('#liveAdd')){
                 } else {
                     this.errMessageStpA = ''
                     this.isStpAVal = false
+                }
+
+                if(this.note.length == 0){
+                    this.errMessageNo = 'Require.'
+                    this.isNoVal = true
+                } else if(this.note.length > 100){
+                    this.errMessageNo = 'Max character 100 length'
+                    this.isNoVal = true
+                } else {
+                    this.errMessageNo = ''
+                    this.isNoVal = false
                 }
     
                 if(this.productName || this.version || this.git || this.relativeProject || this.category !== 0 || this.platform !== 0 || this.expiration || this.server !== 0 || this.startDate || this.stopDate || this.startApproveBy.length !== 0 || this.stopApproveBy.length !== 0){

@@ -32,7 +32,7 @@ class DashboardController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['dashboard', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '4_account'
                     , 'base_module'     : 'home'
                 }
             )

@@ -4,7 +4,7 @@
 
         {% block wrapper %}
             <div class="h-screen flex flex-col bg-gray-100">
-                {{ header() }}
+                {{ header(params) }}
                 <div class="flex flex-1 overflow-hidden">
                     {{ sidebar(params) }}
                     <main id="main" class="bg-gray-100 flex-1 overflow-auto px-5">

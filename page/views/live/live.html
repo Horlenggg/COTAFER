@@ -40,17 +40,18 @@
 		</div>
 	</div>
 	<div class="w-full h-full flex flex-col justify-between mx-auto overflow-hidden">
-		<div class="w-full h-full overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-400 scrollbar-track-gray-100">
-			<table class="flex-1 whitespace-no-wrap select-none">
-				<thead>
-					<tr class="font-bold text-sm text-left text-gray-700 bg-white uppercase">
+		<div class="overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+			<table class="relative w-full h-full whitespace-no-wrap select-none">
+				<thead class="sticky top-0 z-10">
+					<tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
 						<th class="px-4 py-6.5"></th>
+						<th class="px-4 py-6.5">Status</th>
 						<th class="px-4 py-6.5">Product Name</th>
 						<th class="px-4 py-6.5">Category</th>
 						<th class="px-4 py-6.5">Platform</th>
 						<th class="px-4 py-6.5">Version</th>
-						<th class="px-4 py-6.5 w-2/6">Git</th>
-						<th class="px-4 py-6.5">Status</th>
+						<th class="px-4 py-6.5">Git</th>
+						<th class="px-4 py-6.5 w-2/6">Note</th>
 					</tr>
 				</thead>
 				<tbody class="bg-white">
@@ -113,13 +114,14 @@
 								</button>
 							</div>
 						</td>
+						<td class="px-4 py-6.5 text-sm" v-text="live.status" :class="{ 'text-red-500' : live.status == 'Stopped', 'text-green-500' : live.status == 'Running' }"></td>
+						</td>
 						<td class="px-4 py-6.5 text-sm" v-text="live.productName"></td>
 						<td class="px-4 py-6.5 text-sm" v-text="live.category"></td>
 						<td class="px-4 py-6.5 text-sm" v-text="live.platform"></td>
 						<td class="px-4 py-6.5 text-sm" v-text="live.version"></td>
 						<td class="px-4 py-6.5 text-sm" v-text="live.git"></td>
-						<td class="px-4 py-6.5 text-sm" v-text="live.status" :class="{ 'text-red-500' : live.status == 'Stopped', 'text-green-500' : live.status == 'Running' }"></td>
-						</td>
+						<td class="px-4 py-6.5 text-sm" v-text="live.note"></td>
 					</tr>
 				</tbody>
 			</table>

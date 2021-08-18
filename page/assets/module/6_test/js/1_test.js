@@ -8,7 +8,9 @@ if(document.querySelector('#test')){
                     {
                         id              : 1
                         , version       : '1.0.5'
-                        , projectName   : 'Gonoka IOS'
+                        , productName   : 'Gonoka IOS'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
@@ -17,7 +19,9 @@ if(document.querySelector('#test')){
                     ,{
                         id              : 2
                         , version       : '1.0.5'
-                        , projectName   : 'Gonoka Android'
+                        , productName   : 'Gonoka Android'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
@@ -26,7 +30,9 @@ if(document.querySelector('#test')){
                     ,{
                         id              : 3
                         , version       : '1.0.5'
-                        , projectName   : 'Gonoka Web'
+                        , productName   : 'Gonoka Web'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
@@ -35,7 +41,9 @@ if(document.querySelector('#test')){
                     ,{
                         id              : 4
                         , version       : '1.0.5'
-                        , projectName   : 'Gonoka Api'
+                        , productName   : 'Gonoka Api'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
@@ -44,7 +52,9 @@ if(document.querySelector('#test')){
                     ,{
                         id              : 5
                         , version       : '1.0.5'
-                        , projectName   : 'Cotafer IOS'
+                        , productName   : 'Cotafer IOS'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
@@ -53,7 +63,9 @@ if(document.querySelector('#test')){
                     ,{
                         id              : 6
                         , version       : '1.0.5'
-                        , projectName   : 'Cotafer Android'
+                        , productName   : 'Cotafer Android'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
@@ -62,7 +74,9 @@ if(document.querySelector('#test')){
                     ,{
                         id              : 7
                         , version       : '1.0.5'
-                        , projectName   : 'Cotafer Web'
+                        , productName   : 'Cotafer Web'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
@@ -71,7 +85,53 @@ if(document.querySelector('#test')){
                     ,{
                         id              : 8
                         , version       : '1.0.5'
-                        , projectName   : 'Cotafer Api'
+                        , productName   : 'Cotafer Api'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 5
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer IOS'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Running'
+                    }
+                    ,{
+                        id              : 6
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer Android'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 7
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer Web'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Running'
+                    }
+                    ,{
+                        id              : 8
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer Api'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'

@@ -32,7 +32,7 @@ class GoogleController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['google', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '4_account'
                     , 'base_module'     : 'home'
                 }
             )

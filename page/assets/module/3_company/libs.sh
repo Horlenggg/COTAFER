@@ -4,6 +4,7 @@ css=(
     "$Fullcalendar_Min_Css"
     "$Flatpicker_Min_Css"
     "$VUE_MultiselectCss"
+    "$Font_AwesomeCss"
 )
 
 # List of javascript libraries
@@ -13,4 +14,5 @@ js=(
     "$Fullcalendar_Min_Js"
     "$Flatpicker_Min_Js"
     "$VUE_MultiselectJS"
+    "$Font_AwesomeJs"
 )

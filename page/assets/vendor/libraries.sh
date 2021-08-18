@@ -32,3 +32,7 @@ Fullcalendar_Min_Js=./page/assets/vendor/fullcalendar/js/fullcalendar.min.js
 # vue multi select
 VUE_MultiselectJS=./page/assets/vendor/multiselect/js/multiselect.global.js
 VUE_MultiselectCss=./page/assets/vendor/multiselect/css/multiselect.css
+
+#font awesome
+Font_AwesomeJs=./page/assets/vendor/fontawesome/js/all.min.js
+Font_AwesomeCss=./page/assets/vendor/fontawesome/js/all.min.css

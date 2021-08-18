@@ -214,6 +214,21 @@
 				<span class="text-xs text-red-500" v-text='errMessageStpA'></span>
 			</div>
 		</div>
+		<div class="w-full">
+			<label for="note" class="block text-gray-700">Note</label>
+			<div class="relative w-full">
+				<textarea 
+					v-model="note" 
+					class="mt-2.5 w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 resize-none outline-none p-3" 
+					:class="isNoVal ? 'border-red-500' : ''"
+					cols="30" 
+					rows="5" 
+					maxlength="100"
+					placeholder="Write your note here"></textarea>
+				<span v-text="note.length + '/100'" class="absolute bottom-3 right-3 text-xs-sm text-gray-300"></span>
+			</div>
+			<span class="text-xs text-red-500" v-text='errMessageNo'></span>
+		</div>
 	</div>
 	<div class="w-full flex justify-end px-12 mt-15">
 		<button @click="onSubmit" class="font-medium text-lg uppercase text-white bg-gray-700 py-3.5 px-24">Add</button>

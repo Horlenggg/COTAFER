@@ -3,6 +3,15 @@
 {% block bodyContent %}
 
 <div id="companyCompany" class="w-full h-full flex flex-col">
+	<div class="w-full h-10 mt-10">
+		<ul class="list-reset flex text-gray-700">
+			<li><a href="/company" class="text-blue font-bold">Company</a></li>
+			<li><span class="mx-2">/</span></li>
+			<li><a href="/company/company" class="text-blue font-bold">Company</a></li>
+			<li><span class="mx-2">/</span></li>
+			<li>Data</li>
+		</ul>
+	</div>
 	<div class="flex flex-row justify-between items-center my-10">
 		<a href="/company/company/add" class="h-13 flex items-center text-white bg-gray-700 no-underline px-5">Add</a>
 		<div class="flex flex-row items-center space-x-3">
@@ -17,16 +26,17 @@
 		</div>
 	</div>
 	<div class="w-full h-full flex flex-col justify-between mx-auto overflow-hidden">
-		<div class="w-full overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-400 scrollbar-track-gray-100">
-			<table class="w-full whitespace-no-wrap select-none">
-				<thead>
-					<tr class="font-bold text-sm text-left text-gray-700 bg-white uppercase">
+		<div class="overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+			<table class="relative w-full h-full whitespace-no-wrap select-none">
+				<thead class="sticky top-0">
+					<tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
+						<th class="px-4 py-6.5 w-1/8">ID</th>
 						<th class="px-4 py-6.5">Company Name</th>
 						<th class="px-4 py-6.5">Website</th>
 						<th class="px-4 py-6.5">Email</th>
 						<th class="px-4 py-6.5">Phone Number</th>
 						<th class="px-4 py-6.5">Create Date</th>
-						<th class="px-4 py-6.5">Actions</th>
+						<th class="px-4 py-6.5 w-1/8">Actions</th>
 					</tr>
 				</thead>
 				<tbody class="bg-white">
@@ -36,6 +46,7 @@
 						class="text-sm text-gray-700"
 						:class="{ 'bg-gray-100' : index % 2 === 0 }"
 					>
+						<td class="px-4 py-6.5 text-sm" v-text="index + 1"></td>
 						<td class="px-4 py-6.5 text-sm" v-text="com.companyName"></td>
 						<td class="px-4 py-6.5 text-sm" v-text="com.website"></td>
 						<td class="px-4 py-6.5 text-sm" v-text="com.email"></td>

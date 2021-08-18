@@ -11,6 +11,7 @@ if(document.querySelector('#live')){
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Running'
+                        , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                     }
                     ,{
                         id              : 2
@@ -20,6 +21,7 @@ if(document.querySelector('#live')){
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Stopped'
+                        , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                     }
                     ,{
                         id              : 3
@@ -29,6 +31,7 @@ if(document.querySelector('#live')){
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Running'
+                        , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                     }
                     ,{
                         id              : 4
@@ -38,6 +41,7 @@ if(document.querySelector('#live')){
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Stopped'
+                        , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                     }
                     ,{
                         id              : 5
@@ -47,6 +51,7 @@ if(document.querySelector('#live')){
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Running'
+                        , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                     }
                     ,{
                         id              : 6
@@ -56,6 +61,7 @@ if(document.querySelector('#live')){
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Stopped'
+                        , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                     }
                     ,{
                         id              : 7
@@ -65,6 +71,7 @@ if(document.querySelector('#live')){
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Running'
+                        , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                     }
                     ,{
                         id              : 8
@@ -74,6 +81,7 @@ if(document.querySelector('#live')){
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Stopped'
+                        , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                     }
                     ,{
                         id              : 9
@@ -83,6 +91,7 @@ if(document.querySelector('#live')){
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Running'
+                        , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                     }
                     ,{
                         id              : 10
@@ -92,6 +101,7 @@ if(document.querySelector('#live')){
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Stopped'
+                        , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                     }
                 ]
                 , status                : 0
