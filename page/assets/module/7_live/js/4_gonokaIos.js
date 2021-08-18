@@ -7,7 +7,7 @@ if(document.querySelector('#gonokaIos')){
                         id              : 1
                         , productName   : 'Gonoka'
                         , category      : 'Gonoka'
-                        , relativeProject   : 'Api 1.12.0'
+                        , platform      : 'IOS'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Running'
@@ -16,25 +16,7 @@ if(document.querySelector('#gonokaIos')){
                         id              : 2
                         , productName   : 'Gonoka'
                         , category      : 'Gonoka'
-                        , relativeProject   : 'Api 1.12.0'
-                        , version       : '1.0.5'
-                        , git           : 'easd23459560sd34g'
-                        , status        : 'Stopped'
-                    }
-                    ,{
-                        id              : 3
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , relativeProject   : 'Api 1.12.0'
-                        , version       : '1.0.5'
-                        , git           : 'easd23459560sd34g'
-                        , status        : 'Running'
-                    }
-                    ,{
-                        id              : 4
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , relativeProject   : 'Api 1.12.0'
+                        , platform      : 'IOS'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Stopped'
@@ -45,7 +27,7 @@ if(document.querySelector('#gonokaIos')){
                     { value: 1, label: 'Running' }
                     , { value: 2, label: 'Stopped' }
                 ]
-                , isShow                : false
+                , isShow                : 0
                 , isModalDelete         : false
                 , isModalStop           : false
             }
@@ -69,8 +51,17 @@ if(document.querySelector('#gonokaIos')){
             onDelete(id = 0) {
                 this.isModalDelete = true
             },
-            onStop(id = 0) {
+            onStart(id = 0){
+                console.log(id);
+            },
+            onStop(id = 0){
                 this.isModalStop = true
+            },
+            onSuspend(id = 0){
+                console.log(id);
+            },
+            onArchive(id = 0) {
+                console.log(id);
             }
         },
     }

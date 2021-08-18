@@ -9,37 +9,37 @@
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 			</svg>
 		</a>
-		<span class="font-Roboto font-bold text-3xl text-gray-700 ml-6.5">Add Project Testing</span>
+		<span class="font-bold text-3xl text-gray-700 ml-6.5">Add Project Testing</span>
 	</div>
 	<div class="flex flex-col px-12 pt-10 space-y-6.5">
 		<div v-if="permission === 'member'" class="space-y-6.5">
 			<div class="flex flex-row space-x-12.5">
 				<div class="w-1/2">
-					<label for="byLink" class="block font-Roboto text-gray-700">By Link</label>
+					<label for="byLink" class="block text-gray-700">By Link</label>
 					<input 
 						type="text" 
 						v-model="byLink"
-						class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+						class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 						:class="isBlVal ? 'border-red-500' : ''"
 						placeholder="By Link"
 					>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageBl'></span>
+					<span class="text-xs text-red-500" v-text='errMessageBl'></span>
 				</div>
 				<div class="w-1/2">
-					<label for="formLink" class="block font-Roboto text-gray-700">Form Link</label>
+					<label for="formLink" class="block text-gray-700">Form Link</label>
 					<input 
 						type="text" 
 						v-model="formLink"
-						class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+						class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 						:class="isFlVal ? 'border-red-500' : ''"
 						placeholder="Form Link"
 					>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageFl'></span>
+					<span class="text-xs text-red-500" v-text='errMessageFl'></span>
 				</div>
 			</div>
 			<div class="flex flex-row space-x-12.5">
 				<div class="w-1/2">
-					<label for="" class="block font-Roboto text-gray-700">Release Date</label>
+					<label for="" class="block text-gray-700">Release Date</label>
 					<div class="w-full relative">
 						<div class="absolute top-5.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -50,15 +50,15 @@
 							id="releaseDate"
 							type="text" 
 							v-model="releaseDate"
-							class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+							class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isReVal ? 'border-red-500' : ''"
 							placeholder="Release Date"
 						>
 					</div>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageRe'></span>
+					<span class="text-xs text-red-500" v-text='errMessageRe'></span>
 				</div>
 				<div class="w-1/2">
-					<label for="platform" class="block font-Roboto text-gray-700">Platform</label>
+					<label for="platform" class="block text-gray-700">Platform</label>
 					<div class="relative">
 						<div class="absolute top-2.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
@@ -67,19 +67,19 @@
 						</div>
 						<select 
 							v-model="platform" 
-							class="mt-2.5 block w-full appearance-none font-Roboto text-sm bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+							class="mt-2.5 block w-full appearance-none text-sm bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isPlVal ? 'border-red-500' : '', platform == '0' ? 'text-gray-400' : 'text-gray-700'"
 						>
 							<option class="text-gray-400" value="0">Please select project</option>
 							<option class="text-gray-700" v-for="pl in plOption" v-text="pl.label" value="pl.value"></option>
 						</select>
 					</div>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessagePl'></span>
+					<span class="text-xs text-red-500" v-text='errMessagePl'></span>
 				</div>
 			</div>
 			<div class="flex flex-row space-x-12.5">
 				<div class="w-1/2">
-					<label for="" class="block font-Roboto text-gray-700">Start Test Date</label>
+					<label for="" class="block text-gray-700">Start Test Date</label>
 					<div class="relative">
 						<div class="absolute top-5.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -90,15 +90,15 @@
 							id="startTestDate"
 							type="text" 
 							v-model="startTestDate"
-							class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+							class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isStVal ? 'border-red-500' : ''"
 							placeholder="Release Date"
 						>
 					</div>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageSt'></span>
+					<span class="text-xs text-red-500" v-text='errMessageSt'></span>
 				</div>
 				<div class="w-1/2">
-					<label for="" class="block font-Roboto text-gray-700">Finish Test Date</label>
+					<label for="" class="block text-gray-700">Finish Test Date</label>
 					<div class="relative">
 						<div class="absolute top-5.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -109,17 +109,17 @@
 							id="finishTestDate"
 							type="text" 
 							v-model="finishTestDate"
-							class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+							class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isFiVal ? 'border-red-500' : ''"
 							placeholder="Finish Date"
 						>
 					</div>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageFi'></span>
+					<span class="text-xs text-red-500" v-text='errMessageFi'></span>
 				</div>
 			</div>
 			<div class="flex flex-row space-x-12.5">
 				<div class="w-1/2">
-					<label for="" class="block font-Roboto text-gray-700">Staging Date</label>
+					<label for="" class="block text-gray-700">Staging Date</label>
 					<div class="relative">
 						<div class="absolute top-5.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -130,15 +130,15 @@
 							id="stagingDate"
 							type="text" 
 							v-model="stagingDate"
-							class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+							class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isStDVal ? 'border-red-500' : ''"
 							placeholder="Staging Date"
 						>
 					</div>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageStD'></span>
+					<span class="text-xs text-red-500" v-text='errMessageStD'></span>
 				</div>
 				<div class="w-1/2">
-					<label for="" class="block font-Roboto text-gray-700">Product Date</label>
+					<label for="" class="block text-gray-700">Product Date</label>
 					<div class="relative">
 						<div class="absolute top-5.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -149,45 +149,45 @@
 							id="productDate"
 							type="text" 
 							v-model="productDate"
-							class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+							class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isPrDVal ? 'border-red-500' : ''"
 							placeholder="Product Date"
 						>
 					</div>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessagePrD'></span>
+					<span class="text-xs text-red-500" v-text='errMessagePrD'></span>
 				</div>
 			</div>
 			<div class="w-full">
-				<label for="report" class="block font-Roboto text-gray-700">Product Date</label>
+				<label for="report" class="block text-gray-700">Product Date</label>
 				<div class="relative w-full">
 					<textarea 
 						v-model="report" 
-						class="mt-2.5 w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 resize-none outline-none p-3" 
+						class="mt-2.5 w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 resize-none outline-none p-3" 
 						:class="isRePVal ? 'border-red-500' : ''"
 						cols="30" 
 						rows="5" 
 						maxlength="100"
 						placeholder="Write your report here"></textarea>
-					<span v-text="report.length + '/100'" class="absolute bottom-3 right-3 font-Roboto text-xs-sm text-gray-300"></span>
+					<span v-text="report.length + '/100'" class="absolute bottom-3 right-3 text-xs-sm text-gray-300"></span>
 				</div>
-				<span class="font-Roboto text-xs text-red-500" v-text='errMessageReP'></span>
+				<span class="text-xs text-red-500" v-text='errMessageReP'></span>
 			</div>
 		</div>
-		<div v-else-if="permission === 'supervisor'" class="space-y-6.5">
+		<div v-else-if="permission === 'supervisor' || permission === 'manager'" class="space-y-6.5">
 			<div class="flex flex-row space-x-12.5">
 				<div class="w-1/2">
-					<label for="version" class="block font-Roboto text-gray-700">Version</label>
+					<label for="version" class="block text-gray-700">Version</label>
 					<input 
 						type="text" 
 						v-model="version"
-						class="mt-2.5 block w-full font-Roboto text-sm border px-4 py-3 border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none"
+						class="mt-2.5 block w-full text-sm border px-4 py-3 border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none"
 						:class="isVeVal ? 'border-red-500' : ''"
 						placeholder="Version"
 					>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageVe'></span>
+					<span class="text-xs text-red-500" v-text='errMessageVe'></span>
 				</div>
 				<div class="w-1/2">
-					<label for="projectName" class="block font-Roboto text-gray-700">Project Name</label>
+					<label for="projectName" class="block text-gray-700">Project Name</label>
 					<div class="relative">
 						<div class="absolute top-2.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
@@ -196,19 +196,19 @@
 						</div>
 						<select 
 							v-model="projectName" 
-							class="mt-2.5 block w-full appearance-none font-Roboto text-sm bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+							class="mt-2.5 block w-full appearance-none text-sm bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class=" isPrVal ? 'border-red-500' : '', projectName == '0' ? 'text-gray-400' : 'text-gray-700' "
 						>
 							<option class="text-gray-400" value="0">Please select project</option>
 							<option class="text-gray-700" v-for="pr in prOption" v-text="pr.label" value="pr.value"></option>
 						</select>
 					</div>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessagePr'></span>
+					<span class="text-xs text-red-500" v-text='errMessagePr'></span>
 				</div>
 			</div>
 			<div class="flex flex-row space-x-12.5">
 				<div class="w-1/2">
-					<label for="improveTest" class="block font-Roboto text-gray-700">Improve Test</label>
+					<label for="improveTest" class="block text-gray-700">Improve Test</label>
 					<Multiselect
 						v-model="improveTest"
 						class="border-gray-200 hover:border-gray-700 focus:border-gray-700"
@@ -221,10 +221,10 @@
 						:caret="true"
 					>
 					</Multiselect>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageImT'></span>
+					<span class="text-xs text-red-500" v-text='errMessageImT'></span>
 				</div>
 				<div class="w-1/2">
-					<label for="improvePublic" class="block font-Roboto text-gray-700">Improve Public</label>
+					<label for="improvePublic" class="block text-gray-700">Improve Public</label>
 					<Multiselect
 						v-model="improvePublic"
 						class="border-gray-200 hover:border-gray-700 focus:border-gray-700"
@@ -237,36 +237,36 @@
 						:caret="true"
 					>
 					</Multiselect>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageImP'></span>
+					<span class="text-xs text-red-500" v-text='errMessageImP'></span>
 				</div>
 			</div>
 			<div class="flex flex-row space-x-12.5">
 				<div class="w-1/2">
-					<label for="byLink" class="block font-Roboto text-gray-700">By Link</label>
+					<label for="byLink" class="block text-gray-700">By Link</label>
 					<input 
 						type="text" 
 						v-model="byLink"
-						class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+						class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 						:class="isBlVal ? 'border-red-500' : ''"
 						placeholder="By Link"
 					>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageBl'></span>
+					<span class="text-xs text-red-500" v-text='errMessageBl'></span>
 				</div>
 				<div class="w-1/2">
-					<label for="formLink" class="block font-Roboto text-gray-700">Form Link</label>
+					<label for="formLink" class="block text-gray-700">Form Link</label>
 					<input 
 						type="text" 
 						v-model="formLink"
-						class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+						class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 						:class="isFlVal ? 'border-red-500' : ''"
 						placeholder="Form Link"
 					>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageFl'></span>
+					<span class="text-xs text-red-500" v-text='errMessageFl'></span>
 				</div>
 			</div>
 			<div class="flex flex-row space-x-12.5">
 				<div class="w-1/2">
-					<label for="" class="block font-Roboto text-gray-700">Release Date</label>
+					<label for="" class="block text-gray-700">Release Date</label>
 					<div class="w-full relative">
 						<div class="absolute top-5.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -277,15 +277,15 @@
 							id="releaseDate"
 							type="text" 
 							v-model="releaseDate"
-							class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+							class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isReVal ? 'border-red-500' : ''"
 							placeholder="Release Date"
 						>
 					</div>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageRe'></span>
+					<span class="text-xs text-red-500" v-text='errMessageRe'></span>
 				</div>
 				<div class="w-1/2">
-					<label for="platform" class="block font-Roboto text-gray-700">Platform</label>
+					<label for="platform" class="block text-gray-700">Platform</label>
 					<div class="relative">
 						<div class="absolute top-2.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
@@ -294,19 +294,19 @@
 						</div>
 						<select 
 							v-model="platform" 
-							class="mt-2.5 block w-full appearance-none font-Roboto text-sm bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+							class="mt-2.5 block w-full appearance-none text-sm bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isPlVal ? 'border-red-500' : '', platform == '0' ? 'text-gray-400' : 'text-gray-700'"
 						>
 							<option class="text-gray-400" value="0">Please select project</option>
 							<option class="text-gray-700" v-for="pl in plOption" v-text="pl.label" value="pl.value"></option>
 						</select>
 					</div>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessagePl'></span>
+					<span class="text-xs text-red-500" v-text='errMessagePl'></span>
 				</div>
 			</div>
 			<div class="flex flex-row space-x-12.5">
 				<div class="w-1/2">
-					<label for="" class="block font-Roboto text-gray-700">Start Test Date</label>
+					<label for="" class="block text-gray-700">Start Test Date</label>
 					<div class="relative">
 						<div class="absolute top-5.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -317,15 +317,15 @@
 							id="startTestDate"
 							type="text" 
 							v-model="startTestDate"
-							class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+							class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isStVal ? 'border-red-500' : ''"
 							placeholder="Release Date"
 						>
 					</div>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageSt'></span>
+					<span class="text-xs text-red-500" v-text='errMessageSt'></span>
 				</div>
 				<div class="w-1/2">
-					<label for="" class="block font-Roboto text-gray-700">Finish Test Date</label>
+					<label for="" class="block text-gray-700">Finish Test Date</label>
 					<div class="relative">
 						<div class="absolute top-5.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -336,17 +336,17 @@
 							id="finishTestDate"
 							type="text" 
 							v-model="finishTestDate"
-							class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+							class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isFiVal ? 'border-red-500' : ''"
 							placeholder="Finish Date"
 						>
 					</div>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageFi'></span>
+					<span class="text-xs text-red-500" v-text='errMessageFi'></span>
 				</div>
 			</div>
 			<div class="flex flex-row space-x-12.5">
 				<div class="w-1/2">
-					<label for="" class="block font-Roboto text-gray-700">Staging Date</label>
+					<label for="" class="block text-gray-700">Staging Date</label>
 					<div class="relative">
 						<div class="absolute top-5.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -357,15 +357,15 @@
 							id="stagingDate"
 							type="text" 
 							v-model="stagingDate"
-							class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+							class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isStDVal ? 'border-red-500' : ''"
 							placeholder="Staging Date"
 						>
 					</div>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessageStD'></span>
+					<span class="text-xs text-red-500" v-text='errMessageStD'></span>
 				</div>
 				<div class="w-1/2">
-					<label for="" class="block font-Roboto text-gray-700">Product Date</label>
+					<label for="" class="block text-gray-700">Product Date</label>
 					<div class="relative">
 						<div class="absolute top-5.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -376,33 +376,33 @@
 							id="productDate"
 							type="text" 
 							v-model="productDate"
-							class="mt-2.5 block w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+							class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isPrDVal ? 'border-red-500' : ''"
 							placeholder="Product Date"
 						>
 					</div>
-					<span class="font-Roboto text-xs text-red-500" v-text='errMessagePrD'></span>
+					<span class="text-xs text-red-500" v-text='errMessagePrD'></span>
 				</div>
 			</div>
 			<div class="w-full">
-				<label for="report" class="block font-Roboto text-gray-700">Product Date</label>
+				<label for="report" class="block text-gray-700">Product Date</label>
 				<div class="relative w-full">
 					<textarea 
 						v-model="report" 
-						class="mt-2.5 w-full font-Roboto text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 resize-none outline-none p-3" 
+						class="mt-2.5 w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 resize-none outline-none p-3" 
 						:class="isRePVal ? 'border-red-500' : ''"
 						cols="30" 
 						rows="5" 
 						maxlength="100"
 						placeholder="Write your report here"></textarea>
-					<span v-text="report.length + '/100'" class="absolute bottom-3 right-3 font-Roboto text-xs-sm text-gray-300"></span>
+					<span v-text="report.length + '/100'" class="absolute bottom-3 right-3 text-xs-sm text-gray-300"></span>
 				</div>
-				<span class="font-Roboto text-xs text-red-500" v-text='errMessageReP'></span>
+				<span class="text-xs text-red-500" v-text='errMessageReP'></span>
 			</div>
 		</div>
 	</div>
 	<div class="w-full flex justify-end px-12 mt-15">
-		<button @click="onSubmit" class="font-Roboto font-medium text-lg uppercase text-white bg-gray-700 py-3.5 px-24">Add</button>
+		<button @click="onSubmit" class="font-medium text-lg uppercase text-white bg-gray-700 py-3.5 px-24">Add</button>
 	</div>
 </div>
 

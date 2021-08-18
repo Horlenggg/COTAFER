@@ -2,7 +2,7 @@ if(document.querySelector('#test')){
     const test = {
         data() {
             return {
-                permission              : 'member'
+                permission              : 'manager'
 
                 ,tests: [
                     {
@@ -17,7 +17,7 @@ if(document.querySelector('#test')){
                     ,{
                         id              : 2
                         , version       : '1.0.5'
-                        , projectName   : 'Gonoka IOS'
+                        , projectName   : 'Gonoka Android'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
@@ -26,7 +26,7 @@ if(document.querySelector('#test')){
                     ,{
                         id              : 3
                         , version       : '1.0.5'
-                        , projectName   : 'Gonoka IOS'
+                        , projectName   : 'Gonoka Web'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
@@ -35,7 +35,43 @@ if(document.querySelector('#test')){
                     ,{
                         id              : 4
                         , version       : '1.0.5'
-                        , projectName   : 'Gonoka IOS'
+                        , projectName   : 'Gonoka Api'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 5
+                        , version       : '1.0.5'
+                        , projectName   : 'Cotafer IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Running'
+                    }
+                    ,{
+                        id              : 6
+                        , version       : '1.0.5'
+                        , projectName   : 'Cotafer Android'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 7
+                        , version       : '1.0.5'
+                        , projectName   : 'Cotafer Web'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Running'
+                    }
+                    ,{
+                        id              : 8
+                        , version       : '1.0.5'
+                        , projectName   : 'Cotafer Api'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'

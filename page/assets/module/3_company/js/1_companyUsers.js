@@ -35,6 +35,54 @@ if(document.querySelector('#companyUsers')){
                         , department    : 'Web Developer'
                         , roles         : 'Development'
                     }
+                    ,{
+                        id              : 5
+                        , userName      : 'Brainzy'
+                        , email         : 'brainzy@gamail.com'
+                        , phoneNumber   : '012333333'
+                        , department    : 'Web Developer'
+                        , roles         : 'Development'
+                    }
+                    ,{
+                        id              : 6
+                        , userName      : 'Brainzy'
+                        , email         : 'brainzy@gamail.com'
+                        , phoneNumber   : '012333333'
+                        , department    : 'Web Developer'
+                        , roles         : 'Development'
+                    }
+                    ,{
+                        id              : 7
+                        , userName      : 'Brainzy'
+                        , email         : 'brainzy@gamail.com'
+                        , phoneNumber   : '012333333'
+                        , department    : 'Web Developer'
+                        , roles         : 'Development'
+                    }
+                    ,{
+                        id              : 8
+                        , userName      : 'Brainzy'
+                        , email         : 'brainzy@gamail.com'
+                        , phoneNumber   : '012333333'
+                        , department    : 'Web Developer'
+                        , roles         : 'Development'
+                    }
+                    ,{
+                        id              : 9
+                        , userName      : 'Brainzy'
+                        , email         : 'brainzy@gamail.com'
+                        , phoneNumber   : '012333333'
+                        , department    : 'Web Developer'
+                        , roles         : 'Development'
+                    }
+                    ,{
+                        id              : 10
+                        , userName      : 'Brainzy'
+                        , email         : 'brainzy@gamail.com'
+                        , phoneNumber   : '012333333'
+                        , department    : 'Web Developer'
+                        , roles         : 'Development'
+                    }
                 ]
                 , isModalDelete: false
             }

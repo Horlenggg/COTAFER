@@ -37,9 +37,56 @@ class TestValidation(MyValidation):
         except Exception as e:
             return test(headerParam=self.__h, bodyParam=self.__b).testGonokaGet()
 
+    def testGonokaIosGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaIosGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaIosGet()
+
+    def testGonokaAndroidGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaAndroidGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaAndroidGet()
+
+    def testGonokaWebGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaWebGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaWebGet()
+
+    def testGonokaApiGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaApiGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaApiGet()
+
     def testCotaferGet(self):
         try:
             return test(headerParam=self.__h, bodyParam=self.__b).testCotaferGet()
         except Exception as e:
             return test(headerParam=self.__h, bodyParam=self.__b).testCotaferGet()
 
+    def testCotaferIosGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferIosGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferIosGet()
+
+    def testCotaferAndroidGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferAndroidGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferAndroidGet()
+
+    def testCotaferWebGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferWebGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferWebGet()
+
+    def testCotaferApiGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferApiGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferApiGet()

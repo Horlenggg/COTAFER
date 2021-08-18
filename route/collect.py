@@ -241,9 +241,41 @@ def testEditGet():
 def testGonokaGet():
     return test.TestValidation().testGonokaGet()
 
+@route.get('/test/gonoka/ios')
+def testGonokaIosGet():
+    return test.TestValidation().testGonokaIosGet()
+
+@route.get('/test/gonoka/android')
+def testGonokaAndroidGet():
+    return test.TestValidation().testGonokaAndroidGet()
+
+@route.get('/test/gonoka/web')
+def testGonokaWebGet():
+    return test.TestValidation().testGonokaWebGet()
+
+@route.get('/test/gonoka/api')
+def testGonokaApiGet():
+    return test.TestValidation().testGonokaApiGet()
+
 @route.get('/test/cotafer')
 def testCotaferGet():
     return test.TestValidation().testCotaferGet()
+
+@route.get('/test/cotafer/ios')
+def testCotaferIosGet():
+    return test.TestValidation().testCotaferIosGet()
+
+@route.get('/test/cotafer/android')
+def testCotaferAndroidGet():
+    return test.TestValidation().testCotaferAndroidGet()
+
+@route.get('/test/cotafer/web')
+def testCotaferWebGet():
+    return test.TestValidation().testCotaferWebGet()
+
+@route.get('/test/cotafer/api')
+def testCotaferApiGet():
+    return test.TestValidation().testCotaferApiGet()
 
 # ================= #
 #       Live        #
@@ -265,8 +297,30 @@ def liveEditGet():
 def liveGonokaIosGet():
     return live.LiveValidation().liveGonokaIosGet()
 
+@route.get('/live/gonoka/android')
+def liveGonokaAndroidGet():
+    return live.LiveValidation().liveGonokaAndroidGet()
+
+@route.get('/live/gonoka/web')
+def liveGonokaWebGet():
+    return live.LiveValidation().liveGonokaWebGet()
+
+@route.get('/live/gonoka/api')
+def liveGonokaApiGet():
+    return live.LiveValidation().liveGonokaApiGet()
 
 @route.get('/live/cotafer/ios')
 def liveCotaferIosGet():
     return live.LiveValidation().liveCotaferIosGet()
 
+@route.get('/live/cotafer/android')
+def liveCotaferAndroidGet():
+    return live.LiveValidation().liveCotaferAndroidGet()
+
+@route.get('/live/cotafer/web')
+def liveCotaferWebGet():
+    return live.LiveValidation().liveCotaferWebGet()
+
+@route.get('/live/cotafer/api')
+def liveCotaferApiGet():
+    return live.LiveValidation().liveCotaferApiGet()

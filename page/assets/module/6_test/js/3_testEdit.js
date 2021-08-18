@@ -2,7 +2,7 @@ if(document.querySelector('#testEdit')){
     const testEdit = {
         data() {
             return {
-                permission          : 'member'
+                permission          : 'manager'
                 , version           : ''
 
                 , projectName       : 0

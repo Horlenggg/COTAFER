@@ -16,21 +16,21 @@
 		<div class="bg-white flex flex-col p-5 space-y-5">
 			<div class="w-full flex flex-row space-x-5">
 				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Title</label>
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Title</label>
 					<input
 						v-model="title"
 						:class="isTitleVal ? 'border-red-500' : ''"
-						class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4"
+						class="appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4"
 						type="text"
 						placeholder="title"
 					>  
 				</div>
 				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >File Name</label>
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >File Name</label>
 					<input
 						v-model="filename"
 						:class="isFilenameVal ? 'border-red-500' : ''"
-						class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4"
+						class="appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4"
 						type="text"
 						placeholder="filename"
 					>  
@@ -38,9 +38,9 @@
 			</div>
 			<div class="w-full flex flex-row space-x-5">
 				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Category</label>
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Category</label>
 					<div class="relative">
-						<select v-model="category" class="block appearance-none w-full bg-white border text-grey-darker py-3 px-4 pr-8">
+						<select v-model="category" class="block appearance-none w-full bg-white text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 pr-8">
 							<option 
 								v-for="cat in catOption"
 								:key="cat.id"
@@ -56,9 +56,9 @@
 					</div>
 				</div>
 				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Department</label>
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Department</label>
 					<div class="relative">
-						<select v-model="department" class="block appearance-none w-full bg-white border text-grey-darker py-3 px-4 pr-8">
+						<select v-model="department" class="block appearance-none w-full bg-white text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 pr-8">
 							<option 
 								v-for="de in deOption"
 								:key="de.id"
@@ -76,18 +76,18 @@
 			</div>
 			<div class="w-full flex flex-row space-x-5">
 				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">File</label>
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">File</label>
 					<input
 						@change="onFileHandle"
 						ref="inputPdf"
 						:class="isFileVal ? 'border-red-500' : ''"
-						class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4"
+						class="appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4"
 						type="file"
 						accept="application/pdf,application/vnd.ms-excel"
 					>  
 				</div>
 				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Version</label>
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Version</label>
 					<div class="w-full h-10 flex flex-row space-x-5">
 						<div class="w-1/3 h-full flex flex-row">
 							<button @click="onDecrease('major')" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-full focus:outline-none">

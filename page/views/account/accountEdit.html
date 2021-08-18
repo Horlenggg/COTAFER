@@ -16,18 +16,18 @@
 		<div class="bg-white flex flex-col p-5 space-y-5">
 			<div class="w-full flex flex-row space-x-5">
 				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Username</label>
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Username</label>
 					<input 
 						v-model="username"
 						:class="isUsernameVal ? 'border-red-500' : ''"
-						class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4" 
+						class="appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4" 
 						type="text" placeholder="username"
 					>  
 				</div>
 				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Application</label>
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Application</label>
 					<div class="relative">
-						<select v-model="application" class="block appearance-none w-full bg-white border text-grey-darker py-3 px-4 pr-8">
+						<select v-model="application" class="block appearance-none w-full bg-white text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 pr-8">
 							<option 
 								v-for="app in appOption"
 								:key="app.id"
@@ -45,21 +45,21 @@
 			</div>
 			<div class="w-full flex flex-row space-x-5">
 				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Email</label>
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Email</label>
 					<input
 						v-model="email"
 						:class="isEmailVal ? 'border-red-500' : ''"
-						class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3"
+						class="appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 mb-3"
 						type="text"
 						placeholder="example@email.com"
 					>  
 				</div>
 				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >Link</label>
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >Link</label>
 					<input
 						v-model="link"
 						:class="isLinkVal ? 'border-red-500' : ''"
-						class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3"
+						class="appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 mb-3"
 						type="text"
 						placeholder="example.com"
 					>  
@@ -67,19 +67,19 @@
 			</div>
 			<div class="w-full flex flex-row space-x-5">
 				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Password</label>
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Password</label>
 					<input
 						v-model="password"
 						:class="isPasswordVal ? 'border-red-500' : ''"
-						class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter py-3 px-4"
+						class="appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4"
 						type="password"
 						placeholder="*********"
 					>
 				</div>
 				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Permission</label>
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Permission</label>
 					<div class="relative">
-						<select v-model="permission" class="block appearance-none w-full bg-white border text-grey-darker py-3 px-4 pr-8">
+						<select v-model="permission" class="block appearance-none w-full bg-white text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 pr-8">
 							<option 
 								v-for="per in perOption"
 								:key="per.id"

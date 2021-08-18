@@ -198,3 +198,6 @@ body.alert-full-active {
 .flatpickr-wrapper {
     @apply w-full !important;
 }
+body {
+    @apply font-Roboto !important;
+}

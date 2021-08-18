@@ -5,8 +5,8 @@ if(document.querySelector('#live')){
                 lives: [
                     {
                         id              : 1
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
                         , platform      : 'IOS'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
@@ -14,15 +14,33 @@ if(document.querySelector('#live')){
                     }
                     ,{
                         id              : 2
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , platform      : 'IOS'
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
+                        , platform      : 'Android'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Stopped'
                     }
                     ,{
                         id              : 3
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
+                        , platform      : 'Web'
+                        , version       : '1.0.5'
+                        , git           : 'easd23459560sd34g'
+                        , status        : 'Running'
+                    }
+                    ,{
+                        id              : 4
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
+                        , platform      : 'Api'
+                        , version       : '1.0.5'
+                        , git           : 'easd23459560sd34g'
+                        , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 5
                         , productName   : 'Gonoka'
                         , category      : 'Gonoka'
                         , platform      : 'IOS'
@@ -31,10 +49,46 @@ if(document.querySelector('#live')){
                         , status        : 'Running'
                     }
                     ,{
-                        id              : 4
+                        id              : 6
                         , productName   : 'Gonoka'
                         , category      : 'Gonoka'
-                        , platform      : 'IOS'
+                        , platform      : 'Android'
+                        , version       : '1.0.5'
+                        , git           : 'easd23459560sd34g'
+                        , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 7
+                        , productName   : 'Gonoka'
+                        , category      : 'Gonoka'
+                        , platform      : 'Web'
+                        , version       : '1.0.5'
+                        , git           : 'easd23459560sd34g'
+                        , status        : 'Running'
+                    }
+                    ,{
+                        id              : 8
+                        , productName   : 'Gonoka'
+                        , category      : 'Gonoka'
+                        , platform      : 'Api'
+                        , version       : '1.0.5'
+                        , git           : 'easd23459560sd34g'
+                        , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 9
+                        , productName   : 'Gonoka'
+                        , category      : 'Gonoka'
+                        , platform      : 'Web'
+                        , version       : '1.0.5'
+                        , git           : 'easd23459560sd34g'
+                        , status        : 'Running'
+                    }
+                    ,{
+                        id              : 10
+                        , productName   : 'Gonoka'
+                        , category      : 'Gonoka'
+                        , platform      : 'Api'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Stopped'

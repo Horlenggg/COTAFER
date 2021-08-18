@@ -2,7 +2,7 @@ if(document.querySelector('#testAdd')){
     const testAdd = {
         data() {
             return {
-                permission          : 'member'
+                permission          : 'manager'
                 , version           : ''
 
                 , projectName       : 0

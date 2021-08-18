@@ -95,73 +95,194 @@ class TestController(MyController):
                 viewFile='test/testEdit'
             )
 
-    def testGonokaGet(self) -> Any:
+    def testGonokaIosGet(self) -> Any:
         
         try:
-            self.log.info('TestController.testGonokaGet info')
+            self.log.info('TestController.testGonokaIosGet info')
 
             # active link
             self.view.addData(
                 params={
-                    'active_module'     : ['gonoka', '']
+                    'active_module'     : ['gonoka', 'ios']
                     , 'client_module'   : '6_test'
                     , 'base_module'     : 'test'
                 }
             )
 
             return self.render(
-                viewFile='test/gonoka'
+                viewFile='test/gonokaIos'
             )
 
         except Exception as e:
-            self.log.error(f'TestController.testGonokaGet Exception ', str(e))
+            self.log.error(f'TestController.testGonokaIosGet Exception ', str(e))
             return self.render(
-                viewFile='test/gonoka'
+                viewFile='test/gonokaIos'
             )
 
-    def testCotaferGet(self) -> Any:
+    def testGonokaAndroidGet(self) -> Any:
         
         try:
-            self.log.info('TestController.testCotaferGet info')
+            self.log.info('TestController.testGonokaAndroidGet info')
 
             # active link
             self.view.addData(
                 params={
-                    'active_module'     : ['cotafer', '']
+                    'active_module'     : ['gonoka', 'android']
                     , 'client_module'   : '6_test'
                     , 'base_module'     : 'test'
                 }
             )
 
             return self.render(
-                viewFile='test/cotafer'
+                viewFile='test/gonokaAndroid'
             )
 
         except Exception as e:
-            self.log.error(f'TestController.testCotaferGet Exception ', str(e))
+            self.log.error(f'TestController.testGonokaAndroidGet Exception ', str(e))
             return self.render(
-                viewFile='test/cotafer'
+                viewFile='test/gonokaAndroid'
             )
 
+    def testGonokaWebGet(self) -> Any:
         
         try:
-            self.log.info('TestController.testCotaferEditGet info')
+            self.log.info('TestController.testGonokaWebGet info')
 
             # active link
             self.view.addData(
                 params={
-                    'active_module'     : ['cotafer', '']
+                    'active_module'     : ['gonoka', 'web']
                     , 'client_module'   : '6_test'
                     , 'base_module'     : 'test'
                 }
             )
 
             return self.render(
-                viewFile='test/cotaferEdit'
+                viewFile='test/gonokaWeb'
             )
 
         except Exception as e:
-            self.log.error(f'TestController.testCotaferEditGet Exception ', str(e))
+            self.log.error(f'TestController.testGonokaWebGet Exception ', str(e))
             return self.render(
-                viewFile='test/cotaferEdit'
+                viewFile='test/gonokaWeb'
+            )
+
+    def testGonokaApiGet(self) -> Any:
+        
+        try:
+            self.log.info('TestController.testGonokaApiGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['gonoka', 'api']
+                    , 'client_module'   : '6_test'
+                    , 'base_module'     : 'test'
+                }
+            )
+
+            return self.render(
+                viewFile='test/gonokaApi'
+            )
+
+        except Exception as e:
+            self.log.error(f'TestController.testGonokaApiGet Exception ', str(e))
+            return self.render(
+                viewFile='test/gonokaApi'
+            )
+
+    def testCotaferIosGet(self) -> Any:
+        
+        try:
+            self.log.info('TestController.testCotaferIosGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['cotafer', 'ios']
+                    , 'client_module'   : '6_test'
+                    , 'base_module'     : 'test'
+                }
+            )
+
+            return self.render(
+                viewFile='test/cotaferIos'
+            )
+
+        except Exception as e:
+            self.log.error(f'TestController.testCotaferIosGet Exception ', str(e))
+            return self.render(
+                viewFile='test/cotaferIos'
+            )
+
+    def testCotaferAndroidGet(self) -> Any:
+        
+        try:
+            self.log.info('TestController.testCotaferAndroidGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['cotafer', 'android']
+                    , 'client_module'   : '6_test'
+                    , 'base_module'     : 'test'
+                }
+            )
+
+            return self.render(
+                viewFile='test/cotaferAndroid'
+            )
+
+        except Exception as e:
+            self.log.error(f'TestController.testCotaferAndroidGet Exception ', str(e))
+            return self.render(
+                viewFile='test/cotaferAndroid'
+            )
+
+    def testCotaferWebGet(self) -> Any:
+        
+        try:
+            self.log.info('TestController.testCotaferWebGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['cotafer', 'web']
+                    , 'client_module'   : '6_test'
+                    , 'base_module'     : 'test'
+                }
+            )
+
+            return self.render(
+                viewFile='test/cotaferWeb'
+            )
+
+        except Exception as e:
+            self.log.error(f'TestController.testCotaferWebGet Exception ', str(e))
+            return self.render(
+                viewFile='test/cotaferWeb'
+            )
+
+    def testCotaferApiGet(self) -> Any:
+        
+        try:
+            self.log.info('TestController.testCotaferApiGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['cotafer', 'api']
+                    , 'client_module'   : '6_test'
+                    , 'base_module'     : 'test'
+                }
+            )
+
+            return self.render(
+                viewFile='test/cotaferApi'
+            )
+
+        except Exception as e:
+            self.log.error(f'TestController.testCotaferApiGet Exception ', str(e))
+            return self.render(
+                viewFile='test/cotaferApi'
             )

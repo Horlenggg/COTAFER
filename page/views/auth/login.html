@@ -1,7 +1,7 @@
 {% extends 'templates/_baseLayout.html' %}
 
 {% block wrapper %}
-<div class="bg-gray-100">
+<div class="">
     <div class="w-full flex h-screen">
         <div id="checkInOutContainner" x-data="{active: 0, sm: 640, currentBreakPoint: window.innerWidth}" class="w-full flex flex-col md:w-6/12 border-0 md:border-r border-gray-700 md:pt-10 my-4">
             <div class="mx-4 pb-3 md:hidden">
@@ -264,13 +264,13 @@
                 <button class="bg-gray-600 text-sm text-white p-2" type="submit">LOGIN</button>
             </form>
             <div class="absolute inset-0 -z-1 flex overflow-hidden ml-5">
-                <img src="/assets/images/Login_bg.svg" class="ml-auto mt-auto w-full bg-gray-100 relative -right-3 -bottom-4" alt="">
+                <img src="/assets/images/Login_bg.svg" class="ml-auto mt-auto w-full relative -right-3 -bottom-4" alt="">
             </div>
         </div>
     </div>
-    <!-- alert full -->
-    <!-- if full alert is show by default then remove class 'hidden' from this element -->
-    <div class="alert-full hidden absolute inset-0 flex items-center justify-center h-screen bg-gray-100">
+    {# alert full #}
+    {# if full alert is show by default then remove class 'hidden' from this element #}
+    <div class="alert-full hidden absolute inset-0 items-center justify-center h-screen">
         <div class="max-w-xs w-full flex flex-col items-center space-y-3">
             <img src="/assets/images/undraw_a_whole_year_vnfm.svg" class="w-full h-auto" alt="">
             <div class="text-gray-600 font-semibold">Check In successful</div>

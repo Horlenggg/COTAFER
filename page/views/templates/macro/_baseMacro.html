@@ -165,7 +165,7 @@
         , 'sub_module'  : [
             {
                 'sub_module' : 'ios'
-                , 'sub_module_text' : 'Ios'
+                , 'sub_module_text' : 'IOS'
                 , 'sub_module_href' : '/test/gonoka/ios'
             },
             {
@@ -180,7 +180,7 @@
             },
             {
                 'sub_module' : 'api'
-                ,'sub_module_text'  : 'Api'
+                ,'sub_module_text'  : 'API'
                 , 'sub_module_href' : '/test/gonoka/api'
             },
         ]
@@ -196,7 +196,7 @@
         , 'sub_module'  : [
             {
                 'sub_module' : 'ios'
-                , 'sub_module_text' : 'Ios'
+                , 'sub_module_text' : 'IOS'
                 , 'sub_module_href' : '/test/cotafer/ios'
             },
             {
@@ -211,7 +211,7 @@
             },
             {
                 'sub_module' : 'api'
-                ,'sub_module_text'  : 'Api'
+                ,'sub_module_text'  : 'API'
                 , 'sub_module_href' : '/test/cotafer/api'
             },
         ]
@@ -232,7 +232,7 @@
         , 'sub_module'  : [
             {
                 'sub_module' : 'ios'
-                , 'sub_module_text' : 'Ios'
+                , 'sub_module_text' : 'IOS'
                 , 'sub_module_href' : '/live/gonoka/ios'
             },
             {
@@ -247,7 +247,7 @@
             },
             {
                 'sub_module' : 'api'
-                ,'sub_module_text'  : 'Api'
+                ,'sub_module_text'  : 'API'
                 , 'sub_module_href' : '/live/gonoka/api'
             },
         ]
@@ -263,7 +263,7 @@
         , 'sub_module'  : [
             {
                 'sub_module' : 'ios'
-                , 'sub_module_text' : 'Ios'
+                , 'sub_module_text' : 'IOS'
                 , 'sub_module_href' : '/live/cotafer/ios'
             },
             {
@@ -278,7 +278,7 @@
             },
             {
                 'sub_module' : 'api'
-                ,'sub_module_text'  : 'Api'
+                ,'sub_module_text'  : 'API'
                 , 'sub_module_href' : '/live/cotafer/api'
             },
         ]
@@ -291,7 +291,7 @@
         {%- for module in sideBarModules -%}
         {%- if module.collapsible == False -%}
         <li class="group">
-            <a href="{{ module.href }}" class="font-Roboto text-base no-underline py-4 px-5 flex justify-between items-center select-none {{ 'bg-gray-700 text-white' if activeModule[0] == module.module else 'bg-white text-gray-700 hover:bg-gray-700 hover:text-white' }}">
+            <a href="{{ module.href }}" class="text-base no-underline py-4 px-5 flex justify-between items-center select-none {{ 'bg-gray-700 text-white' if activeModule[0] == module.module else 'bg-white text-gray-700 hover:bg-gray-700 hover:text-white' }}">
                 <div class="flex flex-row items-center">
                     {%- if activeModule[0] == module.module -%}
                     <img src="{{ module.icon_active }}" class="w-4 h-4 mr-3" alt="">
@@ -308,7 +308,7 @@
         </li>
         {%- else -%}
         <li>
-            <div class="group font-Roboto text-base no-underline py-4 px-5 flex justify-between items-center select-none bg-white text-gray-700 hover:bg-gray-700 hover:text-white"
+            <div class="group text-base no-underline py-4 px-5 flex justify-between items-center select-none bg-white text-gray-700 hover:bg-gray-700 hover:text-white"
                 @click="activeModule[0] !== '{{ module.module }}' ? activeModule[0] = '{{ module.module }}' : activeModule[0] = null">
                 <div class="flex flex-row items-center">
                     <img src="{{ module.icon }}" class="w-4 h-4 mr-3 group-hover:hidden" alt="">
@@ -320,7 +320,7 @@
                 </svg>
             </div>
             <div {{ '' if activeModule[0]==module.module else 'x-cloak' }}
-                class="{{ 'max-h-full' if activeModule[0] == module.module else 'max-h-0' }} relative font-Roboto text-base overflow-hidden duration-300 ease-out w-full flex flex-col"
+                class="{{ 'max-h-full' if activeModule[0] == module.module else 'max-h-0' }} relative text-base overflow-hidden duration-300 ease-out w-full flex flex-col"
                 x-ref="container{{ module.module }}"
                 x-bind:style="activeModule[0] === '{{ module.module }}' ? 'max-height: ' + $refs.container{{ module.module }}.scrollHeight + 'px' : ''">
                 <div class="bg-white flex flex-col">
@@ -393,7 +393,7 @@
                 <div x-show="isShowNotification" class="absolute -top-1.5 -right-5 h-screen flex flex-col justify-between bg-white shadow-lg blur z-20" style="width: 420px;">
                     <div class="w-full flex flex-col px-6.5 pt-10">
                         <div class="flex flex-row justify-between pb-8 border-b border-gray-300">
-                            <p class="font-Roboto font-medium text-2xxl text-gray-700 ">Notifications</p>
+                            <p class="font-medium text-2xxl text-gray-700 ">Notifications</p>
                             <button @click="isShowNotification = false" class="focus:outline-none">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -408,12 +408,12 @@
                                 <div class="flex-1 flex flex-row justify-between border-b border-gray-300 py-5">
                                     <div class="flex flex-col space-y-2">
                                         <div class="flex flex-row items-center space-x-2.5">
-                                            <p class="font-Roboto font-medium text-lg">Baleze</p>
-                                            <span class="font-Roboto text-sm">Add Project Testing</span>
+                                            <p class="font-medium text-lg">Baleze</p>
+                                            <span class="text-sm">Add Project Testing</span>
                                         </div>
-                                        <span class="font-Roboto text-sm">23-May-21 05:12 PM</span>
+                                        <span class="text-sm">23-May-21 05:12 PM</span>
                                     </div>
-                                    <button class="font-Roboto text-sm text-gray-700">Clear</button>
+                                    <button class="text-sm text-gray-700">Clear</button>
                                 </div>
                             </div>
                             <div class="flex flex-row justify-between items-center space-x-2.5">
@@ -423,12 +423,12 @@
                                 <div class="flex-1 flex flex-row justify-between border-b border-gray-300 py-5">
                                     <div class="flex flex-col space-y-2">
                                         <div class="flex flex-row items-center space-x-2.5">
-                                            <p class="font-Roboto font-medium text-lg">Baleze</p>
-                                            <span class="font-Roboto text-sm">Add Project Testing</span>
+                                            <p class="font-medium text-lg">Baleze</p>
+                                            <span class="text-sm">Add Project Testing</span>
                                         </div>
-                                        <span class="font-Roboto text-sm">23-May-21 05:12 PM</span>
+                                        <span class="text-sm">23-May-21 05:12 PM</span>
                                     </div>
-                                    <button class="font-Roboto text-sm text-gray-700">Clear</button>
+                                    <button class="text-sm text-gray-700">Clear</button>
                                 </div>
                             </div>
                             <div class="flex flex-row justify-between items-center space-x-2.5">
@@ -438,18 +438,18 @@
                                 <div class="flex-1 flex flex-row justify-between border-b border-gray-300 py-5">
                                     <div class="flex flex-col space-y-2">
                                         <div class="flex flex-row items-center space-x-2.5">
-                                            <p class="font-Roboto font-medium text-lg">Baleze</p>
-                                            <span class="font-Roboto text-sm">Add Project Testing</span>
+                                            <p class="font-medium text-lg">Baleze</p>
+                                            <span class="text-sm">Add Project Testing</span>
                                         </div>
-                                        <span class="font-Roboto text-sm">23-May-21 05:12 PM</span>
+                                        <span class="text-sm">23-May-21 05:12 PM</span>
                                     </div>
-                                    <button class="font-Roboto text-sm text-gray-700">Clear</button>
+                                    <button class="text-sm text-gray-700">Clear</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <button class="w-full font-Roboto text-lg text-white bg-gray-700 py-4">Clear all</button>
+                        <button class="w-full text-lg text-white bg-gray-700 py-4">Clear all</button>
                     </div>
                 </div>
             </div>
@@ -462,16 +462,16 @@
                 </div>
                 <ul x-show="isShowProfile" @click.away="isShowProfile = false" class="absolute top-10.5 right-0 flex flex-col z-50 bg-white border transition duration-150 ease-in-out min-w-44">
                     <li><a href="/acc/account/profile"
-                            class="no-underline px-4 py-2 block font-Roboto hover:bg-gray-700 hover:text-white">My
+                            class="no-underline px-4 py-2 block hover:bg-gray-700 hover:text-white">My
                             account</a></li>
                     <li><a href="/acc/account/password/change"
-                            class="no-underline px-4 py-2 block font-Roboto hover:bg-gray-700 hover:text-white">Change
+                            class="no-underline px-4 py-2 block hover:bg-gray-700 hover:text-white">Change
                             password</a></li>
                     <li>
                         <hr class="border-t mx-2 border-gray-200">
                     </li>
                     <li><a href="/logout"
-                            class="no-underline px-4 py-2 block font-Roboto hover:bg-gray-700 hover:text-white">Logout</a></li>
+                            class="no-underline px-4 py-2 block hover:bg-gray-700 hover:text-white">Logout</a></li>
                 </ul>
             </div>
         </div>

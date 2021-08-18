@@ -4,28 +4,23 @@
 
 <div id="companyCompany" class="w-full h-full flex flex-col">
 	<div class="flex flex-row justify-between items-center my-10">
-		<span class="font-Roboto font-bold text-3xl text-main-color">Company</span>
+		<a href="/company/company/add" class="h-13 flex items-center text-white bg-gray-700 no-underline px-5">Add</a>
 		<div class="flex flex-row items-center space-x-3">
 			<div class="h-13 flex flex-row bg-white px-3 py-2">
-				<input type="text" class="h-full font-Roboto p-4 focus:outline-none">
+				<input type="text" class="h-full p-4 focus:outline-none" placeholder="Search...">
 				<button class="h-full border-l pl-2 focus:outline-none">
 					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
 					</svg>
 				</button>
 			</div>
-			<a href="/company/company/add" class="h-full no-underline">
-				<svg xmlns="http://www.w3.org/2000/svg" class="w-7.5 h-7.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-				</svg>
-			</a>
 		</div>
 	</div>
 	<div class="w-full h-full flex flex-col justify-between mx-auto overflow-hidden">
-		<div class="overflow-x-auto">
+		<div class="w-full overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-400 scrollbar-track-gray-100">
 			<table class="w-full whitespace-no-wrap select-none">
 				<thead>
-					<tr class="font-Roboto font-bold text-sm text-left text-gray-700 bg-white uppercase">
+					<tr class="font-bold text-sm text-left text-gray-700 bg-white uppercase">
 						<th class="px-4 py-6.5">Company Name</th>
 						<th class="px-4 py-6.5">Website</th>
 						<th class="px-4 py-6.5">Email</th>
@@ -38,7 +33,7 @@
 					<tr 
 						v-for="(com, index) in companys"
 						:key="com.id"
-						class="font-Roboto text-sm text-gray-700"
+						class="text-sm text-gray-700"
 						:class="{ 'bg-gray-100' : index % 2 === 0 }"
 					>
 						<td class="px-4 py-6.5 text-sm" v-text="com.companyName"></td>
@@ -72,7 +67,7 @@
 			</table>
 		</div>
 		<div class="w-full flex justify-center items-center uppercase py-6.5 space-x-3">
-			<span class="font-Roboto text-lg">1-10 of 100</span>
+			<span class="text-lg">1-10 of 100</span>
 			<!-- Pagination -->
 			<div class="flex">
 				<ul class="flex flex-row justify-center items-center space-x-2">
@@ -84,22 +79,22 @@
 						</button>
 					</li>
 					<li class="w-7 h-7">
-						<button class="w-full h-full font-Roboto text-center text-white bg-gray-700 focus:outline-none">1</button>
+						<button class="w-full h-full text-center text-white bg-gray-700 focus:outline-none">1</button>
 					</li>
 					<li class="w-7 h-7">
-						<button class="w-full h-full font-Roboto text-center focus:outline-none hover:text-white hover:bg-gray-700">2</button>
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">2</button>
 					</li>
 					<li class="w-7 h-7">
-						<button class="w-full h-full font-Roboto text-center focus:outline-none hover:text-white hover:bg-gray-700">3</button>
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">3</button>
 					</li>
 					<li class="w-7 h-7">
-						<button class="w-full h-full font-Roboto text-center focus:outline-none hover:text-white hover:bg-gray-700">4</button>
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">4</button>
 					</li>
 					<li class="w-7 h-7">
-						<button class="w-full h-full font-Roboto text-center focus:outline-none hover:text-white hover:bg-gray-700">5</button>
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">5</button>
 					</li>
 					<li class="w-7 h-7">
-						<button class="w-full h-full font-Roboto text-center focus:outline-none hover:text-white hover:bg-gray-700">6</button>
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">6</button>
 					</li>
 					<li class="flex justify-center items-center">
 						<button class="text-center hover:text-gray-700 focus:outline-none" aria-label="Next">
@@ -127,7 +122,7 @@
 							<path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
 						</svg>
 					</div>
-					<h3 class="font-Roboto text-xl mt-2">Do you really want to delete this user?</h3>
+					<h3 class="text-xl mt-2">Do you really want to delete this user?</h3>
 				</div>
 				<div class="flex flex-row justify-between mt-10">
 					<button type="button" class="font-medium text-xl text-white select-none border bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 px-16 py-3.5">

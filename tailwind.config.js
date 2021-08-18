@@ -53,6 +53,7 @@ module.exports = {
       },
       zIndex: {
         '-1': '-1',
+        '-2': '-2',
         '1200': '1200'
       },
       padding: {
@@ -80,6 +81,9 @@ module.exports = {
     },
   },
   plugins: [
-
+    require('tailwind-scrollbar')
   ],
+  variants: {
+    scrollbar: ['rounded']
+  }
 }
