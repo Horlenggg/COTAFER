@@ -320,3 +320,11 @@ def liveCotaferWebGet():
 @route.get('/live/cotafer/api')
 def liveCotaferApiGet():
     return live.LiveValidation().liveCotaferApiGet()
+
+# ================= #
+#      roadmap      #
+# ================= #
+
+# @route.get('/roadmap')
+# def roadmap():
+#     return live.LiveValidation().roadmap()
