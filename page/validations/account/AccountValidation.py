@@ -14,6 +14,12 @@ class AccountValidation(MyValidation):
         self.__EB = AccountRule()
 
     # Auth 2_login form
+    def dashboardGet(self):
+        try:
+            return account(headerParam=self.__h, bodyParam=self.__b).dashboardGet()
+        except Exception as e:
+            return account(headerParam=self.__h, bodyParam=self.__b).dashboardGet()
+
     def accountGet(self):
         try:
             return account(headerParam=self.__h, bodyParam=self.__b).accountGet()
@@ -90,4 +96,58 @@ class AccountValidation(MyValidation):
         except Exception as e:
             self.log.error('Validation error')
 
+    def documentGet(self):
+        try:
+            return account(headerParam=self.__h, bodyParam=self.__b).documentGet()
+        except Exception as e:
+            return account(headerParam=self.__h, bodyParam=self.__b).documentGet()
 
+    def documentAddGet(self):
+        try:
+            return account(headerParam=self.__h, bodyParam=self.__b).documentAddGet()
+        except Exception as e:
+            return account(headerParam=self.__h, bodyParam=self.__b).documentAddGet()
+
+    def documentAddPost(self):
+        try:
+            self.body.adds(self.__EB.getDocumentAdd())
+
+            if self.isValid():
+                return account(headerParam=self.__h, bodyParam=self.__b).documentAddPost()
+
+        except Exception as e:
+            self.log.error('Validation error')
+
+    def documentAddFilePost(self):
+        try:
+            return account(headerParam=self.__h, bodyParam=self.__b).documentAddFilePost()
+        except Exception as e:
+            return account(headerParam=self.__h, bodyParam=self.__b).documentAddFilePost()
+
+    def documentReversionGet(self):
+        try:
+            return account(headerParam=self.__h, bodyParam=self.__b).documentReversionGet()
+        except Exception as e:
+            return account(headerParam=self.__h, bodyParam=self.__b).documentReversionGet()
+
+    def documentReversionPost(self):
+        try:
+            self.body.adds(self.__EB.getDocumentReversion())
+
+            if self.isValid():
+                return account(headerParam=self.__h, bodyParam=self.__b).documentReversionPost()
+
+        except Exception as e:
+            self.log.error('Validation error')
+
+    def documentReversionFilePost(self):
+        try:
+            return account(headerParam=self.__h, bodyParam=self.__b).documentReversionFilePost()
+        except Exception as e:
+            return account(headerParam=self.__h, bodyParam=self.__b).documentReversionFilePost()
+
+    def googleGet(self):
+        try:
+            return account(headerParam=self.__h, bodyParam=self.__b).googleGet()
+        except Exception as e:
+            return account(headerParam=self.__h, bodyParam=self.__b).googleGet()

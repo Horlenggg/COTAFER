@@ -1,0 +1,149 @@
+{% extends "templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+<div id="document" class="w-full h-full flex flex-col">
+	<div class="w-full mt-5">
+		<ul class="list-reset flex text-grey-dark">
+			<li><a href="/" class="text-blue font-bold">Home</a></li>
+			<li><span class="mx-2">/</span></li>
+			<li><a href="/acc/document" class="text-blue font-bold">Document</a></li>
+			<li><span class="mx-2">/</span></li>
+			<li>Data</li>
+		</ul>
+	</div>
+	<div class="w-full h-10 flex justify-between my-5">
+		<a class="h-full px-6 py-2 text-white bg-gray-700" href="/acc/document/add">Add</a></button>
+		<div class="flex flex-row space-x-3">
+			<div class="w-full h-full flex flex-row items-center group">
+				<label class="w-full h-full border block text-gray-700 bg-white border-r-0 border-gray-200 group-hover:border-gray-700 py-2 px-3">Category</label>
+				<div class="relative w-full h-full">
+					<select class="appearance-none w-full h-full border border-gray-200 group-hover:border-gray-700 focus:border-gray-700 block bg-white text-gray-700 py-2 px-3 focus:outline-none">
+						<option>All</option>
+						<option>Active</option>
+						<option>Inactive</option>
+					</select>
+					<div class="pointer-events-none absolute inset-y-0 right-1 flex items-center px-2 text-gray-700">
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-200 group-hover:text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="w-full h-full flex flex-row items-center group">
+				<label class="w-full h-full border block text-gray-700 bg-white border-r-0 border-gray-200 group-hover:border-gray-700 py-2 px-3">Department</label>
+				<div class="relative w-full h-full">
+					<select class="appearance-none w-full h-full border border-gray-200 group-hover:border-gray-700 focus:border-gray-700 block bg-white text-gray-700 py-2 px-3 focus:outline-none">
+						<option>All</option>
+						<option>Active</option>
+						<option>Inactive</option>
+					</select>
+					<div class="pointer-events-none absolute inset-y-0 right-1 flex items-center px-2 text-gray-700">
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-200 group-hover:text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="w-full h-full flex flex-col justify-between mx-auto overflow-hidden">
+		<div class="overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+			<table class="relative w-full h-full whitespace-no-wrap select-none">
+				<thead class="sticky top-0">
+					<tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
+						<th class="px-4 py-3"></th>
+						<th class="px-4 py-3">Id</th>
+						<th class="px-4 py-3">Title</th>
+						<th class="px-4 py-3">Version</th>
+						<th class="px-4 py-3">Note</th>
+						<th class="px-4 py-3">Project name</th>
+						<th class="px-4 py-3">Category</th>
+						<th class="px-4 py-3">Department</th>
+						<th class="px-4 py-3">Date</th>
+						<th class="px-4 py-3">Created By</th>
+						<th class="px-4 py-3">Updated By</th>
+						<th class="px-4 py-3">Re-version</th>
+					</tr>
+				</thead>
+				<tbody class="bg-white">
+					<tr 
+						v-for="(document, index) in documents"
+						:key="document.id"
+						class="text-sm text-gray-700"
+						:class="{ 'bg-gray-100' : index % 2 === 0 }"
+					>
+						<td class="px-4 py-3 text-sm">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+								<path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+								<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+							</svg>
+						</td>
+						<td class="px-4 py-3 text-sm" v-text="index + 1"></td>
+						<td class="px-4 py-3 text-sm" v-text="document.title"></td>
+						<td class="px-4 py-3 text-sm" v-text="document.version"></td>
+						<td class="px-4 py-3 text-sm" v-text="document.note"></td>
+						<td class="px-4 py-3 text-sm" v-text="document.projectName"></td>
+						<td class="px-4 py-3 text-sm" v-text="document.category"></td>
+						<td class="px-4 py-3 text-sm" v-text="document.department"></td>
+						<td class="px-4 py-3 text-sm" v-text="document.date"></td>
+						<td class="px-4 py-3 text-sm" v-text="document.createdBy"></td>
+						<td class="px-4 py-3 text-sm" v-text="document.updatedBy"></td>
+						<td class="px-4 py-3 text-sm">
+							<button class="focus:outline-none">
+								<a href="/acc/document/reversion">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+										<path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+										<path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+									</svg>
+								</a>
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="w-full flex justify-center items-center uppercase py-6.5 space-x-3">
+			<span class="text-lg">1-10 of 100</span>
+			<!-- Pagination -->
+			<div class="flex">
+				<ul class="flex flex-row justify-center items-center space-x-2">
+					<li class="flex justify-center items-center">
+						<button class="text-center hover:text-gray-700 focus:outline-none" aria-label="Previous">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+							</svg>
+						</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center text-white bg-gray-700 focus:outline-none">1</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">2</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">3</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">4</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">5</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">6</button>
+					</li>
+					<li class="flex justify-center items-center">
+						<button class="text-center hover:text-gray-700 focus:outline-none" aria-label="Next">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+							</svg>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

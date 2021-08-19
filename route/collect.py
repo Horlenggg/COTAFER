@@ -15,12 +15,8 @@ from page.validations.attendance    import AttendanceValidation as attendance
 from page.validations.company       import CompanyValidation as company
 from page.validations.test          import TestValidation as test
 from page.validations.live          import LiveValidation as live
-from page.validations.dashboard     import DashboardValidation as dashboard
 from page.validations.account       import AccountValidation as account
-from page.validations.document      import DocumentValidation as document
-from page.validations.google        import GoogleValidation as google
  
-
 # ================= #
 #       Auth        #
 # ================= #
@@ -52,7 +48,7 @@ def newPasswordGet():
 @route.get('/')
 @route.get('/acc')
 def dashboardGet():
-    return dashboard.DashboardValidation().dashboardGet()
+    return account.AccountValidation().dashboardGet()
 
 @route.get('/acc/account')
 def accountGet():
@@ -96,35 +92,35 @@ def accountEditPost():
 
 @route.get('/acc/document')
 def documentGet():
-    return document.DocumentValidation().documentGet()
+    return account.AccountValidation().documentGet()
 
 @route.get('/acc/document/add')
 def documentAddGet():
-    return document.DocumentValidation().documentAddGet()
+    return account.AccountValidation().documentAddGet()
 
 @route.post('/acc/document/add')
 def documentAddPost():
-    return document.DocumentValidation().documentAddPost()
+    return account.AccountValidation().documentAddPost()
 
 @route.post('/acc/document/add/file')
 def documentAddFilePost():
-    return document.DocumentValidation().documentAddFilePost()
+    return account.AccountValidation().documentAddFilePost()
 
 @route.get('/acc/document/reversion')
 def documentReversionGet():
-    return document.DocumentValidation().documentReversionGet()
+    return account.AccountValidation().documentReversionGet()
 
 @route.post('/acc/document/reversion')
 def documentReversionPost():
-    return document.DocumentValidation().documentReversionPost()
+    return account.AccountValidation().documentReversionPost()
 
 @route.post('/acc/document/reversion/file')
 def documentReversionFilePost():
-    return document.DocumentValidation().documentReversionFilePost()
+    return account.AccountValidation().documentReversionFilePost()
 
 @route.get('/acc/google')
 def googleGet():
-    return google.GoogleValidation().googleGet()
+    return account.AccountValidation().googleGet()
 
 # ================= #
 #    Attendance     #

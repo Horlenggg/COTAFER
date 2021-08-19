@@ -1,0 +1,132 @@
+{% extends "templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+<div id="google" class="w-full h-full flex flex-col">
+	<div class="w-full mt-5">
+		<ul class="list-reset flex text-grey-dark">
+			<li><a href="/" class="text-blue font-bold">Home</a></li>
+			<li><span class="mx-2">/</span></li>
+			<li><a href="/acc/google" class="text-blue font-bold">Google</a></li>
+			<li><span class="mx-2">/</span></li>
+			<li>Data</li>
+		  </ul>
+	</div>
+	<div class="w-full h-10 flex justify-end my-5">
+		<div class="flex flex-row space-x-3">
+			<div class="w-full h-full flex flex-row items-center group">
+				<label class="w-full h-full border block text-gray-700 bg-white border-r-0 border-gray-200 group-hover:border-gray-700 py-2 px-3">Category</label>
+				<div class="relative w-full h-full">
+					<select class="appearance-none w-full h-full border border-gray-200 group-hover:border-gray-700 focus:border-gray-700 block bg-white text-gray-700 py-2 px-3 focus:outline-none">
+						<option>All</option>
+						<option>Active</option>
+						<option>Inactive</option>
+					</select>
+					<div class="pointer-events-none absolute inset-y-0 right-1 flex items-center px-2 text-gray-700">
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-200 group-hover:text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="w-full h-full flex flex-row items-center group">
+				<label class="w-full h-full border block text-gray-700 bg-white border-r-0 border-gray-200 group-hover:border-gray-700 py-2 px-3">Department</label>
+				<div class="relative w-full h-full">
+					<select class="appearance-none w-full h-full border border-gray-200 group-hover:border-gray-700 focus:border-gray-700 block bg-white text-gray-700 py-2 px-3 focus:outline-none">
+						<option>All</option>
+						<option>Active</option>
+						<option>Inactive</option>
+					</select>
+					<div class="pointer-events-none absolute inset-y-0 right-1 flex items-center px-2 text-gray-700">
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-200 group-hover:text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="relative h-full flex flex-row items-center bg-white group">
+				<input type="text" class="h-full border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-3 py-2.5 text-sm focus:outline-none" placeholder="Search...">
+				<button class="absolute h-3/5 top-2 right-1 border-l px-1">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-200 group-hover:text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+					</svg>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="w-full h-full flex flex-col justify-between mx-auto overflow-hidden">
+		<div class="overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+			<table class="relative w-full h-full whitespace-no-wrap select-none">
+				<thead class="sticky top-0">
+					<tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
+						<th class="px-4 py-3">Id</th>
+						<th class="px-4 py-3">Title</th>
+						<th class="px-4 py-3">Link</th>
+						<th class="px-4 py-3">Project name</th>
+						<th class="px-4 py-3">Department</th>
+						<th class="px-4 py-3">Date</th>
+						<th class="px-4 py-3">Assigned by</th>
+					</tr>
+				</thead>
+				<tbody class="bg-white">
+					<tr 
+						v-for="(google, index) in googles"
+						:key="google.id"
+						class="text-sm text-gray-700"
+						:class="{ 'bg-gray-100' : index % 2 === 0 }"
+					>
+						<td class="px-4 py-3 text-sm" v-text="index + 1"></td>
+						<td class="px-4 py-3 text-sm" v-text="google.title"></td>
+						<td class="px-4 py-3 text-sm" v-text="google.link"></td>
+						<td class="px-4 py-3 text-sm" v-text="google.projectName"></td>
+						<td class="px-4 py-3 text-sm" v-text="google.department"></td>
+						<td class="px-4 py-3 text-sm" v-text="google.date"></td>
+						<td class="px-4 py-3 text-sm" v-text="google.assignedBy"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="w-full flex justify-center items-center uppercase py-6.5 space-x-3">
+			<span class="text-lg">1-10 of 100</span>
+			<!-- Pagination -->
+			<div class="flex">
+				<ul class="flex flex-row justify-center items-center space-x-2">
+					<li class="flex justify-center items-center">
+						<button class="text-center hover:text-gray-700 focus:outline-none" aria-label="Previous">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+							</svg>
+						</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center text-white bg-gray-700 focus:outline-none">1</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">2</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">3</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">4</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">5</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">6</button>
+					</li>
+					<li class="flex justify-center items-center">
+						<button class="text-center hover:text-gray-700 focus:outline-none" aria-label="Next">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+							</svg>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

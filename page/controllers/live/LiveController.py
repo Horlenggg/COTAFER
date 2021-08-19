@@ -32,7 +32,7 @@ class LiveController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['', '']
-                    , 'client_module'   : '7_live'
+                    , 'client_module'   : '6_live'
                     , 'base_module'     : 'live'
                 }
             )
@@ -56,7 +56,7 @@ class LiveController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['', '']
-                    , 'client_module'   : '7_live'
+                    , 'client_module'   : '6_live'
                     , 'base_module'     : 'live'
                 }
             )
@@ -80,7 +80,7 @@ class LiveController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['', '']
-                    , 'client_module'   : '7_live'
+                    , 'client_module'   : '6_live'
                     , 'base_module'     : 'live'
                 }
             )
@@ -104,7 +104,7 @@ class LiveController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['gonoka', 'ios']
-                    , 'client_module'   : '7_live'
+                    , 'client_module'   : '6_live'
                     , 'base_module'     : 'live'
                 }
             )
@@ -128,7 +128,7 @@ class LiveController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['gonoka', 'android']
-                    , 'client_module'   : '7_live'
+                    , 'client_module'   : '6_live'
                     , 'base_module'     : 'live'
                 }
             )
@@ -152,7 +152,7 @@ class LiveController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['gonoka', 'web']
-                    , 'client_module'   : '7_live'
+                    , 'client_module'   : '6_live'
                     , 'base_module'     : 'live'
                 }
             )
@@ -176,7 +176,7 @@ class LiveController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['gonoka', 'api']
-                    , 'client_module'   : '7_live'
+                    , 'client_module'   : '6_live'
                     , 'base_module'     : 'live'
                 }
             )
@@ -200,7 +200,7 @@ class LiveController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['cotafer', 'ios']
-                    , 'client_module'   : '7_live'
+                    , 'client_module'   : '6_live'
                     , 'base_module'     : 'live'
                 }
             )
@@ -224,7 +224,7 @@ class LiveController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['cotafer', 'android']
-                    , 'client_module'   : '7_live'
+                    , 'client_module'   : '6_live'
                     , 'base_module'     : 'live'
                 }
             )
@@ -248,7 +248,7 @@ class LiveController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['cotafer', 'web']
-                    , 'client_module'   : '7_live'
+                    , 'client_module'   : '6_live'
                     , 'base_module'     : 'live'
                 }
             )
@@ -272,7 +272,7 @@ class LiveController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['cotafer', 'api']
-                    , 'client_module'   : '7_live'
+                    , 'client_module'   : '6_live'
                     , 'base_module'     : 'live'
                 }
             )

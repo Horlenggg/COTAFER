@@ -3,7 +3,7 @@
 {% block bodyContent %}
 
 <div id="companyRoles" class="w-full h-full flex flex-col">
-	<div class="w-full h-10 mt-10">
+	<div class="w-full mt-5">
 		<ul class="list-reset flex text-gray-700">
 			<li><a href="/company" class="text-blue font-bold">Company</a></li>
 			<li><span class="mx-2">/</span></li>
@@ -12,17 +12,15 @@
 			<li>Data</li>
 		</ul>
 	</div>
-	<div class="flex flex-row justify-between items-center my-10">
-		<a href="/company/roles/add" class="h-13 flex items-center text-white bg-gray-700 no-underline px-5">Add</a>
-		<div class="flex flex-row items-center space-x-3">
-			<div class="h-13 flex flex-row bg-white px-3 py-2">
-				<input type="text" class="h-full p-4 focus:outline-none" placeholder="Search...">
-				<button class="h-full border-l pl-2 focus:outline-none">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-					</svg>
-				</button>
-			</div>
+	<div class="h-10 flex flex-row justify-between items-center my-5">
+		<a href="/company/roles/add" class="h-full flex items-center text-white bg-gray-700 px-6 py-2.5">Add</a>
+		<div class="relative h-full flex flex-row items-center bg-white group">
+			<input type="text" class="h-full border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-3 py-2.5 text-sm focus:outline-none" placeholder="Search...">
+			<button class="absolute h-3/5 top-2 right-1 border-l px-1">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-200 group-hover:text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+				</svg>
+			</button>
 		</div>
 	</div>
 	<div class="w-full h-full flex flex-col justify-between mx-auto overflow-hidden">
@@ -30,11 +28,11 @@
 			<table class="relative w-full h-full whitespace-no-wrap select-none">
 				<thead class="sticky top-0">
 					<tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
-						<th class="px-4 py-6.5 w-1/8">ID</th>
-						<th class="px-4 py-6.5">Roles</th>
-						<th class="px-4 py-6.5">Department</th>
-						<th class="px-4 py-6.5">Create Date</th>
-						<th class="px-4 py-6.5 w-1/8">Actions</th>
+						<th class="px-4 py-3 w-1/8">ID</th>
+						<th class="px-4 py-3">Roles</th>
+						<th class="px-4 py-3">Department</th>
+						<th class="px-4 py-3">Create Date</th>
+						<th class="px-4 py-3 w-1/8">Actions</th>
 					</tr>
 				</thead>
 				<tbody class="bg-white">
@@ -44,11 +42,11 @@
 						class="text-sm text-gray-700"
 						:class="{ 'bg-gray-100' : index % 2 === 0 }"
 					>
-						<td class="px-4 py-6.5 text-sm" v-text="index + 1"></td>
-						<td class="px-4 py-6.5 text-sm" v-text="role.roles"></td>
-						<td class="px-4 py-6.5 text-sm" v-text="role.department"></td>
-						<td class="px-4 py-6.5 text-sm" v-text="role.createDate"></td>
-						<td class="px-4 py-6.5 text-sm">
+						<td class="px-4 py-3 text-sm" v-text="index + 1"></td>
+						<td class="px-4 py-3 text-sm" v-text="role.roles"></td>
+						<td class="px-4 py-3 text-sm" v-text="role.department"></td>
+						<td class="px-4 py-3 text-sm" v-text="role.createDate"></td>
+						<td class="px-4 py-3 text-sm">
 							<div class="flex items-center space-x-4 text-sm">
 								<a href="/company/roles/view">
 									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor">

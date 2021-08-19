@@ -2,15 +2,24 @@
 
 {% block bodyContent %}
 
-<div class="w-full h-full flex flex-col">
+<div class="w-full h-full flex flex-col space-y-5">
+	<div class="w-full mt-5">
+		<ul class="list-reset flex text-gray-700">
+			<li><a href="/attendance" class="text-blue font-bold">Attendance</a></li>
+			<li><span class="mx-2">/</span></li>
+			<li><a href="/attendance/overtimeday" class="text-blue font-bold">Overtime Day</a></li>
+			<li><span class="mx-2">/</span></li>
+			<li>Data</li>
+		</ul>
+	</div>
 	<div class="flex justify-between">
-		<div class="flex flex-col mt-4 mb-2">
-			<span class="text-main-color text-base font-bold mb-1">Overtime day</span>
+		<div class="flex flex-col">
+			<span class="text-main-color text-base font-bold">Overtime day</span>
 		</div>
-		<div class="text-sm mt-4 w-36">
+		<div class="text-sm w-36">
 			<div class="relative">
 				<div x-data="monthPicker()">
-					<div class="mt-1 relative">
+					<div class="relative">
 						<button id="countIdPresenter" type="button" @click="tempselectedYear = selectedYear, isOn = !isOn" x-on:keydown.escape="isOn = false" 
 							class="relative w-full bg-white border border-gray-300 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 							aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
@@ -68,60 +77,83 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex items-center text-sm font-semibold mb-3">
+	<div class="flex items-center text-sm font-semibold">
 		<div class="w-6 h-3 bg-red-300"></div>
 		<h5 class="ml-3 mr-5">PUBLIC HOLIDAY</h5>
 		<div class="w-6 h-3 bg-lightBlue-400"></div>
 		<h5 class="ml-3 mr-5">SATURDAY & SUNDAY</h5>
 	</div>
-	<table class="table-auto w-full bg-white text-sm mb-5 shadow ">
-		<thead>
-			<tr class="bg-indigo-100 py-3">
-				<th class="py-2 font-semibold">Date</th>
-				<th class="py-2 font-semibold">Check In</th>
-				<th class="py-2 font-semibold">Check Out</th>
-				<th class="py-2 font-semibold">Total</th>
-				<th class="py-2 font-semibold">Reason</th>
-			</tr>
-		</thead>
-		<tbody class="text-center text-xs">
-			<tr class="bg-red-300">
-				<td class="py-2">04/25/2021</td>
-				<td class="py-2">8:30 AM</td>
-				<td class="py-2">5:40 PM</td>
-				<td class="py-2">8:30</td>
-				<td class="py-2"></td>
-			</tr>
-			<tr class="bg-gray-50">
-				<td class="py-2">04/26/2021</td>
-				<td class="py-2">8:30 AM</td>
-				<td class="py-2">5:40 PM</td>
-				<td class="py-2">3:30</td>
-				<td class="py-2"></td>
-			</tr>
-			<tr class="bg-lightBlue-400">
-				<td class="py-2">04/27/2021</td>
-				<td class="py-2">8:30 AM</td>
-				<td class="py-2">5:40 PM</td>
-				<td class="py-2">8:40</td>
-				<td class="py-2"></td>
-			</tr>
-			<tr class="bg-gray-50">
-				<td class="py-2">04/28/2021</td>
-				<td class="py-2">8:30 AM</td>
-				<td class="py-2">5:40 PM</td>
-				<td class="py-2">0:30</td>
-				<td class="py-2"></td>
-			</tr>
-			<tr>
-				<td class="py-2">04/30/2021</td>
-				<td class="py-2">8:30 AM</td>
-				<td class="py-2">5:40 PM</td>
-				<td class="py-2">0:30</td>
-				<td class="py-2"></td>
-			</tr>
-		</tbody>
-	</table>
+	<div id="overTimeDay" class="w-full h-full flex flex-col justify-between mx-auto overflow-hidden">
+		<div class="overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+			<table class="relative w-full h-full whitespace-no-wrap select-none">
+				<thead class="sticky top-0">
+					<tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
+						<th class="px-4 py-3">Id</th>
+						<th class="px-4 py-3">Date</th>
+						<th class="px-4 py-3">Checkin</th>
+						<th class="px-4 py-3">Checkout</th>
+						<th class="px-4 py-3">Total</th>
+						<th class="px-4 py-3">Reason</th>
+					</tr>
+				</thead>
+				<tbody class="bg-white">
+					<tr 
+						v-for="(overTime, index) in overTimeDays"
+						:key="overTime.id"
+						class="text-sm text-gray-700"
+						:class="{ 'bg-gray-100' : index % 2 === 0 }"
+					>
+						<td class="px-4 py-3 text-sm" v-text="index + 1"></td>
+						<td class="px-4 py-3 text-sm" v-text="overTime.date"></td>
+						<td class="px-4 py-3 text-sm" v-text="overTime.checkin"></td>
+						<td class="px-4 py-3 text-sm" v-text="overTime.checkout"></td>
+						<td class="px-4 py-3 text-sm" v-text="overTime.total"></td>
+						<td class="px-4 py-3 text-sm" v-text="overTime.reason"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="w-full flex justify-center items-center uppercase py-6.5 space-x-3">
+			<span class="text-lg">1-10 of 100</span>
+			<!-- Pagination -->
+			<div class="flex">
+				<ul class="flex flex-row justify-center items-center space-x-2">
+					<li class="flex justify-center items-center">
+						<button class="text-center hover:text-gray-700 focus:outline-none" aria-label="Previous">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+							</svg>
+						</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center text-white bg-gray-700 focus:outline-none">1</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">2</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">3</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">4</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">5</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">6</button>
+					</li>
+					<li class="flex justify-center items-center">
+						<button class="text-center hover:text-gray-700 focus:outline-none" aria-label="Next">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+							</svg>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
 
 {% endblock %}

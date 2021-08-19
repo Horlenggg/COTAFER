@@ -20,7 +20,7 @@ class AttendanceController(MyController):
         # view params
         # self._param = {
         #     'active_module'     : ['attendance', '']
-        #     , 'client_module'   : '2_attendance'
+        #     , 'client_module'   : '4_attendance'
         # }
 
     def checkInandOutGet(self) -> Any:
@@ -32,7 +32,7 @@ class AttendanceController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['checkinandout', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '4_attendance'
                     , 'base_module'     : 'attendance'
                 }
             )
@@ -56,7 +56,7 @@ class AttendanceController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['leaverequest', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '4_attendance'
                     , 'base_module'     : 'attendance'
                 }
             )
@@ -80,7 +80,7 @@ class AttendanceController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['publicholiday', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '4_attendance'
                     , 'base_module'     : 'attendance'
                 }
             )
@@ -104,7 +104,7 @@ class AttendanceController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['availableday', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '4_attendance'
                     , 'base_module'     : 'attendance'
                 }
             )
@@ -128,7 +128,7 @@ class AttendanceController(MyController):
             self.view.addData(
                 params={
                     'active_module'     : ['overtimeday', '']
-                    , 'client_module'   : '2_attendance'
+                    , 'client_module'   : '4_attendance'
                     , 'base_module'     : 'attendance'
                 }
             )

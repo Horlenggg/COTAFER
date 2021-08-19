@@ -36,3 +36,6 @@ VUE_MultiselectCss=./page/assets/vendor/multiselect/css/multiselect.css
 #font awesome
 Font_AwesomeJs=./page/assets/vendor/fontawesome/js/all.min.js
 Font_AwesomeCss=./page/assets/vendor/fontawesome/js/all.min.css
+
+#vue clickaway
+VUE_Clickaway=./page/assets/vendor/vue-clickaway/vue-clickaway.min.js
