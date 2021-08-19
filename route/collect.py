@@ -281,6 +281,14 @@ def testCotaferApiGet():
 def liveGet():
     return live.LiveValidation().liveGet()
 
+@route.get('/live/gonoka')
+def liveGonokaGet():
+    return live.LiveValidation().liveGonokaGet()
+
+@route.get('/live/cotafer')
+def liveCotaferGet():
+    return live.LiveValidation().liveCotaferGet()
+
 @route.get('/live/add')
 def liveAddGet():
     return live.LiveValidation().liveAddGet()

@@ -17,6 +17,18 @@ class LiveValidation(MyValidation):
         except Exception as e:
             return live(headerParam=self.__h, bodyParam=self.__b).liveGet()
 
+    def liveGonokaGet(self):
+        try:
+            return live(headerParam=self.__h, bodyParam=self.__b).liveGonokaGet()
+        except Exception as e:
+            return live(headerParam=self.__h, bodyParam=self.__b).liveGonokaGet()
+
+    def liveCotaferGet(self):
+        try:
+            return live(headerParam=self.__h, bodyParam=self.__b).liveCotaferGet()
+        except Exception as e:
+            return live(headerParam=self.__h, bodyParam=self.__b).liveCotaferGet()
+
     def liveAddGet(self):
         try:
             return live(headerParam=self.__h, bodyParam=self.__b).liveAddGet()

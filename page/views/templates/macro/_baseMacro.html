@@ -145,7 +145,7 @@
         'module'        : 'gonoka'
         , 'module_text' : 'Gonoka'
         , 'icon'        : 'fas fa-badge-check'
-        , 'href'        : '/test'
+        , 'href'        : '/test/gonoka'
         , 'collapsible' : true
         , 'data_parent' : '#accordionSidebar'
         , 'sub_module'  : [
@@ -175,7 +175,7 @@
         'module'        : 'cotafer'
         , 'module_text' : 'Cotafer'
         , 'icon'        : 'fas fa-clipboard-list'
-        , 'href'        : '/test'
+        , 'href'        : '/test/cotafer'
         , 'collapsible' : True
         , 'data_parent' : '#accordionSidebar'
         , 'sub_module'  : [
@@ -286,16 +286,15 @@
         </li>
         {%- else -%}
         <li>
-            <div class="group text-base no-underline py-4 px-5 flex justify-between items-center select-none bg-white text-gray-700 hover:bg-gray-700 hover:text-white"
-                @click="activeModule[0] !== '{{ module.module }}' ? activeModule[0] = '{{ module.module }}' : activeModule[0] = null">
-                <div class="flex flex-row items-center space-x-3">
-                    <i class="{{ module.icon }} text-lg {{ '' if activeModule[0] == module.module else 'text-gray-700 group-hover:text-white' }}"></i>
+            <a href="{{ module.href }}" class="group text-base no-underline py-4 px-5 flex justify-between items-center select-none {{ 'bg-gray-700 text-white' if activeModule[0] == module.module else 'bg-white text-gray-700 hover:bg-gray-700 hover:text-white' }}">
+                <div class="flex flex-row items-center space-x-3 group">
+                    <i class="{{ module.icon }} text-lg {{ 'text-white' if activeModule[0] == module.module else 'text-gray-700 group-hover:text-white' }}"></i>
                     <span>{{ module.module_text }}</span>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-700 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 {{ 'text-white' if activeModule[0] == module.module else 'text-gray-700 group-hover:text-white' }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
                 </svg>
-            </div>
+            </a>
             <div {{ '' if activeModule[0]==module.module else 'x-cloak' }}
                 class="{{ 'max-h-full' if activeModule[0] == module.module else 'max-h-0' }} relative text-base overflow-hidden duration-300 ease-out w-full flex flex-col"
                 x-ref="container{{ module.module }}"
