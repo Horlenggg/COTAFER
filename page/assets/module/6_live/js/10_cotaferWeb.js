@@ -5,21 +5,12 @@ if(document.querySelector('#cotaferWeb')){
                 cotaferWeb: [
                     {
                         id              : 1
-                        , productName   : 'Cotafer'
+                        , productName   : 'Cotafer Web'
                         , category      : 'Cotafer'
                         , platform      : 'Web'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Running'
-                    }
-                    ,{
-                        id              : 2
-                        , productName   : 'Cotafer'
-                        , category      : 'Cotafer'
-                        , platform      : 'Web'
-                        , version       : '1.0.5'
-                        , git           : 'easd23459560sd34g'
-                        , status        : 'Stopped'
                     }
                 ]
                 , status                : 0

@@ -8,7 +8,9 @@ if(document.querySelector('#cotaferApi')){
                     {
                         id              : 1
                         , version       : '1.0.5'
-                        , projectName   : 'Cotafer Api'
+                        , productName   : 'Cotafer Api'
+                        , category      : 'Cotafer'
+                        , platform      : 'API'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'

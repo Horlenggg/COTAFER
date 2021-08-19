@@ -289,7 +289,7 @@
             <div class="group text-base no-underline py-4 px-5 flex justify-between items-center select-none bg-white text-gray-700 hover:bg-gray-700 hover:text-white"
                 @click="activeModule[0] !== '{{ module.module }}' ? activeModule[0] = '{{ module.module }}' : activeModule[0] = null">
                 <div class="flex flex-row items-center space-x-3">
-                    <i class="{{ module.icon }} text-lg {{ 'text-white' if activeModule[0] == module.module else 'text-gray-700 group-hover:text-white' }}"></i>
+                    <i class="{{ module.icon }} text-lg {{ '' if activeModule[0] == module.module else 'text-gray-700 group-hover:text-white' }}"></i>
                     <span>{{ module.module_text }}</span>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-700 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -358,7 +358,7 @@
                 <i class="fas fa-road {{ 'text-gray-700' if params.base_module == 'roadmap' else 'text-white group-hover:text-gray-700' }}"></i>
             </a>
         </div>
-        <div x-data="{ isShowProfile : false, isShowNotification: false }" class="relative flex flex-row justify-end items-center space-x-5">
+        <div x-data="{ isShowProfile : false, isShowNotification: false }" x-cloak class="relative flex flex-row justify-end items-center space-x-5">
             <div>
                 <div @click="isShowNotification = true" class="cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 20 20" fill="currentColor">

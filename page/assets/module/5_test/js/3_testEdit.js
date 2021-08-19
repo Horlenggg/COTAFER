@@ -33,6 +33,14 @@ if(document.querySelector('#testEdit')){
                 , formLink          : ''
                 , releaseDate       : ''
 
+                , category          : 0
+                , caOption: [
+                    { value: 1, label: 'Gonoka PR' }
+                    , { value: 2, label: 'Cotafer IM' }
+                    , { value: 3, label: 'Cotafer News' }
+                    , { value: 4, label: 'Gonoka Newsfeed' }
+                ]
+
                 , platform          : 0
                 , plOption: [
                     { value: 1, label: 'Gonoka PR' }
@@ -55,6 +63,7 @@ if(document.querySelector('#testEdit')){
                 , isImPVal          : false
                 , isBlVal           : false
                 , isFlVal           : false
+                , isCaVal           : false
                 , isReVal           : false
                 , isPlVal           : false
                 , isStVal           : false
@@ -69,6 +78,7 @@ if(document.querySelector('#testEdit')){
                 , errMessageImP     : ''
                 , errMessageBl      : ''
                 , errMessageFl      : ''
+                , errMessageCa      : ''
                 , errMessageRe      : ''
                 , errMessagePl      : ''
                 , errMessageSt      : ''
@@ -108,6 +118,8 @@ if(document.querySelector('#testEdit')){
         methods: {
             onSubmit() {
     
+                console.log('Validation');
+
                 if(this.permission == 'member'){
                     if(this.byLink.length == 0){
                         this.errMessageBl = 'Require.'
@@ -145,6 +157,14 @@ if(document.querySelector('#testEdit')){
                     } else {
                         this.errMessagePl = ''
                         this.isPlVal = false
+                    }
+
+                    if(this.category == 0){
+                        this.errMessageCa = 'Require.'
+                        this.isCaVal = true
+                    } else {
+                        this.errMessageCa = ''
+                        this.isCaVal = false
                     }
     
                     if(this.startTestDate.length == 0){
@@ -190,60 +210,58 @@ if(document.querySelector('#testEdit')){
                         this.errMessageReP = ''
                     }
 
-                        
-                if(this.byLink || this.formLink || this.releaseDate || this.platform || this.startTestDate || this.finishTestDate || this.stagingDate || this.productDate){
-                    if(!this.isBlVal && !this.isFlVal && !this.isReVal && !this.isPlVal && !this.isStVal && !this.isFiVal && !this.isStDVal && !this.isPrDVal){
-                        
-                        console.log('form submit');
-                        
-                        let 
-                            form            = document.createElement('form'),
-                            byLink          = document.createElement('input'),
-                            formLink        = document.createElement('input'),
-                            releaseDate     = document.createElement('input'),
-                            platform        = document.createElement('input'),
-                            startTestDate   = document.createElement('input'),
-                            finishTestDate  = document.createElement('input'),
-                            stagingDate     = document.createElement('input'),
-                            productDate     = document.createElement('input');
-    
-                            byLink.name                 = 'byLink';
-                            byLink.value                = this.byLink;
-    
-                            formLink.name               = 'formLink';
-                            formLink.value              = this.formLink;
-    
-                            releaseDate.name            = 'releaseDate';
-                            releaseDate.value           = this.releaseDate;
-    
-                            platform.name               = 'platform';
-                            platform.value              = this.platform;
-    
-                            startTestDate.name          = 'startTestDate';
-                            startTestDate.value         = this.startTestDate;
-    
-                            finishTestDate.name         = 'finishTestDate';
-                            finishTestDate.value        = this.finishTestDate;
+                    if(this.byLink || this.formLink || this.releaseDate || this.platform || this.startTestDate || this.finishTestDate || this.stagingDate || this.productDate){
+                        if(!this.isBlVal && !this.isFlVal && !this.isReVal && !this.isPlVal && !this.isStVal && !this.isFiVal && !this.isStDVal && !this.isPrDVal){
+                            
+                            console.log('form submit');
+                            
+                            let 
+                                form            = document.createElement('form'),
+                                byLink          = document.createElement('input'),
+                                formLink        = document.createElement('input'),
+                                releaseDate     = document.createElement('input'),
+                                platform        = document.createElement('input'),
+                                startTestDate   = document.createElement('input'),
+                                finishTestDate  = document.createElement('input'),
+                                stagingDate     = document.createElement('input'),
+                                productDate     = document.createElement('input');
+        
+                                byLink.name                 = 'byLink';
+                                byLink.value                = this.byLink;
+        
+                                formLink.name               = 'formLink';
+                                formLink.value              = this.formLink;
+        
+                                releaseDate.name            = 'releaseDate';
+                                releaseDate.value           = this.releaseDate;
+        
+                                platform.name               = 'platform';
+                                platform.value              = this.platform;
+        
+                                startTestDate.name          = 'startTestDate';
+                                startTestDate.value         = this.startTestDate;
+        
+                                finishTestDate.name         = 'finishTestDate';
+                                finishTestDate.value        = this.finishTestDate;
 
-                            stagingDate.name            = 'stagingDate';
-                            stagingDate.value           = this.stagingDate;
+                                stagingDate.name            = 'stagingDate';
+                                stagingDate.value           = this.stagingDate;
 
-                            productDate.name            = 'productDate';
-                            productDate.value           = this.productDate;
-    
-                            form.append(byLink, formLink, releaseDate, platform, startTestDate, finishTestDate, stagingDate, productDate);
-    
-                            form.method             = 'POST'
-                            form.action             = '/test/edit'
-                            form.className          = 'hidden';
-                            document.querySelector('body').append(form);
+                                productDate.name            = 'productDate';
+                                productDate.value           = this.productDate;
+        
+                                form.append(byLink, formLink, releaseDate, platform, startTestDate, finishTestDate, stagingDate, productDate);
+        
+                                form.method             = 'POST'
+                                form.action             = '/test/add'
+                                form.className          = 'hidden';
+                                document.querySelector('body').append(form);
 
-                            form.submit();
+                                form.submit();
+                        }
                     }
-                }
 
-
-                } else if(this.permission == 'supervisor') {
+                } else if(this.permission == 'supervisor' || 'manager') {
                     if(this.version.length == 0){
                         this.errMessageVe = 'Require.'
                         this.isVeVal = true
@@ -301,6 +319,14 @@ if(document.querySelector('#testEdit')){
                         this.isFlVal = false
                     }
     
+                    if(this.category == 0){
+                        this.errMessageCa = 'Require.'
+                        this.isCaVal = true
+                    } else {
+                        this.errMessageCa = ''
+                        this.isCaVal = false
+                    }
+
                     if(this.releaseDate.length == 0){
                         this.errMessageRe = 'Require.'
                         this.isReVal = true
@@ -419,7 +445,7 @@ if(document.querySelector('#testEdit')){
                                 form.append(version, projectName, improveTest, improvePublic, byLink, formLink, releaseDate, platform, startTestDate, finishTestDate, stagingDate, productDate);
         
                                 form.method             = 'POST'
-                                form.action             = '/test/edit'
+                                form.action             = '/test/add'
                                 form.className          = 'hidden';
                                 document.querySelector('body').append(form);
     

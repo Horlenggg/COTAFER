@@ -5,21 +5,12 @@ if(document.querySelector('#gonokaApi')){
                 gonokaApi: [
                     {
                         id              : 1
-                        , productName   : 'Gonoka'
+                        , productName   : 'Gonoka API'
                         , category      : 'Gonoka'
                         , platform      : 'API'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Running'
-                    }
-                    ,{
-                        id              : 2
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , platform      : 'API'
-                        , version       : '1.0.5'
-                        , git           : 'easd23459560sd34g'
-                        , status        : 'Stopped'
                     }
                 ]
                 , status                : 0

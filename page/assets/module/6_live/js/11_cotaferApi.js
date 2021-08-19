@@ -5,21 +5,12 @@ if(document.querySelector('#cotaferApi')){
                 cotaferApi: [
                     {
                         id              : 1
-                        , productName   : 'Cotafer'
+                        , productName   : 'Cotafer API'
                         , category      : 'Cotafer'
                         , platform      : 'API'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Running'
-                    }
-                    ,{
-                        id              : 2
-                        , productName   : 'Cotafer'
-                        , category      : 'Cotafer'
-                        , platform      : 'API'
-                        , version       : '1.0.5'
-                        , git           : 'easd23459560sd34g'
-                        , status        : 'Stopped'
                     }
                 ]
                 , status                : 0

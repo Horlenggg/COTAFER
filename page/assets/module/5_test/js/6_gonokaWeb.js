@@ -8,7 +8,9 @@ if(document.querySelector('#gonokaWeb')){
                     {
                         id              : 1
                         , version       : '1.0.5'
-                        , projectName   : 'Gonoka Web'
+                        , productName   : 'Gonoka Web'
+                        , category      : 'Gonoka'
+                        , platform      : 'Web'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'

@@ -5,21 +5,12 @@ if(document.querySelector('#gonokaIos')){
                 gonokaIos: [
                     {
                         id              : 1
-                        , productName   : 'Gonoka'
+                        , productName   : 'Gonoka IOS'
                         , category      : 'Gonoka'
                         , platform      : 'IOS'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Running'
-                    }
-                    ,{
-                        id              : 2
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , platform      : 'IOS'
-                        , version       : '1.0.5'
-                        , git           : 'easd23459560sd34g'
-                        , status        : 'Stopped'
                     }
                 ]
                 , status                : 0

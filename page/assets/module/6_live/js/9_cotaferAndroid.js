@@ -5,21 +5,12 @@ if(document.querySelector('#cotaferAndroid')){
                 cotaferAndroid: [
                     {
                         id              : 1
-                        , productName   : 'Cotafer'
+                        , productName   : 'Cotafer Android'
                         , category      : 'Cotafer'
                         , platform      : 'Android'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Running'
-                    }
-                    ,{
-                        id              : 2
-                        , productName   : 'Cotafer'
-                        , category      : 'Cotafer'
-                        , platform      : 'Android'
-                        , version       : '1.0.5'
-                        , git           : 'easd23459560sd34g'
-                        , status        : 'Stopped'
                     }
                 ]
                 , status                : 0

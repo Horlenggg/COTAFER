@@ -8,7 +8,9 @@ if(document.querySelector('#cotaferAndroid')){
                     {
                         id              : 1
                         , version       : '1.0.5'
-                        , projectName   : 'Cotafer Android'
+                        , productName   : 'Cotafer Android'
+                        , category      : 'Cotafer'
+                        , platform      : 'Android'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
