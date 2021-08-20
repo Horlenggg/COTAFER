@@ -15,7 +15,7 @@ if(document.querySelector('#gonoka')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Running'
+                        , status        : 'Progressing'
                         , note          : 'helllllllllllllllllllllllllll'
                     }
                     ,{
@@ -29,7 +29,7 @@ if(document.querySelector('#gonoka')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Stopped'
+                        , status        : 'Suspend'
                         , note          : 'helllllllllllllllllllllllllll'
                     }
                     ,{
@@ -43,7 +43,7 @@ if(document.querySelector('#gonoka')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Running'
+                        , status        : 'Stop'
                         , note          : 'helllllllllllllllllllllllllll'
                     }
                     ,{
@@ -57,7 +57,35 @@ if(document.querySelector('#gonoka')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Stopped'
+                        , status        : 'Ignore'
+                        , note          : 'helllllllllllllllllllllllllll'
+                    }
+                    ,{
+                        id              : 5
+                        , productName   : 'Gonoka'
+                        , category      : 'Gonoka'
+                        , platform      : 'Api'
+                        , version       : '1.0.5'
+                        , devStartDate  : '12.12.2021'
+                        , devDeadline   : '01.01.2022'
+                        , releaseDate   : '02.02.2022'
+                        , maintenanceTime   : '60d'
+                        , feature       : 'live'
+                        , status        : 'Delete'
+                        , note          : 'helllllllllllllllllllllllllll'
+                    }
+                    ,{
+                        id              : 6
+                        , productName   : 'Gonoka'
+                        , category      : 'Gonoka'
+                        , platform      : 'Api'
+                        , version       : '1.0.5'
+                        , devStartDate  : '12.12.2021'
+                        , devDeadline   : '01.01.2022'
+                        , releaseDate   : '02.02.2022'
+                        , maintenanceTime   : '60d'
+                        , feature       : 'live'
+                        , status        : 'Archive'
                         , note          : 'helllllllllllllllllllllllllll'
                     }
                 ]

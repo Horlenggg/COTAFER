@@ -127,7 +127,7 @@
 							</div>
 						</td>
 						<td class="px-4 py-3 text-sm" v-text="index + 1"></td>
-						<td class="px-4 py-3 text-sm" v-text="arch.status" :class="{ 'text-red-500' : arch.status == 'Stopped', 'text-green-500' : arch.status == 'Running' }"></td>
+						<td class="px-4 py-3 text-sm" v-text="arch.status" :class="{ 'text-gray-700' : arch.status === 'Archive' || arch.status === 'Ignore' || arch.status === 'Suspend', 'text-green-500' : arch.status === 'Progressing', 'text-red-500' : arch.status === 'Stop' || arch.status === 'Delete' }"></td>
 						</td>
 						<td class="px-4 py-3 text-sm" v-text="arch.productName"></td>
 						<td class="px-4 py-3 text-sm" v-text="arch.category"></td>

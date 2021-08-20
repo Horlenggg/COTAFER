@@ -132,7 +132,7 @@
 							</div>
 						</td>
 						<td class="px-4 py-3 text-sm" v-text="index + 1"></td>
-						<td class="px-4 py-3 text-sm" v-text="android.status" :class="{ 'text-red-500' : android.status == 'Stopped', 'text-green-500' : android.status == 'Running' }"></td>
+						<td class="px-4 py-3 text-sm" v-text="android.status" :class="{ 'text-gray-700' : android.status === 'Archive' || android.status === 'Ignore' || android.status === 'Suspend', 'text-green-500' : android.status === 'Progressing', 'text-red-500' : android.status === 'Stop' || android.status === 'Delete' }"></td>
 						</td>
 						<td class="px-4 py-3 text-sm" v-text="android.productName"></td>
 						<td class="px-4 py-3 text-sm" v-text="android.category"></td>

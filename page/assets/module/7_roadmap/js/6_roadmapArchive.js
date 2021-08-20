@@ -15,7 +15,7 @@ if(document.querySelector('#archive')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Running'
+                        , status        : 'Archive'
                         , note          : 'helllllllllllllllllllllllllll'
                     }
                     ,{
@@ -29,7 +29,7 @@ if(document.querySelector('#archive')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Stopped'
+                        , status        : 'Archive'
                         , note          : 'helllllllllllllllllllllllllll'
                     }
                     ,{
@@ -43,7 +43,7 @@ if(document.querySelector('#archive')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Running'
+                        , status        : 'Archive'
                         , note          : 'helllllllllllllllllllllllllll'
                     }
                     ,{
@@ -57,7 +57,7 @@ if(document.querySelector('#archive')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Stopped'
+                        , status        : 'Archive'
                         , note          : 'helllllllllllllllllllllllllll'
                     }
                 ]

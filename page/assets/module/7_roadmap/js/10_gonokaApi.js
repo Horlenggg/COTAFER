@@ -14,7 +14,7 @@ if(document.querySelector('#gonokaApi')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Running'
+                        , status        : 'Progressing'
                         , note          : 'helllllllllllllllllllllllllll'
                     }
                 ]
