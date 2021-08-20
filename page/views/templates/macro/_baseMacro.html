@@ -267,6 +267,71 @@
         ]
     },
 ] -%}
+
+{%- elif params.base_module == 'roadmap' -%}
+
+{%- set sideBarModules = [
+    {
+        'module'        : 'gonoka'
+        , 'module_text' : 'Gonoka'
+        , 'icon'        : 'fas fa-badge-check'
+        , 'href'        : '/roadmap/gonoka'
+        , 'collapsible' : true
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : [
+            {
+                'sub_module' : 'ios'
+                , 'sub_module_text' : 'IOS'
+                , 'sub_module_href' : '/roadmap/gonoka/ios'
+            },
+            {
+                'sub_module' : 'android'
+                ,'sub_module_text'  : 'Android'
+                , 'sub_module_href' : '/roadmap/gonoka/android'
+            },
+            {
+                'sub_module' : 'web'
+                ,'sub_module_text'  : 'Web'
+                , 'sub_module_href' : '/roadmap/gonoka/web'
+            },
+            {
+                'sub_module' : 'api'
+                ,'sub_module_text'  : 'API'
+                , 'sub_module_href' : '/roadmap/gonoka/api'
+            },
+        ]
+    },
+    {
+        'module'        : 'cotafer'
+        , 'module_text' : 'Cotafer'
+        , 'icon'        : 'fas fa-clipboard-list'
+        , 'href'        : '/roadmap/cotafer'
+        , 'collapsible' : True
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : [
+            {
+                'sub_module' : 'ios'
+                , 'sub_module_text' : 'IOS'
+                , 'sub_module_href' : '/roadmap/cotafer/ios'
+            },
+            {
+                'sub_module' : 'android'
+                ,'sub_module_text'  : 'Android'
+                , 'sub_module_href' : '/roadmap/cotafer/android'
+            },
+            {
+                'sub_module' : 'web'
+                ,'sub_module_text'  : 'Web'
+                , 'sub_module_href' : '/roadmap/cotafer/web'
+            },
+            {
+                'sub_module' : 'api'
+                ,'sub_module_text'  : 'API'
+                , 'sub_module_href' : '/roadmap/cotafer/api'
+            },
+        ]
+    },
+] -%}
 {%- endif -%}
 
 <aside id="sidebar" class="w-full max-w-70 bg-white hidden md:block lg:block">
@@ -301,7 +366,7 @@
                 x-bind:style="activeModule[0] === '{{ module.module }}' ? 'max-height: ' + $refs.container{{ module.module }}.scrollHeight + 'px' : ''">
                 <div class="bg-white flex flex-col">
                     {% for subModule in module.sub_module -%}
-                    <a class="relative items-center py-2 {{ 'text-white bg-gray-700' if activeModule[1] == subModule.sub_module and activeModule[0] == module.module else 'text-gray-700 bg-white hover:bg-gray-700 hover:text-white' }}"
+                    <a class="relative items-center py-2 {{ 'text-white bg-gray-500' if activeModule[1] == subModule.sub_module and activeModule[0] == module.module else 'text-gray-700 bg-white hover:bg-gray-500 hover:text-white' }}"
                         href="{{ subModule.sub_module_href}}">
                         <span class="ml-10">{{ subModule.sub_module_text }}</span>
                     </a>

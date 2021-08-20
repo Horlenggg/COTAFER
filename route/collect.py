@@ -16,6 +16,7 @@ from page.validations.company       import CompanyValidation as company
 from page.validations.test          import TestValidation as test
 from page.validations.live          import LiveValidation as live
 from page.validations.account       import AccountValidation as account
+from page.validations.roadmap       import RoadmapValidation as roadmap
  
 # ================= #
 #       Auth        #
@@ -333,6 +334,58 @@ def liveCotaferApiGet():
 #      roadmap      #
 # ================= #
 
-# @route.get('/roadmap')
-# def roadmap():
-#     return live.LiveValidation().roadmap()
+@route.get('/roadmap')
+def roadmapGet():
+    return roadmap.RoadmapValidation().roadmapGet()
+
+@route.get('/roadmap/add')
+def roadmapAddGet():
+    return roadmap.RoadmapValidation().roadmapAddGet()
+
+@route.get('/roadmap/edit')
+def roadmapEditGet():
+    return roadmap.RoadmapValidation().roadmapEditGet()
+
+@route.get('/roadmap/archive')
+def roadmapArchiveGet():
+    return roadmap.RoadmapValidation().roadmapArchiveGet()
+
+@route.get('/roadmap/gonoka')
+def roadmapGonokaGet():
+    return roadmap.RoadmapValidation().roadmapGonokaGet()
+
+@route.get('/roadmap/gonoka/ios')
+def roadmapGonokaIosGet():
+    return roadmap.RoadmapValidation().roadmapGonokaIosGet()
+
+@route.get('/roadmap/gonoka/android')
+def roadmapGonokaAndroidGet():
+    return roadmap.RoadmapValidation().roadmapGonokaAndroidGet()
+
+@route.get('/roadmap/gonoka/web')
+def roadmapGonokaWebGet():
+    return roadmap.RoadmapValidation().roadmapGonokaWebGet()
+
+@route.get('/roadmap/gonoka/api')
+def roadmapGonokaApiGet():
+    return roadmap.RoadmapValidation().roadmapGonokaApiGet()
+
+@route.get('/roadmap/cotafer')
+def roadmapCotaferGet():
+    return roadmap.RoadmapValidation().roadmapCotaferGet()
+
+@route.get('/roadmap/cotafer/ios')
+def roadmapCotaferIosGet():
+    return roadmap.RoadmapValidation().roadmapCotaferIosGet()
+
+@route.get('/roadmap/cotafer/android')
+def roadmapCotaferAndroidGet():
+    return roadmap.RoadmapValidation().roadmapCotaferAndroidGet()
+
+@route.get('/roadmap/cotafer/web')
+def roadmapCotaferWebGet():
+    return roadmap.RoadmapValidation().roadmapCotaferWebGet()
+
+@route.get('/roadmap/cotafer/api')
+def roadmapCotaferApiGet():
+    return roadmap.RoadmapValidation().roadmapCotaferApiGet()

@@ -2,14 +2,14 @@
 
 {% block bodyContent %}
 
-<div id="liveEdit" class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
+<div id="roadmapAdd" class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
 	<div class="flex flex-row items-center">
-		<a href="/live" class="no-underline">
+		<a href="/roadmap" class="no-underline">
 			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 			</svg>
 		</a>
-		<span class="font-bold text-3xl text-gray-700 ml-6.5">Edit Live Product</span>
+		<span class="font-bold text-3xl text-gray-700 ml-6.5">Add Roadmap</span>
 	</div>
 	<div class="flex flex-col px-12 pt-10 space-y-6.5">
 		<div class="flex flex-row space-x-12.5">
@@ -34,30 +34,6 @@
 					placeholder="Version"
 				>
 				<span class="text-xs text-red-500" v-text='errMessageVe'></span>
-			</div>
-		</div>
-		<div class="flex flex-row space-x-12.5">
-			<div class="relative w-1/2">
-				<label for="git" class="block text-gray-700">Git</label>
-				<input 
-					type="text" 
-					v-model="git"
-					class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
-					:class="isGiVal ? 'border-red-500' : ''"
-					placeholder="Git"
-				>
-				<span class="text-xs text-red-500" v-text='errMessageGi'></span>
-			</div>
-			<div class="w-1/2">
-				<label for="RelativeProject" class="block text-gray-700">Relative Project</label>
-				<input 
-					type="text" 
-					v-model="relativeProject"
-					class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
-					:class="isReVal ? 'border-red-500' : ''"
-					placeholder="Relative Project"
-				>
-				<span class="text-xs text-red-500" v-text='errMessageRe'></span>
 			</div>
 		</div>
 		<div class="flex flex-row space-x-12.5">
@@ -102,7 +78,7 @@
 		</div>
 		<div class="flex flex-row space-x-12.5">
 			<div class="w-1/2">
-				<label for="" class="block text-gray-700">Expiration</label>
+				<label for="" class="block text-gray-700">Dev Start Date</label>
 				<div class="relative">
 					<div class="absolute top-2.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -110,39 +86,39 @@
 						</svg>
 					</div>
 					<input 
-						id="expiration"
+						id="devStartDate"
 						type="text" 
-						v-model="expiration"
+						v-model="devStartDate"
 						class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
-						:class="isExVal ? 'border-red-500' : ''"
-						placeholder="Expiration"
+						:class="isDeSVal ? 'border-red-500' : ''"
+						placeholder="Dev Start Date"
 					>
 				</div>
-				<span class="text-xs text-red-500" v-text='errMessageEx'></span>
+				<span class="text-xs text-red-500" v-text='errMessageDeS'></span>
 			</div>
 			<div class="w-1/2">
-				<label for="server" class="block text-gray-700">Server</label>
+				<label for="" class="block text-gray-700">Dev Deadline</label>
 				<div class="relative">
 					<div class="absolute top-2.5 right-2 border-l border-gray-300 pl-1.5 z-10">
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
 						</svg>
 					</div>
-					<select 
-						v-model="server" 
-						class="mt-2.5 block w-full appearance-none text-sm bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
-						:class="isSeVal ? 'border-red-500' : '', server == '0' ? 'text-gray-400' : 'text-gray-700'"
+					<input 
+						id="devDeadline"
+						type="text" 
+						v-model="devDeadline"
+						class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+						:class="isDeDVal ? 'border-red-500' : ''"
+						placeholder="Dev Deadline"
 					>
-						<option class="text-gray-400" value="0">Select...</option>
-						<option class="text-gray-700" v-for="se in seOption" v-text="se.label" value="se.value"></option>
-					</select>
 				</div>
-				<span class="text-xs text-red-500" v-text='errMessageSe'></span>
+				<span class="text-xs text-red-500" v-text='errMessageDeD'></span>
 			</div>
 		</div>
 		<div class="flex flex-row space-x-12.5">
 			<div class="w-1/2">
-				<label for="" class="block text-gray-700">Start Date</label>
+				<label for="" class="block text-gray-700">Release Date</label>
 				<div class="relative">
 					<div class="absolute top-2.5 right-2 border-l border-gray-300 pl-1.5 z-10">
 						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -150,69 +126,42 @@
 						</svg>
 					</div>
 					<input 
-						id="startDate"
+						id="releaseDate"
 						type="text" 
-						v-model="startDate"
+						v-model="releaseDate"
 						class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
-						:class="isSttDVal ? 'border-red-500' : ''"
+						:class="isReVal ? 'border-red-500' : ''"
 						placeholder="Start Date"
 					>
 				</div>
-				<span class="text-xs text-red-500" v-text='errMessageSttD'></span>
+				<span class="text-xs text-red-500" v-text='errMessageRe'></span>
 			</div>
-			<div class="w-1/2">
-				<label for="startApproveBy" class="block text-gray-700">Start Approve By</label>
-				<Multiselect
-					v-model="startApproveBy"
-					class="border-gray-200 hover:border-gray-700 focus:border-gray-700"
-					:class="isSttAVal ? 'border-red-500' : ''"
-					placeholder="Start Approve By"
-					:options="sttAOption"
-					mode="tags"
-					:searchable="true"
-					:createTag="true"
-					:caret="true"
+			<div class="relative w-1/2">
+				<label for="maintenanceTime" class="block text-gray-700">Maintenance Time</label>
+				<input 
+					type="text" 
+					v-model="maintenanceTime"
+					class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+					:class="isMaVal ? 'border-red-500' : ''"
+					placeholder="Maintenance Time"
 				>
-				</Multiselect>
-				<span class="text-xs text-red-500" v-text='errMessageSttA'></span>
+				<span class="text-xs text-red-500" v-text='errMessageMa'></span>
 			</div>
 		</div>
-		<div class="flex flex-row space-x-12.5">
-			<div class="w-1/2">
-				<label for="" class="block text-gray-700">Stop Date</label>
-				<div class="relative">
-					<div class="absolute top-2.5 right-2 border-l border-gray-300 pl-1.5 z-10">
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-						</svg>
-					</div>
-					<input 
-						id="stopDate"
-						type="text" 
-						v-model="stopDate"
-						class="mt-2.5 block w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
-						:class="isStpDVal ? 'border-red-500' : ''"
-						placeholder="Stop Date"
-					>
-				</div>
-				<span class="text-xs text-red-500" v-text='errMessageStpD'></span>
+		<div class="w-full">
+			<label for="feature" class="block text-gray-700">Feature</label>
+			<div class="relative w-full">
+				<textarea 
+					v-model="feature" 
+					class="mt-2.5 w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 resize-none outline-none p-3" 
+					:class="isFeVal ? 'border-red-500' : ''"
+					cols="30" 
+					rows="5" 
+					maxlength="100"
+					placeholder="Write your feature here"></textarea>
+				<span v-text="feature.length + '/100'" class="absolute bottom-3 right-3 text-xs-sm text-gray-300"></span>
 			</div>
-			<div class="w-1/2">
-				<label for="stopApproveBy" class="block text-gray-700">Stop Approve By</label>
-				<Multiselect
-					v-model="stopApproveBy"
-					class="border-gray-200 hover:border-gray-700 focus:border-gray-700"
-					:class="isStpAVal ? 'border-red-500' : ''"
-					placeholder="Stop Approve By"
-					:options="stpAOption"
-					mode="tags"
-					:searchable="true"
-					:createTag="true"
-					:caret="true"
-				>
-				</Multiselect>
-				<span class="text-xs text-red-500" v-text='errMessageStpA'></span>
-			</div>
+			<span class="text-xs text-red-500" v-text='errMessageFe'></span>
 		</div>
 		<div class="w-full">
 			<label for="note" class="block text-gray-700">Note</label>
@@ -231,7 +180,7 @@
 		</div>
 	</div>
 	<div class="w-full flex justify-end px-12 mt-15">
-		<button @click="onSubmit" class="font-medium text-lg uppercase text-white bg-gray-700 py-3.5 px-24">Update</button>
+		<button @click="onSubmit" class="font-medium text-lg uppercase text-white bg-gray-700 py-3.5 px-24">Add</button>
 	</div>
 </div>
 
