@@ -117,8 +117,6 @@ if(document.querySelector('#testEdit')){
         },
         methods: {
             onSubmit() {
-    
-                console.log('Validation');
 
                 if(this.permission == 'member'){
                     if(this.byLink.length == 0){
@@ -454,6 +452,9 @@ if(document.querySelector('#testEdit')){
                     }
                 }
             },
+            onBack() {
+                window.history.back()
+            }
         },
     }
     const testEditApp =  Vue.createApp(testEdit);

@@ -249,6 +249,9 @@ if(document.querySelector('#liveAdd')){
                     }
                 }
             },
+            onBack() {
+                window.history.back()
+            }
         },
     }
     const liveAddApp =  Vue.createApp(liveAdd);

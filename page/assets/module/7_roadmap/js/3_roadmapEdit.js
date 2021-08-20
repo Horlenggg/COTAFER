@@ -197,6 +197,9 @@ if(document.querySelector('#roadmapEdit')){
                     }
                 }
             },
+            onBack() {
+                window.history.back()
+            }
         },
     }
     const roadmapEditApp =  Vue.createApp(roadmapEdit);

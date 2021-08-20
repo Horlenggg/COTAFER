@@ -249,6 +249,9 @@ if(document.querySelector('#liveEdit')){
                     }
                 }
             },
+            onBack() {
+                window.history.back()
+            }
         },
     }
     const liveEditApp =  Vue.createApp(liveEdit);
