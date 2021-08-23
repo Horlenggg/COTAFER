@@ -2,8 +2,8 @@ if(document.querySelector('#archive')){
     const archive = {
         data() {
             return {
-                archives: [
-                
+                permission              : 'manager'
+                , archives: [
                     {
                         id              : 1
                         , productName   : 'Gonoka'
@@ -66,44 +66,18 @@ if(document.querySelector('#archive')){
                     { value: 1, label: 'Running' }
                     , { value: 2, label: 'Stopped' }
                 ]
-                , isShow                : 0
-                , isModalDelete         : false
-                , isModalStop           : false
-            }
-        },
-        watch: {
-            isShow(o, n){
-                console.log(o,n);
             }
         },
         mounted() {
             flatpickr("#archiveDate", {});
         },
         methods: {
-            onModal(id = 0) {
-                if(this.isShow == 0){
-                    this.isShow = id
-                } else {
-                    this.isShow = 0
-                }
-            },
-            onDelete(id = 0) {
-                this.isModalDelete = true
-            },
-            onStart(id = 0){
+            onRestore(id = 0) {
                 console.log(id);
             },
-            onStop(id = 0){
-                this.isModalStop = true
-            },
-            onSuspend(id = 0){
-                console.log(id);
-            },
-            onArchive(id = 0) {
-                console.log(id);
-            }
         },
     }
     const archiveApp =  Vue.createApp(archive);
+    archiveApp.component('dropdown-table', DROPDOWN);
     archiveApp.mount('#archive');
 }

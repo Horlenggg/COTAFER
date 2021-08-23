@@ -3,8 +3,7 @@ if(document.querySelector('#gonoka')){
         data() {
             return {
                 permission              : 'manager'
-
-                ,gonokas: [
+                , gonokas: [
                     {
                         id              : 1
                         , version       : '1.0.5'
@@ -99,34 +98,23 @@ if(document.querySelector('#gonoka')){
                     { value: 1, label: 'Running' }
                     , { value: 2, label: 'Stopped' }
                 ]
-                , isShow                : 0
                 , isModalDelete         : false
                 , isModalStop           : false
-            }
-        },
-        watch: {
-            isShow(o, n){
-                console.log(o,n);
             }
         },
         mounted() {
             flatpickr("#gonokaDate", {});
         },
         methods: {
-            onModal(id = 0){
-                if(this.isShow == 0){
-                    this.isShow = id
-                } else {
-                    this.isShow = 0
-                }
-            },
             onDelete(id = 0){
+                console.log(id);
                 this.isModalDelete = true
             },
             onStart(id = 0){
                 console.log(id);
             },
             onStop(id = 0){
+                console.log(id);
                 this.isModalStop = true
             },
             onSuspend(id = 0){
@@ -135,11 +123,9 @@ if(document.querySelector('#gonoka')){
             onArchive(id = 0){
                 console.log(id);
             },
-            away(){
-                console.log('away');
-            }
         },
     }
     const gonokaApp =  Vue.createApp(gonoka);
+    gonokaApp.component('dropdown-table', DROPDOWN);
     gonokaApp.mount('#gonoka');
 }

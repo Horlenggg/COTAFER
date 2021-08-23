@@ -2,7 +2,8 @@ if(document.querySelector('#cotafer')){
     const cotafer = {
         data() {
             return {
-                cotafers: [
+                permission              : 'manager'
+                , cotafers: [
                     {
                         id              : 1
                         , productName   : 'Cotafer'
@@ -93,34 +94,23 @@ if(document.querySelector('#cotafer')){
                     { value: 1, label: 'Running' }
                     , { value: 2, label: 'Stopped' }
                 ]
-                , isShow                : 0
                 , isModalDelete         : false
                 , isModalStop           : false
-            }
-        },
-        watch: {
-            isShow(o, n){
-                console.log(o,n);
             }
         },
         mounted() {
             flatpickr("#cotaferDate", {});
         },
         methods: {
-            onModal(id = 0) {
-                if(this.isShow == 0){
-                    this.isShow = id
-                } else {
-                    this.isShow = 0
-                }
-            },
             onDelete(id = 0) {
+                console.log(id);
                 this.isModalDelete = true
             },
             onStart(id = 0){
                 console.log(id);
             },
             onStop(id = 0){
+                console.log(id);
                 this.isModalStop = true
             },
             onSuspend(id = 0){
@@ -132,5 +122,6 @@ if(document.querySelector('#cotafer')){
         },
     }
     const cotaferApp =  Vue.createApp(cotafer);
+    cotaferApp.component('dropdown-table', DROPDOWN);
     cotaferApp.mount('#cotafer');
 }

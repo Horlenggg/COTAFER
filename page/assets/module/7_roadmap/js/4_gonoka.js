@@ -2,8 +2,8 @@ if(document.querySelector('#gonoka')){
     const gonoka = {
         data() {
             return {
-                gonokas: [
-                
+                permission              : 'manager'
+                , gonokas: [
                     {
                         id              : 1
                         , productName   : 'Gonoka'
@@ -94,34 +94,23 @@ if(document.querySelector('#gonoka')){
                     { value: 1, label: 'Running' }
                     , { value: 2, label: 'Stopped' }
                 ]
-                , isShow                : 0
                 , isModalDelete         : false
                 , isModalStop           : false
-            }
-        },
-        watch: {
-            isShow(o, n){
-                console.log(o,n);
             }
         },
         mounted() {
             flatpickr("#gonokaDate", {});
         },
         methods: {
-            onModal(id = 0) {
-                if(this.isShow == 0){
-                    this.isShow = id
-                } else {
-                    this.isShow = 0
-                }
-            },
             onDelete(id = 0) {
+                console.log(id);
                 this.isModalDelete = true
             },
             onStart(id = 0){
                 console.log(id);
             },
             onStop(id = 0){
+                console.log(id);
                 this.isModalStop = true
             },
             onSuspend(id = 0){
@@ -133,5 +122,6 @@ if(document.querySelector('#gonoka')){
         },
     }
     const gonokaApp =  Vue.createApp(gonoka);
+    gonokaApp.component('dropdown-table', DROPDOWN);
     gonokaApp.mount('#gonoka');
 }

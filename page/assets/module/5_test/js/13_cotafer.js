@@ -3,8 +3,7 @@ if(document.querySelector('#cotafer')){
         data() {
             return {
                 permission              : 'manager'
-
-                ,cotafers: [
+                , cotafers: [
                     {
                         id              : 1
                         , version       : '1.0.5'
@@ -13,7 +12,7 @@ if(document.querySelector('#cotafer')){
                         , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
-                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Running'
                     }
                     ,{
@@ -24,7 +23,7 @@ if(document.querySelector('#cotafer')){
                         , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
-                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stopped'
                     }
                     ,{
@@ -35,7 +34,7 @@ if(document.querySelector('#cotafer')){
                         , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
-                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Running'
                     }
                     ,{
@@ -46,7 +45,7 @@ if(document.querySelector('#cotafer')){
                         , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
-                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stopped'
                     }
                     ,{
@@ -57,7 +56,7 @@ if(document.querySelector('#cotafer')){
                         , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
-                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Running'
                     }
                     ,{
@@ -68,7 +67,7 @@ if(document.querySelector('#cotafer')){
                         , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
-                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stopped'
                     }
                     ,{
@@ -79,7 +78,7 @@ if(document.querySelector('#cotafer')){
                         , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
-                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Running'
                     }
                     ,{
@@ -90,8 +89,140 @@ if(document.querySelector('#cotafer')){
                         , platform      : 'IOS'
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
-                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 9
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer Android'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 10
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer Web'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Running'
+                    },
+                    {
+                        id              : 11
+                        , version       : '1.0.5'
+                        , productName   : 'cotafer IOS'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Running'
+                    }
+                    ,{
+                        id              : 12
+                        , version       : '1.0.5'
+                        , productName   : 'cotafer Android'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 13
+                        , version       : '1.0.5'
+                        , productName   : 'cotafer Web'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Running'
+                    }
+                    ,{
+                        id              : 14
+                        , version       : '1.0.5'
+                        , productName   : 'cotafer Api'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 15
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer IOS'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Running'
+                    }
+                    ,{
+                        id              : 16
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer Android'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 17
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer Web'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Running'
+                    }
+                    ,{
+                        id              : 18
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer Api'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 19
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer Android'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Stopped'
+                    }
+                    ,{
+                        id              : 20
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer Web'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Running'
                     }
                 ]
                 , status                : 0
@@ -99,35 +230,25 @@ if(document.querySelector('#cotafer')){
                     { value: 1, label: 'Running' }
                     , { value: 2, label: 'Stopped' }
                 ]
-                , isShow                : 0
                 , isModalDelete         : false
                 , isModalStop           : false
-            }
-        },
-        watch: {
-            isShow(o, n){
-                console.log(o,n);
+
             }
         },
         mounted() {
             flatpickr("#cotaferDate", {});
         },
         methods: {
-            onModal(id = 0){
-                if(this.isShow == 0){
-                    this.isShow = id
-                } else {
-                    this.isShow = 0
-                }
-            },
             onDelete(id = 0){
-                this.isModalDelete = true
+                this.isModalDelete = true;
+                console.log(id);
             },
             onStart(id = 0){
                 console.log(id);
             },
             onStop(id = 0){
-                this.isModalStop = true
+                this.isModalStop = true;
+                console.log(id);
             },
             onSuspend(id = 0){
                 console.log(id);
@@ -135,11 +256,9 @@ if(document.querySelector('#cotafer')){
             onArchive(id = 0){
                 console.log(id);
             },
-            away(){
-                console.log('away');
-            }
         },
     }
     const cotaferApp =  Vue.createApp(cotafer);
+    cotaferApp.component('dropdown-table', DROPDOWN);
     cotaferApp.mount('#cotafer');
 }
