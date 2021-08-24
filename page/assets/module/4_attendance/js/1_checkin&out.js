@@ -8,21 +8,21 @@ if(document.querySelector('#checkinandout')){
                         , date          : '04/01/2021'
                         , checkin       : '8:30'
                         , checkout      : '5:30'
-                        , other         : ''
+                        , note          : 'sdfdsfdsf'
                     }
                     ,{
                         id              : 2
                         , date          : '05/01/2021'
                         , checkin       : '8:30'
                         , checkout      : '5:30'
-                        , other         : ''
+                        , note          : 'sdfdsfdsf'
                     }
                     ,{
                         id              : 3
                         , date          : '06/01/2021'
                         , checkin       : '8:30'
                         , checkout      : '5:30'
-                        , other         : ''
+                        , note          : 'sdfdsfdsf'
                     }
                 ]
                 , isModalDelete: false

@@ -15,8 +15,9 @@ if(document.querySelector('#cotafer')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Progressing'
+                        , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllll'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 2
@@ -31,6 +32,7 @@ if(document.querySelector('#cotafer')){
                         , feature       : 'live'
                         , status        : 'Suspend'
                         , note          : 'helllllllllllllllllllllllllll'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 3
@@ -45,6 +47,7 @@ if(document.querySelector('#cotafer')){
                         , feature       : 'live'
                         , status        : 'Stop'
                         , note          : 'helllllllllllllllllllllllllll'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 4
@@ -59,6 +62,7 @@ if(document.querySelector('#cotafer')){
                         , feature       : 'live'
                         , status        : 'Ignore'
                         , note          : 'helllllllllllllllllllllllllll'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 5
@@ -73,6 +77,7 @@ if(document.querySelector('#cotafer')){
                         , feature       : 'live'
                         , status        : 'Delete'
                         , note          : 'helllllllllllllllllllllllllll'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 6
@@ -87,15 +92,17 @@ if(document.querySelector('#cotafer')){
                         , feature       : 'live'
                         , status        : 'Archive'
                         , note          : 'helllllllllllllllllllllllllll'
+                        , type          : 'none'
                     }
                 ]
                 , status                : 0
                 , stOption: [
-                    { value: 1, label: 'Running' }
-                    , { value: 2, label: 'Stopped' }
+                    { value: 1, label: 'Start' }
+                    , { value: 2, label: 'Stop' }
+                    , { value: 3, label: 'Suspend' }
+                    , { value: 4, label: 'Delete' }
                 ]
                 , isModalDelete         : false
-                , isModalStop           : false
             }
         },
         mounted() {
@@ -104,14 +111,12 @@ if(document.querySelector('#cotafer')){
         methods: {
             onDelete(id = 0) {
                 console.log(id);
-                this.isModalDelete = true
             },
             onStart(id = 0){
                 console.log(id);
             },
             onStop(id = 0){
                 console.log(id);
-                this.isModalStop = true
             },
             onSuspend(id = 0){
                 console.log(id);
@@ -122,6 +127,7 @@ if(document.querySelector('#cotafer')){
         },
     }
     const cotaferApp =  Vue.createApp(cotafer);
-    cotaferApp.component('dropdown-table', DROPDOWN);
+    cotaferApp.component('dropdown-status', DROPDOWN_STATUS);
+    cotaferApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
     cotaferApp.mount('#cotafer');
 }

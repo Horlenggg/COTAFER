@@ -15,17 +15,19 @@ if(document.querySelector('#gonokaAndroid')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Progressing'
+                        , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllll'
+                        , type          : 'none'
                     }
                 ]
                 , status                : 0
                 , stOption: [
-                    { value: 1, label: 'Running' }
-                    , { value: 2, label: 'Stopped' }
+                    { value: 1, label: 'Start' }
+                    , { value: 2, label: 'Stop' }
+                    , { value: 3, label: 'Suspend' }
+                    , { value: 4, label: 'Delete' }
                 ]
                 , isModalDelete         : false
-                , isModalStop           : false
             }
         },
         mounted() {
@@ -34,14 +36,12 @@ if(document.querySelector('#gonokaAndroid')){
         methods: {
             onDelete(id = 0) {
                 console.log(id);
-                this.isModalDelete = true
             },
             onStart(id = 0){
                 console.log(id);
             },
             onStop(id = 0){
                 console.log(id);
-                this.isModalStop = true
             },
             onSuspend(id = 0){
                 console.log(id);
@@ -52,6 +52,7 @@ if(document.querySelector('#gonokaAndroid')){
         },
     }
     const gonokaAndroidApp =  Vue.createApp(gonokaAndroid);
-    gonokaAndroidApp.component('dropdown-table', DROPDOWN);
+    gonokaAndroidApp.component('dropdown-status', DROPDOWN_STATUS);
+    gonokaAndroidApp.component('dropdown-archive', DROPDOWN_ARCHIVE);;
     gonokaAndroidApp.mount('#gonokaAndroid');
 }

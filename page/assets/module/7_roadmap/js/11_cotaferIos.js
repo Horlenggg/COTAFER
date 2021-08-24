@@ -15,17 +15,19 @@ if(document.querySelector('#cotaferIos')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Progressing'
+                        , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllll'
+                        , type          : 'none'
                     }
                 ]
                 , status                : 0
                 , stOption: [
-                    { value: 1, label: 'Running' }
-                    , { value: 2, label: 'Stopped' }
+                    { value: 1, label: 'Start' }
+                    , { value: 2, label: 'Stop' }
+                    , { value: 3, label: 'Suspend' }
+                    , { value: 4, label: 'Delete' }
                 ]
                 , isModalDelete         : false
-                , isModalStop           : false
             }
         },
         mounted() {
@@ -34,14 +36,12 @@ if(document.querySelector('#cotaferIos')){
         methods: {
             onDelete(id = 0) {
                 console.log(id);
-                this.isModalDelete = true
             },
             onStart(id = 0){
                 console.log(id);
             },
             onStop(id = 0){
                 console.log(id);
-                this.isModalStop = true
             },
             onSuspend(id = 0){
                 console.log(id);
@@ -52,6 +52,7 @@ if(document.querySelector('#cotaferIos')){
         },
     }
     const cotaferIosApp =  Vue.createApp(cotaferIos);
-    cotaferIosApp.component('dropdown-table', DROPDOWN);
+    cotaferIosApp.component('dropdown-status', DROPDOWN_STATUS);
+    cotaferIosApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
     cotaferIosApp.mount('#cotaferIos');
 }

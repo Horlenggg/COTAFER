@@ -13,16 +13,18 @@ if(document.querySelector('#gonokaWeb')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                 ]
                 , status                : 0
                 , stOption: [
-                    { value: 1, label: 'Running' }
-                    , { value: 2, label: 'Stopped' }
+                    { value: 1, label: 'Start' }
+                    , { value: 2, label: 'Stop' }
+                    , { value: 3, label: 'Suspend' }
+                    , { value: 4, label: 'Delete' }
                 ]
                 , isModalDelete         : false
-                , isModalStop           : false
             }
         },
         mounted() {
@@ -31,14 +33,12 @@ if(document.querySelector('#gonokaWeb')){
         methods: {
             onDelete(id = 0) {
                 console.log(id);
-                this.isModalDelete = true
             },
             onStart(id = 0){
                 console.log(id);
             },
             onStop(id = 0){
                 console.log(id);
-                this.isModalStop = true
             },
             onSuspend(id = 0){
                 console.log(id);
@@ -49,6 +49,7 @@ if(document.querySelector('#gonokaWeb')){
         },
     }
     const gonokaWebApp =  Vue.createApp(gonokaWeb);
-    gonokaWebApp.component('dropdown-table', DROPDOWN);
+    gonokaWebApp.component('dropdown-status', DROPDOWN_STATUS);
+    gonokaWebApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
     gonokaWebApp.mount('#gonokaWeb');
 }

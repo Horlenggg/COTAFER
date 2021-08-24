@@ -15,8 +15,9 @@ if(document.querySelector('#archive')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Archive'
+                        , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllll'
+                        , type          : 'Archive'
                     }
                     ,{
                         id              : 2
@@ -29,8 +30,9 @@ if(document.querySelector('#archive')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Archive'
+                        , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllll'
+                        , type          : 'Archive'
                     }
                     ,{
                         id              : 3
@@ -43,8 +45,9 @@ if(document.querySelector('#archive')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Archive'
+                        , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllll'
+                        , type          : 'Archive'
                     }
                     ,{
                         id              : 4
@@ -57,15 +60,26 @@ if(document.querySelector('#archive')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Archive'
+                        , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllll'
+                        , type          : 'Archive'
                     }
                 ]
                 , status                : 0
                 , stOption: [
-                    { value: 1, label: 'Running' }
-                    , { value: 2, label: 'Stopped' }
+                    { value: 1, label: 'Start' }
+                    , { value: 2, label: 'Stop' }
+                    , { value: 3, label: 'Suspend' }
+                    , { value: 4, label: 'Delete' }
                 ]
+                , platform               : 0
+                , plOption: [
+                    { value: 1, label: 'IOS' }
+                    , { value: 2, label: 'Android' }
+                    , { value: 3, label: 'Web' }
+                    , { value: 4, label: 'Api' }
+                ]
+                , isModalDelete         : false
             }
         },
         mounted() {
@@ -75,9 +89,22 @@ if(document.querySelector('#archive')){
             onRestore(id = 0) {
                 console.log(id);
             },
+            onDelete(id = 0) {
+                console.log(id);
+            },
+            onStart(id = 0){
+                console.log(id);
+            },
+            onStop(id = 0){
+                console.log(id);
+            },
+            onSuspend(id = 0){
+                console.log(id);
+            },
         },
     }
     const archiveApp =  Vue.createApp(archive);
-    archiveApp.component('dropdown-table', DROPDOWN);
+    archiveApp.component('dropdown-status', DROPDOWN_STATUS);
+    archiveApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
     archiveApp.mount('#archive');
 }

@@ -62,7 +62,8 @@
 						<th class="px-4 py-3">Platform</th>
 						<th class="px-4 py-3">Form Link</th>
 						<th class="px-4 py-3">By Link</th>
-						<th class="px-4 py-3 w-2/6">Report</th>
+						<th class="px-4 py-3 w-2/12">Report</th>
+						<th class="px-4 py-3">Action</th>
 					</tr>
 				</thead>
 				<tbody class="bg-white">
@@ -73,20 +74,24 @@
 						:class="{ 'bg-gray-100' : index % 2 === 0 }"
 					>
 						<td class="px-4 py-3 text-sm">
-							<dropdown-table 
+							<dropdown-archive 
+								:is-permission="permission" 
+								:is-type="api.type"
+								@on-archive="onArchive(api.id)"
+								>
+							</dropdown-archive>
+						</td>
+						<td class="px-4 py-3 text-sm" v-text="index + 1"></td>
+						<td class="px-4 py-3 text-sm">
+							<dropdown-status 
 								:is-permission="permission" 
 								:is-status="api.status"
-								is-route="/test/edit"
 								@on-start="onStart(api.id)"
 								@on-stop="onStop(api.id)"
 								@on-suspend="onSuspend(api.id)"
-								@on-archive="onArchive(api.id)"
 								@on-delete="onDelete(api.id)"
 								>
-							</dropdown-table>
-						</td>
-						<td class="px-4 py-3 text-sm" v-text="index + 1"></td>
-						<td class="px-4 py-3 text-sm" v-text="api.status" :class="{ 'text-red-500' : api.status == 'Stopped', 'text-green-500' : api.status == 'Running' }"></td>
+							</dropdown-status>
 						</td>
 						<td class="px-4 py-3 text-sm" v-text="api.version"></td>
 						<td class="px-4 py-3 text-sm" v-text="api.productName"></td>
@@ -97,6 +102,27 @@
 						<td class="px-4 py-3 text-sm relative group">
 							<span class="line-clamp-1" v-text="api.report"></span>
 							<span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="api.report"></span>
+						</td>
+						<td class="px-4 py-3 text-sm">
+							<div class="flex items-center space-x-4 text-sm">
+								<a href="/test/view">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor">
+										<path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+										<path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+									</svg>
+								</a>
+								<a href="/test/edit" class="no-underline">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+										<path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+										<path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+									</svg>
+								</a>
+								<button @click="onDelete(api.id)" class="focus:outline-none focus:shadow-outline-gray">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+									</svg>
+								</button>
+							</div>
 						</td>
 					</tr>
 				</tbody>
@@ -165,34 +191,6 @@
 						Yes
 					</button>
 					<button @click="isModalDelete = false" type="button" class="font-medium text-xl text-gray-700 select-none border bg-white hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 px-16 py-3.5">
-						No
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div v-show="isModalStop"
-		class="fixed z-10 inset-0 overflow-y-auto"
-		aria-labelledby="modal-title" role="dialog" 
-		aria-modal="true"
-	>
-		<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-		  	<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-			<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-			<div class="inline-block align-bottom bg-white overflow-hidden transform transition-all sm:align-middle sm:max-w-md sm:w-full pt-8 pb-11 px-9">
-				<div class="w-full flex flex-col justify-center items-center">
-					<div>
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-25 h-25 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-							<path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-						</svg>
-					</div>
-					<h3 class="text-xl mt-2">Do you really want to stop this service?</h3>
-				</div>
-				<div class="flex flex-row justify-between mt-10">
-					<button type="button" class="font-medium text-xl text-white select-none border bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 px-16 py-3.5">
-						Yes
-					</button>
-					<button @click="isModalStop = false" type="button" class="font-medium text-xl text-gray-700 select-none border bg-white hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 px-16 py-3.5">
 						No
 					</button>
 				</div>

@@ -13,7 +13,8 @@ if(document.querySelector('#gonoka')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 2
@@ -24,7 +25,8 @@ if(document.querySelector('#gonoka')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 3
@@ -35,7 +37,8 @@ if(document.querySelector('#gonoka')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 4
@@ -46,7 +49,8 @@ if(document.querySelector('#gonoka')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 5
@@ -57,7 +61,8 @@ if(document.querySelector('#gonoka')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 6
@@ -68,7 +73,8 @@ if(document.querySelector('#gonoka')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 7
@@ -79,7 +85,8 @@ if(document.querySelector('#gonoka')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 8
@@ -90,16 +97,18 @@ if(document.querySelector('#gonoka')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                 ]
                 , status                : 0
                 , stOption: [
-                    { value: 1, label: 'Running' }
-                    , { value: 2, label: 'Stopped' }
+                    { value: 1, label: 'Start' }
+                    , { value: 2, label: 'Stop' }
+                    , { value: 3, label: 'Suspend' }
+                    , { value: 4, label: 'Delete' }
                 ]
                 , isModalDelete         : false
-                , isModalStop           : false
             }
         },
         mounted() {
@@ -108,14 +117,12 @@ if(document.querySelector('#gonoka')){
         methods: {
             onDelete(id = 0){
                 console.log(id);
-                this.isModalDelete = true
             },
             onStart(id = 0){
                 console.log(id);
             },
             onStop(id = 0){
                 console.log(id);
-                this.isModalStop = true
             },
             onSuspend(id = 0){
                 console.log(id);
@@ -126,6 +133,7 @@ if(document.querySelector('#gonoka')){
         },
     }
     const gonokaApp =  Vue.createApp(gonoka);
-    gonokaApp.component('dropdown-table', DROPDOWN);
+    gonokaApp.component('dropdown-status', DROPDOWN_STATUS);
+    gonokaApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
     gonokaApp.mount('#gonoka');
 }

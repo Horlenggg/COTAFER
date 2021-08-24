@@ -129,11 +129,11 @@
 				<thead class="sticky top-0 z-10 select-none">
 					<tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
 						<th class="px-4 py-3">Id</th>
+						<th class="px-4 py-3">Status</th>
 						<th class="px-4 py-3">Date</th>
 						<th class="px-4 py-3">Leave type</th>
 						<th class="px-4 py-3">Person in charge</th>
 						<th class="px-4 py-3">Note</th>
-						<th class="px-4 py-3">Status</th>
 					</tr>
 				</thead>
 				<tbody class="bg-white">
@@ -144,13 +144,13 @@
 						:class="{ 'bg-gray-100' : index % 2 === 0 }"
 					>
 						<td class="px-4 py-3 text-sm" v-text="index + 1"></td>
+						<td class="px-4 py-3 text-sm">
+							<span v-text="availableDay.status" class="font-bold px-2 py-1 rounded-full" :class="{ 'text-green-500 bg-green-100' : availableDay.status == 'Approved', 'text-yellow-500 bg-yellow-100' : availableDay.status == 'Pending', 'text-red-500 bg-red-100' : availableDay.status == 'Declined' }"></span>
+						</td>
 						<td class="px-4 py-3 text-sm" v-text="availableDay.date"></td>
 						<td class="px-4 py-3 text-sm" v-text="availableDay.leaveType"></td>
 						<td class="px-4 py-3 text-sm" v-text="availableDay.personInCharge"></td>
 						<td class="px-4 py-3 text-sm" v-text="availableDay.note"></td>
-						<td class="px-4 py-3 text-sm">
-							<span v-text="availableDay.status" class="font-bold px-2 py-1 rounded-full" :class="{ 'text-green-500 bg-green-100' : availableDay.status == 'Approved', 'text-yellow-500 bg-yellow-100' : availableDay.status == 'Pending', 'text-red-500 bg-red-100' : availableDay.status == 'Declined' }"></span>
-						</td>
 					</tr>
 				</tbody>
 			</table>

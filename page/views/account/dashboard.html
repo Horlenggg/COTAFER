@@ -59,13 +59,13 @@
 				<thead class="sticky top-0 z-10 select-none">
 					<tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
 						<th class="px-4 py-3">Id</th>
+						<th class="px-4 py-3">Status</th>
 						<th class="px-4 py-3">Readed</th>
 						<th class="px-4 py-3">Title</th>
 						<th class="px-4 py-3">Date</th>
 						<th class="px-4 py-3">Project Name</th>
 						<th class="px-4 py-3">Category</th>
 						<th class="px-4 py-3">Created By</th>
-						<th class="px-4 py-3">Status</th>
 					</tr>
 				</thead>
 				<tbody class="bg-white">
@@ -76,15 +76,15 @@
 						:class="{ 'bg-gray-100' : index % 2 === 0 }"
 					>
 						<td class="px-4 py-3 text-sm" v-text="index + 1"></td>
+						<td class="px-4 py-3 text-sm">
+							<span v-text="dashboard.status" class="font-bold px-2 py-1 rounded-full" :class="{ 'text-green-500 bg-green-100' : dashboard.status == 'Low', 'text-yellow-500 bg-yellow-100' : dashboard.status == 'Medium', 'text-red-500 bg-red-100' : dashboard.status == 'High' }"></span>
+						</td>
 						<td class="px-4 py-3 text-sm" v-text="dashboard.readed"></td>
 						<td class="px-4 py-3 text-sm" v-text="dashboard.title"></td>
 						<td class="px-4 py-3 text-sm" v-text="dashboard.date"></td>
 						<td class="px-4 py-3 text-sm" v-text="dashboard.projectName"></td>
 						<td class="px-4 py-3 text-sm" v-text="dashboard.category"></td>
 						<td class="px-4 py-3 text-sm" v-text="dashboard.createdBy"></td>
-						<td class="px-4 py-3 text-sm">
-							<span v-text="dashboard.status" class="font-bold px-2 py-1 rounded-full" :class="{ 'text-green-500 bg-green-100' : dashboard.status == 'Low', 'text-yellow-500 bg-yellow-100' : dashboard.status == 'Medium', 'text-red-500 bg-red-100' : dashboard.status == 'High' }"></span>
-						</td>
 					</tr>
 				</tbody>
 			</table>

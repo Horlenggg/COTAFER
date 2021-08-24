@@ -13,7 +13,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 2
@@ -24,7 +25,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 3
@@ -35,7 +37,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 4
@@ -46,7 +49,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 5
@@ -57,7 +61,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 6
@@ -68,7 +73,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 7
@@ -79,7 +85,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 8
@@ -90,7 +97,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 9
@@ -101,7 +109,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 10
@@ -112,8 +121,9 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Running'
-                    },
+                        , status        : 'Start'
+
+, type          : 'none'                    },
                     {
                         id              : 11
                         , version       : '1.0.5'
@@ -123,7 +133,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 12
@@ -134,7 +145,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 13
@@ -145,7 +157,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 14
@@ -156,7 +169,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 15
@@ -167,7 +181,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 16
@@ -178,7 +193,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 17
@@ -189,7 +205,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 18
@@ -200,7 +217,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 19
@@ -211,7 +229,8 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Stopped'
+                        , status        : 'Stop'
+                        , type          : 'none'
                     }
                     ,{
                         id              : 20
@@ -222,17 +241,18 @@ if(document.querySelector('#cotafer')){
                         , formLink      : 'Google form link'
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        , status        : 'Running'
+                        , status        : 'Start'
+                        , type          : 'none'
                     }
                 ]
                 , status                : 0
                 , stOption: [
-                    { value: 1, label: 'Running' }
-                    , { value: 2, label: 'Stopped' }
+                    { value: 1, label: 'Start' }
+                    , { value: 2, label: 'Stop' }
+                    , { value: 3, label: 'Suspend' }
+                    , { value: 4, label: 'Delete' }
                 ]
                 , isModalDelete         : false
-                , isModalStop           : false
-
             }
         },
         mounted() {
@@ -240,14 +260,12 @@ if(document.querySelector('#cotafer')){
         },
         methods: {
             onDelete(id = 0){
-                this.isModalDelete = true;
                 console.log(id);
             },
             onStart(id = 0){
                 console.log(id);
             },
             onStop(id = 0){
-                this.isModalStop = true;
                 console.log(id);
             },
             onSuspend(id = 0){
@@ -259,6 +277,7 @@ if(document.querySelector('#cotafer')){
         },
     }
     const cotaferApp =  Vue.createApp(cotafer);
-    cotaferApp.component('dropdown-table', DROPDOWN);
+    cotaferApp.component('dropdown-status', DROPDOWN_STATUS);
+    cotaferApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
     cotaferApp.mount('#cotafer');
 }
