@@ -31,8 +31,10 @@
                     class="w-full sm:w-6/12 sm:border-r border-gray-700 px-4 space-y-3">
                     <h3 class="text-xl hidden sm:block font-semibold">Attdentance</h3>
                     <span class="hidden md:block text-sm real-dt-display"></span>
-                    <input type="checkbox" id="overtime" name="overtime">
-                    <label class="text-sm" for="overtime">Over Time (Optional)</label>
+                    <div class="flex flex-row items-center space-x-2">
+                        <input type="checkbox" id="overtime" name="overtime">
+                        <label class="text-sm" for="overtime">Over Time (Optional)</label>
+                    </div>
                     <div class="flex justify-between space-x-1">
                         <form name="checkInFrm" id="checkInFrm" action="/check/in" method="post">
                             <button type="submit" class="px-4 py-2 text-sm text-white bg-gray-600 focus:outline-none">Check In</button>
@@ -197,50 +199,6 @@
                                         <span
                                             :class="{'font-semibold':selectedId == 7, 'font-normal' : selectedId != 7}"
                                             class="ml-2 block truncate">Other</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div x-data="{isOn: false, selected: 'Person in charge', selectedId: 0}">
-                            <div class="mt-1 relative">
-                                <button type="button" @click="isOn = !isOn" @click.away="isOn = false"
-                                    class="relative w-full bg-white border border-gray-300 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                    aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
-                                    <span x-text="selected" :class="{'text-gray-400':selectedId == 0}"
-                                        class="ml-2 block text-sm truncate"></span>
-                                    <span
-                                        class="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                </button>
-                                <input x-model="selectedId" type="hidden" id="personInChargeId" name="personInChargeId">
-                                <ul x-cloak x-show="isOn" x-transition:enter="transition ease-out duration-100 transform"
-                                    x-transition:enter-start="opacity-0 scale-95"
-                                    x-transition:enter-end="opacity-100 scale-100"
-                                    x-transition:leave="transition ease-in duration-75 transform"
-                                    x-transition:leave-start="opacity-100 scale-100"
-                                    x-transition:leave-end="opacity-0 scale-95"
-                                    class="z-50 absolute w-full bg-white shadow-lg max-h-56 py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
-                                    tabindex="-1" role="listbox" aria-labelledby="listbox-label"
-                                    aria-activedescendant="listbox-option-3">
-                                    <li @click="selected='Tharith', selectedId=1"
-                                        class="text-gray-900 hover:bg-gray-300 cursor-default select-none relative py-2 pl-3 pr-9"
-                                        role="option">
-                                        <span
-                                            :class="{'font-semibold':selectedId == 1, 'font-normal' : selectedId != 1}"
-                                            class="ml-2 block truncate">Tharith</span>
-                                    </li>
-                                    <li @click="selected='Carrot', selectedId=2"
-                                        class="text-gray-900 hover:bg-gray-300 cursor-default select-none relative py-2 pl-3 pr-9"
-                                        role="option">
-                                        <span
-                                            :class="{'font-semibold':selectedId == 2, 'font-normal' : selectedId != 2}"
-                                            class="ml-2 block truncate">Carrot</span>
                                     </li>
                                 </ul>
                             </div>

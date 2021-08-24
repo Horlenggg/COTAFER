@@ -110,14 +110,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 document.querySelector(leaveTypeId.getAttribute('data-presenter')).classList.add('border-red-500');
             }
 
-            // person in charge
-            if (personInChargeId.value != '0') {
-                document.querySelector(personInChargeId.getAttribute('data-presenter')).classList.remove('border-red-500');
-            } else {
-                isFormValid = !!0;
-                document.querySelector(personInChargeId.getAttribute('data-presenter')).classList.add('border-red-500');
-            }
-
             // note
             if (note.value != '') {
                 note.classList.remove('border-red-500');
@@ -134,7 +126,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     sDate      = document.createElement('input'),
                     eDate      = document.createElement('input'),
                     lType      = document.createElement('input'),
-                    pInCharge  = document.createElement('input'),
                     note    = document.createElement('input'),
                     form    = document.createElement('form');
 
@@ -155,9 +146,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
                 lType.name  = 'leavetype';
                 lType.value = leaveTypeId.value;
-
-                pInCharge.name   = 'note';
-                pInCharge.value  = personInChargeId.value;
 
                 note.name   = 'note';
                 note.value  = note.value;
