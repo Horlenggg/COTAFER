@@ -52,7 +52,7 @@
 	<div class="w-full h-full flex flex-col justify-between mx-auto overflow-hidden">
 		<div class="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
 			<table class="relative w-full whitespace-no-wrap">
-				<thead class="sticky top-0 z-10">
+				<thead class="sticky top-0 z-10 select-none">
 					<tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
 						<th class="px-4 py-3"></th>
 						<th class="px-4 py-3">ID</th>
@@ -100,11 +100,13 @@
 						<td class="px-4 py-3 text-sm" v-text="co.devDeadline"></td>
 						<td class="px-4 py-3 text-sm" v-text="co.releaseDate"></td>
 						<td class="px-4 py-3 text-sm" v-text="co.maintenanceTime"></td>
-						<td class="px-4 py-3 text-sm">
+						<td class="px-4 py-3 text-sm relative group">
 							<span class="line-clamp-1" v-text="co.feature"></span>
+							<span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="co.feature"></span>
 						</td>
-						<td class="px-4 py-3 text-sm">
+						<td class="px-4 py-3 text-sm relative group">
 							<span class="line-clamp-1" v-text="co.note"></span>
+							<span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="co.note"></span>
 						</td>
 					</tr>
 				</tbody>

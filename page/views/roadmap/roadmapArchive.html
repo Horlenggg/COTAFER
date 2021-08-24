@@ -49,7 +49,7 @@
 	<div class="w-full h-full flex flex-col justify-between mx-auto overflow-hidden">
 		<div class="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
 			<table class="relative w-full whitespace-no-wrap">
-				<thead class="sticky top-0 z-10">
+				<thead class="sticky top-0 z-10 select-none">
 					<tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
 						<th class="px-4 py-3"></th>
 						<th class="px-4 py-3">ID</th>
@@ -97,11 +97,13 @@
 						<td class="px-4 py-3 text-sm" v-text="arch.devDeadline"></td>
 						<td class="px-4 py-3 text-sm" v-text="arch.releaseDate"></td>
 						<td class="px-4 py-3 text-sm" v-text="arch.maintenanceTime"></td>
-						<td class="px-4 py-3 text-sm">
+						<td class="px-4 py-3 text-sm relative group">
 							<span class="line-clamp-1" v-text="arch.feature"></span>
+							<span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="arch.feature"></span>
 						</td>
-						<td class="px-4 py-3 text-sm">
+						<td class="px-4 py-3 text-sm relative group">
 							<span class="line-clamp-1" v-text="arch.note"></span>
+							<span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="arch.note"></span>
 						</td>
 					</tr>
 				</tbody>
@@ -145,62 +147,6 @@
 						</button>
 					</li>
 				</ul>
-			</div>
-		</div>
-	</div>
-	<div v-show="isModalDelete"
-		class="fixed z-10 inset-0 overflow-y-auto"
-		aria-labelledby="modal-title" role="dialog" 
-		aria-modal="true"
-	>
-		<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-		  	<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-			<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-			<div class="inline-block align-bottom bg-white overflow-hidden transform transition-all sm:align-middle sm:max-w-md sm:w-full pt-8 pb-11 px-9">
-				<div class="w-full flex flex-col justify-center items-center">
-					<div>
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-25 h-25 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-							<path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-						</svg>
-					</div>
-					<h3 class="text-xl mt-2">Do you really want to delete this record?</h3>
-				</div>
-				<div class="flex flex-row justify-between mt-10">
-					<button type="button" class="font-medium text-xl text-white select-none border bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 px-16 py-3.5">
-						Yes
-					</button>
-					<button @click="isModalDelete = false" type="button" class="font-medium text-xl text-gray-700 select-none border bg-white hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 px-16 py-3.5">
-						No
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div v-show="isModalStop"
-		class="fixed z-10 inset-0 overflow-y-auto"
-		aria-labelledby="modal-title" role="dialog" 
-		aria-modal="true"
-	>
-		<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-		  	<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-			<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-			<div class="inline-block align-bottom bg-white overflow-hidden transform transition-all sm:align-middle sm:max-w-md sm:w-full pt-8 pb-11 px-9">
-				<div class="w-full flex flex-col justify-center items-center">
-					<div>
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-25 h-25 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-							<path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-						</svg>
-					</div>
-					<h3 class="text-xl mt-2">Do you really want to stop this service?</h3>
-				</div>
-				<div class="flex flex-row justify-between mt-10">
-					<button type="button" class="font-medium text-xl text-white select-none border bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 px-16 py-3.5">
-						Yes
-					</button>
-					<button @click="isModalStop = false" type="button" class="font-medium text-xl text-gray-700 select-none border bg-white hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 px-16 py-3.5">
-						No
-					</button>
-				</div>
 			</div>
 		</div>
 	</div>
