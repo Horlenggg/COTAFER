@@ -135,5 +135,6 @@ if(document.querySelector('#gonoka')){
     const gonokaApp =  Vue.createApp(gonoka);
     gonokaApp.component('dropdown-status', DROPDOWN_STATUS);
     gonokaApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
+    gonokaApp.component('table-test', TABLE_TEST);
     gonokaApp.mount('#gonoka');
 }

@@ -88,7 +88,7 @@
 						<td class="px-4 py-3 text-sm" v-text="index + 1"></td>
 						<td class="px-4 py-3 text-sm">
 							<dropdown-status 
-								:is-permission="permission" 
+								:is-permission="permission"
 								:is-status="go.status"
 								@on-start="onStart(go.id)"
 								@on-stop="onStop(go.id)"
@@ -105,7 +105,7 @@
 						<td class="px-4 py-3 text-sm" v-text="go.devDeadline"></td>
 						<td class="px-4 py-3 text-sm" v-text="go.releaseDate"></td>
 						<td class="px-4 py-3 text-sm" v-text="go.maintenanceTime"></td>
-						<td class="px-4 py-3 text-sm w-1/12 relative group">
+						<td class="px-4 py-3 text-sm relative group">
 							<span class="line-clamp-1" v-text="go.feature"></span>
 							<span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="go.feature"></span>
 						</td>
@@ -114,7 +114,7 @@
 							<span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="go.note"></span>
 						</td>
 						<td class="px-4 py-3 text-sm">
-							<div class="flex items-center space-x-4 text-sm">
+							<div class="flex items-center space-x-3 text-sm">
 								<a href="/roadmap/view">
 									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
 										<path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />

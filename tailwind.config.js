@@ -32,7 +32,8 @@ module.exports = {
       width: {
         '7.5': '1.875rem',
         '15': '3.75rem',
-        '25': '6.25rem'
+        '25': '6.25rem',
+        '70': '17.5rem'
       },
       height: {
         '5.5': '1.375rem',
@@ -78,7 +79,57 @@ module.exports = {
         '5.5': '1.375rem', 
         '11.5': '2.875rem',
 
-       }
+      },
+      keyframes: {
+        'sidebarOn': {
+          '0%': {
+            width: '0px',
+            transform: 'translateX(-100%)',
+          },
+          '25%': {
+            maxWidth: '25%',
+            transform: 'translateX(-75%)',
+          },
+          '50%': {
+            maxWidth: '50%',
+            transform: 'translateX(-50%)',
+          },
+          '75%': {
+            maxWidth: '75%',
+            transform: 'translateX(-25%)',
+          },
+          '100%': {
+            maxWidth: '100%',
+            transform: 'translateX(0%)'
+          },
+        },
+        'sidebarOff': {
+          '0%': {
+            maxWidth: '100%',
+            transform: 'translateX(0%)',
+          },
+          '25%': {
+            maxWidth: '75%',
+            transform: 'translateX(-25%)',
+          },
+          '50%': {
+            maxWidth: '50%',
+            transform: 'translateX(-50%)',
+          },
+          '75%': {
+            maxWidth: '25%',
+            transform: 'translateX(-75%)',
+          },
+          '100%': {
+            width:'0px',
+            transform: 'translateX(-100%)'
+          },
+        }
+      },
+      animation: {
+        'sidebarOn': 'sidebarOn 0.3s ease-out',
+        'sidebarOff': 'sidebarOff 0.3s ease-out',
+      }
     },
   },
   plugins: [

@@ -334,7 +334,7 @@
 ] -%}
 {%- endif -%}
 
-<aside id="sidebar" class="w-full max-w-70 bg-white hidden md:block lg:block">
+<aside id="sidebar" class="w-70 bg-white hidden md:block lg:block overflow-hidden">
     <ul class="list-reset flex flex-col" x-data="{ activeModule: {{ activeModule }} }">
         {%- for module in sideBarModules -%}
         {%- if module.collapsible == False -%}
@@ -386,7 +386,7 @@
     <div class="h-15 flex justify-between items-center px-5 py-1.5">
         <div class="flex flex-row">
             <div class="min-w-65 flex flex-row items-center space-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" onclick="sidebarToggle()" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white cursor-pointer" onclick="sidebarToggle()" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
                 <a href="/"><img class="w-26 h-auto" src="/assets/images/cotafer-logo-white.svg" alt=""></a>
@@ -430,12 +430,12 @@
                 </div>
                 <div x-show="isShowNotification" 
                     x-cloak 
-                    x-transition:enter="transition ease-out duration-1000 transform"
-                    x-transition:enter-start="opacity-0 translate"
-                    x-transition:enter-end="opacity-100"
-                    x-transition:leave="transition ease-in duration-75 transform"
-                    x-transition:leave-start="opacity-100"
-                    x-transition:leave-end="opacity-0"
+                    x-transition:enter="transition ease-out duration-500 transform"
+                    x-transition:enter-start="opacity-0 -translate-x-full"
+                    x-transition:enter-end="opacity-100 translate-x-0"
+                    x-transition:leave="transition ease-in duration-500 transform"
+                    x-transition:leave-start="opacity-100 translate-x-0"
+                    x-transition:leave-end="opacity-0 -translate-x-full"
                     class="absolute -top-3.5 -right-5 h-screen flex flex-col justify-between bg-white shadow-lg blur z-20" style="width: 420px;">
                     <div class="w-full flex flex-col px-6.5 pt-10">
                         <div class="flex flex-row justify-between pb-8 border-b border-gray-300">
