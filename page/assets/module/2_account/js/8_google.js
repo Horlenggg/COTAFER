@@ -22,6 +22,20 @@ if(document.querySelector('#google')){
                         , assignedBy    : 'Brainzy'
                     }
                 ]
+                , category              : 0
+                , caOption: [
+                    { value: 1, label: 'Start' }
+                    , { value: 2, label: 'Stop' }
+                    , { value: 3, label: 'Suspend' }
+                    , { value: 4, label: 'Delete' }
+                ]
+                , department            : 0
+                , deOption: [
+                    { value: 1, label: 'Start' }
+                    , { value: 2, label: 'Stop' }
+                    , { value: 3, label: 'Suspend' }
+                    , { value: 4, label: 'Delete' }
+                ]
             }
         },
     }

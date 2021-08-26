@@ -381,3 +381,141 @@ const COLLAPSE_VIEW_COMPONENT = {
     </div>
     ` 
 };
+
+const TABLE_TEST = {
+    data() {
+        return {
+            row     : this.tbRow,
+            data    : this.tbData
+        }
+    },
+    props: {
+        tbRow   :   Array,
+        tbData  :   Array
+    },
+    template:
+    /**html */
+    `
+    <div class="w-full h-full flex flex-col justify-between mx-auto overflow-hidden">
+        <div class="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+            <table class="relative w-full whitespace-no-wrap">
+                <thead class="sticky top-0 z-10 select-none">
+                    <tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
+                        <th class="px-4 py-3"></th>
+                        <th class="px-4 py-3">ID</th>
+                        <th class="px-4 py-3">Status</th>
+                        <th class="px-4 py-3">Version</th>
+                        <th class="px-4 py-3">Product Name</th>
+                        <th class="px-4 py-3">Category</th>
+                        <th class="px-4 py-3">Platform</th>
+                        <th class="px-4 py-3">Form Link</th>
+                        <th class="px-4 py-3">By Link</th>
+                        <th class="px-4 py-3 w-2/12">Report</th>
+                        <th class="px-4 py-3">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white">
+                    <tr 
+                        v-for="(go, index) in gonokas"
+                        :key="go.id"
+                        class="text-sm text-gray-700"
+                        :class="{ 'bg-gray-100' : index % 2 === 0 }"
+                    >
+                        <td class="px-4 py-3 text-sm">
+                            <dropdown-archive 
+                                :is-permission="permission" 
+                                :is-type="go.type"
+                                @on-archive="onArchive(go.id)"
+                                >
+                            </dropdown-archive>
+                        </td>
+                        <td class="px-4 py-3 text-sm" v-text="index + 1"></td>
+                        <td class="px-4 py-3 text-sm">
+                            <dropdown-status 
+                                :is-permission="permission" 
+                                :is-status="go.status"
+                                @on-start="onStart(go.id)"
+                                @on-stop="onStop(go.id)"
+                                @on-suspend="onSuspend(go.id)"
+                                @on-delete="onDelete(go.id)"
+                                >
+                            </dropdown-status>
+                        </td>
+                        <td class="px-4 py-3 text-sm" v-text="go.version"></td>
+                        <td class="px-4 py-3 text-sm" v-text="go.productName"></td>
+                        <td class="px-4 py-3 text-sm" v-text="go.category"></td>
+                        <td class="px-4 py-3 text-sm" v-text="go.platform"></td>
+                        <td class="px-4 py-3 text-sm" v-text="go.formLink"></td>
+                        <td class="px-4 py-3 text-sm" v-text="go.byLink"></td>
+                        <td class="px-4 py-3 text-sm relative group">
+                            <span class="line-clamp-1" v-text="go.report"></span>
+                            <span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="go.report"></span>
+                        </td>
+                        <td class="px-4 py-3 text-sm">
+                            <div class="flex items-center space-x-4 text-sm">
+                                <a href="/test/view">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                        <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                                <a href="/test/edit" class="no-underline">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                        <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                                <button @click="onDelete(go.id)" class="focus:outline-none focus:shadow-outline-gray">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="w-full flex justify-center items-center uppercase py-6.5 space-x-3">
+            <span class="text-lg">1-10 of 100</span>
+            <!-- Pagination -->
+            <div class="flex">
+                <ul class="flex flex-row justify-center items-center space-x-2">
+                    <li class="flex justify-center items-center">
+                        <button class="text-center hover:text-gray-700 focus:outline-none" aria-label="Previous">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="w-7 h-7">
+                        <button class="w-full h-full text-center text-white bg-gray-700 focus:outline-none">1</button>
+                    </li>
+                    <li class="w-7 h-7">
+                        <button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">2</button>
+                    </li>
+                    <li class="w-7 h-7">
+                        <button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">3</button>
+                    </li>
+                    <li class="w-7 h-7">
+                        <button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">4</button>
+                    </li>
+                    <li class="w-7 h-7">
+                        <button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">5</button>
+                    </li>
+                    <li class="w-7 h-7">
+                        <button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">6</button>
+                    </li>
+                    <li class="flex justify-center items-center">
+                        <button class="text-center hover:text-gray-700 focus:outline-none" aria-label="Next">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    `
+};

@@ -2,107 +2,104 @@
 
 {% block bodyContent %}
 
-<div id="accountEdit" v-cloak class="w-full h-full flex flex-col">
-	<div class="w-full h-10 mt-5">
-		<ul class="list-reset flex text-grey-dark">
-			<li><a href="/" class="text-blue font-bold">Home</a></li>
-			<li><span class="mx-2">/</span></li>
-			<li><a href="/acc/account" class="text-blue font-bold">Account</a></li>
-			<li><span class="mx-2">/</span></li>
-			<li>Edit</li>
-		</ul>
+<div id="accountEdit" v-cloak class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
+	<div class="flex flex-row items-center">
+		<a href="/acc/account" class="no-underline">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+			</svg>
+		</a>
+		<span class="font-bold text-3xl text-gray-700 ml-6.5">Edit Account</span>
 	</div>
-	<div  class="w-full mx-auto overflow-hidden xl:w-3/4">
-		<div class="bg-white flex flex-col p-5 space-y-5">
-			<div class="w-full flex flex-row space-x-5">
-				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Username</label>
-					<input 
-						v-model="username"
-						:class="isUsernameVal ? 'border-red-500' : ''"
-						class="appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4" 
-						type="text" placeholder="username"
-					>  
+	<div class="flex flex-col px-12 pt-10 space-y-6.5">
+		<div class="flex flex-row space-x-12.5">
+			<div class="w-1/2">
+				<label class="block text-gray-700">Username</label>
+				<input 
+					v-model="username"
+					:class="isUsernameVal ? 'border-red-500' : ''"
+					class="mt-2.5 appearance-none block w-full text-sm text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4" 
+					type="text" placeholder="username"
+				>  
+			</div>
+			<div class="w-1/2">
+				<label class="block text-gray-700">Application</label>
+				<div class="relative">
+					<div class="absolute top-2.5 right-2 border-l border-gray-300 pl-1.5 z-10">
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
+						</svg>
+					</div>
+					<select v-model="application" class="block mt-2.5 appearance-none w-full bg-white text-sm text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 pr-8">
+						<option 
+							v-for="app in appOption"
+							:key="app.id"
+							v-text="app.value"
+							:value="app.id"
+						></option>
+					</select>
 				</div>
-				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Application</label>
-					<div class="relative">
-						<select v-model="application" class="block appearance-none w-full bg-white text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 pr-8">
-							<option 
-								v-for="app in appOption"
-								:key="app.id"
-								v-text="app.value"
-								:value="app.id"
-							></option>
-						</select>
-						<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-							</svg>
-						</div>
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="w-1/2">
+				<label class="block text-gray-700">Email</label>
+				<input
+					v-model="email"
+					:class="isEmailVal ? 'border-red-500' : ''"
+					class="mt-2.5 appearance-none block w-full text-sm text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 mb-3"
+					type="text"
+					placeholder="example@email.com"
+				>  
+			</div>
+			<div class="w-1/2">
+				<label class="block text-gray-700" >Link</label>
+				<input
+					v-model="link"
+					:class="isLinkVal ? 'border-red-500' : ''"
+					class="mt-2.5 appearance-none block w-full text-sm text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 mb-3"
+					type="text"
+					placeholder="example.com"
+				>  
+			</div>
+		</div>
+		<div class="flex flex-row space-x-12.5">
+			<div class="w-1/2">
+				<label class="block text-gray-700">Password</label>
+				<input
+					v-model="password"
+					:class="isPasswordVal ? 'border-red-500' : ''"
+					class="mt-2.5 appearance-none block w-full text-sm text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4"
+					type="password"
+					placeholder="*********"
+				>
+			</div>
+			<div class="w-1/2">
+				<label class="block text-gray-700">Permission</label>
+				<div class="relative">
+					<select v-model="permission" class="block mt-2.5 appearance-none w-full bg-white text-sm text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 pr-8">
+						<option 
+							v-for="per in perOption"
+							:key="per.id"
+							v-text="per.value"
+							:value="per.id"
+						></option>
+					</select>
+					<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
 					</div>
 				</div>
 			</div>
-			<div class="w-full flex flex-row space-x-5">
-				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Email</label>
-					<input
-						v-model="email"
-						:class="isEmailVal ? 'border-red-500' : ''"
-						class="appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 mb-3"
-						type="text"
-						placeholder="example@email.com"
-					>  
-				</div>
-				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >Link</label>
-					<input
-						v-model="link"
-						:class="isLinkVal ? 'border-red-500' : ''"
-						class="appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 mb-3"
-						type="text"
-						placeholder="example.com"
-					>  
-				</div>
-			</div>
-			<div class="w-full flex flex-row space-x-5">
-				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Password</label>
-					<input
-						v-model="password"
-						:class="isPasswordVal ? 'border-red-500' : ''"
-						class="appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4"
-						type="password"
-						placeholder="*********"
-					>
-				</div>
-				<div class="w-1/2">
-					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Permission</label>
-					<div class="relative">
-						<select v-model="permission" class="block appearance-none w-full bg-white text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 pr-8">
-							<option 
-								v-for="per in perOption"
-								:key="per.id"
-								v-text="per.value"
-								:value="per.id"
-							></option>
-						</select>
-						<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-							</svg>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="w-full flex justify-end space-x-5">
-				<button class="w-24 h-10 bg-white text-gray-700 border border-gray-700 hover:text-white hover:bg-gray-700 focus:outline-none">
-					<a class="px-5 py-2 text-sm" href="/acc/account">Cancel</a>
-				</button>
-				<button @click="onSubmit" class="w-24 h-10 px-5 py-2 text-sm uppercase text-white bg-gray-700 focus:outline-none">
-					Save
-				</button>
-			</div>
+		</div>
+		<div class="w-full flex justify-end space-x-5">
+			<button class="w-24 h-10 bg-white text-gray-700 border border-gray-700 hover:text-white hover:bg-gray-700 focus:outline-none">
+				<a class="px-5 py-2 text-sm" href="/acc/account">Cancel</a>
+			</button>
+			<button @click="onSubmit" class="w-24 h-10 px-5 py-2 text-sm text-white uppercase bg-gray-700 focus:outline-none">
+				Save
+			</button>
 		</div>
 	</div>
 </div>
