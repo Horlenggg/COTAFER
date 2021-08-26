@@ -2,21 +2,18 @@
 
 {% block bodyContent %}
 
-<div id="cotaferIos" v-cloak class="w-full h-full flex flex-col">
+<div id="gonokaArchive" v-cloak class="w-full h-full flex flex-col">
 	<div class="w-full mt-5">
 		<ul class="list-reset flex text-gray-700">
 			<li><a href="/live" class="text-blue font-bold">Live</a></li>
 			<li><span class="mx-2">/</span></li>
-			<li><a href="/live" class="text-blue font-bold">Cotafer</a></li>
+			<li><a href="/live/gonoka" class="text-blue font-bold">Gonoka</a></li>
 			<li><span class="mx-2">/</span></li>
-			<li>IOS</li>
+			<li>Archive</li>
 		</ul>
 	</div>
 	<div class="h-10 flex flex-row justify-between items-center my-5">
-		<div class="flex flex-row space-x-3">
-			<a href="/live/add" class="h-full text-white bg-gray-700 px-6 py-2">Add</a>
-			<a href="/live/cotafer/archive" class="h-full text-white bg-gray-700 px-6 py-2">Archive</a>
-		</div>
+		<div></div>
 		<div class="h-full flex flex-row items-center space-x-3">
 			<div class="relative w-60 h-full group flex flex-row items-center">
 				<div class="absolute top-2 right-2 border-l border-gray-300 pl-1.5 z-10">
@@ -54,7 +51,7 @@
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
 					</svg>
 				</div>
-				<input id="cotaferIosDate" class="block w-full h-full appearance-none text-sm text-gray-700 bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-3 py-2 focus:outline-none" type="text" placeholder="Select Date">
+				<input id="archiveDate" class="block w-full h-full appearance-none text-sm text-gray-700 bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-3 py-2 focus:outline-none" type="text" placeholder="Select Date">
 			</div>
 			<div class="relative h-full flex flex-row items-center bg-white group">
 				<input type="text" class="h-full border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-3 py-2 text-sm focus:outline-none" placeholder="Search...">
@@ -78,23 +75,27 @@
 						<th class="px-4 py-3">Category</th>
 						<th class="px-4 py-3">Platform</th>
 						<th class="px-4 py-3">Version</th>
-						<th class="px-4 py-3">Git</th>
-						<th class="px-4 py-3 w-2/12">Note</th>
+						<th class="px-4 py-3">Dev Start Date</th>
+						<th class="px-4 py-3">Dev Deadline</th>
+						<th class="px-4 py-3">Release Date</th>
+						<th class="px-4 py-3">Maintenance Time</th>
+						<th class="px-4 py-3">Feature</th>
+						<th class="px-4 py-3">Note</th>
 						<th class="px-4 py-3">Action</th>
 					</tr>
 				</thead>
 				<tbody class="bg-white">
 					<tr 
-						v-for="(ios, index) in cotaferIos"
-						:key="ios.id"
+						v-for="(arch, index) in archives"
+						:key="arch.id"
 						class="text-sm text-gray-700 hover:bg-gray-300"
 						:class="{ 'bg-gray-100' : index % 2 === 0 }"
 					>
 						<td class="px-4 py-3 text-sm">
 							<dropdown-archive 
 								:is-permission="permission" 
-								:is-type="ios.type"
-								@on-archive="onArchive(ios.id)"
+								:is-type="arch.type"
+								@on-restore="onRestore(arch.id)"
 								>
 							</dropdown-archive>
 						</td>
@@ -102,38 +103,45 @@
 						<td class="px-4 py-3 text-sm">
 							<dropdown-status 
 								:is-permission="permission" 
-								:is-status="ios.status"
-								@on-start="onStart(ios.id)"
-								@on-stop="onStop(ios.id)"
-								@on-suspend="onSuspend(ios.id)"
-								@on-delete="onDelete(ios.id)"
+								:is-status="arch.status"
+								@on-start="onStart(arch.id)"
+								@on-stop="onStop(arch.id)"
+								@on-suspend="onSuspend(arch.id)"
+								@on-delete="onDelete(arch.id)"
 								>
 							</dropdown-status>
 						</td>
-						<td class="px-4 py-3 text-sm" v-text="ios.productName"></td>
-						<td class="px-4 py-3 text-sm" v-text="ios.category"></td>
-						<td class="px-4 py-3 text-sm" v-text="ios.platform"></td>
-						<td class="px-4 py-3 text-sm" v-text="ios.version"></td>
-						<td class="px-4 py-3 text-sm" v-text="ios.git"></td>
+						<td class="px-4 py-3 text-sm" v-text="arch.productName"></td>
+						<td class="px-4 py-3 text-sm" v-text="arch.category"></td>
+						<td class="px-4 py-3 text-sm" v-text="arch.platform"></td>
+						<td class="px-4 py-3 text-sm" v-text="arch.version"></td>
+						<td class="px-4 py-3 text-sm" v-text="arch.devStartDate"></td>
+						<td class="px-4 py-3 text-sm" v-text="arch.devDeadline"></td>
+						<td class="px-4 py-3 text-sm" v-text="arch.releaseDate"></td>
+						<td class="px-4 py-3 text-sm" v-text="arch.maintenanceTime"></td>
 						<td class="px-4 py-3 text-sm relative group">
-							<span class="line-clamp-1" v-text="ios.note"></span>
-							<span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="ios.note"></span>
+							<span class="line-clamp-1" v-text="arch.feature"></span>
+							<span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="arch.feature"></span>
+						</td>
+						<td class="px-4 py-3 text-sm relative group">
+							<span class="line-clamp-1" v-text="arch.note"></span>
+							<span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="arch.note"></span>
 						</td>
 						<td class="px-4 py-3 text-sm">
 							<div class="flex items-center space-x-3 text-sm">
-								<a href="/live/view">
+								<a href="/roadmap/view">
 									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
 										<path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
 										<path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
 									</svg>
 								</a>
-								<a href="/live/edit" class="no-underline">
+								<a href="/roadmap/edit" class="no-underline">
 									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
 										<path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
 										<path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
 									</svg>
 								</a>
-								<button @click="onDelete(ios.id)" class="focus:outline-none focus:shadow-outline-gray">
+								<button @click="onDelete(arch.id)" class="focus:outline-none focus:shadow-outline-gray">
 									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
 										<path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
 									</svg>

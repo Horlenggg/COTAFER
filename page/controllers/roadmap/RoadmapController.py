@@ -110,13 +110,13 @@ class RoadmapController(MyController):
             )
 
             return self.render(
-                viewFile='roadmap/roadmapGonokaArchive'
+                viewFile='roadmap/gonokaArchive'
             )
 
         except Exception as e:
             self.log.error(f'RoadmapController.roadmapGonokaArchiveGet Exception ', str(e))
             return self.render(
-                viewFile='roadmap/roadmapGonokaArchive'
+                viewFile='roadmap/gonokaArchive'
             )
 
     def roadmapCotaferArchiveGet(self) -> Any:
@@ -134,13 +134,13 @@ class RoadmapController(MyController):
             )
 
             return self.render(
-                viewFile='roadmap/roadmapCotaferArchive'
+                viewFile='roadmap/cotaferArchive'
             )
 
         except Exception as e:
             self.log.error(f'RoadmapController.roadmapCotaferArchiveGet Exception ', str(e))
             return self.render(
-                viewFile='roadmap/roadmapCotaferArchive'
+                viewFile='roadmap/cotaferArchive'
             )
 
 

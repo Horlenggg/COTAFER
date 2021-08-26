@@ -143,6 +143,54 @@ class LiveController(MyController):
                 viewFile='live/liveEdit'
             )
 
+    def liveGonokaArchiveGet(self) -> Any:
+        
+        try:
+            self.log.info('LiveController.liveGonokaArchiveGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['gonoka', '']
+                    , 'client_module'   : '6_live'
+                    , 'base_module'     : 'live'
+                }
+            )
+
+            return self.render(
+                viewFile='live/gonokaArchive'
+            )
+
+        except Exception as e:
+            self.log.error(f'LiveController.liveGonokaArchiveGet Exception ', str(e))
+            return self.render(
+                viewFile='live/gonokaArchive'
+            )
+
+    def liveCotaferArchiveGet(self) -> Any:
+        
+        try:
+            self.log.info('LiveController.liveCotaferArchiveGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['cotafer', '']
+                    , 'client_module'   : '6_live'
+                    , 'base_module'     : 'live'
+                }
+            )
+
+            return self.render(
+                viewFile='live/cotaferArchive'
+            )
+
+        except Exception as e:
+            self.log.error(f'LiveController.liveCotaferArchiveGet Exception ', str(e))
+            return self.render(
+                viewFile='live/cotaferArchive'
+            )
+
     def liveGonokaIosGet(self) -> Any:
         
         try:

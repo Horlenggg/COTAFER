@@ -17,12 +17,9 @@ if(document.querySelector('#gonokaWeb')){
                     }
                 ]
                 , status                : 0
-                , stOption: [
-                    { value: 1, label: 'Start' }
-                    , { value: 2, label: 'Stop' }
-                    , { value: 3, label: 'Suspend' }
-                    , { value: 4, label: 'Delete' }
-                ]
+                , stOption              : NORMAL_STATUS 
+                , platform              : 0
+                , plOption              : PLATFORM
                 , isModalDelete         : false
             }
         },

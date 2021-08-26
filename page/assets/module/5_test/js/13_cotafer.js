@@ -122,8 +122,7 @@ if(document.querySelector('#cotafer')){
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Start'
-
-, type          : 'none'                    },
+                        , type          : 'none'                    },
                     {
                         id              : 11
                         , version       : '1.0.5'
@@ -246,12 +245,9 @@ if(document.querySelector('#cotafer')){
                     }
                 ]
                 , status                : 0
-                , stOption: [
-                    { value: 1, label: 'Start' }
-                    , { value: 2, label: 'Stop' }
-                    , { value: 3, label: 'Suspend' }
-                    , { value: 4, label: 'Delete' }
-                ]
+                , stOption              : NORMAL_STATUS 
+                , platform              : 0
+                , plOption              : PLATFORM
                 , isModalDelete         : false
             }
         },

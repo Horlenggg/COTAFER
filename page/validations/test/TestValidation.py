@@ -37,6 +37,12 @@ class TestValidation(MyValidation):
         except Exception as e:
             return test(headerParam=self.__h, bodyParam=self.__b).testGonokaGet()
 
+    def testGonokaArchiveGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaArchiveGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testGonokaArchiveGet()
+
     def testGonokaIosGet(self):
         try:
             return test(headerParam=self.__h, bodyParam=self.__b).testGonokaIosGet()
@@ -66,6 +72,12 @@ class TestValidation(MyValidation):
             return test(headerParam=self.__h, bodyParam=self.__b).testCotaferGet()
         except Exception as e:
             return test(headerParam=self.__h, bodyParam=self.__b).testCotaferGet()
+
+    def testCotaferArchiveGet(self):
+        try:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferArchiveGet()
+        except Exception as e:
+            return test(headerParam=self.__h, bodyParam=self.__b).testCotaferArchiveGet()
 
     def testCotaferIosGet(self):
         try:

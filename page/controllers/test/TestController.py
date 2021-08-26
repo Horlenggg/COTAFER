@@ -95,6 +95,54 @@ class TestController(MyController):
                 viewFile='test/cotafer'
             )
 
+    def testGonokaArchiveGet(self) -> Any:
+        
+        try:
+            self.log.info('TestController.testGonokaArchiveGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['gonoka', '']
+                    , 'client_module'   : '5_test'
+                    , 'base_module'     : 'test'
+                }
+            )
+
+            return self.render(
+                viewFile='test/gonokaArchive'
+            )
+
+        except Exception as e:
+            self.log.error(f'TestController.testGonokaArchiveGet Exception ', str(e))
+            return self.render(
+                viewFile='test/gonokaArchive'
+            )
+
+    def testCotaferArchiveGet(self) -> Any:
+        
+        try:
+            self.log.info('TestController.testCotaferArchiveGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['cotafer', '']
+                    , 'client_module'   : '5_test'
+                    , 'base_module'     : 'test'
+                }
+            )
+
+            return self.render(
+                viewFile='test/cotaferArchive'
+            )
+
+        except Exception as e:
+            self.log.error(f'TestController.testCotaferArchiveGet Exception ', str(e))
+            return self.render(
+                viewFile='test/cotaferArchive'
+            )
+
     def testAddGet(self) -> Any:
         
         try:

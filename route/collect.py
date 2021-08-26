@@ -233,10 +233,13 @@ def testAddGet():
 def testEditGet():
     return test.TestValidation().testEditGet()
 
-
 @route.get('/test/gonoka')
 def testGonokaGet():
     return test.TestValidation().testGonokaGet()
+
+@route.get('/test/gonoka/archive')
+def testGonokaArchiveGet():
+    return test.TestValidation().testGonokaArchiveGet()
 
 @route.get('/test/gonoka/ios')
 def testGonokaIosGet():
@@ -257,6 +260,10 @@ def testGonokaApiGet():
 @route.get('/test/cotafer')
 def testCotaferGet():
     return test.TestValidation().testCotaferGet()
+
+@route.get('/test/cotafer/archive')
+def testCotaferArchiveGet():
+    return test.TestValidation().testCotaferArchiveGet()
 
 @route.get('/test/cotafer/ios')
 def testCotaferIosGet():
@@ -297,6 +304,14 @@ def liveAddGet():
 @route.get('/live/edit')
 def liveEditGet():
     return live.LiveValidation().liveEditGet()
+
+@route.get('/live/gonoka/archive')
+def liveGonokaArchiveGet():
+    return live.LiveValidation().liveGonokaArchiveGet()
+
+@route.get('/live/cotafer/archive')
+def liveCotaferArchiveGet():
+    return live.LiveValidation().liveCotaferArchiveGet()
 
 @route.get('/live/gonoka/ios')
 def liveGonokaIosGet():
