@@ -1,13 +1,13 @@
-if(document.querySelector('#gonoka')){
-    const gonoka = {
+if(document.querySelector('#cotaferArchive')){
+    const cotaferArchive = {
         data() {
             return {
                 permission              : 'manager'
-                , gonokas: [
+                , archives: [
                     {
                         id              : 1
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
                         , platform      : 'IOS'
                         , version       : '1.0.5'
                         , devStartDate  : '12.12.2021'
@@ -17,12 +17,12 @@ if(document.querySelector('#gonoka')){
                         , feature       : 'live'
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllll'
-                        , type          : 'none'
+                        , type          : 'Archive'
                     }
                     ,{
                         id              : 2
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
                         , platform      : 'Android'
                         , version       : '1.0.5'
                         , devStartDate  : '12.12.2021'
@@ -30,14 +30,14 @@ if(document.querySelector('#gonoka')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Suspend'
+                        , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllll'
-                        , type          : 'none'
+                        , type          : 'Archive'
                     }
                     ,{
                         id              : 3
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
                         , platform      : 'Web'
                         , version       : '1.0.5'
                         , devStartDate  : '12.12.2021'
@@ -45,14 +45,14 @@ if(document.querySelector('#gonoka')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Stop'
+                        , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllll'
-                        , type          : 'none'
+                        , type          : 'Archive'
                     }
                     ,{
                         id              : 4
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
                         , platform      : 'Api'
                         , version       : '1.0.5'
                         , devStartDate  : '12.12.2021'
@@ -60,24 +60,9 @@ if(document.querySelector('#gonoka')){
                         , releaseDate   : '02.02.2022'
                         , maintenanceTime   : '60d'
                         , feature       : 'live'
-                        , status        : 'Ignore'
+                        , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllll'
-                        , type          : 'none'
-                    }
-                    ,{
-                        id              : 5
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , platform      : 'Api'
-                        , version       : '1.0.5'
-                        , devStartDate  : '12.12.2021'
-                        , devDeadline   : '01.01.2022'
-                        , releaseDate   : '02.02.2022'
-                        , maintenanceTime   : '60d'
-                        , feature       : 'live'
-                        , status        : 'Delete'
-                        , note          : 'helllllllllllllllllllllllllll'
-                        , type          : 'none'
+                        , type          : 'Archive'
                     }
                 ]
                 , status                : 0
@@ -88,9 +73,12 @@ if(document.querySelector('#gonoka')){
             }
         },
         mounted() {
-            flatpickr("#gonokaDate", {});
+            flatpickr("#archiveDate", {});
         },
         methods: {
+            onRestore(id = 0) {
+                console.log(id);
+            },
             onDelete(id = 0) {
                 console.log(id);
             },
@@ -103,13 +91,10 @@ if(document.querySelector('#gonoka')){
             onSuspend(id = 0){
                 console.log(id);
             },
-            onArchive(id = 0) {
-                console.log(id);
-            }
         },
     }
-    const gonokaApp =  Vue.createApp(gonoka);
-    gonokaApp.component('dropdown-status', DROPDOWN_STATUS);
-    gonokaApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
-    gonokaApp.mount('#gonoka');
+    const cotaferArchiveApp =  Vue.createApp(cotaferArchive);
+    cotaferArchiveApp.component('dropdown-status', DROPDOWN_STATUS);
+    cotaferArchiveApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
+    cotaferArchiveApp.mount('#cotaferArchive');
 }

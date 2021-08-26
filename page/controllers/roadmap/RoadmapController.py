@@ -95,10 +95,10 @@ class RoadmapController(MyController):
                 viewFile='roadmap/roadmapEdit'
             )
 
-    def roadmapArchiveGet(self) -> Any:
+    def roadmapGonokaArchiveGet(self) -> Any:
         
         try:
-            self.log.info('RoadmapController.roadmapArchiveGet info')
+            self.log.info('RoadmapController.roadmapGonokaArchiveGet info')
 
             # active link
             self.view.addData(
@@ -110,14 +110,39 @@ class RoadmapController(MyController):
             )
 
             return self.render(
-                viewFile='roadmap/roadmapArchive'
+                viewFile='roadmap/roadmapGonokaArchive'
             )
 
         except Exception as e:
-            self.log.error(f'RoadmapController.roadmapArchiveGet Exception ', str(e))
+            self.log.error(f'RoadmapController.roadmapGonokaArchiveGet Exception ', str(e))
             return self.render(
-                viewFile='roadmap/roadmapArchive'
+                viewFile='roadmap/roadmapGonokaArchive'
             )
+
+    def roadmapCotaferArchiveGet(self) -> Any:
+        
+        try:
+            self.log.info('RoadmapController.roadmapCotaferArchiveGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['', '']
+                    , 'client_module'   : '7_roadmap'
+                    , 'base_module'     : 'roadmap'
+                }
+            )
+
+            return self.render(
+                viewFile='roadmap/roadmapCotaferArchive'
+            )
+
+        except Exception as e:
+            self.log.error(f'RoadmapController.roadmapCotaferArchiveGet Exception ', str(e))
+            return self.render(
+                viewFile='roadmap/roadmapCotaferArchive'
+            )
+
 
     def roadmapGonokaGet(self) -> Any:
         

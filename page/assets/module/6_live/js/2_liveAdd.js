@@ -8,7 +8,7 @@ if(document.querySelector('#liveAdd')){
                 , relativeProject   : ''
 
                 , category          : 0
-                , cateOption          : [
+                , caOption          : [
                     { value: 1, label: 'Ios' }
                     , { value: 2, label: 'Android' }
                     , { value: 3, label: 'Web' }
@@ -16,12 +16,7 @@ if(document.querySelector('#liveAdd')){
                 ]
     
                 , platform         : 0
-                , plOption         : [
-                    { value: 1, label: 'Gonoka PR' }
-                    , { value: 2, label: 'Cotafer IM' }
-                    , { value: 3, label: 'Cotafer News' }
-                    , { value: 4, label: 'Gonoka Newsfeed' }
-                ]
+                , plOption         : PLATFORM
 
                 , expiration        : ''
                 , server            : 0

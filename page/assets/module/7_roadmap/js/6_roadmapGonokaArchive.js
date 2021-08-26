@@ -1,5 +1,5 @@
-if(document.querySelector('#archive')){
-    const archive = {
+if(document.querySelector('#gonokaArchive')){
+    const gonokaArchive = {
         data() {
             return {
                 permission              : 'manager'
@@ -66,19 +66,9 @@ if(document.querySelector('#archive')){
                     }
                 ]
                 , status                : 0
-                , stOption: [
-                    { value: 1, label: 'Start' }
-                    , { value: 2, label: 'Stop' }
-                    , { value: 3, label: 'Suspend' }
-                    , { value: 4, label: 'Delete' }
-                ]
-                , platform               : 0
-                , plOption: [
-                    { value: 1, label: 'IOS' }
-                    , { value: 2, label: 'Android' }
-                    , { value: 3, label: 'Web' }
-                    , { value: 4, label: 'Api' }
-                ]
+                , stOption              : ROADMAP_STATUS
+                , platform              : 0
+                , plOption              : PLATFORM
                 , isModalDelete         : false
             }
         },
@@ -103,8 +93,8 @@ if(document.querySelector('#archive')){
             },
         },
     }
-    const archiveApp =  Vue.createApp(archive);
-    archiveApp.component('dropdown-status', DROPDOWN_STATUS);
-    archiveApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
-    archiveApp.mount('#archive');
+    const gonokaArchiveApp =  Vue.createApp(gonokaArchive);
+    gonokaArchiveApp.component('dropdown-status', DROPDOWN_STATUS);
+    gonokaArchiveApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
+    gonokaArchiveApp.mount('#gonokaArchive');
 }

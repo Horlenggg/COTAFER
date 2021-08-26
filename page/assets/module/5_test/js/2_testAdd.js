@@ -34,20 +34,10 @@ if(document.querySelector('#testAdd')){
                 , releaseDate       : ''
 
                 , category          : 0
-                , caOption: [
-                    { value: 1, label: 'Gonoka PR' }
-                    , { value: 2, label: 'Cotafer IM' }
-                    , { value: 3, label: 'Cotafer News' }
-                    , { value: 4, label: 'Gonoka Newsfeed' }
-                ]
+                , caOption          : CATEGORY
 
                 , platform          : 0
-                , plOption: [
-                    { value: 1, label: 'Gonoka PR' }
-                    , { value: 2, label: 'Cotafer IM' }
-                    , { value: 3, label: 'Cotafer News' }
-                    , { value: 4, label: 'Gonoka Newsfeed' }
-                ]
+                , plOption          : PLATFORM 
 
                 , startTestDate     : ''
                 , finishTestDate    : ''

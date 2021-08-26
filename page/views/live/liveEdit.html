@@ -75,7 +75,7 @@
 						:class="isCaVal ? 'border-red-500' : '', category == '0' ? 'text-gray-400' : 'text-gray-700'"
 					>
 						<option class="text-gray-400" value="0">Select...</option>
-						<option class="text-gray-700" v-for="ca in cateOption" v-text="ca.label" value="ca.value"></option>
+						<option class="text-gray-700" v-for="ca in caOption" v-text="ca.label" value="ca.value"></option>
 					</select>
 				</div>
 				<span class="text-xs text-red-500" v-text='errMessageCa'></span>

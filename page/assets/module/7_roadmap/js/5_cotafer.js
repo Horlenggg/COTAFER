@@ -79,29 +79,11 @@ if(document.querySelector('#cotafer')){
                         , note          : 'helllllllllllllllllllllllllll'
                         , type          : 'none'
                     }
-                    ,{
-                        id              : 6
-                        , productName   : 'Cotafer'
-                        , category      : 'Cotafer'
-                        , platform      : 'Api'
-                        , version       : '1.0.5'
-                        , devStartDate  : '12.12.2021'
-                        , devDeadline   : '01.01.2022'
-                        , releaseDate   : '02.02.2022'
-                        , maintenanceTime   : '60d'
-                        , feature       : 'live'
-                        , status        : 'Archive'
-                        , note          : 'helllllllllllllllllllllllllll'
-                        , type          : 'none'
-                    }
                 ]
                 , status                : 0
-                , stOption: [
-                    { value: 1, label: 'Start' }
-                    , { value: 2, label: 'Stop' }
-                    , { value: 3, label: 'Suspend' }
-                    , { value: 4, label: 'Delete' }
-                ]
+                , stOption              : ROADMAP_STATUS
+                , platform              : 0
+                , plOption              : PLATFORM
                 , isModalDelete         : false
             }
         },

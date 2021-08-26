@@ -74,37 +74,171 @@
 			</div>
 		</div>
 	</div>
-	<div class="w-full flex space-x-3">
+	<div id="publicholiday" v-cloak class="w-full flex space-x-3">
 		<div id="calendar" class="flex-1 bg-white shadow p-4 mb-4"></div>
 		<div class="w-56">
 			<div class="bg-white flex flex-col shadow pt-2 pb-4 px-2 space-y-1">
 				<span class="text-base">Holiday</span>
 				<div class="flex items-center text-second-color">
-					<span class="text-sm font-semibold mr-2">January</span>
+					<span class="text-sm font-semibold text-gray-700 mr-2">January</span>
 					<hr class="flex-1">
 				</div>
-				<span class="text-sm font-semibold">New Year's Day</span>
-				<span class="text-xs">Fri, 1 Jan 2021</span>
-				<span class="text-sm font-semibold">Victory Day</span>
-				<span class="text-xs">Thu, 7 Jan 2021</span>
+				<span class="text-sm">New Year's Day</span>
+				<span class="text-xs text-gray-500">Fri, 1 Jan 2021</span>
+				<span class="text-sm">Victory Day</span>
+				<span class="text-xs text-gray-500">Thu, 7 Jan 2021</span>
 				<div class="flex items-center text-second-color">
-					<span class="text-sm font-semibold mr-2">February</span>
+					<span class="text-sm font-semibold text-gray-700 mr-2">February</span>
 					<hr class="flex-1">
 				</div>
 				<div class="flex items-center text-second-color">
-					<span class="text-sm font-semibold mr-2">March</span>
+					<span class="text-sm font-semibold text-gray-700 mr-2">March</span>
 					<hr class="flex-1">
 				</div>
-				<span class="text-sm font-semibold">International Women's Day</span>
-				<span class="text-xs">Mon, 8 Mar 2021</span>
+				<span class="text-sm">International Women's Day</span>
+				<span class="text-xs text-gray-500">Mon, 8 Mar 2021</span>
 				<div class="flex items-center text-second-color">
-					<span class="text-sm font-semibold mr-2">April</span>
+					<span class="text-sm font-semibold text-gray-700 mr-2">April</span>
 					<hr class="flex-1">
 				</div>
-				<span class="text-sm font-semibold">Khmer New Year</span>
-				<span class="text-xs">Wed, 14 Apr 2021 - Fri, 16 Apr 2021</span>
+				<span class="text-sm">Khmer New Year</span>
+				<span class="text-xs text-gray-500">Wed, 14 Apr 2021 - Fri, 16 Apr 2021</span>
 				<div class="pt-2 flex">
-					<button class="modalEventDetail-toggler text-sm font-semibold ml-auto" type="button">Show More</button>
+					<button class="modalEventDetail-toggler text-sm font-semibold ml-auto" type="button" @click="isModalSeeMore = true">Show More</button>
+				</div>
+			</div>
+		</div>
+		<div v-show="isModalSeeMore"
+			class="fixed z-10 inset-0 overflow-y-auto"
+			aria-labelledby="modal-title" role="dialog" 
+			aria-modal="true"
+		>
+			<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+				<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+				<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+				<div class="inline-block align-bottom bg-white overflow-hidden transform transition-all sm:align-middle sm:max-w-5xl sm:w-full px-10 pt-5 pb-10">
+					<div class="w-full flex flex-col justify-center items-center">
+						<div class="w-full flex flex-row justify-between">
+							<p class="font-bold text-3xl">Holiday</p>
+							<button @click="isModalSeeMore = false" class="focus:outline-none">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+								  </svg>
+							</button>
+						</div>
+					</div>
+					<div class="w-full flex flex-row justify-between divide-x divide-gray-300 mt-5">
+						<div class="w-1/3 flex flex-col space-y-3 pr-10">
+							<div class="flex items-center text-second-color">
+								<span class="text-sm font-semibold text-gray-700 mr-2">January</span>
+								<hr class="flex-1">
+							</div>
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">New Year's Day</span>
+								<span class="text-xs text-gray-500">Fri, 1 Jan 2021</span>
+							</div>
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">Victory Day</span>
+								<span class="text-xs text-gray-500">Thu, 7 Jan 2021</span>
+							</div>
+							<div class="flex items-center text-second-color">
+								<span class="text-sm font-semibold text-gray-700 mr-2">February</span>
+								<hr class="flex-1">
+							</div>
+							<div class="flex items-center text-second-color">
+								<span class="text-sm font-semibold text-gray-700 mr-2">March</span>
+								<hr class="flex-1">
+							</div>
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">International Women's Day</span>
+								<span class="text-xs text-gray-500">Mon, 8 Mar 2021</span>
+							</div>
+							<div class="flex items-center text-second-color">
+								<span class="text-sm font-semibold text-gray-700 mr-2">April</span>
+								<hr class="flex-1">
+							</div>
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">Khmer New Year</span>
+								<span class="text-xs text-gray-500">Wed, 14 Apr 2021 - Fri, 16 Apr 2021</span>
+							</div>
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">Visak Bochea</span>
+								<span class="text-xs text-gray-500">Mon, 26 Apr 2021</span>
+							</div>
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">Royal Ploughing Ceremony</span>
+								<span class="text-xs text-gray-500">Fri, 30 Apr 2021</span>
+							</div>
+						</div>
+						<div class="w-1/3 flex flex-col space-y-3 px-10">
+							<div class="flex items-center text-second-color">
+								<span class="text-sm font-semibold text-gray-700 mr-2">May</span>
+								<hr class="flex-1">
+							</div>
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">International Labor Day</span>
+								<span class="text-xs text-gray-500">Sat, 1 May 2021</span>
+							</div>
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">King Sihamoni's Birthday</span>
+								<span class="text-xs text-gray-500">Fri, 14 May 2021</span>
+							</div>
+							<div class="flex items-center text-second-color">
+								<span class="text-sm font-semibold text-gray-700 mr-2">June</span>
+								<hr class="flex-1">
+							</div>
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">Queen Mother's Birthday</span>
+								<span class="text-xs text-gray-500">Fri, 18 Jun 2021</span>
+							</div>
+							<div class="flex items-center text-second-color">
+								<span class="text-sm font-semibold text-gray-700 mr-2">July</span>
+								<hr class="flex-1">
+							</div>
+							<div class="flex items-center text-second-color">
+								<span class="text-sm font-semibold text-gray-700 mr-2">August</span>
+								<hr class="flex-1">
+							</div>
+							<div class="flex items-center text-second-color">
+								<span class="text-sm font-semibold text-gray-700 mr-2">September</span>
+								<hr class="flex-1">
+							</div>
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">Constitution Day</span>
+								<span class="text-xs text-gray-500">Fri, 24 Sep 2021</span>
+							</div>
+							<div class="flex items-center text-second-color">
+								<span class="text-sm font-semibold text-gray-700 mr-2">October</span>
+								<hr class="flex-1">
+							</div>
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">Pchum Ben Festival</span>
+								<span class="text-xs text-gray-500">Tue, 5 Oct 2021 - Thu, 7 Oct 2021</span>
+							</div>
+						</div>
+						<div class="w-1/3 flex flex-col space-y-3 pl-10">
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">King Father's Commemoration Day</span>
+								<span class="text-xs text-gray-500">Fri, 15 Oct 2021</span>
+							</div>
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">King's Coronation Day</span>
+								<span class="text-xs text-gray-500">Fri, 29 Oct 2021</span>
+							</div>
+							<div class="flex items-center text-second-color">
+								<span class="text-sm font-semibold text-gray-700 mr-2">November</span>
+								<hr class="flex-1">
+							</div>
+							<div class="flex flex-col items-start space-y-1">
+								<span class="text-sm">Independence Day</span>
+								<span class="text-xs text-gray-500">Tue, 9 Nov 2021</span>
+							</div>
+							<div class="flex items-center text-second-color">
+								<span class="text-sm font-semibold text-gray-700 mr-2">December</span>
+								<hr class="flex-1">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

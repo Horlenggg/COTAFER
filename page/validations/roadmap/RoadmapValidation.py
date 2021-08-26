@@ -29,11 +29,18 @@ class RoadmapValidation(MyValidation):
         except Exception as e:
             return roadmap(headerParam=self.__h, bodyParam=self.__b).roadmapEditGet()
 
-    def roadmapArchiveGet(self):
+    def roadmapGonokaArchiveGet(self):
         try:
-            return roadmap(headerParam=self.__h, bodyParam=self.__b).roadmapArchiveGet()
+            return roadmap(headerParam=self.__h, bodyParam=self.__b).roadmapGonokaArchiveGet()
         except Exception as e:
-            return roadmap(headerParam=self.__h, bodyParam=self.__b).roadmapArchiveGet()
+            return roadmap(headerParam=self.__h, bodyParam=self.__b).roadmapGonokaArchiveGet()
+
+    def roadmapCotaferArchiveGet(self):
+        try:
+            return roadmap(headerParam=self.__h, bodyParam=self.__b).roadmapCotaferArchiveGet()
+        except Exception as e:
+            return roadmap(headerParam=self.__h, bodyParam=self.__b).roadmapCotaferArchiveGet()
+
 
     def roadmapGonokaGet(self):
         try:

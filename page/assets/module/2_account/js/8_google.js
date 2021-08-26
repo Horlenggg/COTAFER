@@ -23,12 +23,7 @@ if(document.querySelector('#google')){
                     }
                 ]
                 , category              : 0
-                , caOption: [
-                    { value: 1, label: 'Start' }
-                    , { value: 2, label: 'Stop' }
-                    , { value: 3, label: 'Suspend' }
-                    , { value: 4, label: 'Delete' }
-                ]
+                , caOption              : CATEGORY 
                 , department            : 0
                 , deOption: [
                     { value: 1, label: 'Start' }

@@ -346,9 +346,13 @@ def roadmapAddGet():
 def roadmapEditGet():
     return roadmap.RoadmapValidation().roadmapEditGet()
 
-@route.get('/roadmap/archive')
-def roadmapArchiveGet():
-    return roadmap.RoadmapValidation().roadmapArchiveGet()
+@route.get('/roadmap/gonoka/archive')
+def roadmapGonokaArchiveGet():
+    return roadmap.RoadmapValidation().roadmapGonokaArchiveGet()
+
+@route.get('/roadmap/cotafer/archive')
+def roadmapCotaferArchiveGet():
+    return roadmap.RoadmapValidation().roadmapCotaferArchiveGet()
 
 @route.get('/roadmap/gonoka')
 def roadmapGonokaGet():

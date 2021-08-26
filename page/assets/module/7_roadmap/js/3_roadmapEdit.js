@@ -6,20 +6,10 @@ if(document.querySelector('#roadmapEdit')){
                 , version           : ''
 
                 , category          : 0
-                , cateOption          : [
-                    { value: 1, label: 'Ios' }
-                    , { value: 2, label: 'Android' }
-                    , { value: 3, label: 'Web' }
-                    , { value: 4, label: 'Api' }
-                ]
+                , caOption          : CATEGORY
     
-                , platform         : 0
-                , plOption         : [
-                    { value: 1, label: 'Gonoka PR' }
-                    , { value: 2, label: 'Cotafer IM' }
-                    , { value: 3, label: 'Cotafer News' }
-                    , { value: 4, label: 'Gonoka Newsfeed' }
-                ]
+                , platform          : 0
+                , plOption          : PLATFORM
 
                 , devStartDate      : ''
                 , devDeadline       : ''

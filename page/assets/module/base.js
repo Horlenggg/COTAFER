@@ -469,7 +469,7 @@ const TABLE_TEST = {
                     <tr 
                         v-for="(data, index) in datas"
                         :key="data.id"
-                        class="text-sm text-gray-700"
+                        class="text-sm text-gray-700 hover:bg-gray-300"
                         :class="{ 'bg-gray-100' : index % 2 === 0 }"
                     >
                         <td class="px-4 py-3 text-sm">
@@ -570,3 +570,27 @@ const TABLE_TEST = {
     </div>
     `
 };
+
+const PLATFORM = [
+    { value: 1, label: 'IOS' }
+    , { value: 2, label: 'ANDROID' }
+    , { value: 3, label: 'WEB' }
+    , { value: 4, label: 'API' }
+];
+
+const CATEGORY = [
+    { value: 1, label: 'GONOKA' }
+    , { value: 2, label: 'COTAFER' }
+];
+
+const NORMAL_STATUS = [
+    { value: 1, label: 'START' }
+    , { value: 2, label: 'STOP' }
+];
+
+const ROADMAP_STATUS = [
+    { value: 1, label: 'START' }
+    , { value: 2, label: 'STOP' }
+    , { value: 3, label: 'SUSPEND' }
+    , { value: 4, label: 'DELETE' }
+];
