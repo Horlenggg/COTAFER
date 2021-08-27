@@ -28,6 +28,7 @@
 					<tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
 						<th class="px-4 py-3 w-1/8">ID</th>
 						<th class="px-4 py-3">Company Name</th>
+						<th class="px-4 py-3">Title</th>
 						<th class="px-4 py-3">Website</th>
 						<th class="px-4 py-3">Email</th>
 						<th class="px-4 py-3">Phone Number</th>
@@ -44,18 +45,19 @@
 					>
 						<td class="px-4 py-3 text-sm" v-text="index + 1"></td>
 						<td class="px-4 py-3 text-sm" v-text="com.companyName"></td>
+						<td class="px-4 py-3 text-sm" v-text="com.title"></td>
 						<td class="px-4 py-3 text-sm" v-text="com.website"></td>
 						<td class="px-4 py-3 text-sm" v-text="com.email"></td>
 						<td class="px-4 py-3 text-sm" v-text="com.phoneNumber"></td>
 						<td class="px-4 py-3 text-sm" v-text="com.createDate"></td>
 						<td class="px-4 py-3 text-sm">
 							<div class="flex items-center space-x-3 text-sm">
-								<a href="/company/company/view">
+								<button @click="onView(com.id)" class="focus:outline-none">
 									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
 										<path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
 										<path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
 									</svg>
-								</a>
+								</button>
 								<a href="/company/company/edit">
 									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
 										<path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
@@ -138,6 +140,85 @@
 					<button @click="isModalDelete = false" type="button" class="font-medium text-xl text-gray-700 select-none border bg-white hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 px-16 py-3.5">
 						No
 					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div v-show="isModalDetail"
+		class="fixed z-10 inset-0 overflow-y-auto"
+		aria-labelledby="modal-title" role="dialog" 
+		aria-modal="true"
+	>
+		<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+		  	<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+			<span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+			<div class="inline-block align-bottom bg-white overflow-hidden transform transition-all sm:align-middle sm:max-w-5xl sm:w-full pt-8 pb-11 px-9">
+				<div class="flex flex-row justify-between items-center">
+					<span class="font-bold text-3xl text-gray-700 ml-6.5">View Company</span>
+					<button @click="isModalDetail = false" class="focus:outline-none">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+						  </svg>
+					</button>
+				</div>
+				<div v-for="view in companyView" class="flex flex-col px-12 pt-10 space-y-6.5">
+					<div class="flex flex-row justify-center space-x-12.5">
+						<div class="w-1/2 flex flex-col items-start">
+							<label for="id" class="block text-gray-700">ID</label>
+							<div 
+								v-text="view.id"
+								class="mt-2.5 block w-full text-sm text-left border px-4 py-3 focus:outline-none">
+							</div>
+						</div>
+					</div>
+					<div class="flex flex-row space-x-12.5">
+						<div class="w-1/2 flex flex-col items-start">
+							<label for="companyName" class="block text-gray-700">Company name</label>
+							<div 
+								v-text="view.companyName"
+								class="mt-2.5 block w-full text-sm text-left border px-4 py-3 focus:outline-none">
+							</div>
+						</div>
+						<div class="w-1/2 flex flex-col items-start">
+							<label for="title" class="block text-gray-700">Title</label>
+							<div 
+								v-text="view.title"
+								class="mt-2.5 block w-full text-sm text-left border px-4 py-3 focus:outline-none">
+							</div>
+						</div>
+					</div>
+					<div class="flex flex-row space-x-12.5">
+						<div class="w-1/2 flex flex-col items-start">
+							<label for="website" class="block text-gray-700">Website</label>
+							<div 
+								v-text="view.website"
+								class="mt-2.5 block w-full text-sm text-left border px-4 py-3 focus:outline-none">
+							</div>
+						</div>
+						<div class="w-1/2 flex flex-col items-start">
+							<label for="email" class="block text-gray-700">Email</label>
+							<div 
+								v-text="view.email"
+								class="mt-2.5 block w-full text-sm text-left border px-4 py-3 focus:outline-none">
+							</div>
+						</div>
+					</div>
+					<div class="flex flex-row space-x-12.5">
+						<div class="w-1/2 flex flex-col items-start">
+							<label for="phoneNumber" class="block text-gray-700">Phone number</label>
+							<div 
+								v-text="view.phoneNumber"
+								class="mt-2.5 block w-full text-sm text-left border px-4 py-3 focus:outline-none">
+							</div>
+						</div>
+						<div class="w-1/2 flex flex-col items-start">
+							<label for="icon" class="block text-gray-700">Icon</label>
+							<div 
+								v-text="view.icon"
+								class="mt-2.5 block w-full text-sm text-left border px-4 py-3 focus:outline-none">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

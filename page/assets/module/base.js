@@ -254,7 +254,7 @@ const COLLAPSE_COMPONENT = {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
                 </svg>
                 <p  
-                    class="font-Roboto font-medium" 
+                    class="font-medium" 
                     :class="{ 'w-3/12 pb-3 border-b' : !isCollapse }"
                     v-text="title">
                     </p>
@@ -274,7 +274,7 @@ const COLLAPSE_COMPONENT = {
             class="pl-7"
             >
             <div v-if="index == 0" class="flex flex-row justify-between items-center select-none mt-3">
-                <label :for="isID + index" v-text="sub.text" class="font-Roboto text-sm py-3 border-t border-b w-4/6 pl-4"></label>
+                <label :for="isID + index" v-text="sub.text" class="text-sm py-3 border-t border-b w-4/6 pl-4"></label>
                 <input 
                     :id="isID + index"
                     v-model="sub.model"
@@ -284,7 +284,7 @@ const COLLAPSE_COMPONENT = {
                     >
             </div>
             <div v-else class="flex flex-row justify-between items-center select-none">
-                <label :for="isID + index" v-text="sub.text" class="font-Roboto text-sm py-3 border-b w-4/6 pl-4"></label>
+                <label :for="isID + index" v-text="sub.text" class="text-sm py-3 border-b w-4/6 pl-4"></label>
                 <input 
                     :id=" isID + index "
                     v-model="sub.model"
@@ -345,14 +345,14 @@ const COLLAPSE_VIEW_COMPONENT = {
     <div>
         <div class="w-full flex flex-row justify-between items-center">
             <div class="flex-1 flex flex-row items-center cursor-pointer select-none space-x-3">
-                <svg v-if="!isCollapse" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg v-if="!isCollapse" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
                 <svg v-else xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
                 </svg>
                 <p  
-                    class="font-Roboto font-medium" 
+                    class="font-medium text-left" 
                     :class="{ 'w-3/12 pb-3 border-b' : !isCollapse }"
                     v-text="title">
                     </p>
@@ -372,7 +372,7 @@ const COLLAPSE_VIEW_COMPONENT = {
             class="pl-7"
             >
             <div v-if="index == 0" class="flex flex-row justify-between items-center select-none mt-3">
-                <label v-text="sub.text" class="font-Roboto text-sm py-3 border-t border-b w-4/6 pl-4"></label>
+                <label v-text="sub.text" class="text-sm text-left py-3 border-t border-b w-4/6 pl-4"></label>
                 <input 
                     v-model="sub.model"
                     class="border-none focus:outline-none" 
@@ -381,7 +381,7 @@ const COLLAPSE_VIEW_COMPONENT = {
                     >
             </div>
             <div v-else class="flex flex-row justify-between items-center select-none">
-                <label v-text="sub.text" class="font-Roboto text-sm py-3 border-b w-4/6 pl-4"></label>
+                <label v-text="sub.text" class="text-sm text-left py-3 border-b w-4/6 pl-4"></label>
                 <input 
                     v-model="sub.model"
                     class="border-none focus:outline-none" 
