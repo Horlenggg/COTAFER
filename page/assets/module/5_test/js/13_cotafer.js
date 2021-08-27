@@ -15,6 +15,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 2
@@ -27,6 +34,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 3
@@ -39,6 +53,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 4
@@ -51,6 +72,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 5
@@ -63,6 +91,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 6
@@ -75,6 +110,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 7
@@ -87,6 +129,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 8
@@ -99,6 +148,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 9
@@ -111,6 +167,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 10
@@ -122,7 +185,14 @@ if(document.querySelector('#cotafer')){
                         , byLink        : 'Google link'
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Start'
-                        , type          : 'none'                    },
+                        , type          : 'none'
+                    , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'                    },
                     {
                         id              : 11
                         , version       : '1.0.5'
@@ -134,6 +204,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 12
@@ -146,6 +223,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 13
@@ -158,6 +242,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 14
@@ -170,6 +261,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 15
@@ -182,6 +280,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 16
@@ -194,6 +299,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 17
@@ -206,6 +318,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 18
@@ -218,6 +337,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 19
@@ -230,6 +356,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 20
@@ -242,6 +375,13 @@ if(document.querySelector('#cotafer')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                 ]
                 , status                : 0
@@ -249,12 +389,20 @@ if(document.querySelector('#cotafer')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , cotaferView           : []
+                , isModalDetail         : false
             }
         },
         mounted() {
             flatpickr("#cotaferDate", {});
         },
         methods: {
+            onView(id) {
+                let cotafer = this.cotafers.filter(cotafer => cotafer.id == id);
+                this.cotaferView = cotafer;
+                this.isModalDetail = true
+            },
             onDelete(id = 0){
                 console.log(id);
             },

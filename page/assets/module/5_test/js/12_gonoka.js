@@ -15,6 +15,13 @@ if(document.querySelector('#gonoka')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 2
@@ -27,6 +34,13 @@ if(document.querySelector('#gonoka')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 3
@@ -39,6 +53,13 @@ if(document.querySelector('#gonoka')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 4
@@ -51,6 +72,13 @@ if(document.querySelector('#gonoka')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 5
@@ -63,6 +91,13 @@ if(document.querySelector('#gonoka')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 6
@@ -75,6 +110,13 @@ if(document.querySelector('#gonoka')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 7
@@ -87,6 +129,13 @@ if(document.querySelector('#gonoka')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 8
@@ -99,6 +148,13 @@ if(document.querySelector('#gonoka')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                 ]
                 , status                : 0
@@ -106,12 +162,20 @@ if(document.querySelector('#gonoka')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , gonokaView            : []
+                , isModalDetail         : false
             }
         },
         mounted() {
             flatpickr("#gonokaDate", {});
         },
         methods: {
+            onView(id) {
+                let gonoka = this.gonokas.filter(gonoka => gonoka.id == id);
+                this.gonokaView = gonoka;
+                this.isModalDetail = true
+            },
             onDelete(id = 0){
                 console.log(id);
             },

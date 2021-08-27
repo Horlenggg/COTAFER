@@ -6,63 +6,79 @@ if(document.querySelector('#cotaferArchive')){
                 , archives: [
                     {
                         id              : 1
-                        , productName   : 'Cotafer'
+                        , version       : '1.0.5'
+                        , productName   : 'cotafer IOS'
                         , category      : 'Cotafer'
                         , platform      : 'IOS'
-                        , version       : '1.0.5'
-                        , devStartDate  : '12.12.2021'
-                        , devDeadline   : '01.01.2022'
-                        , releaseDate   : '02.02.2022'
-                        , maintenanceTime   : '60d'
-                        , feature       : 'live'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Start'
-                        , note          : 'helllllllllllllllllllllllllll'
                         , type          : 'Archive'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 2
-                        , productName   : 'Cotafer'
-                        , category      : 'Cotafer'
-                        , platform      : 'Android'
                         , version       : '1.0.5'
-                        , devStartDate  : '12.12.2021'
-                        , devDeadline   : '01.01.2022'
-                        , releaseDate   : '02.02.2022'
-                        , maintenanceTime   : '60d'
-                        , feature       : 'live'
-                        , status        : 'Start'
-                        , note          : 'helllllllllllllllllllllllllll'
+                        , productName   : 'cotafer Android'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Stop'
                         , type          : 'Archive'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 3
-                        , productName   : 'Cotafer'
-                        , category      : 'Cotafer'
-                        , platform      : 'Web'
                         , version       : '1.0.5'
-                        , devStartDate  : '12.12.2021'
-                        , devDeadline   : '01.01.2022'
-                        , releaseDate   : '02.02.2022'
-                        , maintenanceTime   : '60d'
-                        , feature       : 'live'
+                        , productName   : 'cotafer Web'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
                         , status        : 'Start'
-                        , note          : 'helllllllllllllllllllllllllll'
                         , type          : 'Archive'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 4
-                        , productName   : 'Cotafer'
-                        , category      : 'Cotafer'
-                        , platform      : 'Api'
                         , version       : '1.0.5'
-                        , devStartDate  : '12.12.2021'
-                        , devDeadline   : '01.01.2022'
-                        , releaseDate   : '02.02.2022'
-                        , maintenanceTime   : '60d'
-                        , feature       : 'live'
-                        , status        : 'Start'
-                        , note          : 'helllllllllllllllllllllllllll'
+                        , productName   : 'cotafer Api'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        , status        : 'Stop'
                         , type          : 'Archive'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                 ]
                 , status                : 0
@@ -70,12 +86,20 @@ if(document.querySelector('#cotaferArchive')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , cotaferView              : []
+                , isModalDetail         : false
             }
         },
         mounted() {
             flatpickr("#archiveDate", {});
         },
         methods: {
+            onView(id) {
+                let cotafer = this.archives.filter(cotafer => cotafer.id == id);
+                this.cotaferView = cotafer;
+                this.isModalDetail = true
+            },
             onRestore(id = 0) {
                 console.log(id);
             },

@@ -15,6 +15,13 @@ if(document.querySelector('#cotaferWeb')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Start'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                 ]
                 , status                : 0
@@ -22,12 +29,20 @@ if(document.querySelector('#cotaferWeb')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , cotaferView           : []
+                , isModalDetail         : false
             }
         },
         mounted() {
             flatpickr("#cotaferWebDate", {});
         },
         methods: {
+            onView(id) {
+                let cotafer = this.cotaferWeb.filter(cotafer => cotafer.id == id);
+                this.cotaferView = cotafer;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },

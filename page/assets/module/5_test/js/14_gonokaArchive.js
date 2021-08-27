@@ -6,63 +6,155 @@ if(document.querySelector('#gonokaArchive')){
                 , archives: [
                     {
                         id              : 1
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , platform      : 'IOS'
                         , version       : '1.0.5'
-                        , devStartDate  : '12.12.2021'
-                        , devDeadline   : '01.01.2022'
-                        , releaseDate   : '02.02.2022'
-                        , maintenanceTime   : '60d'
-                        , feature       : 'live'
+                        , productName   : 'Gonoka IOS'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Start'
-                        , note          : 'helllllllllllllllllllllllllll'
-                        , type          : 'Archive'
+                        , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 2
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , platform      : 'Android'
                         , version       : '1.0.5'
-                        , devStartDate  : '12.12.2021'
-                        , devDeadline   : '01.01.2022'
-                        , releaseDate   : '02.02.2022'
-                        , maintenanceTime   : '60d'
-                        , feature       : 'live'
-                        , status        : 'Start'
-                        , note          : 'helllllllllllllllllllllllllll'
+                        , productName   : 'Gonoka Android'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Stop'
                         , type          : 'Archive'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 3
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , platform      : 'Web'
                         , version       : '1.0.5'
-                        , devStartDate  : '12.12.2021'
-                        , devDeadline   : '01.01.2022'
-                        , releaseDate   : '02.02.2022'
-                        , maintenanceTime   : '60d'
-                        , feature       : 'live'
+                        , productName   : 'Gonoka Web'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Start'
-                        , note          : 'helllllllllllllllllllllllllll'
                         , type          : 'Archive'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                     ,{
                         id              : 4
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
-                        , platform      : 'Api'
                         , version       : '1.0.5'
-                        , devStartDate  : '12.12.2021'
-                        , devDeadline   : '01.01.2022'
-                        , releaseDate   : '02.02.2022'
-                        , maintenanceTime   : '60d'
-                        , feature       : 'live'
-                        , status        : 'Start'
-                        , note          : 'helllllllllllllllllllllllllll'
+                        , productName   : 'Gonoka Api'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Stop'
                         , type          : 'Archive'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
+                    }
+                    ,{
+                        id              : 5
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer IOS'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Start'
+                        , type          : 'Archive'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
+                    }
+                    ,{
+                        id              : 6
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer Android'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Stop'
+                        , type          : 'Archive'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
+                    }
+                    ,{
+                        id              : 7
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer Web'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Start'
+                        , type          : 'Archive'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
+                    }
+                    ,{
+                        id              : 8
+                        , version       : '1.0.5'
+                        , productName   : 'Cotafer Api'
+                        , category      : 'Cotafer'
+                        , platform      : 'IOS'
+                        , formLink      : 'Google form link'
+                        , byLink        : 'Google link'
+                        , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
+                        , status        : 'Stop'
+                        , type          : 'Archive'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                 ]
                 , status                : 0
@@ -70,12 +162,20 @@ if(document.querySelector('#gonokaArchive')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , gonokaView              : []
+                , isModalDetail         : false
             }
         },
         mounted() {
             flatpickr("#archiveDate", {});
         },
         methods: {
+            onView(id) {
+                let gonoka = this.archives.filter(gonoka => gonoka.id == id);
+                this.gonokaView = gonoka;
+                this.isModalDetail = true
+            },
             onRestore(id = 0) {
                 console.log(id);
             },

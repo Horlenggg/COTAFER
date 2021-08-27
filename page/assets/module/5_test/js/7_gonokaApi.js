@@ -3,7 +3,7 @@ if(document.querySelector('#gonokaApi')){
         data() {
             return {
                 permission              : 'manager'
-                ,gonokaApi: [
+                , gonokaApi: [
                     {
                         id              : 1
                         , version       : '1.0.5'
@@ -15,6 +15,13 @@ if(document.querySelector('#gonokaApi')){
                         , report        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend at aliquet posuere dignissim egestas.'
                         , status        : 'Stop'
                         , type          : 'none'
+                        , improveTest   : ['Brainzy', 'Brainzy']
+                        , improvePublic : ['Brainzy', 'Brainzy']
+                        , startTestDate : '21.21.2021'
+                        , finishTestDate: '21.21.2021'
+                        , stagingDate   : '21.21.2021'
+                        , productDate   : '21.21.2021'
+                        , releaseDate   : '21.21.2021'
                     }
                 ]
                 , status                : 0
@@ -22,12 +29,20 @@ if(document.querySelector('#gonokaApi')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , gonokaView            : []
+                , isModalDetail         : false
             }
         },
         mounted() {
             flatpickr("#gonokaApiDate", {});
         },
         methods: {
+            onView(id) {
+                let gonoka = this.gonokaApi.filter(gonoka => gonoka.id == id);
+                this.gonokaView = gonoka;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },
