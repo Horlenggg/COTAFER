@@ -16,6 +16,7 @@ from page.validations.company       import CompanyValidation as company
 from page.validations.test          import TestValidation as test
 from page.validations.live          import LiveValidation as live
 from page.validations.account       import AccountValidation as account
+from page.validations.setting       import SettingValidation as setting
 from page.validations.roadmap       import RoadmapValidation as roadmap
  
 # ================= #
@@ -54,26 +55,6 @@ def dashboardGet():
 @route.get('/acc/account')
 def accountGet():
     return account.AccountValidation().accountGet()
-
-@route.get('/acc/account/profile')
-def accountProfileGet():
-    return account.AccountValidation().accountProfileGet()
-
-@route.post('/acc/account/profile')
-def accountProfilePost():
-    return account.AccountValidation().accountProfilePost()
-
-@route.post('/acc/account/profile/upload')
-def accountProfileUpload():
-    return account.AccountValidation().accountProfileUpload()
-
-@route.get('/acc/account/password/change')
-def accountChangePasswordGet():
-    return account.AccountValidation().accountChangePasswordGet()
-
-@route.post('/acc/account/password/change')
-def accountChangePasswordPost():
-    return account.AccountValidation().accountChangePasswordPost()
 
 @route.get('/acc/account/add')
 def accountAddGet():
@@ -408,3 +389,27 @@ def roadmapCotaferWebGet():
 @route.get('/roadmap/cotafer/api')
 def roadmapCotaferApiGet():
     return roadmap.RoadmapValidation().roadmapCotaferApiGet()
+
+# ================= #
+#      roadmap      #
+# ================= #
+
+@route.get('/setting/my-profile')
+def settingProfileGet():
+    return setting.SettingValidation().settingProfileGet()
+
+@route.post('/setting/my-profile')
+def settingProfilePost():
+    return setting.SettingValidation().settingProfilePost()
+
+@route.post('/setting/my-profile/upload')
+def settingProfileUpload():
+    return setting.SettingValidation().settingProfileUpload()
+
+@route.get('/setting/change-pass')
+def settingChangePasswordGet():
+    return setting.SettingValidation().settingChangePasswordGet()
+
+@route.post('/setting/change-pass')
+def settingChangePasswordPost():
+    return setting.SettingValidation().settingChangePasswordPost()

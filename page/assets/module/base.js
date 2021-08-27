@@ -594,3 +594,8 @@ const ROADMAP_STATUS = [
     , { value: 3, label: 'SUSPEND' }
     , { value: 4, label: 'DELETE' }
 ];
+
+const DEPARTMENT = [
+    { value: 1, label: 'WEB' }
+    , { value: 2, label: 'MOBILE' }
+];

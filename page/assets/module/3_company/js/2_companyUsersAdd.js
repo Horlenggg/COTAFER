@@ -36,12 +36,7 @@ if(document.querySelector('#companyUsersAdd')){
                 , errMessagePa: '' //error message password
                 , errMessageRp: '' //error message repassword
     
-                , deOption: [
-                    { value: 1, label: 'Ios' }
-                    , { value: 2, label: 'Android' }
-                    , { value: 3, label: 'Web' }
-                    , { value: 4, label: 'Api' }
-                ]
+                , deOption: DEPARTMENT
                 , roOption: [
                     { value: 1, label: 'Ios Developer' }
                     , { value: 2, label: 'Android Developer' }

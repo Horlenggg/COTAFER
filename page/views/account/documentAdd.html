@@ -17,21 +17,23 @@
 				<label class="block text-gray-700">Title</label>
 				<input
 					v-model="title"
-					:class="isTitleVal ? 'border-red-500' : ''"
+					:class="isTiVal ? 'border-red-500' : ''"
 					class="mt-2.5 text-sm appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4"
 					type="text"
 					placeholder="title"
-				>  
+				> 
+				<span class="text-xs text-red-500" v-text='errMessageTi'></span>
 			</div>
 			<div class="w-1/2">
-				<label class="block text-gray-700" >File Name</label>
+				<label class="block text-gray-700">Project name</label>
 				<input
-					v-model="filename"
-					:class="isFilenameVal ? 'border-red-500' : ''"
+					v-model="projectName"
+					:class="isPrVal ? 'border-red-500' : ''"
 					class="mt-2.5 text-sm appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4"
 					type="text"
-					placeholder="filename"
+					placeholder="Project name"
 				>  
+				<span class="text-xs text-red-500" v-text='errMessagePr'></span>
 			</div>
 		</div>
 		<div class="flex flex-row space-x-12.5">
@@ -43,15 +45,16 @@
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
 						</svg>
 					</div>
-					<select v-model="category" class="mt-2.5 text-sm block appearance-none w-full bg-white text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 pr-8">
-						<option 
-							v-for="cat in catOption"
-							:key="cat.id"
-							v-text="cat.value"
-							:value="cat.id"
-						></option>
+					<select 
+						v-model="category" 
+						class="mt-2.5 block w-full appearance-none text-sm bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+						:class="isCaVal ? 'border-red-500' : '', category == '0' ? 'text-gray-400' : 'text-gray-700'"
+					>
+						<option class="text-gray-400" value="0">Select...</option>
+						<option class="text-gray-700" v-for="ca in caOption" v-text="ca.label" value="ca.value"></option>
 					</select>
 				</div>
+				<span class="text-xs text-red-500" v-text='errMessageCa'></span>
 			</div>
 			<div class="w-1/2">
 				<label class="block text-gray-700">Department</label>
@@ -61,32 +64,57 @@
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
 						</svg>
 					</div>
-					<select v-model="department" class="mt-2.5 text-sm block appearance-none w-full bg-white text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 pr-8">
-						<option 
-							v-for="de in deOption"
-							:key="de.id"
-							v-text="de.value"
-							:value="de.id"
-						></option>
+					<select 
+						v-model="department" 
+						class="mt-2.5 block w-full appearance-none text-sm bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+						:class="isDeVal ? 'border-red-500' : '', department == '0' ? 'text-gray-400' : 'text-gray-700'"
+					>
+						<option class="text-gray-400" value="0">Select...</option>
+						<option class="text-gray-700" v-for="de in deOption" v-text="de.label" value="de.value"></option>
 					</select>
 				</div>
+				<span class="text-xs text-red-500" v-text='errMessageDe'></span>
 			</div>
 		</div>
 		<div class="flex flex-row space-x-12.5">
+			<div class="w-1/2">
+				<label class="block text-gray-700">File Name</label>
+				<input
+					v-model="filename"
+					:class="isFnVal ? 'border-red-500' : ''"
+					class="mt-2.5 text-sm appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4"
+					type="text"
+					placeholder="filename"
+				>  
+				<span class="text-xs text-red-500" v-text='errMessageFn'></span>
+			</div>
 			<div class="w-1/2">
 				<label class="block text-gray-700">File</label>
 				<input
 					@change="onFileHandle"
 					ref="inputPdf"
-					:class="isFileVal ? 'border-red-500' : ''"
+					:class="isFiVal ? 'border-red-500' : ''"
 					class="mt-2.5 text-sm appearance-none block w-full bg-grey-lighter text-gray-700 text-grey-darker border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4"
 					type="file"
 					accept="application/pdf,application/vnd.ms-excel"
-				>  
+				>
+				<span class="text-xs text-red-500" v-text='errMessageFi'></span>
 			</div>
-			<div class="w-1/2">
-
+		</div>
+		<div class="w-full">
+			<label for="note" class="block text-gray-700">Note</label>
+			<div class="relative w-full">
+				<textarea 
+					v-model="note" 
+					class="mt-2.5 w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 resize-none outline-none p-3" 
+					:class="isNoVal ? 'border-red-500' : ''"
+					cols="30" 
+					rows="5" 
+					maxlength="100"
+					placeholder="Write your note here"></textarea>
+				<span v-text="note.length + '/100'" class="absolute bottom-3 right-3 text-xs-sm text-gray-300"></span>
 			</div>
+			<span class="text-xs text-red-500" v-text='errMessageNo'></span>
 		</div>
 		<div class="w-full flex justify-end space-x-5">
 			<button class="w-24 h-10 text-sm bg-white text-gray-700 border border-gray-700 hover:text-white hover:bg-gray-700 focus:outline-none">

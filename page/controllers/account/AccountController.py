@@ -78,7 +78,7 @@ class AccountController(MyController):
             # active link
             self.view.addData(
                 params={
-                    'active_module'     : ['account', '']
+                    'active_module'     : ['', '']
                     , 'client_module'   : '2_account'
                     , 'base_module'     : 'home'
                 }
@@ -175,7 +175,7 @@ class AccountController(MyController):
             # active link
             self.view.addData(
                 params={
-                    'active_module'     : ['account', '']
+                    'active_module'     : ['', '']
                     , 'client_module'   : '2_account'
                     , 'base_module'     : 'home'
                 }

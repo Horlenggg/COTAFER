@@ -4,8 +4,11 @@ if(document.querySelector('#accountChangePw')){
             return {
                 currentPassword: ''
                 , newPassword: ''
-                , isCurrentPasswordVal: false
-                , isNewPasswordVal: false
+
+                , isCpVal: false
+                , isNpVal: false
+                , errMessageCp: ''
+                , errMessageNp: ''
             }
         },
         mounted() {
@@ -16,23 +19,29 @@ if(document.querySelector('#accountChangePw')){
                 let pRegex = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/);
 
                 if (!this.currentPassword) {
-                    this.isCurrentPasswordVal = true;
+                    this.isCpVal = true
+                    this.errMessageCp = 'Require.'
                 } else if(!pRegex.test(this.currentPassword)) {
-                    this.isCurrentPasswordVal = true;
+                    this.isCpVal = true
+                    this.errMessageCp = 'Not valid password'
                 } else {
-                    this.isCurrentPasswordVal = false;
+                    this.isCpVal = false
+                    this.errMessageCp = ''
                 }
 
                 if (!this.newPassword) {
-                    this.isNewPasswordVal = true;
+                    this.isNpVal = true
+                    this.errMessageNp = 'Require.'
                 } else if(!pRegex.test(this.newPassword)) {
-                    this.isNewPasswordVal = true;
+                    this.isNpVal = true
+                    this.errMessageNp = 'Not valid password'
                 } else {
-                    this.isNewPasswordVal = false;
+                    this.isNpVal = false
+                    this.errMessageNp = ''
                 }
 
     
-                if(!this.isCurrentPasswordVal && !this.isNewPasswordVal){
+                if(!this.isCpVal && !this.isNpVal){
                     let 
                         currentPassword = document.createElement('input'),
                         newPassword     = document.createElement('input'),
@@ -71,6 +80,9 @@ if(document.querySelector('#accountChangePw')){
                     reader.readAsDataURL(file[0])
                     this.$emit('input', file[0])
                 }
+            }
+            , onBack() {
+                window.history.back()
             }
         }
     }

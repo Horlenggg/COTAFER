@@ -21,12 +21,7 @@ if(document.querySelector('#companyRolesAdd')){
                     , { value: 14, label: 'Api' }
                 ]
                 , department            : 0
-                , deOption: [
-                    { value: 1, label: 'Ios' }
-                    , { value: 2, label: 'Android' }
-                    , { value: 3, label: 'Web' }
-                    , { value: 4, label: 'Api' }
-                ]
+                , deOption              : DEPARTMENT 
 
                 , dashboard             : 'Dashboard'
                 , dashboardData         : [

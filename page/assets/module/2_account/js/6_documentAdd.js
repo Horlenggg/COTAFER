@@ -3,23 +3,32 @@ if(document.querySelector('#documentAdd')){
         data() {
             return {
                 title: ''
-                , category: 1
+                , projectName: ''
+                , category: 0
                 , file: []
                 , filename: ''
-                , department: 1
-    
-                , catOption: [
-                    { id: 1, value: 'Web' }
-                    , { id: 2, value: 'Mobile' }
-                ]
-                , deOption: [
-                    { id: 1, value: 'Web' }
-                    , { id: 2, value: 'Mobile' }
-                ]
-    
-                , isTitleVal: false
-                , isFilenameVal: false
-                , isFileVal: false
+
+                , department: 0
+                , caOption: CATEGORY
+                , deOption: DEPARTMENT
+
+                , note: ''
+                
+                , isPrVal: false
+                , isTiVal: false
+                , isCaVal: false
+                , isDeVal: false
+                , isFnVal: false
+                , isFiVal: false
+                , isNoVal: false
+
+                , errMessagePr: ''
+                , errMessageTi: ''
+                , errMessageCa: ''
+                , errMessageDe: ''
+                , errMessageFn: ''
+                , errMessageFi: ''
+                , errMessageNo: ''
             }
         },
         mounted() {
@@ -42,24 +51,62 @@ if(document.querySelector('#documentAdd')){
             }
             , onSubmit(){
                 if (!this.title) {
-                    this.isTitleVal = true;
+                    this.isTiVal = true
+                    this.errMessageTi = 'Require.'
                 } else {
-                    this.isTitleVal = false;
+                    this.isTitleVal = false
+                    this.errMessageTi = ''
+                }
+
+                if (!this.projectName) {
+                    this.isPrVal = true;
+                    this.errMessagePr = 'Require.'
+                } else {
+                    this.isPrVal = false
+                    this.errMessagePr = ''
+                }
+
+                if(this.category == 0){
+                    this.isCaVal = true;
+                    this.errMessageCa = 'Require.'
+                } else {
+                    this.isCaVal = false
+                    this.errMessageCa = ''
+                }
+
+                if(this.department == 0){
+                    this.isDeVal = true;
+                    this.errMessageDe = 'Require.'
+                } else {
+                    this.isDeVal = false
+                    this.errMessageDe = ''
                 }
     
                 if (this.file.length == 0) {
-                    this.isFileVal = true;
+                    this.isFiVal = true
+                    this.errMessageFi = 'Require.'
                 } else {
-                    this.isFileVal = false;
+                    this.isFiVal = false
+                    this.errMessageFi = ''
                 }
 
                 if (!this.filename) {
-                    this.isFilenameVal = true;
+                    this.isFnVal = true
+                    this.errMessageFn = 'Require.'
                 } else {
-                    this.isFilenameVal = false;
+                    this.isFnVal = false
+                    this.errMessageFn = ''
+                }
+
+                if (!this.note) {
+                    this.isNoVal = true
+                    this.errMessageNo = 'Require.'
+                } else {
+                    this.isNoVal = false
+                    this.errMessageNo = ''
                 }
     
-                if(this.isTitleVal == false && this.isFileVal == false && this.isFilenameVal == false){
+                if(!this.isTiVal && !this.isPrVal && !this.isFiVal && !this.isFnVal && !this.isNoVal){
                     let 
                         title       = document.createElement('input'),
                         category    = document.createElement('input'),

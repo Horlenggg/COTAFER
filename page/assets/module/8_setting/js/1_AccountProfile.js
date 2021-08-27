@@ -6,21 +6,26 @@ if(document.querySelector('#accountProfile')){
                 , lastName: ''
                 , email: ''
                 , phoneNumber: ''
-                , department: 1
+                , department: 0
                 , password: ''
 
                 , pfImage: 'https://images.unsplash.com/photo-1535704882196-765e5fc62a53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'
     
-                , deOption: [
-                    { id: 1, value: 'Web' }
-                    , { id: 2, value: 'Mobile' }
-                ]
+                , deOption: DEPARTMENT
     
-                , isFirstNameVal: false
-                , isLastNameVal: false
-                , isEmailVal: false
-                , isPasswordVal: false
-                , isPhoneNumberVal: false
+                , isFnVal: false
+                , isLnVal: false
+                , isEmVal: false
+                , isPaVal: false
+                , isPhVal: false
+                , isDeVal: false
+
+                , errMessageFn: ''
+                , errMessageLn: ''
+                , errMessageEm: ''
+                , errMessagePa: ''
+                , errMessagePh: ''
+                , errMessageDe: ''
             }
         },
         mounted() {
@@ -33,40 +38,60 @@ if(document.querySelector('#accountProfile')){
                     pRegex = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/);
             
                 if (!this.firstName) {
-                    this.isFirstNameVal = true;
+                    this.isFnVal = true
+                    this.errMessageFn = 'Require.'
                 } else {
-                    this.isFirstNameVal = false;
+                    this.isFnVal = false
+                    this.errMessageFn = ''
                 }
 
                 if (!this.lastName) {
-                    this.isLastNameVal = true;
+                    this.isLnVal = true
+                    this.errMessageLn = 'Require.'
                 } else {
-                    this.isLastNameVal = false;
+                    this.isLnVal = false
+                    this.errMessageLn = ''
                 }
     
                 if (!this.email) {
-                    this.isEmailVal = true;
+                    this.isEmVal = true
+                    this.errMessageEm = 'Require.'
                 } else if (!eRegex.test(this.email)) {
-                    this.isEmailVal = true;
+                    this.isEmVal = true
+                    this.errMessageEm = 'Not valid email'
                 } else {
-                    this.isEmailVal = false;
+                    this.isEmVal = false
+                    this.errMessageEm = ''
                 }
     
                 if (!this.password) {
-                    this.isPasswordVal = true;
+                    this.isPaVal = true
+                    this.errMessagePa = 'Require.'
                 } else if(!pRegex.test(this.password)) {
-                    this.isPasswordVal = true;
+                    this.isPaVal = true
+                    this.errMessagePa = 'Not valid password'
                 } else {
-                    this.isPasswordVal = false;
+                    this.isPaVal = false
+                    this.errMessagePa = ''
                 }
     
                 if (!this.phoneNumber) {
-                    this.isPhoneNumberVal = true;
+                    this.isPhVal = true
+                    this.errMessagePh = 'Require.'
                 } else {
-                    this.isPhoneNumberVal = false;
+                    this.isPhVal = false
+                    this.errMessagePh = ''
+                }
+
+                if (this.department == 0) {
+                    this.isDeVal = true
+                    this.errMessageDe = 'Require.'
+                } else {
+                    this.isDeVal = false
+                    this.errMessageDe = ''
                 }
     
-                if(!this.isFirstNameVal && !this.isLastNameVal && !this.isEmailVal && !this.isPasswordVal && !this.isPhoneNumberVal){
+                if(!this.isFnVal && !this.isLnVal && !this.isEmVal && !this.isPaVal && !this.isPhVal && !this.isDeVal){
                     let 
                         firstName   = document.createElement('input'),
                         lastName    = document.createElement('input'),
@@ -132,6 +157,9 @@ if(document.querySelector('#accountProfile')){
                     request.open("POST", "/account/profile/upload");
                     request.send(formData);
                 }
+            }
+            , onBack() {
+                window.history.back()
             }
         }
     }

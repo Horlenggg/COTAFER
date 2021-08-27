@@ -5,24 +5,35 @@ if(document.querySelector('#accountEdit')){
                 username: ''
                 , email: ''
                 , password: ''
-                , application: 1
+                , application: 0
                 , link: ''
-                , permission: 1
-    
-                , appOption: [
-                    { id: 1, value: 'Cotafer News' }
-                    , { id: 2, value: 'Gonoka PR' }
-                    , { id: 3, value: 'Gonoka Newsfeed' }
+                , permission: 0
+                , phonenumber: ''
+                , apOption: [
+                    { value: 1, label: 'Cotafer News' }
+                    , { value: 2, label: 'Gonoka PR' }
+                    , { value: 3, label: 'Gonoka Newsfeed' }
                 ]
-                , perOption: [
-                    { id: 1, value: 'Admin' }
-                    , { id: 2, value: 'User' }
+                , peOption: [
+                    { value: 1, label: 'Admin' }
+                    , { value: 2, label: 'User' }
                 ]
     
-                , isUsernameVal: false
-                , isEmailVal: false
-                , isPasswordVal: false
-                , isLinkVal: false
+                , isUsVal: false
+                , isEmVal: false
+                , isPaVal: false
+                , isLiVal: false
+                , isApVal: false
+                , isPeVal: false
+                , isPhVal: false
+
+                , errMessageUs: ''
+                , errMessageEm: ''
+                , errMessagePa: ''
+                , errMessageLi: ''
+                , errMessageAp: ''
+                , errMessagePe: ''
+                , errMessagePh: ''
             }
         },
         mounted() {
@@ -36,33 +47,68 @@ if(document.querySelector('#accountEdit')){
                     lRegex = new RegExp(/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
             
                 if (!this.username) {
-                    this.isUsernameVal = true;
+                    this.isUsVal = true
+                    this.errMessageUs = 'Require.'
                 } else {
-                    this.isUsernameVal = false;
+                    this.isUsVal = false
+                    this.errMessageUs = ''
+                }
+
+                if (this.application == 0) {
+                    this.isApVal = true
+                    this.errMessageAp = 'Require.'
+                } else {
+                    this.isApVal = false
+                    this.errMessageAp = ''
+                }
+
+                if (this.permission == 0) {
+                    this.isPeVal = true
+                    this.errMessagePe = 'Require.'
+                } else {
+                    this.isPeVal = false
+                    this.errMessagePe = ''
+                }
+
+                if (!this.phonenumber) {
+                    this.isPhVal = true
+                    this.errMessagePh = 'Require.'
+                } else {
+                    this.isPhVal = false
+                    this.errMessagePh = ''
                 }
     
                 if (!this.email) {
-                    this.isEmailVal = true;
+                    this.isEmVal = true
+                    this.errMessageEm = 'Require.'
                 } else if (!eRegex.test(this.email)) {
-                    this.isEmailVal = true;
+                    this.isEmVal = true
+                    this.errMessageEm = 'Email not valid'
                 } else {
-                    this.isEmailVal = false;
+                    this.isEmVal = false
+                    this.errMessageEm = ''
                 }
     
                 if (!this.password) {
-                    this.isPasswordVal = true;
+                    this.isPaVal = true
+                    this.errMessagePa = 'Require.'
                 } else if(!pRegex.test(this.password)) {
-                    this.isPasswordVal = true;
+                    this.isPaVal = true
+                    this.errMessagePa = 'Password not valid'
                 } else {
-                    this.isPasswordVal = false;
+                    this.isPaVal = false
+                    this.errMessagePa = ''
                 }
     
                 if (!this.link) {
-                    this.isLinkVal = true;
+                    this.isLiVal = true
+                    this.errMessageLi = 'Require.'
                 } else if(!lRegex.test(this.link)) {
-                    this.isLinkVal = true;
+                    this.isLiVal = true
+                    this.errMessageLi = 'Link not valid'
                 } else {
-                    this.isLinkVal = false;
+                    this.isLiVal = false
+                    this.errMessageLi = ''
                 }
     
                 if(this.isUsernameVal == false && this.isEmailVal == false && this.isPasswordVal == false && this.isLinkVal == false){
@@ -85,17 +131,19 @@ if(document.querySelector('#accountEdit')){
                     password.value  = Sha256.hash(this.password);
     
                     application.name    = 'application';
-                    application.value   = this.application;
+                    application.value   = parseInt(this.application);
     
                     link.name       = 'link';
                     link.value      = this.link;
     
                     permission.name    = 'permission';
-                    permission.value   = this.permission;
+                    permission.value   = parseInt(this.permission);
+
+                    console.log(this.username, this.email, this.password, this.application, this.link, this.permission);
         
                     form.className  = 'hidden';
                     form.method     = 'POST';
-                    form.action     = '/account/edit';
+                    form.action     = '/account/add';
         
                     form.append(username);
                     form.append(email);
