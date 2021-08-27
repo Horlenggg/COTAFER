@@ -5,13 +5,7 @@ if(document.querySelector('#testAdd')){
                 permission          : 'manager'
                 , version           : ''
 
-                , projectName       : 0
-                , prOption          : [
-                    { value: 1, label: 'Ios' }
-                    , { value: 2, label: 'Android' }
-                    , { value: 3, label: 'Web' }
-                    , { value: 4, label: 'Api' }
-                ]
+                , projectName       : ''
     
                 , improveTest       : []
                 , imTOption         : [
@@ -261,8 +255,11 @@ if(document.querySelector('#testAdd')){
                         this.isVeVal = false
                     }
         
-                    if(this.projectName == 0){
+                    if(this.projectName.length == 0){
                         this.errMessagePr = 'Require.'
+                        this.isPrVal = true
+                    } else if(this.projectName.length > 30){
+                        this.errMessagePr = 'Max character 30 length'
                         this.isPrVal = true
                     } else {
                         this.errMessagePr = ''
@@ -374,7 +371,7 @@ if(document.querySelector('#testAdd')){
                         this.errMessageReP = ''
                     }
 
-                    if(this.version || this.projectName !== 0 || this.improveTest || this.improvePublic || this.byLink || this.formLink || this.releaseDate || this.platform || this.startTestDate || this.finishTestDate || this.stagingDate || this.productDate){
+                    if(this.version || this.projectName || this.improveTest || this.improvePublic || this.byLink || this.formLink || this.releaseDate || this.platform || this.startTestDate || this.finishTestDate || this.stagingDate || this.productDate){
                         if(!this.isVeVal && !this.isPrVal && !this.isImTVal && !this.isImPVal && !this.isBlVal && !this.isFlVal && !this.isReVal && !this.isPlVal && !this.isStVal && !this.isFiVal && !this.isStDVal && !this.isPrDVal){
                             
                             console.log('form submit');

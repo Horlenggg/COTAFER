@@ -5,13 +5,7 @@ if(document.querySelector('#testEdit')){
                 permission          : 'manager'
                 , version           : ''
 
-                , projectName       : 0
-                , prOption          : [
-                    { value: 1, label: 'Ios' }
-                    , { value: 2, label: 'Android' }
-                    , { value: 3, label: 'Web' }
-                    , { value: 4, label: 'Api' }
-                ]
+                , projectName       : ''
     
                 , improveTest       : []
                 , imTOption         : [
@@ -261,8 +255,11 @@ if(document.querySelector('#testEdit')){
                         this.isVeVal = false
                     }
         
-                    if(this.projectName == 0){
+                    if(this.projectName.length == 0){
                         this.errMessagePr = 'Require.'
+                        this.isPrVal = true
+                    } else if(this.projectName.length > 30){
+                        this.errMessagePr = 'Max character 30 length'
                         this.isPrVal = true
                     } else {
                         this.errMessagePr = ''

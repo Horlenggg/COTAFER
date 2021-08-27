@@ -70,7 +70,7 @@
 							class="mt-2.5 block w-full appearance-none text-sm bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isPlVal ? 'border-red-500' : '', platform == '0' ? 'text-gray-400' : 'text-gray-700'"
 						>
-							<option class="text-gray-400" value="0">Please select project</option>
+							<option class="text-gray-400" value="0">Please select platform</option>
 							<option class="text-gray-700" v-for="pl in plOption" v-text="pl.label" value="pl.value"></option>
 						</select>
 					</div>
@@ -194,14 +194,13 @@
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
 							</svg>
 						</div>
-						<select 
-							v-model="projectName" 
-							class="mt-2.5 block w-full appearance-none text-sm bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
-							:class=" isPrVal ? 'border-red-500' : '', projectName == '0' ? 'text-gray-400' : 'text-gray-700' "
+						<input 
+							type="text" 
+							v-model="projectName"
+							class="mt-2.5 block w-full text-sm border px-4 py-3 border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none"
+							:class="isPrVal ? 'border-red-500' : ''"
+							placeholder="Project name"
 						>
-							<option class="text-gray-400" value="0">Please select project</option>
-							<option class="text-gray-700" v-for="pr in prOption" v-text="pr.label" value="pr.value"></option>
-						</select>
 					</div>
 					<span class="text-xs text-red-500" v-text='errMessagePr'></span>
 				</div>
@@ -297,7 +296,7 @@
 							class="mt-2.5 block w-full appearance-none text-sm bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
 							:class="isPlVal ? 'border-red-500' : '', platform == '0' ? 'text-gray-400' : 'text-gray-700'"
 						>
-							<option class="text-gray-400" value="0">Please select project</option>
+							<option class="text-gray-400" value="0">Please select platform</option>
 							<option class="text-gray-700" v-for="pl in plOption" v-text="pl.label" value="pl.value"></option>
 						</select>
 					</div>
