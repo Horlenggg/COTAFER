@@ -70,12 +70,20 @@ if(document.querySelector('#gonokaArchive')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , gonokaView            : []
+                , isModalDetail         : false
             }
         },
         mounted() {
             flatpickr("#archiveDate", {});
         },
         methods: {
+            onView(id) {
+                let gonoka = this.archives.filter(gonoka => gonoka.id == id);
+                this.gonokaView = gonoka;
+                this.isModalDetail = true
+            },
             onRestore(id = 0) {
                 console.log(id);
             },

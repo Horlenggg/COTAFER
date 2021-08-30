@@ -1,19 +1,26 @@
-if(document.querySelector('#cotaferApi')){
-    const cotaferApi = {
+if(document.querySelector('#cotaferIos')){
+    const cotaferIos = {
         data() {
             return {
                 permission              : 'manager'
-                , cotaferApi: [
+                , cotaferIos: [
                     {
                         id              : 1
-                        , productName   : 'Cotafer API'
+                        , productName   : 'Cotafer IOS'
                         , category      : 'Cotafer'
-                        , platform      : 'API'
+                        , platform      : 'IOS'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                 ]
                 , status                : 0
@@ -21,12 +28,20 @@ if(document.querySelector('#cotaferApi')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , cotaferView           : []
+                , isModalDetail         : false
             }
         },
         mounted() {
-            flatpickr("#cotaferApiDate", {});
+            flatpickr("#cotaferIosDate", {});
         },
         methods: {
+            onView(id) {
+                let cotafer = this.cotaferIos.filter(cotafer => cotafer.id == id);
+                this.cotaferView = cotafer;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },
@@ -44,8 +59,8 @@ if(document.querySelector('#cotaferApi')){
             }
         },
     }
-    const cotaferApiApp =  Vue.createApp(cotaferApi);
-    cotaferApiApp.component('dropdown-status', DROPDOWN_STATUS);
-    cotaferApiApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
-    cotaferApiApp.mount('#cotaferApi');
+    const cotaferIosApp =  Vue.createApp(cotaferIos);
+    cotaferIosApp.component('dropdown-status', DROPDOWN_STATUS);
+    cotaferIosApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
+    cotaferIosApp.mount('#cotaferIos');
 }

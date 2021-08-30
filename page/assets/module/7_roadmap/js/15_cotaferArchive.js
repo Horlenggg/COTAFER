@@ -70,12 +70,20 @@ if(document.querySelector('#cotaferArchive')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , cotaferView           : []
+                , isModalDetail         : false
             }
         },
         mounted() {
             flatpickr("#archiveDate", {});
         },
         methods: {
+            onView(id) {
+                let cotafer = this.archives.filter(cotafer => cotafer.id == id);
+                this.cotaferView = cotafer;
+                this.isModalDetail = true
+            },
             onRestore(id = 0) {
                 console.log(id);
             },

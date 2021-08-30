@@ -25,12 +25,20 @@ if(document.querySelector('#cotaferApi')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , cotaferView           : []
+                , isModalDetail         : false
             }
         },
         mounted() {
             flatpickr("#cotaferApiDate", {});
         },
         methods: {
+            onView(id) {
+                let cotafer = this.cotaferApi.filter(cotafer => cotafer.id == id);
+                this.cotaferView = cotafer;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },

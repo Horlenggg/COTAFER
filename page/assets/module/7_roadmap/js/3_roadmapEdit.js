@@ -14,7 +14,6 @@ if(document.querySelector('#roadmapEdit')){
                 , devStartDate      : ''
                 , devDeadline       : ''
                 , releaseDate       : ''
-                , maintenanceTime   : ''
                 , feature           : ''
                 , note              : ''
 
@@ -27,7 +26,6 @@ if(document.querySelector('#roadmapEdit')){
                 , isDeSVal          : false
                 , isDeDVal          : false
                 , isReVal           : false
-                , isMaVal           : false
                 , isFeVal           : false
                 , isNoVal           : false
 
@@ -38,7 +36,6 @@ if(document.querySelector('#roadmapEdit')){
                 , errMessageDeS     : ''
                 , errMessageDeD     : ''
                 , errMessageRe      : ''
-                , errMessageMa      : ''
                 , errMessageFe      : ''
                 , errMessageNo      : ''
             }
@@ -131,17 +128,6 @@ if(document.querySelector('#roadmapEdit')){
                     this.isReVal = false
                 }
 
-                if(this.maintenanceTime.length == 0){
-                    this.errMessageMa = 'Require.'
-                    this.isMaVal = true
-                } else if(this.maintenanceTime.length > 30){
-                    this.errMessageMa = 'Max character 30 length'
-                    this.isMaVal = true
-                } else {
-                    this.errMessageMa = ''
-                    this.isMaVal = false
-                }
-
                 if(this.feature.length == 0){
                     this.errMessageFe = 'Require.'
                     this.isFeVal = true
@@ -164,8 +150,8 @@ if(document.querySelector('#roadmapEdit')){
                     this.isNoVal = false
                 }
     
-                if( this.productName || this.version || this.category !== 0 || this.platform !== 0 || this.devStartDate || this.devDeadline || this.releaseDate || this.maintenanceTime || this.feature || this.note ){
-                    if( !this.isPrVal && !this.isVeVal && !this.isCaVal && !this.isPlVal && !this.isDeSDVal && !this.isDeDVal && !this.isReVal && !this.isMaVal && !this.isMaVal && !this.isFeVal && !this.isNoVal ){
+                if( this.productName || this.version || this.category !== 0 || this.platform !== 0 || this.devStartDate || this.devDeadline || this.releaseDate || this.feature || this.note ){
+                    if( !this.isPrVal && !this.isVeVal && !this.isCaVal && !this.isPlVal && !this.isDeSDVal && !this.isDeDVal && !this.isReVal && !this.isMaVal && !this.isFeVal && !this.isNoVal ){
                         
                         console.log('form submit');
                         

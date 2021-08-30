@@ -103,7 +103,7 @@ class RoadmapController(MyController):
             # active link
             self.view.addData(
                 params={
-                    'active_module'     : ['', '']
+                    'active_module'     : ['gonoka', '']
                     , 'client_module'   : '7_roadmap'
                     , 'base_module'     : 'roadmap'
                 }
@@ -127,7 +127,7 @@ class RoadmapController(MyController):
             # active link
             self.view.addData(
                 params={
-                    'active_module'     : ['', '']
+                    'active_module'     : ['cotafer', '']
                     , 'client_module'   : '7_roadmap'
                     , 'base_module'     : 'roadmap'
                 }

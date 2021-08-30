@@ -14,6 +14,13 @@ if(document.querySelector('#gonokaAndroid')){
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                 ]
                 , status                : 0
@@ -21,12 +28,20 @@ if(document.querySelector('#gonokaAndroid')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , gonokaView            : []
+                , isModalDetail         : false
             }
         },
         mounted() {
             flatpickr("#gonokaAndroidDate", {});
         },
         methods: {
+            onView(id) {
+                let gonoka = this.gonokaAndroid.filter(gonoka => gonoka.id == id);
+                this.gonokaView = gonoka;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },

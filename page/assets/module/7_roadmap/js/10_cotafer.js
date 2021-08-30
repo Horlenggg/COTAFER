@@ -85,12 +85,20 @@ if(document.querySelector('#cotafer')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , cotaferView            : []
+                , isModalDetail         : false
             }
         },
         mounted() {
             flatpickr("#cotaferDate", {});
         },
         methods: {
+            onView(id) {
+                let cotafer = this.cotafers.filter(cotafer => cotafer.id == id);
+                this.cotaferView = cotafer;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },

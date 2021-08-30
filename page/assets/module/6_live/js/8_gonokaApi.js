@@ -1,19 +1,26 @@
-if(document.querySelector('#gonokaIos')){
-    const gonokaIos = {
+if(document.querySelector('#gonokaApi')){
+    const gonokaApi = {
         data() {
             return {
                 permission              : 'manager'
-                , gonokaIos: [
+                , gonokaApi: [
                     {
                         id              : 1
-                        , productName   : 'Gonoka IOS'
+                        , productName   : 'Gonoka API'
                         , category      : 'Gonoka'
-                        , platform      : 'IOS'
+                        , platform      : 'API'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                 ]
                 , status                : 0
@@ -21,12 +28,20 @@ if(document.querySelector('#gonokaIos')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , gonokaView            : []
+                , isModalDetail         : false
             }
         },
         mounted() {
-            flatpickr("#gonokaIosDate", {});
+            flatpickr("#gonokaApiDate", {});
         },
         methods: {
+            onView(id) {
+                let gonoka = this.gonokaApi.filter(gonoka => gonoka.id == id);
+                this.gonokaView = gonoka;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },
@@ -44,8 +59,8 @@ if(document.querySelector('#gonokaIos')){
             }
         },
     }
-    const gonokaIosApp =  Vue.createApp(gonokaIos);
-    gonokaIosApp.component('dropdown-status', DROPDOWN_STATUS);
-    gonokaIosApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
-    gonokaIosApp.mount('#gonokaIos');
+    const gonokaApiApp =  Vue.createApp(gonokaApi);
+    gonokaApiApp.component('dropdown-status', DROPDOWN_STATUS);
+    gonokaApiApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
+    gonokaApiApp.mount('#gonokaApi');
 }

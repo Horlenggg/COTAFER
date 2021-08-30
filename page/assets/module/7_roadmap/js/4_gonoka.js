@@ -85,12 +85,20 @@ if(document.querySelector('#gonoka')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , gonokaView            : []
+                , isModalDetail         : false
             }
         },
         mounted() {
             flatpickr("#gonokaDate", {});
         },
         methods: {
+            onView(id) {
+                let gonoka = this.gonokas.filter(gonoka => gonoka.id == id);
+                this.gonokaView = gonoka;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },

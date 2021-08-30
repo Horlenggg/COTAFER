@@ -1,14 +1,14 @@
-if(document.querySelector('#gonokaApi')){
-    const gonokaApi = {
+if(document.querySelector('#gonokaIos')){
+    const gonokaIos = {
         data() {
             return {
                 permission              : 'manager'
-                , gonokaApi: [
+                , gonokaIos: [
                     {
                         id              : 1
                         , productName   : 'Gonoka'
                         , category      : 'Gonoka'
-                        , platform      : 'Api'
+                        , platform      : 'IOS'
                         , version       : '1.0.5'
                         , devStartDate  : '12.12.2021'
                         , devDeadline   : '01.01.2022'
@@ -25,12 +25,20 @@ if(document.querySelector('#gonokaApi')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , gonokaView            : []
+                , isModalDetail         : false
             }
         },
         mounted() {
-            flatpickr("#gonokaApiDate", {});
+            flatpickr("#gonokaIosDate", {});
         },
         methods: {
+            onView(id) {
+                let gonoka = this.gonokaIos.filter(gonoka => gonoka.id == id);
+                this.gonokaView = gonoka;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },
@@ -48,8 +56,8 @@ if(document.querySelector('#gonokaApi')){
             }
         },
     }
-    const gonokaApiApp =  Vue.createApp(gonokaApi);
-    gonokaApiApp.component('dropdown-status', DROPDOWN_STATUS);
-    gonokaApiApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
-    gonokaApiApp.mount('#gonokaApi');
+    const gonokaIosApp =  Vue.createApp(gonokaIos);
+    gonokaIosApp.component('dropdown-status', DROPDOWN_STATUS);
+    gonokaIosApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
+    gonokaIosApp.mount('#gonokaIos');
 }

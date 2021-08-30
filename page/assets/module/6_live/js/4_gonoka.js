@@ -1,9 +1,9 @@
-if(document.querySelector('#cotafer')){
-    const cotafer = {
+if(document.querySelector('#gonoka')){
+    const gonoka = {
         data() {
             return {
                 permission              : 'manager'
-                , cotafers: [
+                , gonokas: [
                     {
                         id              : 1
                         , productName   : 'Cotafer'
@@ -14,6 +14,13 @@ if(document.querySelector('#cotafer')){
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 2
@@ -25,6 +32,13 @@ if(document.querySelector('#cotafer')){
                         , status        : 'Stop'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 3
@@ -36,6 +50,13 @@ if(document.querySelector('#cotafer')){
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 4
@@ -47,6 +68,13 @@ if(document.querySelector('#cotafer')){
                         , status        : 'Stop'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 5
@@ -58,6 +86,13 @@ if(document.querySelector('#cotafer')){
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 6
@@ -69,6 +104,13 @@ if(document.querySelector('#cotafer')){
                         , status        : 'Stop'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 7
@@ -80,6 +122,13 @@ if(document.querySelector('#cotafer')){
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 8
@@ -91,6 +140,13 @@ if(document.querySelector('#cotafer')){
                         , status        : 'Stop'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 9
@@ -102,6 +158,13 @@ if(document.querySelector('#cotafer')){
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 10
@@ -113,6 +176,13 @@ if(document.querySelector('#cotafer')){
                         , status        : 'Stop'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                 ]
                 , status                : 0
@@ -120,12 +190,20 @@ if(document.querySelector('#cotafer')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , gonokaView            : []
+                , isModalDetail         : false
             }
         },
         mounted() {
-            flatpickr("#cotaferDate", {});
+            flatpickr("#gonokaDate", {});
         },
         methods: {
+            onView(id) {
+                let gonoka = this.gonokas.filter(gonoka => gonoka.id == id);
+                this.gonokaView = gonoka;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },
@@ -143,8 +221,8 @@ if(document.querySelector('#cotafer')){
             }
         },
     }
-    const cotaferApp =  Vue.createApp(cotafer);
-    cotaferApp.component('dropdown-status', DROPDOWN_STATUS);
-    cotaferApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
-    cotaferApp.mount('#cotafer');
+    const gonokaApp =  Vue.createApp(gonoka);
+    gonokaApp.component('dropdown-status', DROPDOWN_STATUS);
+    gonokaApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
+    gonokaApp.mount('#gonoka');
 }

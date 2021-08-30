@@ -165,7 +165,7 @@ if(document.querySelector('#roadmapAdd')){
                 }
     
                 if( this.productName || this.version || this.category !== 0 || this.platform !== 0 || this.devStartDate || this.devDeadline || this.releaseDate || this.maintenanceTime || this.feature || this.note ){
-                    if( !this.isPrVal && !this.isVeVal && !this.isCaVal && !this.isPlVal && !this.isDeSDVal && !this.isDeDVal && !this.isReVal && !this.isMaVal && !this.isMaVal && !this.isFeVal && !this.isNoVal ){
+                    if( !this.isPrVal && !this.isVeVal && !this.isCaVal && !this.isPlVal && !this.isDeSDVal && !this.isDeDVal && !this.isReVal && !this.isMaVal && !this.isFeVal && !this.isNoVal ){
                         
                         console.log('form submit');
                         

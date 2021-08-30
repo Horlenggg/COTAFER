@@ -1,19 +1,26 @@
-if(document.querySelector('#cotaferIos')){
-    const cotaferIos = {
+if(document.querySelector('#gonokaWeb')){
+    const gonokaWeb = {
         data() {
             return {
                 permission              : 'manager'
-                , cotaferIos: [
+                , gonokaWeb: [
                     {
                         id              : 1
-                        , productName   : 'Cotafer IOS'
-                        , category      : 'Cotafer'
-                        , platform      : 'IOS'
+                        , productName   : 'Gonoka Web'
+                        , category      : 'Gonoka'
+                        , platform      : 'Web'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                 ]
                 , status                : 0
@@ -21,12 +28,20 @@ if(document.querySelector('#cotaferIos')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , gonokaView            : []
+                , isModalDetail         : false
             }
         },
         mounted() {
-            flatpickr("#cotaferIosDate", {});
+            flatpickr("#gonokaWebDate", {});
         },
         methods: {
+            onView(id) {
+                let gonoka = this.gonokaWeb.filter(gonoka => gonoka.id == id);
+                this.gonokaView = gonoka;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },
@@ -44,8 +59,8 @@ if(document.querySelector('#cotaferIos')){
             }
         },
     }
-    const cotaferIosApp =  Vue.createApp(cotaferIos);
-    cotaferIosApp.component('dropdown-status', DROPDOWN_STATUS);
-    cotaferIosApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
-    cotaferIosApp.mount('#cotaferIos');
+    const gonokaWebApp =  Vue.createApp(gonokaWeb);
+    gonokaWebApp.component('dropdown-status', DROPDOWN_STATUS);
+    gonokaWebApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
+    gonokaWebApp.mount('#gonokaWeb');
 }

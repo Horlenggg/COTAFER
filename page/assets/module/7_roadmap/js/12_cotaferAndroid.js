@@ -25,6 +25,9 @@ if(document.querySelector('#cotaferAndroid')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , cotaferView           : []
+                , isModalDetail         : false
             }
         },
 
@@ -32,6 +35,11 @@ if(document.querySelector('#cotaferAndroid')){
             flatpickr("#cotaferAndroidDate", {});
         },
         methods: {
+            onView(id) {
+                let cotafer = this.cotaferAndroid.filter(cotafer => cotafer.id == id);
+                this.cotaferView = cotafer;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },

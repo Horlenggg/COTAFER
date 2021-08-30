@@ -1,9 +1,9 @@
-if(document.querySelector('#gonoka')){
-    const gonoka = {
+if(document.querySelector('#cotafer')){
+    const cotafer = {
         data() {
             return {
                 permission              : 'manager'
-                , gonokas: [
+                , cotafers: [
                     {
                         id              : 1
                         , productName   : 'Cotafer'
@@ -14,6 +14,13 @@ if(document.querySelector('#gonoka')){
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 2
@@ -25,6 +32,13 @@ if(document.querySelector('#gonoka')){
                         , status        : 'Stop'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 3
@@ -36,6 +50,13 @@ if(document.querySelector('#gonoka')){
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 4
@@ -47,72 +68,121 @@ if(document.querySelector('#gonoka')){
                         , status        : 'Stop'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 5
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
                         , platform      : 'IOS'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 6
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
                         , platform      : 'Android'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Stop'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 7
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
                         , platform      : 'Web'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 8
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
                         , platform      : 'Api'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Stop'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 9
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
                         , platform      : 'Web'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Start'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                     ,{
                         id              : 10
-                        , productName   : 'Gonoka'
-                        , category      : 'Gonoka'
+                        , productName   : 'Cotafer'
+                        , category      : 'Cotafer'
                         , platform      : 'Api'
                         , version       : '1.0.5'
                         , git           : 'easd23459560sd34g'
                         , status        : 'Stop'
                         , note          : 'helllllllllllllllllllllllllllllllllllllllllllllllll'
                         , type          : 'none'
+                        , relativeProject : 'Cotafer IM'
+                        , expiration    : '21.12.2021'
+                        , server        : 'development'
+                        , startDate     : '21.12.2021'
+                        , stopDate      : '21.12.2021'
+                        , startApproveBy : ['Brainzy', 'Brainzy']
+                        , stopApproveBy : ['Brainzy', 'Brainzy']
                     }
                 ]
                 , status                : 0
@@ -120,12 +190,20 @@ if(document.querySelector('#gonoka')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , cotaferView           : []
+                , isModalDetail         : false
             }
         },
         mounted() {
-            flatpickr("#gonokaDate", {});
+            flatpickr("#cotaferDate", {});
         },
         methods: {
+            onView(id) {
+                let cotafer = this.cotafers.filter(cotafer => cotafer.id == id);
+                this.cotaferView = cotafer;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },
@@ -143,8 +221,8 @@ if(document.querySelector('#gonoka')){
             }
         },
     }
-    const gonokaApp =  Vue.createApp(gonoka);
-    gonokaApp.component('dropdown-status', DROPDOWN_STATUS);
-    gonokaApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
-    gonokaApp.mount('#gonoka');
+    const cotaferApp =  Vue.createApp(cotafer);
+    cotaferApp.component('dropdown-status', DROPDOWN_STATUS);
+    cotaferApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
+    cotaferApp.mount('#cotafer');
 }

@@ -1,14 +1,14 @@
-if(document.querySelector('#gonokaIos')){
-    const gonokaIos = {
+if(document.querySelector('#gonokaAndroid')){
+    const gonokaAndroid = {
         data() {
             return {
                 permission              : 'manager'
-                , gonokaIos: [
+                , gonokaAndroid: [
                     {
                         id              : 1
                         , productName   : 'Gonoka'
                         , category      : 'Gonoka'
-                        , platform      : 'IOS'
+                        , platform      : 'Android'
                         , version       : '1.0.5'
                         , devStartDate  : '12.12.2021'
                         , devDeadline   : '01.01.2022'
@@ -25,12 +25,20 @@ if(document.querySelector('#gonokaIos')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , gonokaView            : []
+                , isModalDetail         : false
             }
         },
         mounted() {
-            flatpickr("#gonokaIosDate", {});
+            flatpickr("#gonokaAndroidDate", {});
         },
         methods: {
+            onView(id) {
+                let gonoka = this.gonokaAndroid.filter(gonoka => gonoka.id == id);
+                this.gonokaView = gonoka;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },
@@ -48,8 +56,8 @@ if(document.querySelector('#gonokaIos')){
             }
         },
     }
-    const gonokaIosApp =  Vue.createApp(gonokaIos);
-    gonokaIosApp.component('dropdown-status', DROPDOWN_STATUS);
-    gonokaIosApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
-    gonokaIosApp.mount('#gonokaIos');
+    const gonokaAndroidApp =  Vue.createApp(gonokaAndroid);
+    gonokaAndroidApp.component('dropdown-status', DROPDOWN_STATUS);
+    gonokaAndroidApp.component('dropdown-archive', DROPDOWN_ARCHIVE);;
+    gonokaAndroidApp.mount('#gonokaAndroid');
 }

@@ -1,14 +1,14 @@
-if(document.querySelector('#gonokaAndroid')){
-    const gonokaAndroid = {
+if(document.querySelector('#gonokaWeb')){
+    const gonokaWeb = {
         data() {
             return {
                 permission              : 'manager'
-                , gonokaAndroid: [
+                , gonokaWeb: [
                     {
                         id              : 1
                         , productName   : 'Gonoka'
                         , category      : 'Gonoka'
-                        , platform      : 'Android'
+                        , platform      : 'Web'
                         , version       : '1.0.5'
                         , devStartDate  : '12.12.2021'
                         , devDeadline   : '01.01.2022'
@@ -25,12 +25,20 @@ if(document.querySelector('#gonokaAndroid')){
                 , platform              : 0
                 , plOption              : PLATFORM
                 , isModalDelete         : false
+
+                , gonokaView            : []
+                , isModalDetail         : false
             }
         },
         mounted() {
-            flatpickr("#gonokaAndroidDate", {});
+            flatpickr("#gonokaWebDate", {});
         },
         methods: {
+            onView(id) {
+                let gonoka = this.gonokaWeb.filter(gonoka => gonoka.id == id);
+                this.gonokaView = gonoka;
+                this.isModalDetail = true
+            },
             onDelete(id = 0) {
                 console.log(id);
             },
@@ -48,8 +56,8 @@ if(document.querySelector('#gonokaAndroid')){
             }
         },
     }
-    const gonokaAndroidApp =  Vue.createApp(gonokaAndroid);
-    gonokaAndroidApp.component('dropdown-status', DROPDOWN_STATUS);
-    gonokaAndroidApp.component('dropdown-archive', DROPDOWN_ARCHIVE);;
-    gonokaAndroidApp.mount('#gonokaAndroid');
+    const gonokaWebApp =  Vue.createApp(gonokaWeb);
+    gonokaWebApp.component('dropdown-status', DROPDOWN_STATUS);
+    gonokaWebApp.component('dropdown-archive', DROPDOWN_ARCHIVE);
+    gonokaWebApp.mount('#gonokaWeb');
 }
