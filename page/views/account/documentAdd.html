@@ -20,7 +20,7 @@
 					:class="isTiVal ? 'border-red-500' : ''"
 					class="mt-2.5 text-sm appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4"
 					type="text"
-					placeholder="title"
+					placeholder="Title"
 				> 
 				<span class="text-xs text-red-500" v-text='errMessageTi'></span>
 			</div>
@@ -78,13 +78,13 @@
 		</div>
 		<div class="flex flex-row space-x-12.5">
 			<div class="w-1/2">
-				<label class="block text-gray-700">File Name</label>
+				<label class="block text-gray-700">File name</label>
 				<input
 					v-model="filename"
 					:class="isFnVal ? 'border-red-500' : ''"
 					class="mt-2.5 text-sm appearance-none block w-full bg-grey-lighter text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4"
 					type="text"
-					placeholder="filename"
+					placeholder="File name"
 				>  
 				<span class="text-xs text-red-500" v-text='errMessageFn'></span>
 			</div>
