@@ -332,6 +332,28 @@
         ]
     },
 ] -%}
+{% elif params.base_module == 'setting' -%}
+
+{%- set sideBarModules = [
+    {
+        'module'        : 'profile'
+        , 'module_text' : 'Profile'
+        , 'icon'        : 'fas fa-user-circle'
+        , 'href'        : '/setting/profile'
+        , 'collapsible' : False
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : []
+    },
+    {
+        'module'        : 'change-pass'
+        , 'module_text' : 'Change Password'
+        , 'icon'        : 'fas fa-unlock-alt'
+        , 'href'        : '/setting/change-pass'
+        , 'collapsible' : False
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : []
+    },
+] -%}
 {%- endif -%}
 
 <aside id="sidebar" x-data="{ activeModule: {{ activeModule }} }" class="w-70 bg-white hidden md:block lg:block overflow-hidden">
@@ -503,7 +525,7 @@
                     <span class="text-white">Justin</span>
                 </div>
                 <ul x-show="isShowProfile" @click.away="isShowProfile = false" class="absolute top-14 right-5 flex flex-col z-50 bg-white border transition duration-150 ease-in-out min-w-44 shadow-lg">
-                    <li><a href="/setting/my-profile"
+                    <li><a href="/setting/profile"
                             class="no-underline px-4 py-2 block hover:bg-gray-700 hover:text-white">My
                             Profile</a></li>
                     <li><a href="/setting/change-pass"

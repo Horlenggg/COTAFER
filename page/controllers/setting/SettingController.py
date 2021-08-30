@@ -30,20 +30,20 @@ class SettingController(MyController):
             # active link
             self.view.addData(
                 params={
-                    'active_module'     : ['', '']
+                    'active_module'     : ['profile', '']
                     , 'client_module'   : '8_setting'
-                    , 'base_module'     : 'home'
+                    , 'base_module'     : 'setting'
                 }
             )
 
             return self.render(
-                viewFile='setting/settingProfile'
+                viewFile='setting/profile'
             )
 
         except Exception as e:
             self.log.error(f'SettingController.settingProfileGet Exception ', str(e))
             return self.render(
-                viewFile='setting/settingProfile'
+                viewFile='setting/profile'
             )
 
     def accountProfilePost(self) -> Any:
@@ -127,20 +127,20 @@ class SettingController(MyController):
             # active link
             self.view.addData(
                 params={
-                    'active_module'     : ['', '']
+                    'active_module'     : ['change-pass', '']
                     , 'client_module'   : '8_setting'
-                    , 'base_module'     : 'home'
+                    , 'base_module'     : 'setting'
                 }
             )
 
             return self.render(
-                viewFile='setting/settingChangePassword'
+                viewFile='setting/changePassword'
             )
 
         except Exception as e:
             self.log.error(f'SettingController.settingChangePasswordGet Exception ', str(e))
             return self.render(
-                viewFile='setting/settingChangePassword'
+                viewFile='setting/changePassword'
             )
 
     def settingChangePasswordPost(self) -> Any:

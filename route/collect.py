@@ -394,15 +394,16 @@ def roadmapCotaferApiGet():
 #      roadmap      #
 # ================= #
 
-@route.get('/setting/my-profile')
+@route.get('/setting')
+@route.get('/setting/profile')
 def settingProfileGet():
     return setting.SettingValidation().settingProfileGet()
 
-@route.post('/setting/my-profile')
+@route.post('/setting/profile')
 def settingProfilePost():
     return setting.SettingValidation().settingProfilePost()
 
-@route.post('/setting/my-profile/upload')
+@route.post('/setting/profile/upload')
 def settingProfileUpload():
     return setting.SettingValidation().settingProfileUpload()
 
