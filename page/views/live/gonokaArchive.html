@@ -75,12 +75,8 @@
 						<th class="px-4 py-3">Category</th>
 						<th class="px-4 py-3">Platform</th>
 						<th class="px-4 py-3">Version</th>
-						<th class="px-4 py-3">Dev Start Date</th>
-						<th class="px-4 py-3">Dev Deadline</th>
-						<th class="px-4 py-3">Release Date</th>
-						<th class="px-4 py-3">Maintenance Time</th>
-						<th class="px-4 py-3">Feature</th>
-						<th class="px-4 py-3">Note</th>
+						<th class="px-4 py-3">Git</th>
+						<th class="px-4 py-3 w-2/12">Note</th>
 						<th class="px-4 py-3">Action</th>
 					</tr>
 				</thead>
@@ -95,7 +91,7 @@
 							<dropdown-archive 
 								:is-permission="permission" 
 								:is-type="arch.type"
-								@on-restore="onRestore(arch.id)"
+								@on-archive="onArchive(arch.id)"
 								>
 							</dropdown-archive>
 						</td>
@@ -115,14 +111,7 @@
 						<td class="px-4 py-3 text-sm" v-text="arch.category"></td>
 						<td class="px-4 py-3 text-sm" v-text="arch.platform"></td>
 						<td class="px-4 py-3 text-sm" v-text="arch.version"></td>
-						<td class="px-4 py-3 text-sm" v-text="arch.devStartDate"></td>
-						<td class="px-4 py-3 text-sm" v-text="arch.devDeadline"></td>
-						<td class="px-4 py-3 text-sm" v-text="arch.releaseDate"></td>
-						<td class="px-4 py-3 text-sm" v-text="arch.maintenanceTime"></td>
-						<td class="px-4 py-3 text-sm relative group">
-							<span class="line-clamp-1" v-text="arch.feature"></span>
-							<span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="arch.feature"></span>
-						</td>
+						<td class="px-4 py-3 text-sm" v-text="arch.git"></td>
 						<td class="px-4 py-3 text-sm relative group">
 							<span class="line-clamp-1" v-text="arch.note"></span>
 							<span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="arch.note"></span>
