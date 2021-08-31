@@ -8,6 +8,7 @@ if(document.querySelector('#checkinandout')){
                         , date          : '04/01/2021'
                         , checkin       : '8:30'
                         , checkout      : '5:30'
+                        , total         : '00:30'
                         , note          : 'sdfdsfdsf'
                     }
                     ,{
@@ -15,6 +16,7 @@ if(document.querySelector('#checkinandout')){
                         , date          : '05/01/2021'
                         , checkin       : '8:30'
                         , checkout      : '5:30'
+                        , total         : '00:30'
                         , note          : 'sdfdsfdsf'
                     }
                     ,{
@@ -22,6 +24,7 @@ if(document.querySelector('#checkinandout')){
                         , date          : '06/01/2021'
                         , checkin       : '8:30'
                         , checkout      : '5:30'
+                        , total         : '00:30'
                         , note          : 'sdfdsfdsf'
                     }
                 ]
