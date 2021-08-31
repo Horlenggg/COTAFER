@@ -11,10 +11,10 @@
             <h3 class="hidden sm:block text-xl font-semibold mx-4 md:mx-10 pb-4">Attdentance & Leave request</h3>
             <div class="lg:flex space-y-3 lg:space-y-0 lg:space-x-4 px-4 mb-6 text-sm">
                 <div class="flex-1">
-                    <input name="email" id="email" class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-2 px-4" type="email" placeholder="Enter email address">
+                    <input name="email" id="email" class="appearance-none block w-full text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4" type="email" placeholder="Enter email address">
                 </div>
                 <div class="flex-1">
-                    <input name="password" id="password" class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-2 px-4" type="password" placeholder="Enter password">
+                    <input name="password" id="password" class="appearance-none block w-full text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4" type="password" placeholder="Enter password">
                 </div>
                 <!-- if server mark request failed then show this element by removing class 'hidden' -->
                 <div class="hidden text-sm text-red-500">Something went wrong. Please try again</div>
@@ -37,10 +37,10 @@
                     </div>
                     <div class="flex justify-between space-x-1">
                         <form name="checkInFrm" id="checkInFrm" action="/check/in" method="post">
-                            <button type="submit" class="px-4 py-2 text-sm text-white bg-gray-600 focus:outline-none">Check In</button>
+                            <button type="submit" class="h-10 px-4 py-2 text-sm text-white uppercase bg-gray-700 focus:outline-none">Check In</button>
                         </form>
                         <form name="checkOutFrm" id="checkOutFrm" action="/check/out" method="post">
-                            <button type="submit" class="px-4 py-2 text-sm text-white bg-gray-600 focus:outline-none">Check Out</button>
+                            <button type="submit" class="h-10 px-4 py-2 text-sm text-white uppercase bg-gray-700 focus:outline-none">Check Out</button>
                         </form>
                     </div>
                     <div class="flex flex-col items-center">
@@ -59,19 +59,15 @@
                         <div x-data="{isOn: false, selected: 'Count*', selectedId: 0}">
                             <div class="mt-1 relative">
                                 <button id="countIdPresenter" type="button" @click="isOn = !isOn" @click.away="isOn = false"
-                                    class="relative w-full bg-white border border-gray-300 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                    class="relative w-full bg-white text-left text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 sm:text-sm"
                                     aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
                                     <span x-text="selected" :class="{'text-gray-400':selectedId == 0}"
                                         class="ml-2 block text-sm truncate"></span>
-                                    <span
-                                        class="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                clip-rule="evenodd" />
+                                    <div class="absolute top-2.5 right-2 border-l border-gray-300 pl-1.5 z-10">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
                                         </svg>
-                                    </span>
+                                    </div>
                                 </button>
                                 <input x-model="selectedId" type="hidden" id="countId" name="countId" data-presenter="#countIdPresenter">
                                 <ul x-cloak x-show="isOn"
@@ -117,27 +113,23 @@
                             </div>
                         </div>
                         <div class="space-y-3 2xl:space-y-0 space-x-0 2xl:space-x-3 flex flex-col 2xl:flex-row justify-between">
-                            <input type="text" class="w-full border-gray-300 focus:outline-none focus:ring-1 focus:ring-indigo-500 2xl:flex-1 border calender text-sm p-2"
+                            <input type="text" class="w-full text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none 2xl:flex-1 calender text-sm py-3 px-4"
                                 placeholder="Start date*" name="startDate" id="startDate">
-                            <input type="text" class="w-full border-gray-300 focus:outline-none focus:ring-1 focus:ring-indigo-500 2xl:flex-1 border calender text-sm p-2" placeholder="End date"
+                            <input type="text" class="w-full text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none 2xl:flex-1 calender text-sm py-3 px-4" placeholder="End date"
                                 name="endDate" id="endDate">
                         </div>
                         <div x-data="{isOn: false, selected: 'Leave type*', selectedId: 0}">
                             <div class="mt-1 relative">
                                 <button id="leaveTypeIdPresenter" type="button" @click="isOn = !isOn" @click.away="isOn = false"
-                                    class="relative w-full bg-white border border-gray-300 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                    class="relative w-full bg-white text-left text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4 sm:text-sm"
                                     aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
                                     <span x-text="selected" :class="{'text-gray-400':selectedId == 0}"
                                         class="ml-2 block text-sm truncate"></span>
-                                    <span
-                                        class="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                clip-rule="evenodd" />
+                                    <div class="absolute top-2.5 right-2 border-l border-gray-300 pl-1.5 z-10">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
                                         </svg>
-                                    </span>
+                                    </div>
                                 </button>
                                 <input x-model="selectedId" type="hidden" id="leaveTypeId" name="leaveTypeId" data-presenter="#leaveTypeIdPresenter">
                                 <ul x-cloak x-show="isOn"
@@ -204,8 +196,8 @@
                             </div>
                         </div>
                         <textarea id="note" name="note" placeholder="Note*"
-                            class="focus:outline-none focus:ring-1 focus:ring-indigo-500 text-sm resize-none border w-full p-2" rows="5"></textarea>
-                        <button class="block bg-gray-600 w-full text-sm p-2 text-white" type="submit">Submit</button>
+                            class="w-full text-sm resize-none text-left text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4" rows="5"></textarea>
+                        <button class="block bg-gray-700 w-full h-10 text-sm text-white uppercase px-5 py-2" type="submit">Submit</button>
                     </form>
                 </div>
             </div>
@@ -216,10 +208,10 @@
             </div>
             <h3 class="text-xl font-semibold mx-8 pb-4">Login</h3>
             <form name="loginFrm" id="loginFrm" class="mx-8 space-y-3 w-full max-w-xs flex flex-col" action="/login" method="post">
-                <input id="loginEmail" name="username" class="text-sm appearance-none block w-full bg-grey-lighter text-grey-darker border py-2 px-4" type="text" placeholder="Enter email address">
-                <input id="loginPass" name="password" class="text-sm appearance-none block w-full bg-grey-lighter text-grey-darker border py-2 px-4" type="password" placeholder="Enter password">
+                <input id="loginEmail" name="username" class="text-sm appearance-none block w-full text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4" type="text" placeholder="Enter email address">
+                <input id="loginPass" name="password" class="text-sm appearance-none block w-full text-gray-700 border border-gray-200 hover:border-gray-700 focus:border-gray-700 focus:outline-none py-3 px-4" type="password" placeholder="Enter password">
                 <a class="text-xs ml-auto" href="/password/forgot">Forgot password?</a>
-                <button class="bg-gray-600 text-sm text-white p-2" type="submit">LOGIN</button>
+                <button class="block bg-gray-700 w-full h-10 text-sm text-white uppercase px-5 py-2" type="submit">LOGIN</button>
             </form>
             <div class="absolute inset-0 -z-1 flex overflow-hidden ml-5">
                 <img src="/assets/images/Login_bg.svg" class="ml-auto mt-auto w-full relative -right-3 -bottom-4" alt="">

@@ -112,7 +112,39 @@
 				<span class="text-xs text-red-500" v-text='errMessagePa'></span>
 			</div>
 			<div class="w-1/2">
+				<label class="block text-gray-700">Environment</label>
+				<div class="relative">
+					<div class="absolute top-2.5 right-2 border-l border-gray-300 pl-1.5 z-10">
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 1024 1024" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M256 384l256 256 256-256z"/>
+						</svg>
+					</div>
+					<select 
+						v-model="environment" 
+						class="mt-2.5 block w-full appearance-none text-sm bg-white border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-4 py-3 focus:outline-none"
+						:class="isEnVal ? 'border-red-500' : '', environment == '0' ? 'text-gray-400' : 'text-gray-700'"
+					>
+						<option class="text-gray-400" value="0">Select...</option>
+						<option class="text-gray-700" v-for="en in enOption" v-text="en.label" value="en.value"></option>
+					</select>
+					<span class="text-xs text-red-500" v-text='errMessageEn'></span>
+				</div>
 			</div>
+		</div>
+		<div class="w-full">
+			<label for="note" class="block text-gray-700">Note</label>
+			<div class="relative w-full">
+				<textarea 
+					v-model="note" 
+					class="mt-2.5 w-full text-sm border border-gray-200 hover:border-gray-700 focus:border-gray-700 resize-none outline-none p-3" 
+					:class="isNoVal ? 'border-red-500' : ''"
+					cols="30" 
+					rows="5" 
+					maxlength="100"
+					placeholder="Write your note here"></textarea>
+				<span v-text="note.length + '/100'" class="absolute bottom-3 right-3 text-xs-sm text-gray-300"></span>
+			</div>
+			<span class="text-xs text-red-500" v-text='errMessageNo'></span>
 		</div>
 		<div class="w-full flex justify-end space-x-5">
 			<button class="w-24 h-10 bg-white text-gray-700 border border-gray-700 hover:text-white hover:bg-gray-700 focus:outline-none">

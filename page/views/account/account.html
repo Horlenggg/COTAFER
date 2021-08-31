@@ -57,6 +57,7 @@
 					<tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
 						<th class="px-4 py-3">Id</th>
 						<th class="px-4 py-3">Permission</th>
+						<th class="px-4 py-3">Environment</th>
 						<th class="px-4 py-3">Username</th>
 						<th class="px-4 py-3">Email</th>
 						<th class="px-4 py-3">Phone Number</th>
@@ -64,6 +65,7 @@
 						<th class="px-4 py-3">Application</th>
 						<th class="px-4 py-3">Link</th>
 						<th class="px-4 py-3">Date</th>
+						<th class="px-4 py-3">Note</th>
 						<th class="px-4 py-3">Action</th>
 					</tr>
 				</thead>
@@ -78,13 +80,20 @@
 						<td class="px-4 py-3 text-sm">
 							<span v-text="account.permission" class="font-bold px-2 py-1 rounded-full" :class="{ 'text-green-500 bg-green-100' : account.permission == 'Admin', 'text-yellow-500 bg-yellow-100' : account.permission == 'Editor' }"></span>
 						</td>
+						<td class="px-4 py-3 text-sm" v-text="account.environment"></td>
 						<td class="px-4 py-3 text-sm" v-text="account.userName"></td>
 						<td class="px-4 py-3 text-sm" v-text="account.email"></td>
 						<td class="px-4 py-3 text-sm" v-text="account.phoneNumber"></td>
-						<td class="px-4 py-3 text-sm" v-text="account.password"></td>
+						<td class="px-4 py-3 text-sm">
+							<table-password :is-data="account.password"></table-password>
+						</td>
 						<td class="px-4 py-3 text-sm" v-text="account.application"></td>
 						<td class="px-4 py-3 text-sm" v-text="account.link"></td>
 						<td class="px-4 py-3 text-sm" v-text="account.date"></td>
+						<td class="px-4 py-3 text-sm relative group">
+							<span class="line-clamp-1" v-text="account.note"></span>
+							<span class="w-full absolute top-0 right-0 text-gray-700 bg-white shadow-md border border-gray-700 hidden group-hover:block z-10 px-4 py-2" v-text="account.note"></span>
+						</td>
 						<td class="px-4 py-3 text-sm">
 							<div class="flex items-center space-x-3 text-sm">
 								<a href="/acc/account/edit" class="no-underline">

@@ -9,16 +9,16 @@ if(document.querySelector('#accountAdd')){
                 , link: ''
                 , permission: 0
                 , phonenumber: ''
-                , appOption: [
+                , apOption: [
                     { value: 1, label: 'Cotafer News' }
                     , { value: 2, label: 'Gonoka PR' }
                     , { value: 3, label: 'Gonoka Newsfeed' }
                 ]
-                , perOption: [
-                    { value: 1, label: 'Admin' }
-                    , { value: 2, label: 'User' }
-                ]
-    
+                , perOption: PERMISSION
+                , environment: 0
+                , enOption: ENVIRONMENT
+                , note: ''
+
                 , isUsVal: false
                 , isEmVal: false
                 , isPaVal: false
@@ -26,6 +26,8 @@ if(document.querySelector('#accountAdd')){
                 , isApVal: false
                 , isPeVal: false
                 , isPhVal: false
+                , isEnVal: false
+                , isNoVal: false
 
                 , errMessageUs: ''
                 , errMessageEm: ''
@@ -34,6 +36,8 @@ if(document.querySelector('#accountAdd')){
                 , errMessageAp: ''
                 , errMessagePe: ''
                 , errMessagePh: ''
+                , errMessageEn: ''
+                , errMessageNo: ''
             }
         },
         mounted() {
@@ -76,6 +80,22 @@ if(document.querySelector('#accountAdd')){
                 } else {
                     this.isPhVal = false
                     this.errMessagePh = ''
+                }
+
+                if (this.invironment == 0) {
+                    this.isEnVal = true
+                    this.errMessageEn = 'Require.'
+                } else {
+                    this.isEnVal = false
+                    this.errMessageEn = ''
+                }
+
+                if (!this.note) {
+                    this.isNoVal = true
+                    this.errMessageNo = 'Require.'
+                } else {
+                    this.isNoVal = false
+                    this.errMessageNo = ''
                 }
     
                 if (!this.email) {

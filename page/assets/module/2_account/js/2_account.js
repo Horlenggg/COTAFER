@@ -13,17 +13,21 @@ if(document.querySelector('#account')){
                         , link          : 'news.com'
                         , date          : '12.12.2021'
                         , permission    : 'Admin'
+                        , note          : 'account for admin'
+                        , environment   : 'Dev'
                     }
                     ,{
                         id              : 2
                         , userName      : 'Brainzy'
                         , email         : 'brainzy@cotafer.com'
                         , phoneNumber   : '012333333'
-                        , password      : '12345678'
+                        , password      : '12345678sSs'
                         , application   : 'News'
                         , link          : 'news.com'
                         , date          : '12.12.2021'
                         , permission    : 'Editor'
+                        , note          : 'account for admin'
+                        , environment   : 'Dev'
                     }
                 ]
                 , isModalDelete: false
@@ -36,5 +40,6 @@ if(document.querySelector('#account')){
         },
     }
     const accountApp =  Vue.createApp(account);
+    accountApp.component('table-password', TABLE_PASSWORD);
     accountApp.mount('#account');
 }
