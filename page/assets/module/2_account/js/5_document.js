@@ -32,7 +32,13 @@ if(document.querySelector('#document')){
                 , caOption              : CATEGORY 
                 , department            : 0
                 , deOption              : DEPARTMENT 
+                , isModalDelete: false
             }
+        },
+        methods: {
+            onDelete(id = 0) {
+                this.isModalDelete = true
+            },
         },
     }
     const documentApp =  Vue.createApp(document);

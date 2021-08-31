@@ -26,7 +26,13 @@ if(document.querySelector('#google')){
                 , caOption              : CATEGORY 
                 , department            : 0
                 , deOption              : DEPARTMENT
+                , isModalDelete: false
             }
+        },
+        methods: {
+            onDelete(id = 0) {
+                this.isModalDelete = true
+            },
         },
     }
     const googleApp =  Vue.createApp(google);

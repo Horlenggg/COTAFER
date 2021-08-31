@@ -2,6 +2,7 @@
 css=(
     "$TailwindCss"
     "$Font_AwesomeCss"
+    "$Flatpicker_Min_Css"
 )
 
 # List of javascript libraries
@@ -10,4 +11,5 @@ js=(
     "$VUE_Js"
     "$Sha256"
     "$Font_AwesomeJs"
+    "$Flatpicker_Min_Js"
 )

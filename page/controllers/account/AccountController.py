@@ -340,6 +340,31 @@ class AccountController(MyController):
                 viewFile='account/documentAdd'
             )
 
+    def documentEditGet(self) -> Any:
+        
+        try:
+            self.log.info('AccountController.documentEditGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['document', '']
+                    , 'client_module'   : '2_account'
+                    , 'base_module'     : 'home'
+                }
+            )
+
+            return self.render(
+                viewFile='account/documentEdit'
+            )
+
+        except Exception as e:
+            self.log.error(f'AccountController.documentEditGet Exception ', str(e))
+            return self.render(
+                viewFile='account/documentEdit'
+            )
+
+
     def documentAddPost(self) -> Any:
         try:
 
@@ -523,4 +548,52 @@ class AccountController(MyController):
             self.log.error(f'AccountController.googleGet Exception ', str(e))
             return self.render(
                 viewFile='account/google'
+            )
+
+    def googleAddGet(self) -> Any:
+        
+        try:
+            self.log.info('AccountController.googleAddGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['google', '']
+                    , 'client_module'   : '2_account'
+                    , 'base_module'     : 'home'
+                }
+            )
+
+            return self.render(
+                viewFile='account/googleAdd'
+            )
+
+        except Exception as e:
+            self.log.error(f'AccountController.googleAddGet Exception ', str(e))
+            return self.render(
+                viewFile='account/googleAdd'
+            )
+
+    def googleEditGet(self) -> Any:
+        
+        try:
+            self.log.info('AccountController.googleEditGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['google', '']
+                    , 'client_module'   : '2_account'
+                    , 'base_module'     : 'home'
+                }
+            )
+
+            return self.render(
+                viewFile='account/googleEdit'
+            )
+
+        except Exception as e:
+            self.log.error(f'AccountController.googleEditGet Exception ', str(e))
+            return self.render(
+                viewFile='account/googleEdit'
             )

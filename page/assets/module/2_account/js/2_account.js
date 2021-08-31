@@ -31,6 +31,8 @@ if(document.querySelector('#account')){
                     }
                 ]
                 , isModalDelete: false
+                , environment: 0
+                , enOption: ENVIRONMENT
             }
         },
         methods: {

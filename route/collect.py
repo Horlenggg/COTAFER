@@ -79,6 +79,10 @@ def documentGet():
 def documentAddGet():
     return account.AccountValidation().documentAddGet()
 
+@route.get('/acc/document/edit')
+def documentEditGet():
+    return account.AccountValidation().documentEditGet()
+
 @route.post('/acc/document/add')
 def documentAddPost():
     return account.AccountValidation().documentAddPost()
@@ -102,6 +106,14 @@ def documentReversionFilePost():
 @route.get('/acc/google')
 def googleGet():
     return account.AccountValidation().googleGet()
+
+@route.get('/acc/google/add')
+def googleAddGet():
+    return account.AccountValidation().googleAddGet()
+
+@route.get('/acc/google/edit')
+def googleEditGet():
+    return account.AccountValidation().googleEditGet()
 
 # ================= #
 #    Attendance     #

@@ -108,6 +108,12 @@ class AccountValidation(MyValidation):
         except Exception as e:
             return account(headerParam=self.__h, bodyParam=self.__b).documentAddGet()
 
+    def documentEditGet(self):
+        try:
+            return account(headerParam=self.__h, bodyParam=self.__b).documentEditGet()
+        except Exception as e:
+            return account(headerParam=self.__h, bodyParam=self.__b).documentEditGet()
+
     def documentAddPost(self):
         try:
             self.body.adds(self.__EB.getDocumentAdd())
@@ -151,3 +157,15 @@ class AccountValidation(MyValidation):
             return account(headerParam=self.__h, bodyParam=self.__b).googleGet()
         except Exception as e:
             return account(headerParam=self.__h, bodyParam=self.__b).googleGet()
+
+    def googleAddGet(self):
+        try:
+            return account(headerParam=self.__h, bodyParam=self.__b).googleAddGet()
+        except Exception as e:
+            return account(headerParam=self.__h, bodyParam=self.__b).googleAddGet()
+
+    def googleEditGet(self):
+        try:
+            return account(headerParam=self.__h, bodyParam=self.__b).googleEditGet()
+        except Exception as e:
+            return account(headerParam=self.__h, bodyParam=self.__b).googleEditGet()
