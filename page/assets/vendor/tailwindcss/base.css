@@ -6,6 +6,10 @@
     display: none !important;
 }
 
+[x-cloak] {
+    display: none !important;
+}
+
 .text-main-color {
     color: rgba(55, 65, 81, 1);
 }
