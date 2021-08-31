@@ -48,7 +48,6 @@ def newPasswordGet():
 # ================= #
 
 @route.get('/')
-@route.get('/acc')
 def dashboardGet():
     return account.AccountValidation().dashboardGet()
 
