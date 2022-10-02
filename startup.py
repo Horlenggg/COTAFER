@@ -1,22 +1,16 @@
 """
 Author: masakokh
-Year: 2021
-Version: 1.0.0
+Year: 2020
+Version: 1.4.0
 Package: Framework
 """
+# need to import route collection
+from route.collect import route as wa
 
-# need to init project
-from application import *
-from application.crontab import cron
 
-# need to import route and collect
-from route.system import *
-from route.collect import *
-
+# start project
 if __name__ == '__main__':
-    """
-    
-    """
-    cron.service()
-    # start project
-    wa.start()
+	"""
+	"""
+	# start project
+	wa.start()

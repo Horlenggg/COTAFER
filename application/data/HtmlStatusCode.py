@@ -1,15 +1,13 @@
 """
 Author: masakokh
-Year: 2021
+Year: 2020
 Version: 1.0.0
 Package: Framework
 """
 
 
-class HtmlStatusCode:
-    """
+class HttpStatusCode:
 
-    """
     ERROR               = 500
     FORBIDDEN           = 403
     NOT_AUTHORISE       = 401
