@@ -4,13 +4,15 @@ Year: 2020
 Version: 1.4.0
 Package: Framework
 """
+# need to init project
+from application import *
 # need to import route collection
-from route.collect import route as wa
+from route.system import *
+from route.collect import *
+# add any config
 
-
-# start project
 if __name__ == '__main__':
-	"""
-	"""
-	# start project
-	wa.start()
+    """
+    """
+    # start project
+    wa.start()
