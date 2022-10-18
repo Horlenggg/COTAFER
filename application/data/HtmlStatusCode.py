@@ -6,7 +6,7 @@ Package: Framework
 """
 
 
-class HttpStatusCode:
+class HtmlStatusCode:
 
     ERROR               = 500
     FORBIDDEN           = 403
