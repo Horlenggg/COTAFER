@@ -4,8 +4,8 @@ Year: 2021
 Version: 1.0.0
 Package: Framework
 """
+import hashlib
 import time
-from Crypto.Hash import SHA512, SHA256
 # from Crypto.PublicKey import RSA
 
 
@@ -27,8 +27,8 @@ class CryptoC:
         :return:
         """
         return (
-            SHA256.new(
-                data=key.encode('utf-8')
+            hashlib.sha256(
+                key.encode('utf-8')
             )
         ).hexdigest()
 
@@ -39,8 +39,8 @@ class CryptoC:
         :return:
         """
         return (
-            SHA512.new(
-                data= key.encode('utf-8')
+            hashlib.sha512(
+                key.encode('utf-8')
             )
         ).hexdigest()
 
