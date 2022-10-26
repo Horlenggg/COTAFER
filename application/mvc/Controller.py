@@ -3,20 +3,18 @@ Author: masakokh
 Year: 2020
 Version: 1.1.2
 """
-from typing import Any
 from werkzeug.utils import secure_filename
-from flask import redirect, url_for, Response, make_response, redirect
+from flask import redirect, url_for, Response, redirect
 from application.mvc.ControllerData import ControllerData
 from application.mvc.Model import Model
 from application.mvc.View import View
+from application.data.ErrorCode import ErrorCode
 from application.data.HtmlStatusCode import HtmlStatusCode
 from library.MyLogger import MyLogger
 
 
 class Controller:
-    """
 
-    """
 
     def __init__(self, logColor=False):
         self.log        = MyLogger(logColor)
@@ -25,6 +23,7 @@ class Controller:
         self.view       = View()
         # status
         self.status     = HtmlStatusCode()
+        self.errorCode  = ErrorCode()
         # language
         self.language   = self.view.getLanguage()
         # request data
@@ -37,9 +36,7 @@ class Controller:
         return self.__request
 
     def getModel(self) -> Model:
-        """
 
-        """
         return self.model
 
     def updateModelParam(self, obj: dict) -> None:

@@ -29,6 +29,17 @@ class Session:
             connection_pool= self.__pool
         )
 
+    def getTTL(self, key:str):
+        """
+        Get time to live
+        :param key
+        :return: time untill session is expired in second.
+        """
+        try:
+            return self.__session.ttl(key)
+        except Exception as e:
+            print(f'application.data.page.Session.getTTL Exception: {str(e)}')
+
     def delete(self, key: str) -> None:
         """
 

@@ -74,3 +74,8 @@ class MyConfig(ConfigEnv):
         return self.__data.get(
             EC.SESSION
         )
+
+    def getClientVendor(self) -> dict:
+        return self.__data.get(
+            EC.CLIENT_VENDOR
+        )

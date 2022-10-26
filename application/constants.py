@@ -34,7 +34,8 @@ SESSION_DB_DEFAULT          = 1
 # page or output structure folder
 PAGE_PATH                   = ROOT_DIR + '/page/'
 # mvc
-VIEW_PATH                   = PAGE_PATH + 'views/'
+VIEW_NAME                   = 'views/'
+VIEW_PATH                   = PAGE_PATH + VIEW_NAME
 VIEW_FILE_EXT               = '.py'
 VIEW_FILE_TEMPLATE_EXT      = '.html'
 # default template

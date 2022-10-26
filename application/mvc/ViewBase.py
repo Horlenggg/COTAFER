@@ -10,7 +10,7 @@ import pathlib
 import string
 import random
 from typing import Any
-from flask import render_template, Response, request, make_response
+from flask import render_template, request, make_response
 from application.i18n.Language import languageIOS2 as languageISO2AvailableList, languageIOS2Default
 from application.i18n.Translation import Translation as Ait
 import application.constants
@@ -20,9 +20,7 @@ from library.MyLogger import MyLogger
 
 
 class ViewBase:
-    """
 
-    """
     def __init__(self, cookie: ViewCookie):
         """
 
@@ -47,21 +45,16 @@ class ViewBase:
         self.language       = self.__getLanguage()
 
     def __foundTemplateFile(self, fileName: str) -> bool:
-        """
 
-        """
         if os.path.isfile(fileName):
             return True
         else:
             return False
 
     def __getFileTimestamp(self, filename) -> str:
-        """
 
-        """
         #
         filename    = str(pathlib.Path().absolute()) + '/page' + filename
-
         #
         if os.path.exists(filename):
             modTimesinceEpoc    = os.path.getmtime(filename)
@@ -75,12 +68,15 @@ class ViewBase:
 
         :return:
         """
-        currentLanguageURL = str(request.url_rule).split('/')
+        try:
+            currentLanguageURL = str(request.url_rule).split('/')
 
-        for iso2 in languageISO2AvailableList:
-            if str(iso2) == currentLanguageURL[1]:
-                return iso2
-        return languageIOS2Default
+            for iso2 in languageISO2AvailableList:
+                if str(iso2) == currentLanguageURL[1]:
+                    return iso2
+            return languageIOS2Default
+        except Exception as e:
+            return languageIOS2Default
 
     def __randomStringDigits(self, stringLength: int= 6) -> str:
         """
@@ -94,22 +90,6 @@ class ViewBase:
                 ) for i in range(stringLength)
             )
         )
-
-    # def addCSS(self, fileName: str) -> None:
-    #     """
-    #
-    #     :param fileName:
-    #     :return:
-    #     """
-    #     self.css.append(fileName)
-    #
-    # def addJS(self, fileName: str) -> None:
-    #     """
-    #
-    #     :param fileName:
-    #     :return:
-    #     """
-    #     self.js.append(fileName)
 
     def addParam(self, key: str, value: str) -> None:
         """
@@ -128,34 +108,32 @@ class ViewBase:
         :return:
         """
         # full filename
-        # self.fileName   = application.constants.VIEW_PATH \
-        #                   + self.fileName \
-        #                   + application.constants.VIEW_FILE_TEMPLATE_EXT
         self.fileName = self.fileName \
                         + application.constants.VIEW_FILE_TEMPLATE_EXT
+
         # check existing file
         # add full path
         if os.path.exists(
-                application.constants.VIEW_PATH \
+                application.constants.PAGE_PATH \
                 + self.fileName
         ):
             # return string of template
             pageResponse    = make_response(
                                  render_template(
                                     self.fileName
-                                    , _         = self.translate()._
-                                    , vdate     = self.__getFileTimestamp
-                                    , vrand     = self.__randomStringDigits
-                                    , params    = self.params
-                                    , page      = {
-                                        'title'     : self.title
-                                        , 'css'     : self.css
-                                        , 'js'      : self.js
-                                        , 'lang'    : self.language
+                                    , _= self.translate()._
+                                    , vdate= self.__getFileTimestamp
+                                    , vrand= self.__randomStringDigits
+                                    , params= self.params
+                                    , page= {
+                                        'title': self.title
+                                        , 'css': self.css
+                                        , 'js': self.js
+                                        , 'lang': self.language
                                     }
-                                    , seo       = {
-                                        'keyword'   : self.seo.getMetaKeyword()
-                                        , 'desc'    : self.seo.getMetaDescription()
+                                    , seo= {
+                                        'keyword': self.seo.getMetaKeyword()
+                                        , 'desc': self.seo.getMetaDescription()
                                     }
                                 )
                             )
@@ -165,7 +143,7 @@ class ViewBase:
             # return string of default template
             pageResponse    = make_response(
                                 render_template(
-                                    application.constants.VIEW_DEFAULT_FILE
+                                    application.constants.VIEW_NAME + application.constants.VIEW_DEFAULT_FILE
                                 )
                             )
 
@@ -181,9 +159,7 @@ class ViewBase:
         return pageResponse
 
     def translate(self) -> Ait:
-        """
 
-        """
         # translate function
         return Ait(
                     self.language

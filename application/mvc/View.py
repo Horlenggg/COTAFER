@@ -10,8 +10,6 @@ from application.constants import ASSET_CSS_PATH, ASSET_JS_PATH, ASSET_NAME
 from application.mvc.ViewBase import ViewBase
 from application.mvc.ViewCookie import ViewCookie
 from application.mvc.ViewSEO import ViewSEO
-import application.constants as ac
-
 
 class View:
     """
@@ -26,6 +24,8 @@ class View:
         # basic view
         self.__view     = ViewBase(self.__cookie)
 
+        self.viewTheme = 'views/'
+
     def __isInternalLink(self, link: str) -> bool:
         """
 
@@ -39,17 +39,6 @@ class View:
         else:
             return True
 
-    # def addCSS(self, fileName: str) -> None:
-    #     """
-    #
-    #     :param fileName:
-    #     :return:
-    #     """
-    #     if self.__isInternalLink(fileName):
-    #         self.__view.addCSS(ASSET_CSS_PATH + fileName + '.css')
-    #     else:
-    #         self.__view.addCSS(fileName)
-
     def addData(self, params: dict) -> None:
         """
         Alias method of addParams
@@ -57,17 +46,6 @@ class View:
         :return:
         """
         self.addParams(params)
-
-    # def addJS(self, fileName: str) -> None:
-    #     """
-    #
-    #     :param fileName:
-    #     :return:
-    #     """
-    #     if self.__isInternalLink(fileName):
-    #         self.__view.addJS(ASSET_JS_PATH + fileName + '.js')
-    #     else:
-    #         self.__view.addJS(fileName)
 
     def addParam(self, key: str, value: str) -> None:
         """
@@ -151,4 +129,4 @@ class View:
         :return:
         """
         if fileName:
-            self.__view.fileName    = fileName
+            self.__view.fileName    = self.viewTheme + fileName

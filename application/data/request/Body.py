@@ -5,47 +5,34 @@ from library.MyLogger import MyLogger
 
 log = MyLogger()
 
+
 class Body:
-    """
 
-    """
     def __init__(self):
-        """
-
-        """
+        pass
 
     def file(self) -> Any:
-        """
 
-        """
         # upload file
         return request.files
 
     def form(self) -> Any:
-        """
 
-        """
         # form
         return request.form
 
     def get(self) -> dict:
-        """
 
-        """
         # get query url
         return request.args
 
     def json(self) -> json:
-        """
 
-        """
         # json
         return request.json
 
     def jsonString(self) -> str:
-        """
 
-        """
         return request.get_json(force = True)
 
     def is_json(self, myjson):
@@ -56,36 +43,42 @@ class Body:
         except TypeError as e:
             return False
         return True
+    
+    @property
+    def contentType(self) -> str:
+        try:
+            return (request.content_type or '')
+        except Exception as e:
+            return ''
 
     @property
     def param(self) -> dict:
         """
         """
         _items    =   {}
-        try:
-            # print('is-json::%',self.is_json(request.get_json()))
-            if self.is_json(request.json) is False:
-                _requestParam    = self.form()
+        try: 
+            if not self.contentType.startswith('application/json') or self.is_json(request.json) is False: 
+                _requestParam    = (self.form()).to_dict(flat=True)
             else:
-                _requestParam    = self.json()
+                _requestParam    = self.json() 
 
-            if isinstance(_requestParam, dict) and _requestParam == {}:
+            if self.contentType.startswith('application/json') and isinstance(_requestParam, dict) and _requestParam == {}:
                 _requestParam       = self.json()
 
             if _requestParam is not None and isinstance(_requestParam, dict) is True:
+                # multipart/form-data
+                if self.contentType.startswith('multipart/form-data'):
+                    __files = (self.file()).to_dict(flat=True) 
+ 
+                    if (__files.get('file') is not None):
+                        _requestParam.update(__files)
 
-                try:
-                    _requestParam = _requestParam.to_dict(flat=False)
-                    for key, value in _requestParam.items():
-                        if key.find('-s', len(key)-2, len(key)) == -1:
-                            _items.update({key:  value[0]})
-                        else:
-                            _items.update({key:  value})
-                except Exception as ne:
-                    for key, value in _requestParam.items():
-                        _items.update({key:  value}) # if isinstance(value, list) else value})
+                for key, value in _requestParam.items():
+                    _items.update({key:  value}) # if isinstance(value, list) else value})
+ 
         except Exception as e:
-            # print(str(e))
+            log.error('Body.param Ex ::', str(e))
+            print('Body.param Ex :: ', e)
             _items = {}
 
         return _items

@@ -5,24 +5,20 @@ Version: 1.4.2
 Package: Framework
 Last Modify: 2021-07-07T02:03:44.387Z
 """
+from application.data.request.Header import Header
 import json
 import re
 import requests
-from application.data.request.Header import Header
 from application.mvc.ModelBase import ModelBase
 from application.mvc.ModelResponseAPIInternal import ModelResponseAPIInternal as ModelResponseInternal
 from library.MyLogger import MyLogger
 
 
 class ModelRequest:
-    """
 
-    """
 
     def __init__(self):
-        """
 
-        """
         # logger
         self.log                = MyLogger()
         # public
@@ -30,7 +26,7 @@ class ModelRequest:
         # response
         self._responseMRI       = ModelResponseInternal()
         # header request
-        self.__header           = ModelBase().params.header.getAll()
+        self.__header           = {}
 
     def _jsonParseToGetParams(self, data: dict) -> str:
         """
@@ -79,7 +75,24 @@ class ModelRequest:
 
         return False
 
-    def _requestJson(self, endpoint: str, data: dict = {}, method: str= 'POST') -> None:
+
+    def _fireAndForget(self, url, data, headers):
+
+        from threading import Thread
+
+        def __requestTask(endpoint, json, headers):
+            requests.post(
+                endpoint
+                , json      = json
+                , headers   = headers
+            )
+            # You can consider notify here if you want to.
+            # =>
+
+        Thread(target=__requestTask, args=(url, data, headers)).start()
+
+
+    def _requestJson(self, endpoint: str, data: dict = {}, method: str= 'POST', isFireAndForget: bool=False) -> None:
         """
 
         :param endpoint:
@@ -90,67 +103,51 @@ class ModelRequest:
         if self._isInternalEndpoint(endpoint):
             endpoint        = self._prefixEndPoint + endpoint
 
+        self.log.info('request aprams', data)
+
         try:
             # POST method
             if method.lower() == 'post':
 
-                # response requests
-                response    = requests.post(
-                                url         = endpoint
-                                , json      = data
-                                , headers   = self.__header
-                            )
-                # self.log.info('data response', response.json())
-                # get and set response as json
-                self._responseMRI.setResultJson(response.json())
+                if not isFireAndForget:
 
-                # get http status
-                self._responseMRI.setHttpStatusCode(response.status_code)
+                    # response requests
+                    response    = requests.post(
+                                    endpoint
+                                    , json= data
+                                    , headers= self.__header
+                                )
 
-            # PUT method
-            elif method.lower() == 'put': 
-                # response requests
-                response = requests.put(
-                    url         = endpoint
-                    , data      = data
-                    , headers   = self.__header
-                )
-                
-                # get and set response as json
-                self._responseMRI.setResultJson(response.json())
+                    # get and set response as json
+                    self._responseMRI.setResultJson(response.json())
 
-                # get http status
-                self._responseMRI.setHttpStatusCode(response.status_code)
+                    # get http status
+                    self._responseMRI.setHttpStatusCode(response.status_code)
 
-            # DELETE method
-            elif method.lower() == 'put': 
-                # response requests
-                response = requests.delete(
-                    url         = endpoint
-                    , headers   = self.__header
-                )
-                # get and set response as json
-                self._responseMRI.setResultJson(response.json())
-
-                # get http status
-                self._responseMRI.setHttpStatusCode(response.status_code)
+                else:
+                    self._fireAndForget(endpoint, data, self.__header)
+                    return
 
             # GET method
             else:
+
                 # response requests
                 response    = requests.get(
-                                url         = endpoint
-                                , params    = self._jsonParseToGetParams(data)
-                                , headers   = self.__header
+                                endpoint
+                                , params= self._jsonParseToGetParams(data)
+                                , headers= self.__header
                             )
+
                 # get and set response as json
                 self._responseMRI.setResultJson(response.json())
 
                 # get http status
                 self._responseMRI.setHttpStatusCode(response.status_code)
 
+            self.log.info('api response', self._responseMRI.response)
+
         except Exception as e:
-            self.log.error(f'ModelRequest._requestJson', f'{str(e)}')
+            self.log.error(f'{self.__class__.__name__}.request', f'{str(e)}')
 
     def _requestText(self,  endpoint: str, data: dict = {}, method: str= 'POST') -> None:
         """
@@ -166,60 +163,30 @@ class ModelRequest:
 
         # escape request
         if not self._validateEndpoint(endpoint):
-            self.log.info(f'ModelRequest.requestText:_validateEndpoint')
+            self.log.info(f'Model.requestText:_validateEndpoint')
         else:
             try:
                 # POST method
                 if method.lower() == 'post':
                     # response requests
-                    response = requests.post(
-                        url         = endpoint
-                        , json      = data
-                        , headers   = self.__header
-                    )
+                    response    = requests.post(
+                                    endpoint
+                                    , json= data
+                                    , headers= self.__header
+                                )
 
                     # get and set content
                     self._responseMRI.setResultText(response.text)
 
                     # get http status
                     self._responseMRI.setHttpStatusCode(response.status_code)
-
-                # PUT method
-                elif method.lower() == 'put':
-                    # response requests
-                    response = requests.put(
-                        url         = endpoint
-                        , data      = data
-                        , headers   = self.__header
-                    )
-
-                    # get and set content
-                    self._responseMRI.setResultText(response.text)
-
-                    # get http status
-                    self._responseMRI.setHttpStatusCode(response.status_code)
-
-                # DELETE method
-                elif method.lower() == 'delete':
-                    # response requests
-                    response = requests.delete(
-                        url         = endpoint
-                        , headers   = self.__header
-                    )
-
-                    # get and set content
-                    self._responseMRI.setResultText(response.text)
-
-                    # get http status
-                    self._responseMRI.setHttpStatusCode(response.status_code)
-
                 # GET method
                 else:
                     # response requests
                     response    = requests.get(
-                                    url         = endpoint
-                                    , params    = self._jsonParseToGetParams(data)
-                                    , headers   = self.__header
+                                    endpoint
+                                    , params= self._jsonParseToGetParams(data)
+                                    , headers= self.__header
                                 )
 
                     # get and set content
@@ -228,9 +195,9 @@ class ModelRequest:
                     # get http status
                     self._responseMRI.setHttpStatusCode(response.status_code)
             except Exception as e:
-                self.log.error(f'ModelRequest._requestText', f'{str(e)}')
+                self.log.error(f'Model.requestText', f'{str(e)}')
 
-    def json(self, endpoint: str, data: dict = {}, method: str= 'POST') -> None:
+    def json(self, endpoint: str, data: dict = {}, method: str= 'POST', isFireAndForget: bool = False) -> None:
         """
 
         :return:
@@ -239,6 +206,7 @@ class ModelRequest:
             endpoint
             , data
             , method
+            , isFireAndForget
         )
 
     def setHeader(self, header: dict) -> None:

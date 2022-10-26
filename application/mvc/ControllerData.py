@@ -7,19 +7,20 @@ from flask import request
 
 
 class ControllerData:
-    """
 
-    """
     def __init__(self):
-        """
 
-        """
         # file
         self.file           = request.files
         # form
         self.form           = request.form
         # json
-        self.json           = request.json
+        self.json = {}
+        try:
+            self.json           = request.json or {}
+        except Exception as e:
+            pass
+        
         # query string
         self.queryString    = request.args
         # string

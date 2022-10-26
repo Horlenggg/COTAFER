@@ -10,6 +10,7 @@ class Config(Entity):
     """
 
     """
+    CLIENT_VENDOR       = 'client_vendor'
     GONOKA_WEB_API      = 'api'
     GONOKA_MEDIA_API    = 'gonoka_media_api'
     LOGGER              = 'log'
