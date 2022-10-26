@@ -23,8 +23,8 @@ class AuthController(MyController):
         """
 
         """
-        super().__init__(hParam=headerParam, bParam=bodyParam, modelClass=AuthModel())
-        self.model          = AuthModel()
+        super().__init__(hParam=headerParam, bParam=bodyParam, viewPath='auth/')
+        self.model          = AuthModel(self.getModelParam)
 
     def __createSessions(self, data:dict):
         try:

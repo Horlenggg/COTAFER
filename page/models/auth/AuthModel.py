@@ -8,8 +8,12 @@ from library.MyModel import MyModel
 
 class AuthModel(MyModel):
 
-    def __init__(self):
+    def __init__(self, initParams: dict):
+        """
+        """
         super().__init__()
+
+        self.setHeaderParams(initParams)
 
     #
     def login(self, data: dict) -> None:
