@@ -14,38 +14,40 @@ from page.models.company.CompanyModel import CompanyModel
 class CompanyController(MyController):
 
     def __init__(self, headerParam: dict, bodyParam: dict):
+        """
 
-        super().__init__(hParam=headerParam, bParam=bodyParam, modelClass=CompanyModel())
-        
-        # view params
-        # self._param = {
-        #     'active_module'     : ['attendance', '']
-        #     , 'client_module'   : '2_attendance'
-        # }
+        """
+        super().__init__(hParam=headerParam, bParam=bodyParam, viewPath='company/')
+        self.model          = CompanyModel(self.getModelParam)
+        # className
+        self.__className    = self.__class__.__name__
 
-    def companyUsersGet(self) -> Any:
-        
+    def companyUsersGet(self, data: dict={}) -> Any:
         try:
-            self.log.info('CompanyController.companyUsersGet info')
+            self.__className = f'{self.__className}.companyUsersGet'
+            
+            # check if token is exist
+            # if self.session.found(self.session.TOKEN):
+            #     return self.redirect('dashboardGet')
 
             # active link
             self.view.addData(
-                params={
+                params = {
                     'active_module'     : ['users', '']
                     , 'client_module'   : '3_company'
                     , 'base_module'     : 'company'
                 }
             )
 
-            return self.render(
-                viewFile='company/users'
-            )
+            if data.get('errorMessage'):
+                self.view.addParam('errorMessage', data.get('errorMessage'))
+
+            # view
+            return self.view.render('company/users'), self.status.OK
 
         except Exception as e:
-            self.log.error(f'CompanyController.companyUsersGet Exception ', str(e))
-            return self.render(
-                viewFile='company/users'
-            )
+            self.log.error(title=f'{self.__className} Ex', content=f'{e=}')
+            return self.view.render('company/users')
 
     def companyUsersAddGet(self) -> Any:
         
