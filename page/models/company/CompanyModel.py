@@ -11,18 +11,13 @@ class CompanyModel(MyModel):
 
     """
 
-    def __init__(self):
+    def __init__(self, initParams: dict):
         """
-
         """
         super().__init__()
 
-    def companyUsersGet(self, token: str, lngCode) -> None:
-        """
+        self.setHeaderParams(initParams)
 
-        :param token:
-        :param lngCode:
-        :return:
-        """
-        # self.request.json('/dashboard', {"login_token": token, "lng_code": lngCode})
-        pass
+    #
+    def companyUsersGet(self, data: dict) -> None:
+        self.request.json('/company/user/get', data)
