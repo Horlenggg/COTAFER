@@ -18,6 +18,7 @@ from page.validations.live          import LiveValidation as live
 from page.validations.account       import AccountValidation as account
 from page.validations.setting       import SettingValidation as setting
 from page.validations.roadmap       import RoadmapValidation as roadmap
+from page.validations.users         import UsersValidation as users
  
 # ================= #
 #       Auth        #
@@ -208,6 +209,23 @@ def companyCompanyEditGet():
 @route.get('/company/company/view')
 def companyCompanyViewGet():
     return company.CompanyValidation().companyCompanyViewGet()
+
+# ================= #
+#      users        #
+# ================= #
+
+@route.get('/users')
+@route.get('/users/users')
+def usersControlGet():
+    return users.UsersValidation().usersControlGet()
+
+# @route.get('/users/users/add')
+# def controlUsersAddGet():
+#     return users.UsersValidation().controlUsersAddGet()
+
+# @route.get('/users/users/view')
+# def controlUsersViewGet():
+#     return users.UsersValidation().controlUsersViewGet()
 
 # ================= #
 #       Test        #

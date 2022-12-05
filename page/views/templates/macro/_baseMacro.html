@@ -138,6 +138,20 @@
     },
 ] -%}
 
+{%- elif params.base_module == 'users' -%}
+
+{%- set sideBarModules = [
+    {
+        'module'        : 'users'
+        , 'module_text' : 'Users'
+        , 'icon'        : 'fas fa-clipboard-list'
+        , 'href'        : '/users'
+        , 'collapsible' : False
+        , 'data_parent' : '#accordionSidebar'
+        , 'sub_module'  : []
+    }
+] -%}
+
 {%- elif params.base_module == 'test' -%}
 
 {%- set sideBarModules = [
@@ -434,6 +448,9 @@
             </a>
             <a href="/company" title="Company" class="group no-underline flex items-center rounded p-2 {{ 'bg-white' if params.base_module == 'company' else 'hover:bg-white' }}">
                 <i class="fas fa-building {{ 'text-gray-700' if params.base_module == 'company' else 'text-white group-hover:text-gray-700' }}"></i>
+            </a>
+            <a href="/users" title="Users" class="group no-underline flex items-center rounded p-2 {{ 'bg-white' if params.base_module == 'users' else 'hover:bg-white' }}">
+                <i class="fas fa-building {{ 'text-gray-700' if params.base_module == 'users' else 'text-white group-hover:text-gray-700' }}"></i>
             </a>
             <a href="/attendance" title="Attendance" class="group no-underline flex items-center rounded p-2 {{ 'bg-white' if params.base_module == 'attendance' else 'hover:bg-white' }}">
                 <i class="fas fa-calendar-check {{ 'text-gray-700' if params.base_module == 'attendance' else 'text-white group-hover:text-gray-700' }}"></i>

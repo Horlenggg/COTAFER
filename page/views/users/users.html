@@ -1,0 +1,131 @@
+{% extends 'views/templates/_sidebar.html' %}
+
+{% block bodyContent %}
+
+<div id="usersControl" class="w-full h-full flex flex-col">
+	<div class="h-10 flex flex-row justify-start items-center">
+		<ul>
+			<li><a href="/users" class="text-blue font-bold"></a></li>
+			<h2 class="text-black font-bold pt-10 mt-10">Users Control</h2>
+		</ul>
+	</div>
+	<div class="h-10 flex flex-row justify-end items-center">
+		<div class="relative h-full flex flex-row items-center bg-white group mr-5">
+			<input type="text" class="h-full border border-gray-200 hover:border-gray-700 focus:border-gray-700 px-3 py-2.5 text-sm focus:outline-none" placeholder="Search...">
+			<button class="absolute h-3/5 top-2 right-1 border-l px-1">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-200 group-hover:text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+				</svg>
+			</button>
+		</div>
+		<a href="#" class="h-full flex items-center text-white border border-gray-700 rounded-full">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="gray" class="w-10 h-8">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+			</svg>			  	  
+		</a>
+	</div>
+	<div class="w-full h-full flex flex-col justify-between mx-auto overflow-hidden mt-5">
+		<div class="overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+			<table class="relative w-full whitespace-no-wrap">
+				<thead class="sticky top-0 z-10 select-none">
+					<tr class="font-bold text-sm text-left text-white bg-gray-700 uppercase">
+						<th class="px-4 py-3 w-1/8">Id</th>
+						<th class="px-4 py-3">Username</th>
+						<th class="px-4 py-3">Email</th>
+						<th class="px-4 py-3">Phone Number</th>
+						<th class="px-4 py-3">Department</th>
+						<th class="px-4 py-3">Roles</th>
+						<th class="px-4 py-3 w-1/8">Actions</th>
+					</tr>
+				</thead>
+				<tbody class="bg-white">
+					<tr 
+						v-for="(user, index) in users"
+						:key="user.id"
+						class="text-sm text-gray-700 hover:bg-gray-300"
+						:class="{ 'bg-gray-100' : index % 2 === 0 }"
+					>
+						<td class="px-4 py-3 text-sm" v-text="index + 1"></td>
+						<td class="px-4 py-3 text-sm" v-text="user.userName"></td>
+						<td class="px-4 py-3 text-sm" v-text="user.email"></td>
+						<td class="px-4 py-3 text-sm" v-text="user.phoneNumber"></td>
+						<td class="px-4 py-3 text-sm">
+							<div v-for="(de, index) in user.department">
+								<span v-if="index == user.department.length - 1 " v-text="de"></span>
+								<span v-else v-text="de + ',&nbsp;' "></span>
+							</div>
+						</td>
+						<td class="px-4 py-3 text-sm">
+							<div v-for="(ro, index) in user.roles">
+								<span v-if="index == user.roles.length - 1 " v-text="ro"></span>
+								<span v-else v-text="ro + ',&nbsp;' "></span>
+							</div>
+						</td>
+						<td class="px-4 py-3 text-sm">
+							<div class="flex items-center space-x-3 text-sm">
+								<button @click="onView(user.id)" class="focus:outline-none">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+										<path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+										<path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+									</svg>
+								</button>
+								<a href="#">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+										<path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+										<path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+									</svg>
+								</a>
+								<button @click="onDelete(user.id)" class="focus:outline-none">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+									</svg>
+								</button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="w-full flex justify-center items-center uppercase py-6.5 space-x-3">
+			<span class="text-lg">1-10 of 100</span>
+			<!-- Pagination -->
+			<div class="flex">
+				<ul class="flex flex-row justify-center items-center space-x-2">
+					<li class="flex justify-center items-center">
+						<button class="text-center hover:text-gray-700 focus:outline-none" aria-label="Previous">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+							</svg>
+						</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center text-white bg-gray-700 focus:outline-none">1</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">2</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">3</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">4</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">5</button>
+					</li>
+					<li class="w-7 h-7">
+						<button class="w-full h-full text-center focus:outline-none hover:text-white hover:bg-gray-700">6</button>
+					</li>
+					<li class="flex justify-center items-center">
+						<button class="text-center hover:text-gray-700 focus:outline-none" aria-label="Next">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+							</svg>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
