@@ -215,17 +215,21 @@ def companyCompanyViewGet():
 # ================= #
 
 @route.get('/users')
-@route.get('/users/users')
+@route.get('/users/control')
 def usersControlGet():
     return users.UsersValidation().usersControlGet()
 
-# @route.get('/users/users/add')
-# def controlUsersAddGet():
-#     return users.UsersValidation().controlUsersAddGet()
+@route.get('/users/control/add')
+def usersControlAddGet():
+    return users.UsersValidation().usersControlAddGet()
 
-# @route.get('/users/users/view')
-# def controlUsersViewGet():
-#     return users.UsersValidation().controlUsersViewGet()
+@route.get('/users/control/edit')
+def usersControlEditGet():
+    return users.UsersValidation().usersControlEditGet()
+
+@route.get('/users/users/view')
+def usersControlViewGet():
+    return users.UsersValidation().usersControlViewGet()
 
 # ================= #
 #       Test        #

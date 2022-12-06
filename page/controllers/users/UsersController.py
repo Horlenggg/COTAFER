@@ -48,52 +48,77 @@ class UsersController(MyController):
             self.log.error(title=f'{self.__className} Ex', content=f'{e=}')
             return self.view.render('/users/users')
 
-    #
-    # def controlUsersAddGet(self) -> Any:
+    #Add
+    def usersControlAddGet(self) -> Any:
         
-    #     try:
-    #         self.log.info('UsersController.controlUsersAddGet info')
+        try:
+            self.log.info('UsersController.usersControlAddGet info')
 
-    #         # active link
-    #         self.view.addData(
-    #             params={
-    #                 'active_module'     : ['users', '']
-    #                 , 'client_module'   : '9_users'
-    #                 , 'base_module'     : 'users'
-    #             }
-    #         )
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['users', '']
+                    , 'client_module'   : '9_users'
+                    , 'base_module'     : 'users'
+                }
+            )
 
-    #         return self.render(
-    #             viewFile='users/usersAdd'
-    #         )
+            return self.render(
+                viewFile='users/usersAdd'
+            )
 
-    #     except Exception as e:
-    #         self.log.error(f'UsersController.controlUsersAddGet Exception ', str(e))
-    #         return self.render(
-    #             viewFile='users/usersAdd'
-    #         )
+        except Exception as e:
+            self.log.error(f'UsersController.usersControlAddGet Exception ', str(e))
+            return self.render(
+                viewFile='users/usersAdd'
+            )
 
-    # 
-    # def controlUsersViewGet(self) -> Any:
+    # edit
+    def usersControlEditGet(self) -> Any:
         
-    #     try:
-    #         self.log.info('UsersController.controlUsersViewGet info')
+        try:
+            self.log.info('UsersController.usersControlEditGet info')
 
-    #         # active link
-    #         self.view.addData(
-    #             params={
-    #                 'active_module'     : ['users', '']
-    #                 , 'client_module'   : '9_users'
-    #                 , 'base_module'     : 'users'
-    #             }
-    #         )
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['users', '']
+                    , 'client_module'   : '3_users'
+                    , 'base_module'     : 'users'
+                }
+            )
 
-    #         return self.render(
-    #             viewFile='/users/users'
-    #         )
+            return self.render(
+                viewFile='users/usersEdit'
+            )
 
-    #     except Exception as e:
-    #         self.log.error(f'UsersController.controlUsersViewGet Exception ', str(e))
-    #         return self.render(
-    #             viewFile='/users/users'
-    #         )
+        except Exception as e:
+            self.log.error(f'UsersController.usersControlEditGet Exception ', str(e))
+            return self.render(
+                viewFile='company/usersEdit'
+            )
+
+    # view
+    def usersControlViewGet(self) -> Any:
+        
+        try:
+            self.log.info('UsersController.usersControlViewGet info')
+
+            # active link
+            self.view.addData(
+                params={
+                    'active_module'     : ['users', '']
+                    , 'client_module'   : '3_users'
+                    , 'base_module'     : 'users'
+                }
+            )
+
+            return self.render(
+                viewFile='users/usersView'
+            )
+
+        except Exception as e:
+            self.log.error(f'UsersController.usersControlViewGet Exception ', str(e))
+            return self.render(
+                viewFile='users/usersView'
+            )

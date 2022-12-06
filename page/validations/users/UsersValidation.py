@@ -18,16 +18,20 @@ class UsersValidation(MyValidation):
         except Exception as e:
             return users(headerParam=self.__h, bodyParam=self.__b).usersControlGet()
 
-    # 
-    # def controlUsersAddGet(self):
-    #     try:
-    #         return users(headerParam=self.__h, bodyParam=self.__b).controlUsersAddGet()
-    #     except Exception as e:
-    #         return users(headerParam=self.__h, bodyParam=self.__b).controlUsersAddGet()
+    def usersControlAddGet(self):
+        try:
+            return users(headerParam=self.__h, bodyParam=self.__b).usersControlAddGet()
+        except Exception as e:
+            return users(headerParam=self.__h, bodyParam=self.__b).usersControlAddGet()
 
-    # # 
-    # def controlUsersViewGet(self):
-    #     try:
-    #         return users(headerParam=self.__h, bodyParam=self.__b).controlUsersViewGet()
-    #     except Exception as e:
-    #         return users(headerParam=self.__h, bodyParam=self.__b).controlUsersViewGet()
+    def usersControlEditGet(self):
+        try:
+            return users(headerParam=self.__h, bodyParam=self.__b).usersControlEditGet()
+        except Exception as e:
+            return users(headerParam=self.__h, bodyParam=self.__b).usersControlEditGet()
+
+    def usersControlViewGet(self):
+        try:
+            return users(headerParam=self.__h, bodyParam=self.__b).usersControlViewGet()
+        except Exception as e:
+            return users(headerParam=self.__h, bodyParam=self.__b).usersControlViewGet()
