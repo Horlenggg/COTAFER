@@ -1,7 +1,7 @@
 """
 Author: masakokh
 Year: 2020
-Version: 1.2.1
+Version: 1.2.2
 Package: Framework
 """
 import sys
@@ -11,11 +11,11 @@ from application.data.HtmlStatusCode import HtmlStatusCode as hsc
 
 # instance a flask's object
 # web application
-wa                  = WebApp()
+webApp                  = WebApp()
 
 # update assets
-wa.static_folder    = (ac.ASSET_PATH).rstrip('/')
-wa.static_url_path  = ac.ASSET_NAME
+webApp.static_folder    = (ac.ASSET_PATH).rstrip('/')
+webApp.static_url_path  = ac.ASSET_NAME
 
 # update template
-wa.template_folder  = (ac.PAGE_PATH).rstrip('/')
+webApp.template_folder  = (ac.PAGE_PATH).rstrip('/')
