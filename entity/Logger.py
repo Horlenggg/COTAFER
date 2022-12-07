@@ -1,7 +1,8 @@
 """
 Author: masakokh
 Year: 2020
-Version: 1.0.0
+Version: 1.0.1
+Package: project
 """
 from application.data.Entity import Entity
 
@@ -13,40 +14,36 @@ class Logger(Entity):
     def __init__(self, data: dict):
         """
 
+        :param data:
         """
         #
-        super().__init__()
+        super(Logger, self).__init__()
+        self.setKeyName('log')
 
         # static variables
-        self._enable            = 'enable'
-        self._extension         = 'extension'
-        self._formatFileName    = 'format_file_name'
-        self._path              = 'path'
-        self._prefix            = 'prefix'
+        self.__enable           = 'enable'
+        self.__extension        = 'extension'
+        self.__path             = 'path'
         # dynamic variables
         self.enable             = False
         self.extension          = ''
-        self.formatFileName     = ''
         self.path               = ''
-        self.prefix             = ''
 
         # load data mapping
-        self._assignData(data)
+        self.__assignData(data)
 
-    def _assignData(self, data: dict) -> None:
+    def __assignData(self, data: dict) -> None:
         """
 
         :return:
         """
         try:
-            self.enable         = data[self._enable]
-            self.extension      = data[self._extension]
-            self.formatFileName = data[self._formatFileName]
-            self.path           = data[self._path]
-            self.prefix         = data[self._prefix]
+            self.enable         = data[self.__enable]
+            self.extension      = data[self.__extension]
+            self.path           = data[self.__path]
 
         except KeyError as e:
-            print(str(e))
+            print(f'entity.Logger.__assignData KeyError: {str(e)}')
 
         except Exception as e:
-            print(str(e))
+            print(f'entity.Logger.__assignData Exception: {str(e)}')
