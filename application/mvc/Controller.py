@@ -63,7 +63,7 @@ class Controller:
         """
         self.view.render()
 
-    def setModel(self, model: Model) -> Model:
+    def setModel(self, model: Model) -> None:
         """
 
         :param model:
