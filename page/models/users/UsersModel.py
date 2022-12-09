@@ -19,5 +19,6 @@ class UsersModel(MyModel):
         self.setHeaderParams(initParams)
 
     #
-    def controlUsersGet(self, data: dict) -> None:
+    def usersControlGet(self, data: dict) -> None:
         self.request.json('/users/control/get', data)
+        
