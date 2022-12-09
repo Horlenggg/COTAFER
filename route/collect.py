@@ -23,6 +23,8 @@ from page.validations.setting       import SettingValidation as setting
 from page.validations.roadmap       import RoadmapValidation as roadmap
 from page.validations.users         import UsersValidation as users
 
+from page.controllers.DefaultController import DefaultController
+
 
 #######################
 # a reference from startup
@@ -39,33 +41,31 @@ wa  = route
 def pageNotFound(error):
 	return 'This page does not exist', 404
 
+@route.errorhandler(405)
+def pageNotFound(error):
+    return 'This page does not allow the method', 405
 
-@route.route('/assets/upload/<path:filename>')
+@route.get('/assets/translation.js')
+def translation():
+    return DefaultController(headerParam={}, bodyParam={}).getJsTranslation()
+
+@route.get('/assets/<path:filename>')
 def assetsURL(filename):
 	return sfd(route.static_folder, filename), 200
 
 
-@route.route('/static/upload/<path:filename>')
+@route.get('/static/<path:filename>')
 def staticURL(filename):
 	return sfd(route.static_folder, filename), 200
 
 
 @route.get('/robots.txt')
 def robotsTxt():
-	"""
-	"""
-	# content     = ''
-
-	# try:
-	#     reader  = open('robots.txt', mode='r')
-	#     content = reader.read()
-	# finally:
-	#     reader.close()
 	# return content
-	return """
-	        User-agent: *
-	        Disallow: /
-	"""
+	return      """
+					User-agent: *
+					Disallow: /
+				"""
 
 
 # ================= #
