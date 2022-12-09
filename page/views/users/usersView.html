@@ -1,0 +1,90 @@
+{% extends "views/templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+	<div id="usersControlView" v-cloak class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
+		<div class="flex flex-row items-center">
+			<a href="/users" class="no-underline">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+				</svg>
+			</a>
+			<span class="font-bold text-3xl text-gray-700 ml-6.5">View User</span>
+		</div>
+		<div class="flex flex-col px-12 pt-10 space-y-6.5">
+			<div class="flex flex-row space-x-12.5">
+				<div class="w-1/2">
+					<label for="firstname" class="block text-gray-700">First name</label>
+					<div 
+						v-text="firstName"
+						class="mt-2.5 block w-full text-sm border px-4 py-3 focus:outline-none">
+					</div>
+				</div>
+				<div class="w-1/2">
+					<label for="lastname" class="block text-gray-700">Last name</label>
+					<div 
+						v-text="lastName"
+						class="mt-2.5 block w-full text-sm border px-4 py-3 focus:outline-none">
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-row space-x-12.5">
+				<div class="w-1/2">
+					<label for="email" class="block text-gray-700">Email</label>
+					<div 
+						v-text="email"
+						class="mt-2.5 block w-full text-sm border px-4 py-3 focus:outline-none">
+					</div>
+				</div>
+				<div class="w-1/2">
+					<label for="phonenumber" class="block text-gray-700">Phone number</label>
+					<div 
+						v-text="phoneNumber"
+						class="mt-2.5 block w-full text-sm border px-4 py-3 focus:outline-none">
+					</div>
+				</div>
+			</div>
+			<div class="w-full">
+				<label for="department" class="block text-gray-700">Department</label>
+				<div class="mt-2.5 h-auto flex flex-wrap gap-1.5 border p-1.5">
+					<div
+						v-for="de in department"
+						v-text="de" 
+						class="text-sm border px-1.5 py-1">
+					</div>
+				</div>
+			</div>
+			<div class="relative w-full">
+				<label for="roles" class="block text-gray-700">Roles</label>
+				<div class="mt-2.5 h-auto flex flex-wrap gap-1.5 border p-1.5">
+					<div
+						v-for="ro in roles"
+						v-text="ro" 
+						class="text-sm border px-1.5 py-1">
+					</div>
+				</div>
+			</div>
+			<div class="relative w-full">
+				<label for="company" class="block text-gray-700">Company</label>
+				<div class="mt-2.5 h-auto flex flex-wrap gap-1.5 border p-1.5">
+					<div
+						v-for="co in company"
+						v-text="co" 
+						class="text-sm border px-1.5 py-1">
+					</div>
+				</div>
+			</div>
+			<div class="relative w-full">
+				<label for="project" class="block text-gray-700">Project</label>
+				<div class="mt-2.5 h-auto flex flex-wrap gap-1.5 border p-1.5">
+					<div
+						v-for="pr in project"
+						v-text="pr" 
+						class="text-sm border px-1.5 py-1">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
