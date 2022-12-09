@@ -24,13 +24,6 @@ LOG_SYSTEM_PATH             = ROOT_DIR + '/logs/'
 IP                          = '127.0.0.1'
 PORT                        = '7031'
 
-# session
-SESSION_HOST                = IP
-SESSION_PORT                = 5566
-SESSION_EXPIRATION          = 600  # 10 minutes * 60
-SESSION_PASSWORD            = 12345678
-SESSION_DB_DEFAULT          = 1
-
 # page or output structure folder
 PAGE_PATH                   = ROOT_DIR + '/page/'
 # mvc

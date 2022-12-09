@@ -17,11 +17,9 @@
         , "image_extension": ["png", "jpg", "jpeg"]
     }
     , "log": {
-        "path": "logs/"
-        , "prefix": ""
-        , "extension": ".log"
-        , "format_file_name": "%Y-%m-%d"
-        , "enable": "true"
+        "enable": "true"
+        , "extension": "log"
+        , "path": "logs/"
     }
     , "session": {
         "db": 0

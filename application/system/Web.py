@@ -180,5 +180,5 @@ class Web(Flask):
 		self.run(
 			host    = ac.IP
 			, port  = ac.PORT
-			, debug = not Env().isProduction()
+			, debug = not env.isProduction()
 		)
