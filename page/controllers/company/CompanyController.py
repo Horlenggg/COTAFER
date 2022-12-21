@@ -313,10 +313,10 @@ class CompanyController(MyController):
                 viewFile='company/rolesView'
             )
 
-    def companyCompanyGet(self) -> Any:
+    def companyCompanyGet(self, data: dict={}) -> Any:
         
         try:
-            self.log.info('CompanyController.companyCompanyGet info')
+            self.__className = f'{self.__className}.companyCompanyGet'
 
             # active link
             self.view.addData(
@@ -327,20 +327,21 @@ class CompanyController(MyController):
                 }
             )
 
-            return self.render(
-                viewFile='company/company'
-            )
+            if data.get('errorMessage'):
+                self.view.addParam('errorMessage', data.get('errorMessage'))
+
+            # view
+            return self.view.render('/company/company')
 
         except Exception as e:
-            self.log.error(f'CompanyController.companyCompanyGet Exception ', str(e))
-            return self.render(
-                viewFile='company/company'
-            )
+            self.log.error(title=f'{self.__className} Ex', content=f'{e=}')
+            # view
+            return self.view.render('/company/company')
 
-    def companyCompanyAddGet(self) -> Any:
+    def companyCompanyAddGet(self, data: dict={}) -> Any:
         
         try:
-            self.log.info('CompanyController.companyCompanyAddGet info')
+            self.__className = f'{self.__className}.companyCompanyAddGet'
 
             # active link
             self.view.addData(
@@ -351,20 +352,21 @@ class CompanyController(MyController):
                 }
             )
 
-            return self.render(
-                viewFile='company/companyAdd'
-            )
+            if data.get('errorMessage'):
+                self.view.addParam('errorMessage', data.get('errorMessage'))
+
+            # view
+            return self.view.render('/company/companyAdd')
 
         except Exception as e:
-            self.log.error(f'CompanyController.companyCompanyAddGet Exception ', str(e))
-            return self.render(
-                viewFile='company/companyAdd'
-            )
+            self.log.error(title=f'{self.__className} Ex', content=f'{e=}')
+            # view
+            return self.view.render('/company/companyAdd')
 
-    def companyCompanyEditGet(self) -> Any:
+    def companyCompanyEditGet(self, data: dict={}) -> Any:
         
         try:
-            self.log.info('CompanyController.companyCompanyEditGet info')
+            self.__className = f'{self.__className}.companyCompanyEditGet'
 
             # active link
             self.view.addData(
@@ -375,20 +377,21 @@ class CompanyController(MyController):
                 }
             )
 
-            return self.render(
-                viewFile='company/companyEdit'
-            )
+            if data.get('errorMessage'):
+                self.view.addParam('errorMessage', data.get('errorMessage'))
+
+            # view
+            return self.view.render('/company/companyEdit')
 
         except Exception as e:
-            self.log.error(f'CompanyController.companyCompanyEditGet Exception ', str(e))
-            return self.render(
-                viewFile='company/companyEdit'
-            )
+            self.log.error(title=f'{self.__className} Ex', content=f'{e=}')
+            # view
+            return self.view.render('/company/companyEdit')
 
-    def companyCompanyViewGet(self) -> Any:
+    def companyCompanyViewGet(self, data: dict={}) -> Any:
         
         try:
-            self.log.info('CompanyController.companyCompanyViewGet info')
+            self.__className = f'{self.__className}.companyCompanyViewGet'
 
             # active link
             self.view.addData(
@@ -399,12 +402,13 @@ class CompanyController(MyController):
                 }
             )
 
-            return self.render(
-                viewFile='company/companyView'
-            )
+            if data.get('errorMessage'):
+                self.view.addParam('errorMessage', data.get('errorMessage'))
+
+            # view
+            return self.view.render('/company/companyView')
 
         except Exception as e:
-            self.log.error(f'CompanyController.companyCompanyViewGet Exception ', str(e))
-            return self.render(
-                viewFile='company/companyView'
-            )
+            self.log.error(title=f'{self.__className} Ex', content=f'{e=}')
+            # view
+            return self.view.render('/company/companyView')
