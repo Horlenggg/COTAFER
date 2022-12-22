@@ -8,6 +8,7 @@ if(document.querySelector('#companyCompanyAdd')){
                 , email         : ''
                 , phoneNumber   : ''
                 , icon          : ''
+                , project       : ''
     
                 , isCnVal: false //check validation company name
                 , isTtVal: false //check validation title
@@ -15,6 +16,7 @@ if(document.querySelector('#companyCompanyAdd')){
                 , isEmVal: false //check validation email
                 , isPhVal: false //check validation phone number
                 , isIcVal: false //check validation icon
+                , isPrVal: false //check validation project
     
                 , errMessageCn: '' //error message company name
                 , errMessageTt: '' //error message title
@@ -22,6 +24,7 @@ if(document.querySelector('#companyCompanyAdd')){
                 , errMessageEm: '' //error message email
                 , errMessagePh: '' //error message phone number
                 , errMessageIc: '' //error message icon
+                , errMessagePr: '' //check validation project
             }
         },
         methods: {
@@ -92,6 +95,17 @@ if(document.querySelector('#companyCompanyAdd')){
                 }
     
                 if(this.icon.length == 0){
+                    this.errMessageIc = 'Require.'
+                    this.isIcVal = true
+                } else if(this.icon.length > 3){
+                    this.errMessageIc = 'Max 3'
+                    this.isIcVal = true
+                } else {
+                    this.errMessageIc = ''
+                    this.isIcVal = false
+                }
+
+                if(this.project.length == 0){
                     this.errMessageIc = 'Require.'
                     this.isIcVal = true
                 } else if(this.icon.length > 3){

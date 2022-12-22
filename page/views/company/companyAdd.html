@@ -1,4 +1,4 @@
-{% extends "templates/_sidebar.html" %}
+{% extends "views/templates/_sidebar.html" %}
 
 {% block bodyContent %}
 
@@ -82,6 +82,28 @@
 				>
 				<span class="text-xs text-disable">The recommended image size: 20x20 pixels. Only jpeg, png, svg</span>
 			</div>
+		</div>
+		<div class="relative z-0 w-full group">
+			<label for="project" class="text-gray-500">Add project</label>
+			<select
+				name="project"
+				value=""
+				onclick="this.setAttribute('value', this.value);"
+				class="pt-0 pb-0 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200"
+				:class="isPrVal ? 'border-red-500' : ''"
+			>
+				<option value="" selected disabled hidden></option>
+				<a href="#">
+					<option value="1" class="transition hover:bg-indigo-50">API
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+					</option>
+				</a>
+				<option value="2">IOS</option>
+				<option value="3">Web</option>
+				<option value="4"><span>+</span> Add Items</option>
+			</select>
 		</div>
 	</div>
 	<div class="w-full flex justify-end px-12 mt-15">
