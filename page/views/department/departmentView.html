@@ -1,0 +1,29 @@
+{% extends "views/templates/_sidebar.html" %}
+
+{% block bodyContent %}
+
+<div id="departmentView" v-cloak class="w-full max-w-4xl bg-white mx-auto p-8 my-6.5">
+	<div class="flex flex-row items-center">
+		<a href="/department" class="no-underline">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+			</svg>
+		</a>
+		<span class="font-bold text-3xl text-gray-700 ml-6.5">View Department</span>
+	</div>
+	<div class="flex flex-col px-12 pt-10 space-y-6.5">
+		<div class="w-full">
+			<label for="departmentName" class="block text-gray-700">Department name</label>
+			<div v-text="departmentName" class="mt-2.5 block w-full text-sm border px-4 py-3 focus:outline-none"></div>
+		</div>
+		<div class="w-full space-y-3">
+			<collapse-view-vue :data="dashboardData" :title="dashboard"></collapse-view-vue>
+			<collapse-view-vue :data="documentData" :title="document"></collapse-view-vue>
+			<collapse-view-vue :data="settingData" :title="setting"></collapse-view-vue>
+			<collapse-view-vue :data="usersData" :title="users"></collapse-view-vue>
+			<collapse-view-vue :data="projectTestingData" :title="projectTesting"></collapse-view-vue>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
