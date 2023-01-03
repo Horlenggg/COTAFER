@@ -22,6 +22,7 @@ from page.validations.account       import AccountValidation as account
 from page.validations.setting       import SettingValidation as setting
 from page.validations.roadmap       import RoadmapValidation as roadmap
 from page.validations.users         import UsersValidation as users
+from page.validations.department	import DepartmentValidation as department
 
 from page.controllers.DefaultController import DefaultController
 
@@ -257,6 +258,29 @@ def companyCompanyEditGet():
 @route.get('/company/company/view')
 def companyCompanyViewGet():
 	return company.CompanyValidation().companyCompanyViewGet()
+
+
+# ================= #
+#     department    #
+# ================= #
+
+@route.get('/department')
+@route.get('/department/department')
+def departmentGet():
+	return department.DepartmentValidation().departmentGet()
+
+@route.get('/department/add')
+def departmentAddGet():
+	return department.DepartmentValidation().departmentAddGet()
+
+@route.get('/department/edit')
+def departmentEditGet():
+	return department.DepartmentValidation().departmentEditGet()
+
+@route.get('/department/view')
+def departmentViewGet():
+	return department.DepartmentValidation().departmentViewGet()
+
 
 # ================= #
 #      users        #
