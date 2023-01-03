@@ -93,13 +93,11 @@
 				:class="isPrVal ? 'border-red-500' : ''"
 			>
 				<option value="" selected disabled hidden></option>
-				<a href="#">
-					<option value="1" class="transition hover:bg-indigo-50">API
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-						</svg>
-					</option>
-				</a>
+				<option value="1">API</option>
+				<span class="transition group-open:rotate-180">
+					<svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" 
+					stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+					</svg> 
 				<option value="2">IOS</option>
 				<option value="3">Web</option>
 				<option value="4"><span>+</span> Add Items</option>
