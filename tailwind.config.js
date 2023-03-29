@@ -8,7 +8,7 @@ module.exports = {
     './page/assets/module/**/js/*.js',
     './page/assets/module/base.js',
   ],
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: 'media', 
   theme: {
     extend: {
       fontFamily: {
